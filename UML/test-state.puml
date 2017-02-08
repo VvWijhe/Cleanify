@@ -1,5 +1,4 @@
 @startuml
-scale 800 width
 
 state S_Start{
 S_Start --> S_Init
