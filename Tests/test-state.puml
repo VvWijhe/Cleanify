@@ -1,5 +1,5 @@
 @startuml
-scale 1000 width
+scale 800 width
 
 state S_Start{
 S_Start --> S_Init
@@ -16,24 +16,32 @@ E_In_20C --> S_20C
 E_In_50C --> S_50C
 }
 
+state Money{
+
+E_Money_Enough --> S_Coke
+E_Not_Enough_Money --> S_Wait_For_Coins
+
 state S_5C{
-E_1Money_Enough --> S_Coke
-E_1Money_Not_Enough --> S_Wait_For_Coins
+S_5C --> E_Money_Enough
+S_5C --> E_Not_Enough_Money
 }
 
 state S_10C{
-E_2Money_Enough --> S_Coke
-E_2Money_Not_Enough --> S_Wait_For_Coins
+S_10C --> E_Money_Enough
+S_10C --> E_Not_Enough_Money
 }
 
 state S_20C{
-E_3Money_Enough --> S_Coke
-E_3Money_Not_Enough --> S_Wait_For_Coins
+S_20C --> E_Money_Enough
+S_20C --> E_Not_Enough_Money
 }
 
 state S_50C{
-E_4Money_Enough --> S_Coke
-E_4Money_Not_Enough --> S_Wait_For_Coins
+S_50C --> E_Money_Enough
+S_50C --> E_Not_Enough_Money
+}
+
+
 }
 
 state S_Coke{
