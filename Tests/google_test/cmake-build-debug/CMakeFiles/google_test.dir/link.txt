@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/google_test.dir/main.cpp.o  -o google_test 
