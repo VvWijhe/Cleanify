@@ -1,0 +1,37 @@
+@startuml
+scale 600 width
+
+state Roomba{
+Roomba -down-> Sensoren
+Roomba -down-> Actuatoren
+Roomba -down-> Behuizing
+Roomba -down-> Besturingseenheid
+Roomba -down-> Voeding
+}
+
+state Sensoren{
+Sensoren: Klif sensor
+Sensoren: Bots sensor
+Sensoren: Afstand sensor
+}
+
+state Actuatoren{
+Actuatoren: Motoren wielen
+Actuatoren: Motoren borstels
+Actuatoren: Speaker
+Actuatoren: Status LED
+}
+
+state Behuizing{
+
+}
+
+state Besturingseenheid{
+Besturingseenheid:Raspberry Pi
+}
+
+state Voeding{
+Voeding:Accu
+}
+
+@enduml
