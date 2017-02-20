@@ -78,6 +78,50 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Female-Replacement/Tests/google_test/cmake-build-debug/CMakeFiles" "/media/victor/harde schijf/school/HBO2/semester_2/Female-Replacement/Tests/google_test/cmake-build-debug/CMakeFiles/progress.marks"
@@ -123,6 +167,58 @@ google_test/fast:
 	$(MAKE) -f CMakeFiles/google_test.dir/build.make CMakeFiles/google_test.dir/build
 .PHONY : google_test/fast
 
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) -f lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) -f lib/googletest-master/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest-master/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -150,6 +246,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/google_test.dir/build.make CMakeFiles/google_test.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tests/test.o: tests/test.cpp.o
+
+.PHONY : tests/test.o
+
+# target to build an object file
+tests/test.cpp.o:
+	$(MAKE) -f CMakeFiles/google_test.dir/build.make CMakeFiles/google_test.dir/tests/test.cpp.o
+.PHONY : tests/test.cpp.o
+
+tests/test.i: tests/test.cpp.i
+
+.PHONY : tests/test.i
+
+# target to preprocess a source file
+tests/test.cpp.i:
+	$(MAKE) -f CMakeFiles/google_test.dir/build.make CMakeFiles/google_test.dir/tests/test.cpp.i
+.PHONY : tests/test.cpp.i
+
+tests/test.s: tests/test.cpp.s
+
+.PHONY : tests/test.s
+
+# target to generate assembly for a file
+tests/test.cpp.s:
+	$(MAKE) -f CMakeFiles/google_test.dir/build.make CMakeFiles/google_test.dir/tests/test.cpp.s
+.PHONY : tests/test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,10 +281,21 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... google_test"
+	@echo "... gmock_main"
+	@echo "... gmock"
+	@echo "... gtest_main"
+	@echo "... gtest"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tests/test.o"
+	@echo "... tests/test.i"
+	@echo "... tests/test.s"
 .PHONY : help
 
 
