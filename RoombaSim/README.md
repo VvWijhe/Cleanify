@@ -1,6 +1,6 @@
 ## RoombaSim
 
-version: 0.0.1
+version: 0.0.2
 
 This is a simulator for the roomba cleaner in our project.
 
