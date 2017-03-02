@@ -4,9 +4,9 @@ version: 0.0.1
 
 This is a simulator for the roomba cleaner in our project.
 
-### Reqiurements
+### Requirements
 - C++11 or newer
-- Qt libraries(Core, graphics)
+- Qt libraries(Core, Graphics)
 
 ### Building
 - Open the .pro file in Qt creator
