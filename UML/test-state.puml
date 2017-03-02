@@ -1,54 +1,7 @@
 @startuml
-
-state S_Start{
-S_Start --> S_Init
+digraph foo {
+  subA;
+  subB;
+  Super;
 }
-
-state S_Init{
-S_Init --> S_Wait_For_Coins
-}
-
-state S_Wait_For_Coins{
-E_In_5C --> S_5C
-E_In_10C --> S_10C
-E_In_20C --> S_20C
-E_In_50C --> S_50C
-}
-
-state Money{
-
-E_Money_Enough --> S_Coke
-E_Not_Enough_Money --> S_Wait_For_Coins
-
-state S_5C{
-S_5C --> E_Money_Enough
-S_5C --> E_Not_Enough_Money
-}
-
-state S_10C{
-S_10C --> E_Money_Enough
-S_10C --> E_Not_Enough_Money
-}
-
-state S_20C{
-S_20C --> E_Money_Enough
-S_20C --> E_Not_Enough_Money
-}
-
-state S_50C{
-S_50C --> E_Money_Enough
-S_50C --> E_Not_Enough_Money
-}
-
-
-}
-
-state S_Coke{
-S_Coke --> S_Change
-}
-
-state S_Change{
-S_Change --> S_Init
-}
-
 @enduml
