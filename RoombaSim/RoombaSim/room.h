@@ -7,9 +7,10 @@
 
 #include "roomba.h"
 
+#define SCALE(meters) (meters * 35.0)
+
 using namespace std;
-using Wall = QGraphicsLineItem;
-using route = QGraphicsLineItem;
+using Line = QGraphicsLineItem;
 
 class Room : public QGraphicsScene {
    Q_OBJECT
@@ -20,10 +21,10 @@ public slots:
    void update();
 
 private:
-   vector<Wall *> _walls;
+   vector<Line *> _walls;
    Roomba *_roomba;
    int _lastRouteX, _lastRouteY;
-   vector<route *> _route;
+   vector<Line *> _route;
 };
 
 #endif // ROOM_H

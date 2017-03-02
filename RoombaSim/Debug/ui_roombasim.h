@@ -42,6 +42,7 @@ public:
     QLabel *speedLabel;
     QSlider *speedSlider;
     QSpacerItem *verticalSpacer;
+    QPushButton *exitButton;
     QStatusBar *statusbar;
     QMenuBar *menubar;
 
@@ -111,6 +112,11 @@ public:
 
         verticalLayout->addItem(verticalSpacer);
 
+        exitButton = new QPushButton(centralwidget);
+        exitButton->setObjectName(QStringLiteral("exitButton"));
+
+        verticalLayout->addWidget(exitButton);
+
 
         horizontalLayout->addLayout(verticalLayout);
 
@@ -123,7 +129,7 @@ public:
         RoombaSim->setStatusBar(statusbar);
         menubar = new QMenuBar(RoombaSim);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 958, 24));
+        menubar->setGeometry(QRect(0, 0, 958, 20));
         RoombaSim->setMenuBar(menubar);
 
         retranslateUi(RoombaSim);
@@ -137,6 +143,7 @@ public:
         startButton->setText(QApplication::translate("RoombaSim", "Start", 0));
         pushButton->setText(QApplication::translate("RoombaSim", "Stop", 0));
         speedLabel->setText(QApplication::translate("RoombaSim", "Speed", 0));
+        exitButton->setText(QApplication::translate("RoombaSim", "Exit", 0));
     } // retranslateUi
 
 };

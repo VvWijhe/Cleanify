@@ -16,15 +16,32 @@ RoombaSim::RoombaSim(QWidget *parent) :
    // Create room
    _room = new Room;
    _room->setBackgroundBrush(QBrush(Qt::black));
-   _room->setSceneRect(0, 0, 1278, 718);
+   _room->setSceneRect(0, 0, 698, 698);
 
    ui->view->setScene(_room);
-   ui->view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-   ui->view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+//   ui->view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+//   ui->view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
    ui->view->scale(1, -1);
    ui->view->setRenderHint(QPainter::Antialiasing);
-   ui->view->setFixedSize(1280, 720);
+   ui->view->setFixedSize(700, 700);
    ui->view->show();
+
+   // draw grid
+   for(int i = 0; i < ui->view->height(); i++) {
+      _grid.push_back(new Line(0, SCALE(i), ui->view->height(), SCALE(i)));
+   }
+
+   for(int i = 0; i < ui->view->width(); i++) {
+      _grid.push_back(new Line(SCALE(i), 0, SCALE(i), ui->view->width()));
+   }
+
+   for(auto grid : _grid) {
+      QPen pen;
+      pen.setColor(QColor("#cccdce"));
+      grid->setPen(pen);
+      grid->setOpacity(0.1);
+      _room->addItem(grid);
+   }
 
    // Update all objects in the room
    _updater = new QTimer;
@@ -46,4 +63,8 @@ void RoombaSim::on_pushButton_clicked() {
 
 void RoombaSim::on_speedSlider_valueChanged(int value) {
     _updater->setInterval(1000 / value);
+}
+
+void RoombaSim::on_exitButton_clicked() {
+    exit(EXIT_SUCCESS);
 }

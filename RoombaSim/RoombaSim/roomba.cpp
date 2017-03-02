@@ -14,7 +14,7 @@ Roomba::Roomba() {
    QRectF br = boundingRect();
    setTransformOriginPoint(br.center());
 
-   setRect(0, 0, 60, 60);
+   setRect(0, 0, 1, 1);
 }
 
 Roomba::Roomba(int posx, int posy, int width, int height) {

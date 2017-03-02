@@ -23,10 +23,13 @@ private slots:
 
    void on_speedSlider_valueChanged(int value);
 
+   void on_exitButton_clicked();
+
 private:
    Ui::RoombaSim *ui;
    Room *_room;
    QTimer *_updater;
+   vector<Line *> _grid;
 };
 
 #endif // ROOMBASIM_H
