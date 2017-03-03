@@ -19,8 +19,6 @@ RoombaSim::RoombaSim(QWidget *parent) :
    _room->setSceneRect(0, 0, 698, 698);
 
    ui->view->setScene(_room);
-//   ui->view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-//   ui->view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
    ui->view->scale(1, -1);
    ui->view->setRenderHint(QPainter::Antialiasing);
    ui->view->setFixedSize(700, 700);
@@ -47,6 +45,11 @@ RoombaSim::RoombaSim(QWidget *parent) :
    _updater = new QTimer;
    QObject::connect(_updater, SIGNAL(timeout()), _room, SLOT(update()));
    _updater->setInterval(ui->speedSlider->value());
+
+   QObject::connect(_room, SIGNAL(updated()), this, SLOT(roomUpdated()));
+
+   ui->dt->setText(QString::number(DELTA_t_sec));
+   ui->statusbar->showMessage("Scale 1:100 cm");
 }
 
 RoombaSim::~RoombaSim() {
@@ -67,4 +70,13 @@ void RoombaSim::on_speedSlider_valueChanged(int value) {
 
 void RoombaSim::on_exitButton_clicked() {
     exit(EXIT_SUCCESS);
+}
+
+void RoombaSim::roomUpdated() {
+   auto roomba = _room->getRoomba();
+   auto posx{roomba->rect().x() + roomba->pos().x() + (roomba->rect().height() / 2)};
+   auto posy{roomba->rect().y() + roomba->pos().y() + (roomba->rect().width() / 2)};
+
+   ui->x->setText(QString::number(posx));
+   ui->y->setText(QString::number(posy));
 }

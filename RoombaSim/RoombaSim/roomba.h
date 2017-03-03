@@ -4,8 +4,7 @@
 #include <QGraphicsItem>
 #include <vector>
 
-#define M_PI 3.14159265358979323846
-#define M_2PI M_PI * 2
+#include "helper.h"
 
 using namespace std;
 

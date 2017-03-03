@@ -45,7 +45,7 @@ void Room::update() {
    }
 
    // draw path so we can see where it drove
-   if(!(_roomba->getDistance() % 40)) {
+   if(!(_roomba->getDistance() % 20)) {
       auto posx{_roomba->rect().x() + _roomba->pos().x() + (_roomba->rect().height() / 2)};
       auto posy{_roomba->rect().y() + _roomba->pos().y() + (_roomba->rect().width() / 2)};
 
@@ -61,7 +61,7 @@ void Room::update() {
 
       QPen pen;
       pen.setColor(Qt::yellow);
-      pen.setWidth(20);
+      pen.setWidth(10);
 
       _route[_route.size() - 1]->setPen(pen);
       _route[_route.size() - 1]->setOpacity(0.04);
@@ -70,4 +70,6 @@ void Room::update() {
       _lastRouteX = posx;
       _lastRouteY = posy;
    }
+
+   emit updated();
 }

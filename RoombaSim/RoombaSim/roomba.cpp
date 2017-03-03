@@ -26,11 +26,11 @@ Roomba::Roomba(int posx, int posy, int width, int height) {
 }
 
 void Roomba::setAngle(double angle) {
-   while(angle > M_2PI) {
-      angle -= M_2PI;
+   while(angle > PI_2) {
+      angle -= PI_2;
    }
-   while(angle < -M_2PI) {
-      angle += M_2PI;
+   while(angle < -PI_2) {
+      angle += PI_2;
    }
    _angle = angle;
 }
@@ -48,15 +48,16 @@ status_t Roomba::move(vector<QGraphicsLineItem *> walls) {
       setRotation(360);
    }
 
-   auto setPoint{((_angle * 180) / M_PI)};
-   auto diff{setPoint - rotation()};
+   // rotate to the shortest angle algorithm
+   double setPoint {((_angle * 180.0) / PI)};
+   double diff {setPoint - rotation()};
    diff = fabs((static_cast<int>(diff) + 180) % 360 - 180);
 
-   if(diff < 0 && rotation() != static_cast<int>(setPoint)) {
-      setRotation(rotation() - 1);
+   if(diff < 0 && !compare(setPoint, rotation(), 1.0)) {
+      setRotation(rotation() - angular_velocity * DELTA_t_sec);
       return ROTATING;
-   } else if(diff > 0 && rotation() != static_cast<int>(setPoint)) {
-      setRotation(rotation() + 1);
+   } else if(diff > 0 && !compare(setPoint, rotation(), 1.0)) {
+      setRotation(rotation() + angular_velocity * DELTA_t_sec);
       return ROTATING;
    } // end rotation
 
@@ -80,7 +81,7 @@ status_t Roomba::move(vector<QGraphicsLineItem *> walls) {
    setPen(QPen(Qt::green));
 
    // move roomba
-   setPos(pos().x() + cos(_angle), pos().y() + sin(_angle));
+   setPos(pos().x() + cos(_angle) * velocity * DELTA_t_sec, pos().y() + sin(_angle) * velocity * DELTA_t_sec);
    _distance++;
 
    return MOVING;

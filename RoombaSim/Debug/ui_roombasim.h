@@ -13,10 +13,12 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -42,6 +44,13 @@ public:
     QLabel *speedLabel;
     QSlider *speedSlider;
     QSpacerItem *verticalSpacer;
+    QFormLayout *formLayout;
+    QLabel *label;
+    QLineEdit *dt;
+    QLabel *label_2;
+    QLineEdit *x;
+    QLabel *label_3;
+    QLineEdit *y;
     QPushButton *exitButton;
     QStatusBar *statusbar;
     QMenuBar *menubar;
@@ -54,8 +63,8 @@ public:
         RoombaSim->resize(958, 486);
         RoombaSim->setMaximumSize(QSize(958, 486));
         QFont font;
-        font.setFamily(QStringLiteral("Arial"));
-        font.setPointSize(10);
+        font.setFamily(QStringLiteral("Sans"));
+        font.setPointSize(12);
         RoombaSim->setFont(font);
         centralwidget = new QWidget(RoombaSim);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
@@ -98,7 +107,7 @@ public:
         speedSlider = new QSlider(centralwidget);
         speedSlider->setObjectName(QStringLiteral("speedSlider"));
         speedSlider->setMaximumSize(QSize(100, 16777215));
-        speedSlider->setMinimum(30);
+        speedSlider->setMinimum(33);
         speedSlider->setMaximum(900);
         speedSlider->setSingleStep(90);
         speedSlider->setOrientation(Qt::Horizontal);
@@ -111,6 +120,45 @@ public:
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
+
+        formLayout = new QFormLayout();
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setContentsMargins(-1, 0, -1, 0);
+        label = new QLabel(centralwidget);
+        label->setObjectName(QStringLiteral("label"));
+
+        formLayout->setWidget(5, QFormLayout::LabelRole, label);
+
+        dt = new QLineEdit(centralwidget);
+        dt->setObjectName(QStringLiteral("dt"));
+        dt->setReadOnly(true);
+
+        formLayout->setWidget(5, QFormLayout::FieldRole, dt);
+
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        formLayout->setWidget(6, QFormLayout::LabelRole, label_2);
+
+        x = new QLineEdit(centralwidget);
+        x->setObjectName(QStringLiteral("x"));
+        x->setReadOnly(true);
+
+        formLayout->setWidget(6, QFormLayout::FieldRole, x);
+
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+
+        formLayout->setWidget(7, QFormLayout::LabelRole, label_3);
+
+        y = new QLineEdit(centralwidget);
+        y->setObjectName(QStringLiteral("y"));
+        y->setReadOnly(true);
+
+        formLayout->setWidget(7, QFormLayout::FieldRole, y);
+
+
+        verticalLayout->addLayout(formLayout);
 
         exitButton = new QPushButton(centralwidget);
         exitButton->setObjectName(QStringLiteral("exitButton"));
@@ -129,7 +177,7 @@ public:
         RoombaSim->setStatusBar(statusbar);
         menubar = new QMenuBar(RoombaSim);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 958, 20));
+        menubar->setGeometry(QRect(0, 0, 958, 24));
         RoombaSim->setMenuBar(menubar);
 
         retranslateUi(RoombaSim);
@@ -143,6 +191,9 @@ public:
         startButton->setText(QApplication::translate("RoombaSim", "Start", 0));
         pushButton->setText(QApplication::translate("RoombaSim", "Stop", 0));
         speedLabel->setText(QApplication::translate("RoombaSim", "Speed", 0));
+        label->setText(QApplication::translate("RoombaSim", "dt", 0));
+        label_2->setText(QApplication::translate("RoombaSim", "x", 0));
+        label_3->setText(QApplication::translate("RoombaSim", "y", 0));
         exitButton->setText(QApplication::translate("RoombaSim", "Exit", 0));
     } // retranslateUi
 

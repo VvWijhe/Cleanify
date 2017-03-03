@@ -6,8 +6,7 @@
 #include <vector>
 
 #include "roomba.h"
-
-#define SCALE(meters) (meters * 35.0)
+#include "helper.h"
 
 using namespace std;
 using Line = QGraphicsLineItem;
@@ -17,8 +16,13 @@ class Room : public QGraphicsScene {
 public:
    Room();
 
+   Roomba* getRoomba() const { return _roomba; }
+
 public slots:
    void update();
+
+signals:
+   void updated();
 
 private:
    vector<Line *> _walls;

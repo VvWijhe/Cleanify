@@ -196,7 +196,8 @@ DIST          = /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/lex.prf \
 		../RoombaSim/RoombaSim.pro ../RoombaSim/room.h \
 		../RoombaSim/roomba.h \
-		../RoombaSim/roombasim.h ../RoombaSim/main.cpp \
+		../RoombaSim/roombasim.h \
+		../RoombaSim/helper.h ../RoombaSim/main.cpp \
 		../RoombaSim/room.cpp \
 		../RoombaSim/roomba.cpp \
 		../RoombaSim/roombasim.cpp
@@ -523,7 +524,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../RoombaSim/room.h ../RoombaSim/roomba.h ../RoombaSim/roombasim.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../RoombaSim/room.h ../RoombaSim/roomba.h ../RoombaSim/roombasim.h ../RoombaSim/helper.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../RoombaSim/main.cpp ../RoombaSim/room.cpp ../RoombaSim/roomba.cpp ../RoombaSim/roombasim.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../RoombaSim/roombasim.ui $(DISTDIR)/
 
@@ -645,6 +646,7 @@ moc_room.cpp: /opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsScene \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
 		../RoombaSim/roomba.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsItem \
+		../RoombaSim/helper.h \
 		../RoombaSim/room.h
 	/opt/Qt5.5.1/5.5/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++ -I/home/jamie/Documents/Project4/Cleanify/RoombaSim/RoombaSim -I/opt/Qt5.5.1/5.5/gcc_64/include -I/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets -I/opt/Qt5.5.1/5.5/gcc_64/include/QtGui -I/opt/Qt5.5.1/5.5/gcc_64/include/QtCore -I. ../RoombaSim/room.h -o moc_room.cpp
 
@@ -761,6 +763,7 @@ moc_roombasim.cpp: /opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QMainWindow \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../RoombaSim/roomba.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsItem \
+		../RoombaSim/helper.h \
 		../RoombaSim/roombasim.h
 	/opt/Qt5.5.1/5.5/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++ -I/home/jamie/Documents/Project4/Cleanify/RoombaSim/RoombaSim -I/opt/Qt5.5.1/5.5/gcc_64/include -I/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets -I/opt/Qt5.5.1/5.5/gcc_64/include/QtGui -I/opt/Qt5.5.1/5.5/gcc_64/include/QtCore -I. ../RoombaSim/roombasim.h -o moc_roombasim.cpp
 
@@ -903,7 +906,8 @@ main.o: ../RoombaSim/main.cpp /opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplica
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsLineItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../RoombaSim/roomba.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsItem
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsItem \
+		../RoombaSim/helper.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../RoombaSim/main.cpp
 
 room.o: ../RoombaSim/room.cpp ../RoombaSim/room.h \
@@ -1000,7 +1004,8 @@ room.o: ../RoombaSim/room.cpp ../RoombaSim/room.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qset.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
 		../RoombaSim/roomba.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsItem
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsItem \
+		../RoombaSim/helper.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o room.o ../RoombaSim/room.cpp
 
 roomba.o: ../RoombaSim/roomba.cpp ../RoombaSim/roomba.h \
@@ -1091,6 +1096,7 @@ roomba.o: ../RoombaSim/roomba.cpp ../RoombaSim/roomba.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qimage.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtransform.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpixelformat.h \
+		../RoombaSim/helper.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QPainter \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainter.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextoption.h \
@@ -1242,7 +1248,62 @@ roombasim.o: ../RoombaSim/roombasim.cpp ../RoombaSim/roombasim.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../RoombaSim/roomba.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsItem \
+		../RoombaSim/helper.h \
 		ui_roombasim.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcoreapplication.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qeventloop.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainter.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qscrollarea.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qframe.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayout.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qstyleoption.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qvalidator.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qslider.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractslider.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qstyle.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qtabbar.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qrubberband.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QPushButton \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QSlider \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QSpacerItem \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QVBoxLayout \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QTimer \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtimer.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qbasictimer.h

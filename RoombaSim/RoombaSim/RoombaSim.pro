@@ -22,7 +22,8 @@ SOURCES += main.cpp \
 HEADERS  += \
     room.h \
     roomba.h \
-    roombasim.h
+    roombasim.h \
+    helper.h
 
 FORMS    += \
     roombasim.ui

@@ -25,6 +25,8 @@ private slots:
 
    void on_exitButton_clicked();
 
+   void roomUpdated();
+
 private:
    Ui::RoombaSim *ui;
    Room *_room;
