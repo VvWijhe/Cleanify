@@ -12,7 +12,7 @@ This is a simulator for the roomba cleaner in our project.
 - Open the .pro file in Qt creator
 - Build
 
-## Changelog
+### Changelog
 - 0.0.1
 initial release
 
