@@ -14,12 +14,15 @@ This is a simulator for the roomba cleaner in our project.
 
 ### Changelog
 - 0.0.1
+
 initial release
 
 - 0.0.2
+
 added grid
 
 - 0.0.3
+
 scaled the speeds
 
 
