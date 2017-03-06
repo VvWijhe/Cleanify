@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor user
+
+rectangle gui {
+  user -> (gui-settings)
+}
+
+rectangle website {
+  user -> (web-settings)
+}
+
+rectangle controller {
+  rectangle roomba {
+    user -> (on-off)
+    (on-off) .> (clean)
+  }
+}
+
+gui <.> controller : tcp
+website <.> controller : tcp
+@enduml
