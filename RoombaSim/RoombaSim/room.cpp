@@ -63,9 +63,9 @@ void Room::update() {
       pen.setColor(Qt::yellow);
       pen.setWidth(10);
 
-      _route[_route.size() - 1]->setPen(pen);
-      _route[_route.size() - 1]->setOpacity(0.04);
-      addItem(_route[_route.size() - 1]);
+      _route.back()->setPen(pen);
+      _route.back()->setOpacity(0.04);
+      addItem(_route.back());
 
       _lastRouteX = posx;
       _lastRouteY = posy;
