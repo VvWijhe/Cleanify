@@ -13,12 +13,15 @@ rectangle website {
 }
 
 rectangle controller {
-  rectangle roomba {
-    user -> (on-off)
-    (on-off) .> (clean)
-  }
+  (bluetooth dongle) <-> (server)
 }
 
-gui <.> controller : tcp
-website <.> controller : tcp
+rectangle roomba {
+   (bluetooth dongle) ..(bluetooth module)
+   user -> (on-off)
+   (on-off) .> (clean) : <<extends>>
+}
+
+gui <.> server
+website <.> server
 @enduml
