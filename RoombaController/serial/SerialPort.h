@@ -11,7 +11,7 @@ private:
 public:
     void connect(void);
     void disconnect(void);
-    void write(unsigned char cmd);
+    void write(unsigned char cmd[]);
     void read(void);
 };
 

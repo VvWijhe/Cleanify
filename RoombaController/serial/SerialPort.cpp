@@ -3,6 +3,7 @@
 //
 #include "SerialPort.h"
 #include <stdio.h>      // standard input / output functions
+#include <iostream>
 #include <stdlib.h>
 #include <string.h>     // string function definitions
 #include <unistd.h>     // UNIX standard function definitions
@@ -10,8 +11,10 @@
 #include <errno.h>      // Error number definitions
 #include <termios.h>    // POSIX terminal control definitions
 
+int USB = open( "/dev/ttyUSB0", O_RDWR| O_NOCTTY );
+
 void SerialPort::connect() {
-    int USB = open( "/dev/ttyUSB0", O_RDWR| O_NOCTTY );
+
 
     struct termios tty;
     struct termios tty_old;
@@ -80,8 +83,7 @@ void SerialPort::read() {
     }
 }
 
-void SerialPort::write(unsigned char cmd) {
-    unsigned char cmd[] = "INIT \r";
+void SerialPort::write(unsigned char cmd[]) {
     int n_written = 0,
             spot = 0;
 
