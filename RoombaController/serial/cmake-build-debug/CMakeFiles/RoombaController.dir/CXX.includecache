@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/raymon/Documents/Github/Female-Replacement/RoombaController/main.cpp
+serial/SerialPort.h
+/home/raymon/Documents/Github/Female-Replacement/RoombaController/serial/SerialPort.h
+iostream
+-
+
+/home/raymon/Documents/Github/Female-Replacement/RoombaController/serial/SerialPort.cpp
+SerialPort.h
+/home/raymon/Documents/Github/Female-Replacement/RoombaController/serial/SerialPort.h
+stdio.h
+-
+iostream
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+fcntl.h
+-
+errno.h
+-
+termios.h
+-
+
+/home/raymon/Documents/Github/Female-Replacement/RoombaController/serial/SerialPort.h
+
