@@ -6,21 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Dataframe/DataFrames.cpp
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Dataframe/DataFrames.cpp
+map
+-
 DataFrames.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Dataframe/DataFrames.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Dataframe/DataFrames.h
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Dataframe/DataFrames.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Dataframe/DataFrames.h
+iostream
+-
+map
+-
+string
+-
+sstream
+-
+iterator
+-
+vector
+-
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/main.cpp
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/main.cpp
 serial/SerialPort.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/serial/SerialPort.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.h
+Dataframe/DataFrames.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Dataframe/DataFrames.h
 iostream
 -
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/serial/SerialPort.cpp
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.cpp
 SerialPort.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/serial/SerialPort.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.h
 stdio.h
 -
 iostream
@@ -38,5 +54,5 @@ errno.h
 termios.h
 -
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/serial/SerialPort.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.h
 

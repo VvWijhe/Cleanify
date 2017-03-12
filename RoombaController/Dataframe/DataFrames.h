@@ -10,6 +10,7 @@
 #include <string>
 #include <sstream>
 #include <iterator>
+#include <vector>
 
 
 
@@ -17,24 +18,35 @@
 class Cmd{
 private:
 
-public:
+    std::map<std::string,unsigned char> Commands;
 
-    int cmd_Start();
-    int cmd_Baud(int Baud);
-    int cmd_Control();
-    int cmd_Safe();
-    int cmd_Full();
-    int cmd_Power();
-    int cmd_Spot();
-    int cmd_Clean();
-    int cmd_Max();
-    int cmd_Drive(int Vel, int Rad);
-    int cmd_Motors(uint8_t Bits);
-    int cmd_Leds(uint8_t Bits, int Color, int intensity);
-    int cmd_Song();
-    int cmd_Play(uint8_t Number);
-    int cmd_Sensors(uint8_t Code);
-    int cmd_Dock();
+public:
+    Cmd()
+    {
+        Cmd::Commands["Start"]     = 128;
+        Cmd::Commands["Baud"]      = 129;
+        Cmd::Commands["Control"]   = 130;
+        Cmd::Commands["Safe"]      = 131;
+        Cmd::Commands["Full"]      = 132;
+        Cmd::Commands["Power"]     = 133;
+        Cmd::Commands["Spot"]      = 134;
+        Cmd::Commands["Clean"]     = 135;
+        Cmd::Commands["Max"]       = 136;
+        Cmd::Commands["Drive"]     = 137;
+        Cmd::Commands["Motors"]    = 138;
+        Cmd::Commands["Leds"]      = 139;
+        Cmd::Commands["Song"]      = 140;
+        Cmd::Commands["Play"]      = 141;
+        Cmd::Commands["Sensors"]   = 142;
+        Cmd::Commands["Dock"]      = 143;
+
+    }
+
+    int dataFrames();
+
+    const std::map<std::string, unsigned char> &getCommands() const;
+
+
 };
 
 
