@@ -11,8 +11,8 @@ private:
 public:
     void connect(void);
     void disconnect(void);
-    void write(unsigned char cmd[]);
-    void read(void);
+    void swrite(unsigned char cmd[]);
+    void sread(void);
 };
 
 #endif //FEMALE_REPLACEMENT_SERIALPORT_H

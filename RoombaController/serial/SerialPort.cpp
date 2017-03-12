@@ -54,10 +54,10 @@ void SerialPort::connect() {
 }
 
 void SerialPort::disconnect(void){
-
+    close(USB);
 }
 
-void SerialPort::read() {
+void SerialPort::sread() {
     int n = 0,
             spot = 0;
     char buf = '\0';
@@ -83,7 +83,7 @@ void SerialPort::read() {
     }
 }
 
-void SerialPort::write(unsigned char cmd[]) {
+void SerialPort::swrite(unsigned char cmd[]) {
     int n_written = 0,
             spot = 0;
 
