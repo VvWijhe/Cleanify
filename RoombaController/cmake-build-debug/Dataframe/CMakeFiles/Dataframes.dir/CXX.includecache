@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jamie/Documents/Project4/Cleanify/RoombaController/Dataframe/DataFrames.cpp
+DataFrames.h
+/home/jamie/Documents/Project4/Cleanify/RoombaController/Dataframe/DataFrames.h
+
+/home/jamie/Documents/Project4/Cleanify/RoombaController/Dataframe/DataFrames.h
+

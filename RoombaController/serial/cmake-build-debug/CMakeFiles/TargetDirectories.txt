@@ -1,3 +1,0 @@
-/home/raymon/Documents/Github/Female-Replacement/RoombaController/serial/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/raymon/Documents/Github/Female-Replacement/RoombaController/serial/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/raymon/Documents/Github/Female-Replacement/RoombaController/serial/cmake-build-debug/CMakeFiles/RoombaController.dir
