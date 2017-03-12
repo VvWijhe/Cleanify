@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jamie/Documents/Project4/Cleanify/RoombaController/serial/SerialPort.cpp
+SerialPort.h
+/home/jamie/Documents/Project4/Cleanify/RoombaController/serial/SerialPort.h
+stdio.h
+-
+iostream
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+fcntl.h
+-
+errno.h
+-
+termios.h
+-
+
+/home/jamie/Documents/Project4/Cleanify/RoombaController/serial/SerialPort.h
+
