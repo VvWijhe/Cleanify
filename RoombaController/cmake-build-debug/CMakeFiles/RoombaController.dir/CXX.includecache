@@ -6,13 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Dataframe/DataFrames.cpp
-map
--
-DataFrames.h
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Dataframe/DataFrames.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Tests/test.cpp
+test.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Tests/test.h
 
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Dataframe/DataFrames.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Tests/test.h
+
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/main.cpp
+iostream
+-
+serial/SerialPort.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.h
+serial/DataFrames.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/DataFrames.h
+
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/DataFrames.h
 iostream
 -
 map
@@ -26,25 +34,11 @@ iterator
 vector
 -
 
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Tests/test.cpp
-test.h
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Tests/test.h
-
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Tests/test.h
-
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/main.cpp
-iostream
--
-serial/SerialPort.h
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/serial/SerialPort.h
-Dataframe/DataFrames.h
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Dataframe/DataFrames.h
-
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/serial/SerialPort.cpp
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.cpp
 SerialPort.h
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/serial/SerialPort.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.h
 
-/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/serial/SerialPort.h
+/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.h
 iostream
 -
 array

@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/raymon/Documents/Clion/clion-2016.3.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/raymon/Documents/Clion/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
+RM = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug
+CMAKE_BINARY_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaControl
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/raymon/Documents/Clion/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/raymon/Documents/Clion/clion-2016.3.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug/CMakeFiles /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/CMakeFiles" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -122,60 +122,6 @@ RoombaController: cmake_check_build_system
 RoombaController/fast:
 	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/build
 .PHONY : RoombaController/fast
-
-Dataframe/DataFrames.o: Dataframe/DataFrames.cpp.o
-
-.PHONY : Dataframe/DataFrames.o
-
-# target to build an object file
-Dataframe/DataFrames.cpp.o:
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o
-.PHONY : Dataframe/DataFrames.cpp.o
-
-Dataframe/DataFrames.i: Dataframe/DataFrames.cpp.i
-
-.PHONY : Dataframe/DataFrames.i
-
-# target to preprocess a source file
-Dataframe/DataFrames.cpp.i:
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.i
-.PHONY : Dataframe/DataFrames.cpp.i
-
-Dataframe/DataFrames.s: Dataframe/DataFrames.cpp.s
-
-.PHONY : Dataframe/DataFrames.s
-
-# target to generate assembly for a file
-Dataframe/DataFrames.cpp.s:
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.s
-.PHONY : Dataframe/DataFrames.cpp.s
-
-Tests/test.o: Tests/test.cpp.o
-
-.PHONY : Tests/test.o
-
-# target to build an object file
-Tests/test.cpp.o:
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Tests/test.cpp.o
-.PHONY : Tests/test.cpp.o
-
-Tests/test.i: Tests/test.cpp.i
-
-.PHONY : Tests/test.i
-
-# target to preprocess a source file
-Tests/test.cpp.i:
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Tests/test.cpp.i
-.PHONY : Tests/test.cpp.i
-
-Tests/test.s: Tests/test.cpp.s
-
-.PHONY : Tests/test.s
-
-# target to generate assembly for a file
-Tests/test.cpp.s:
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Tests/test.cpp.s
-.PHONY : Tests/test.cpp.s
 
 main.o: main.cpp.o
 
@@ -240,12 +186,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... RoombaController"
-	@echo "... Dataframe/DataFrames.o"
-	@echo "... Dataframe/DataFrames.i"
-	@echo "... Dataframe/DataFrames.s"
-	@echo "... Tests/test.o"
-	@echo "... Tests/test.i"
-	@echo "... Tests/test.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

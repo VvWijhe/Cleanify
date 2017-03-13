@@ -1,4 +1,4 @@
-# Install script for directory: /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController
+# Install script for directory: /media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

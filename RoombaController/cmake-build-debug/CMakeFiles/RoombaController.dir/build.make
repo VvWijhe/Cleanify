@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/raymon/Documents/Clion/clion-2016.3.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/raymon/Documents/Clion/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
+RM = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug
+CMAKE_BINARY_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/RoombaController.dir/depend.make
@@ -57,42 +57,18 @@ include CMakeFiles/RoombaController.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/RoombaController.dir/flags.make
 
-CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o: CMakeFiles/RoombaController.dir/flags.make
-CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o: ../Dataframe/DataFrames.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o -c /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Dataframe/DataFrames.cpp
-
-CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Dataframe/DataFrames.cpp > CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.i
-
-CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Dataframe/DataFrames.cpp -o CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.s
-
-CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o.requires:
-
-.PHONY : CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o.requires
-
-CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o.provides: CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o.requires
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o.provides.build
-.PHONY : CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o.provides
-
-CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o.provides.build: CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o
-
-
 CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o: CMakeFiles/RoombaController.dir/flags.make
 CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o: ../serial/SerialPort.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o -c /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/serial/SerialPort.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.cpp"
 
 CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/serial/SerialPort.cpp > CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.cpp" > CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.i
 
 CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/serial/SerialPort.cpp -o CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.cpp" -o CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.s
 
 CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o.requires:
 
@@ -105,42 +81,18 @@ CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o.provides: CMakeFiles/Roo
 CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o.provides.build: CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o
 
 
-CMakeFiles/RoombaController.dir/Tests/test.cpp.o: CMakeFiles/RoombaController.dir/flags.make
-CMakeFiles/RoombaController.dir/Tests/test.cpp.o: ../Tests/test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RoombaController.dir/Tests/test.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RoombaController.dir/Tests/test.cpp.o -c /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Tests/test.cpp
-
-CMakeFiles/RoombaController.dir/Tests/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RoombaController.dir/Tests/test.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Tests/test.cpp > CMakeFiles/RoombaController.dir/Tests/test.cpp.i
-
-CMakeFiles/RoombaController.dir/Tests/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RoombaController.dir/Tests/test.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/Tests/test.cpp -o CMakeFiles/RoombaController.dir/Tests/test.cpp.s
-
-CMakeFiles/RoombaController.dir/Tests/test.cpp.o.requires:
-
-.PHONY : CMakeFiles/RoombaController.dir/Tests/test.cpp.o.requires
-
-CMakeFiles/RoombaController.dir/Tests/test.cpp.o.provides: CMakeFiles/RoombaController.dir/Tests/test.cpp.o.requires
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Tests/test.cpp.o.provides.build
-.PHONY : CMakeFiles/RoombaController.dir/Tests/test.cpp.o.provides
-
-CMakeFiles/RoombaController.dir/Tests/test.cpp.o.provides.build: CMakeFiles/RoombaController.dir/Tests/test.cpp.o
-
-
 CMakeFiles/RoombaController.dir/main.cpp.o: CMakeFiles/RoombaController.dir/flags.make
 CMakeFiles/RoombaController.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RoombaController.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RoombaController.dir/main.cpp.o -c /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RoombaController.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RoombaController.dir/main.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/main.cpp"
 
 CMakeFiles/RoombaController.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RoombaController.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/main.cpp > CMakeFiles/RoombaController.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/main.cpp" > CMakeFiles/RoombaController.dir/main.cpp.i
 
 CMakeFiles/RoombaController.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RoombaController.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/main.cpp -o CMakeFiles/RoombaController.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/main.cpp" -o CMakeFiles/RoombaController.dir/main.cpp.s
 
 CMakeFiles/RoombaController.dir/main.cpp.o.requires:
 
@@ -155,21 +107,17 @@ CMakeFiles/RoombaController.dir/main.cpp.o.provides.build: CMakeFiles/RoombaCont
 
 # Object files for target RoombaController
 RoombaController_OBJECTS = \
-"CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o" \
 "CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o" \
-"CMakeFiles/RoombaController.dir/Tests/test.cpp.o" \
 "CMakeFiles/RoombaController.dir/main.cpp.o"
 
 # External object files for target RoombaController
 RoombaController_EXTERNAL_OBJECTS =
 
-RoombaController: CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o
 RoombaController: CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o
-RoombaController: CMakeFiles/RoombaController.dir/Tests/test.cpp.o
 RoombaController: CMakeFiles/RoombaController.dir/main.cpp.o
 RoombaController: CMakeFiles/RoombaController.dir/build.make
 RoombaController: CMakeFiles/RoombaController.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable RoombaController"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable RoombaController"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RoombaController.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -177,9 +125,7 @@ CMakeFiles/RoombaController.dir/build: RoombaController
 
 .PHONY : CMakeFiles/RoombaController.dir/build
 
-CMakeFiles/RoombaController.dir/requires: CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o.requires
 CMakeFiles/RoombaController.dir/requires: CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o.requires
-CMakeFiles/RoombaController.dir/requires: CMakeFiles/RoombaController.dir/Tests/test.cpp.o.requires
 CMakeFiles/RoombaController.dir/requires: CMakeFiles/RoombaController.dir/main.cpp.o.requires
 
 .PHONY : CMakeFiles/RoombaController.dir/requires
@@ -189,6 +135,6 @@ CMakeFiles/RoombaController.dir/clean:
 .PHONY : CMakeFiles/RoombaController.dir/clean
 
 CMakeFiles/RoombaController.dir/depend:
-	cd /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug /home/raymon/Documents/Github/Cleanify/Cleanify/RoombaController/cmake-build-debug/CMakeFiles/RoombaController.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/CMakeFiles/RoombaController.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/RoombaController.dir/depend
 
