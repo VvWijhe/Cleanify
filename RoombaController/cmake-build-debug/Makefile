@@ -150,6 +150,33 @@ Dataframe/DataFrames.cpp.s:
 	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.s
 .PHONY : Dataframe/DataFrames.cpp.s
 
+Tests/test.o: Tests/test.cpp.o
+
+.PHONY : Tests/test.o
+
+# target to build an object file
+Tests/test.cpp.o:
+	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Tests/test.cpp.o
+.PHONY : Tests/test.cpp.o
+
+Tests/test.i: Tests/test.cpp.i
+
+.PHONY : Tests/test.i
+
+# target to preprocess a source file
+Tests/test.cpp.i:
+	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Tests/test.cpp.i
+.PHONY : Tests/test.cpp.i
+
+Tests/test.s: Tests/test.cpp.s
+
+.PHONY : Tests/test.s
+
+# target to generate assembly for a file
+Tests/test.cpp.s:
+	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Tests/test.cpp.s
+.PHONY : Tests/test.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -216,6 +243,9 @@ help:
 	@echo "... Dataframe/DataFrames.o"
 	@echo "... Dataframe/DataFrames.i"
 	@echo "... Dataframe/DataFrames.s"
+	@echo "... Tests/test.o"
+	@echo "... Tests/test.i"
+	@echo "... Tests/test.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

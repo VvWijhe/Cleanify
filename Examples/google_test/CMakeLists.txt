@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.6)
 project(google_test)
 
 set(CMAKE_CXX_STANDARD 11)
-add_subdirectory(lib/googletest-master)
-include_directories(lib/googletest-master/googletest/include)
-include_directories(lib/googletest-master/googlemock/include)
+add_subdirectory(../../Libs/googletest-master)
+include_directories(../../Libs/googletest-master/googletest/include)
+include_directories(../../googletest-master/googlemock/include)
 
 
 

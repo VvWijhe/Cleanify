@@ -18,3 +18,4 @@ int Cmd::dataFrames() {
 const std::map<std::string, unsigned char> &Cmd::getCommands() const {
     return Commands;
 }
+

@@ -20,6 +20,8 @@ private:
 
     std::map<std::string,unsigned char> Commands;
 
+
+
 public:
     Cmd()
     {
@@ -45,6 +47,7 @@ public:
     int dataFrames();
 
     const std::map<std::string, unsigned char> &getCommands() const;
+
 
 
 };
