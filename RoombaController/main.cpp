@@ -1,16 +1,12 @@
+#include <iostream>
 #include "serial/SerialPort.h"
 #include "Dataframe/DataFrames.h"
 
-
 using namespace std;
-
-
 
 int main()
 {
     Cmd commands;
-
-    int test = 130;
 
 
     auto it = commands.getCommands().find("Song");
@@ -26,9 +22,6 @@ int main()
 
 
     cout << opcode << endl;
-
-
-
 
     cout << "hello world" << endl;
 
