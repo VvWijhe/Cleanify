@@ -1,7 +1,6 @@
 //
 // Created by raymon on 11-3-17.
 //
-#include <vector>
 #include "SerialPort.h"
 
 int SerialPort::connect() {

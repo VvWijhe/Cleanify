@@ -15,6 +15,7 @@
 #include <fcntl.h>      // File control definitions
 #include <errno.h>      // Error number definitions
 #include <termios.h>    // POSIX terminal control definitions
+#include <vector>
 
 using byteArray = std::array<unsigned char, 255>;
 
