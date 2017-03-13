@@ -14,8 +14,6 @@
 int USB = open( "/dev/ttyUSB0", O_RDWR| O_NOCTTY );
 
 void SerialPort::connect() {
-
-
     struct termios tty;
     struct termios tty_old;
     memset (&tty, 0, sizeof tty);
