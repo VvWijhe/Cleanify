@@ -21,26 +21,25 @@ private:
     std::map<std::string,unsigned char> Commands;
 
 
-
 public:
     Cmd()
     {
-        Cmd::Commands["Start"]     = 128;
-        Cmd::Commands["Baud"]      = 129;
-        Cmd::Commands["Control"]   = 130;
-        Cmd::Commands["Safe"]      = 131;
-        Cmd::Commands["Full"]      = 132;
-        Cmd::Commands["Power"]     = 133;
-        Cmd::Commands["Spot"]      = 134;
-        Cmd::Commands["Clean"]     = 135;
-        Cmd::Commands["Max"]       = 136;
-        Cmd::Commands["Drive"]     = 137;
-        Cmd::Commands["Motors"]    = 138;
-        Cmd::Commands["Leds"]      = 139;
-        Cmd::Commands["Song"]      = 140;
-        Cmd::Commands["Play"]      = 141;
-        Cmd::Commands["Sensors"]   = 142;
-        Cmd::Commands["Dock"]      = 143;
+        Commands["Start"]     = 128;
+        Commands["Baud"]      = 129;
+        Commands["Control"]   = 130;
+        Commands["Safe"]      = 131;
+        Commands["Full"]      = 132;
+        Commands["Power"]     = 133;
+        Commands["Spot"]      = 134;
+        Commands["Clean"]     = 135;
+        Commands["Max"]       = 136;
+        Commands["Drive"]     = 137;
+        Commands["Motors"]    = 138;
+        Commands["Leds"]      = 139;
+        Commands["Song"]      = 140;
+        Commands["Play"]      = 141;
+        Commands["Sensors"]   = 142;
+        Commands["Dock"]      = 143;
 
     }
 
@@ -48,7 +47,7 @@ public:
 
     const std::map<std::string, unsigned char> &getCommands() const;
 
-
+    std::vector<unsigned char> fillVector();
 
 };
 

@@ -27,7 +27,5 @@ int main()
 
 
 
-    //testing::InitGoogleTest(&argc, argv);
-    //RUN_ALL_TESTS();
     return 0;
 }
