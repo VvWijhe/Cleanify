@@ -44,6 +44,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/../Libs/googletest-master"/>
+					<Add directory="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/../Libs/googletest-master/googletest/include"/>
+					<Add directory="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/../googletest-master/googlemock/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -67,6 +70,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/../Libs/googletest-master"/>
+					<Add directory="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/../Libs/googletest-master/googletest/include"/>
+					<Add directory="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/../googletest-master/googlemock/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -88,6 +94,12 @@
 			<Option target="RoombaController"/>
 		</Unit>
 		<Unit filename="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Dataframe/DataFrames.h">
+			<Option target="RoombaController"/>
+		</Unit>
+		<Unit filename="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Tests/test.cpp">
+			<Option target="RoombaController"/>
+		</Unit>
+		<Unit filename="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Tests/test.h">
 			<Option target="RoombaController"/>
 		</Unit>
 		<Unit filename="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/main.cpp">

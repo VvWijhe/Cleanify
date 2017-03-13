@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I"/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/../Libs/googletest-master" -I"/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/../Libs/googletest-master/googletest/include" -I"/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/../googletest-master/googlemock/include" 
 
