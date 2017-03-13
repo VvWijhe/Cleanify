@@ -13,7 +13,7 @@ namespace roombaSCI {
 
     class RoombaSCI {
     public:
-        RoombaSCI() {}
+        RoombaSCI()  {}
 
         int sendCommand(std::string command, const byteVector &data) {
             auto it = cmds_.getOpcode(command);
