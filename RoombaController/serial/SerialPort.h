@@ -4,6 +4,7 @@
 
 #ifndef FEMALE_REPLACEMENT_SERIALPORT_H
 #define FEMALE_REPLACEMENT_SERIALPORT_H
+
 #include <iostream>
 #include <array>
 #include <vector>
@@ -16,7 +17,7 @@
 #include <termios.h>    // POSIX terminal control definitions
 #include <vector>
 
-using byteArray = std::array<unsigned char, 255>;
+using byteVector = std::vector<unsigned char>;
 
 class SerialPort {
 public:
@@ -29,7 +30,7 @@ public:
 
     int swrite(const std::vector<unsigned char> &data);
 
-    byteArray sread() const;
+    byteVector sread() const;
 
 private:
     std::string port_;

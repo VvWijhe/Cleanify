@@ -13,18 +13,25 @@ namespace roombaSCI {
 
     class RoombaSCI {
     public:
-        RoombaSCI()  {}
+        RoombaSCI(std::string portname, speed_t baud) : serial_(portname, baud) {}
 
         int sendCommand(std::string command, const byteVector &data) {
             auto it = cmds_.getOpcode(command);
-            byteVector commands = {it->second};
 
-            for(const auto byte : data){
-                commands.push_back(byte);
-            }
-            if (serial_.swrite(commands) < 0){
+            if (it == std::end(it)) {
                 return -1;
             }
+
+            byteVector sequence = {it->second};
+
+            for (const auto byte : data) {
+                sequence.push_back(byte);
+            }
+
+            if (serial_.swrite(sequence) < 0) {
+                return -1;
+            }
+
             return 1;
         }
 

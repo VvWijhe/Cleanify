@@ -47,16 +47,16 @@ void SerialPort::disconnect() {
     close(usbState_);
 }
 
-byteArray SerialPort::sread() const {
+byteVector SerialPort::sread() const {
     ssize_t n{};
     int index{};
     unsigned char c{};
 
     /* Whole response*/
-    byteArray buffer;
+    byteVector buffer;
 
     do {
-        if((n = read(usbState_, &c, 1)) < 0) {
+        if ((n = read(usbState_, &c, 1)) < 0) {
             break;
         }
 
@@ -76,8 +76,8 @@ byteArray SerialPort::sread() const {
 }
 
 int SerialPort::swrite(const std::vector<unsigned char> &data) {
-    for(const auto byte : data) {
-        if(write(usbState_, &byte, 1) < 0) {
+    for (const auto byte : data) {
+        if (write(usbState_, &byte, 1) < 0) {
             std::cerr << "error: " << strerror(errno) << std::endl;
             return -1;
         }
