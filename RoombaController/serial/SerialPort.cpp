@@ -1,94 +1,88 @@
 //
 // Created by raymon on 11-3-17.
 //
+#include <vector>
 #include "SerialPort.h"
-#include <stdio.h>      // standard input / output functions
-#include <iostream>
-#include <stdlib.h>
-#include <string.h>     // string function definitions
-#include <unistd.h>     // UNIX standard function definitions
-#include <fcntl.h>      // File control definitions
-#include <errno.h>      // Error number definitions
-#include <termios.h>    // POSIX terminal control definitions
 
-int USB = open( "/dev/ttyUSB0", O_RDWR| O_NOCTTY );
-
-void SerialPort::connect() {
-
-
+int SerialPort::connect() {
     struct termios tty;
-    struct termios tty_old;
-    memset (&tty, 0, sizeof tty);
+    memset(&tty, 0, sizeof tty);
 
-/* Error Handling */
-    if ( tcgetattr ( USB, &tty ) != 0 ) {
-        std::cout << "Error " << errno << " from tcgetattr: " << strerror(errno) << std::endl;
+    usbState_ = open(port_.c_str(), O_RDWR | O_NOCTTY);
+
+    /* Error Handling */
+    if (tcgetattr(usbState_, &tty) != 0) {
+        std::cerr << "Error " << errno << " from tcgetattr: " << strerror(errno) << std::endl;
+        return -1;
     }
 
-/* Save old tty parameters */
-    tty_old = tty;
+    /* Set Baud Rate */
+    cfsetospeed(&tty, baud_);
+    cfsetispeed(&tty, baud_);
 
-/* Set Baud Rate */
-    cfsetospeed (&tty, (speed_t)B9600);
-    cfsetispeed (&tty, (speed_t)B9600);
+    /* Setting other Port Stuff */
+    tty.c_cflag &= ~PARENB;            // Make 8n1
+    tty.c_cflag &= ~CSTOPB;
+    tty.c_cflag &= ~CSIZE;
+    tty.c_cflag |= CS8;
 
-/* Setting other Port Stuff */
-    tty.c_cflag     &=  ~PARENB;            // Make 8n1
-    tty.c_cflag     &=  ~CSTOPB;
-    tty.c_cflag     &=  ~CSIZE;
-    tty.c_cflag     |=  CS8;
+    tty.c_cflag &= ~CRTSCTS;           // no flow control
+    tty.c_cc[VMIN] = 1;                  // read doesn't block
+    tty.c_cc[VTIME] = 5;                  // 0.5 seconds read timeout
+    tty.c_cflag |= CREAD | CLOCAL;     // turn on READ & ignore ctrl lines
 
-    tty.c_cflag     &=  ~CRTSCTS;           // no flow control
-    tty.c_cc[VMIN]   =  1;                  // read doesn't block
-    tty.c_cc[VTIME]  =  5;                  // 0.5 seconds read timeout
-    tty.c_cflag     |=  CREAD | CLOCAL;     // turn on READ & ignore ctrl lines
-
-/* Make raw */
+    /* Make raw */
     cfmakeraw(&tty);
 
-/* Flush Port, then applies attributes */
-    tcflush( USB, TCIFLUSH );
-    if ( tcsetattr ( USB, TCSANOW, &tty ) != 0) {
-        std::cout << "Error " << errno << " from tcsetattr" << std::endl;
+    /* Flush Port, then applies attributes */
+    tcflush(usbState_, TCIFLUSH);
+    if (tcsetattr(usbState_, TCSANOW, &tty) != 0) {
+        std::cerr << "Error " << errno << " from tcsetattr" << std::endl;
+        return -1;
     }
+
+    return 1;
 }
 
-void SerialPort::disconnect(void){
-    close(USB);
+void SerialPort::disconnect() {
+    close(usbState_);
 }
 
-void SerialPort::sread() {
-    int n = 0,
-            spot = 0;
-    char buf = '\0';
+byteArray SerialPort::sread() const {
+    ssize_t n{};
+    int index{};
+    unsigned char c{};
 
-/* Whole response*/
-    char response[1024];
-    memset(response, '\0', sizeof response);
+    /* Whole response*/
+    byteArray buffer;
 
     do {
-        n = read( USB, &buf, 1 );
-        sprintf( &response[spot], "%c", buf );
-        spot += n;
-    } while( buf != '\r' && n > 0);
+        if((n = read(usbState_, &c, 1)) < 0) {
+            break;
+        }
+
+        buffer[index] = c;
+        index += n;
+    } while (c != '\r' && n > 0 && index < buffer.size());
 
     if (n < 0) {
-        std::cout << "Error reading: " << strerror(errno) << std::endl;
+        std::cerr << "Error reading: " << strerror(errno) << std::endl;
+    } else if (n == 0) {
+        std::cerr << "Read nothing!" << std::endl;
+    } else {
+        std::cout << "Response: " << buffer.data() << std::endl;
     }
-    else if (n == 0) {
-        std::cout << "Read nothing!" << std::endl;
-    }
-    else {
-        std::cout << "Response: " << response << std::endl;
-    }
+
+    return buffer;
 }
 
-void SerialPort::swrite(unsigned char cmd[]) {
-    int n_written = 0,
-            spot = 0;
+int SerialPort::swrite(const std::vector<unsigned char> &data) {
+    for(const auto byte : data) {
+        if(write(usbState_, &byte, 1) < 0) {
+            std::cerr << "error: " << strerror(errno) << std::endl;
+            return -1;
+        }
+    }
 
-    do {
-        n_written = write( USB, &cmd[spot], 1 );
-        spot += n_written;
-    } while (cmd[spot-1] != '\r' && n_written > 0);
+    return 1;
 }
