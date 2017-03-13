@@ -4,7 +4,6 @@
 
 #ifndef FEMALE_REPLACEMENT_SERIALPORT_H
 #define FEMALE_REPLACEMENT_SERIALPORT_H
-
 #include <iostream>
 #include <array>
 #include <vector>
