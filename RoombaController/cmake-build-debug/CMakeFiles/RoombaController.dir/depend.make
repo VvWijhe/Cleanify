@@ -4,6 +4,9 @@
 CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o: ../Dataframe/DataFrames.cpp
 CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o: ../Dataframe/DataFrames.h
 
+CMakeFiles/RoombaController.dir/Tests/test.cpp.o: ../Tests/test.cpp
+CMakeFiles/RoombaController.dir/Tests/test.cpp.o: ../Tests/test.h
+
 CMakeFiles/RoombaController.dir/main.cpp.o: ../Dataframe/DataFrames.h
 CMakeFiles/RoombaController.dir/main.cpp.o: ../main.cpp
 CMakeFiles/RoombaController.dir/main.cpp.o: ../serial/SerialPort.h
