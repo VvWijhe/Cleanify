@@ -77,10 +77,12 @@ byteVector SerialPort::sread() const {
 
 int SerialPort::swrite(const std::vector<unsigned char> &data) {
     for (const auto byte : data) {
-        if (write(usbState_, &byte, 1) < 0) {
-            std::cerr << "error: " << strerror(errno) << std::endl;
-            return -1;
-        }
+        /// TBD
+//        if (write(usbState_, &byte, 1) < 0) {
+//            std::cerr << "error: " << strerror(errno) << std::endl;
+//            return -1;
+//        }
+        std::cout << static_cast<int>(byte) << std::endl;
     }
 
     return 1;

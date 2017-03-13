@@ -1,13 +1,10 @@
 #include <iostream>
-#include "serial/SerialPort.h"
+#include "serial/roombasci.h"
 
 using namespace std;
 
 int main() {
-    SerialPort serial("/dev/", 9600);
-    serial.connect();
-    serial.swrite({186});
-    serial.sread();
-    serial.disconnect();
+    roombaSCI::RoombaSCI sci("/dev/tty0", B19200);
+    sci.sendCommand("Start", {12, 255});
     return 0;
 }

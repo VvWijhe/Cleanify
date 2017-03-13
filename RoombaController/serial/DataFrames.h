@@ -31,16 +31,19 @@ public:
         commands_["Play"] = 141;
         commands_["Sensors"] = 142;
         commands_["Dock"] = 143;
-
     }
 
-    std::map<std::string, unsigned char> getCommands() const {
+    std::map<std::string, unsigned char> getMap() const {
         return commands_;
     }
 
-    std::map<std::string, unsigned char>::iterator getOpcode(std::string opcode) const {
-        return getCommands().find(opcode);
+    std::map<std::string, unsigned char>::const_iterator getCommand(std::string cmd) const {
+        return commands_.find(cmd);
     };
+
+    std::map<std::string, unsigned char>::iterator getEnd() {
+        return commands_.end();
+    }
 
 private:
     std::map<std::string, unsigned char> commands_;
