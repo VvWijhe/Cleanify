@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 
 set(SOURCE_FILES
-        Dataframe/DataFrames.cpp Dataframe/DataFrames.h
+        serial/DataFrames.h
         serial/SerialPort.cpp serial/SerialPort.h
         Tests/test.cpp Tests/test.h
         main.cpp)
