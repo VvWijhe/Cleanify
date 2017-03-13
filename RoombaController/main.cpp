@@ -1,9 +1,22 @@
+#include <iostream>
 #include "serial/SerialPort.h"
+#include "Dataframe/DataFrames.h"
 
 using namespace std;
 
-int main() {
-    SerialPort serial("/dev/tty0", B19200);
-    serial.connect();
-    serial.swrite({100, 200, 20, 255});
+int main()
+{
+    Cmd commands;
+
+    auto it = commands.getCommands().find("Song");
+
+    it -> first;
+    it -> second;
+
+    char opcode = it -> second;
+
+    cout << opcode << endl;
+
+    cout << "hello world" << endl;
+    return 0;
 }

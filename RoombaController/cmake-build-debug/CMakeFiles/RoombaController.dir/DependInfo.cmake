@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/Dataframe/DataFrames.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/cmake-build-debug/CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o"
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/main.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/cmake-build-debug/CMakeFiles/RoombaController.dir/main.cpp.o"
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/serial/SerialPort.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/cmake-build-debug/CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o"
+  "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/Dataframe/DataFrames.cpp" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/CMakeFiles/RoombaController.dir/Dataframe/DataFrames.cpp.o"
+  "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/main.cpp" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/CMakeFiles/RoombaController.dir/main.cpp.o"
+  "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/serial/SerialPort.cpp" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug/CMakeFiles/RoombaController.dir/serial/SerialPort.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
