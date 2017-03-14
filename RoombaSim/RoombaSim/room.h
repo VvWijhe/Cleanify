@@ -16,6 +16,18 @@ class Room : public QGraphicsScene {
 public:
    Room();
 
+   ~Room() {
+      // delete wall
+      for(auto &wall : _walls) {
+         delete wall;
+      }
+
+      // delete routes
+      for(auto &route : _route) {
+         delete route;
+      }
+   }
+
    Roomba* getRoomba() const { return _roomba; }
 
 public slots:

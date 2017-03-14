@@ -1,13 +1,20 @@
 //
 // Created by raymon on 11-3-17.
 //
-#include "SerialPort.h"
+#include "serialport.h"
 
-int SerialPort::connect() {
+using namespace sci;
+
+int serialport::connect() {
     struct termios tty;
     memset(&tty, 0, sizeof tty);
 
     usbState_ = open(port_.c_str(), O_RDWR | O_NOCTTY);
+
+    if(usbState_ < 0) {
+        std::cerr << "error opening port: " << strerror(errno) << " in path " << port_ << std::endl;
+        return -1;
+    }
 
     /* Error Handling */
     if (tcgetattr(usbState_, &tty) != 0) {
@@ -43,11 +50,11 @@ int SerialPort::connect() {
     return 1;
 }
 
-void SerialPort::disconnect() {
+void serialport::disconnect() {
     close(usbState_);
 }
 
-byteVector SerialPort::sread() const {
+byteVector serialport::sread() const {
     ssize_t n{};
     int index{};
     unsigned char c{};
@@ -75,15 +82,21 @@ byteVector SerialPort::sread() const {
     return buffer;
 }
 
-int SerialPort::swrite(const std::vector<unsigned char> &data) {
-    for (const auto byte : data) {
-        /// TBD
-//        if (write(usbState_, &byte, 1) < 0) {
-//            std::cerr << "error: " << strerror(errno) << std::endl;
-//            return -1;
-//        }
-        std::cout << static_cast<int>(byte) << std::endl;
+int serialport::swrite(const std::vector<unsigned char> &data) {
+    if(usbState_ < 0) {
+        std::cerr << "please connect before write" << std::endl;
+        return -1;
     }
+
+    std::cout << "sending: ";
+    for (const auto byte : data) {
+        if (write(usbState_, &byte, 1) < 0) {
+            std::cerr << "error writing: " << strerror(errno) << std::endl;
+            return -1;
+        }
+        std::cout << '[' << static_cast<int>(byte) << ']';
+    }
+    std::cout << std::endl;
 
     return 1;
 }

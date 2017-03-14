@@ -17,25 +17,29 @@
 #include <termios.h>    // POSIX terminal control definitions
 #include <vector>
 
-using byteVector = std::vector<unsigned char>;
+namespace sci {
+    using byteVector = std::vector<unsigned char>;
 
-class SerialPort {
-public:
-    SerialPort(std::string portname, speed_t baud) : port_(portname),
-                                                     baud_(baud) {}
+    class serialport {
+    public:
+        serialport(std::string portname, speed_t baud) : port_(portname),
+                                                         baud_(baud) {}
 
-    int connect();
+        int connect();
 
-    void disconnect();
+        void disconnect();
 
-    int swrite(const std::vector<unsigned char> &data);
+        int swrite(const std::vector<unsigned char> &data);
 
-    byteVector sread() const;
+        byteVector sread() const;
 
-private:
-    std::string port_;
-    speed_t baud_;
-    int usbState_{};
-};
+        int getStatus() { return usbState_; }
+
+    private:
+        std::string port_;
+        speed_t baud_;
+        int usbState_{};
+    };
+}
 
 #endif //FEMALE_REPLACEMENT_SERIALPORT_H

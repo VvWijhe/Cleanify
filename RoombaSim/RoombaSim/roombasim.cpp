@@ -53,6 +53,9 @@ RoombaSim::RoombaSim(QWidget *parent) :
 }
 
 RoombaSim::~RoombaSim() {
+   for(auto &grid : _grid) {
+      delete grid;
+   }
    delete ui;
 }
 

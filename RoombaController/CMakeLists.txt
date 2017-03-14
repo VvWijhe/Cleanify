@@ -4,8 +4,8 @@ project(RoombaController)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        serial/DataFrames.h
-        serial/SerialPort.cpp serial/SerialPort.h
+        sci/commands.h
+        sci/serialport.cpp sci/serialport.h
         main.cpp)
 
 add_executable(RoombaController ${SOURCE_FILES})

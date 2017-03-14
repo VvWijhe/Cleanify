@@ -5,21 +5,26 @@
 #ifndef ROOMBACONTROLLER_ROOMBASCI_H
 #define ROOMBACONTROLLER_ROOMBASCI_H
 
-#include "DataFrames.h"
-#include "SerialPort.h"
+#include "commands.h"
+#include "serialport.h"
 
-
-namespace roombaSCI {
-
+namespace sci {
     class RoombaSCI {
     public:
         RoombaSCI(std::string portname, speed_t baud) : serial_(portname, baud) {}
 
+        int connect() { return serial_.connect(); }
+
         int sendCommand(std::string command, const byteVector &data) {
+            if(serial_.getStatus() < 0) {
+                std::cerr << "Roomba SCI error: device not connected" << std::endl;
+                return -1;
+            }
+
             auto it = cmds_.getCommand(command);
 
             if (it == cmds_.getEnd()) {
-                std::cerr << "error: command not found" << std::endl;
+                std::cerr << "Roomba SCI error: command '" << command << "' not found" << std::endl;
                 return -1;
             }
 
@@ -43,7 +48,7 @@ namespace roombaSCI {
 
     private:
         Commands cmds_;
-        SerialPort serial_;
+        serialport serial_;
     };
 }
 
