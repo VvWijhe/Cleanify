@@ -17,14 +17,18 @@ rectangle controller {
    (bluetooth)
 }
 
+rectangle bluetoothmodule {
+
+}
+
 rectangle roomba {
+   (sci) - bluetoothmodule
    (IR-bottom)
    (IR-front)
    (button-front)
    cliff -> (IR-bottom)
    object -> (button-front)
    dock -> (IR-front)
-   (bluetooth module)
    user -> (on-off)
    (on-off) .> (clean) : <<extends>>
 }
