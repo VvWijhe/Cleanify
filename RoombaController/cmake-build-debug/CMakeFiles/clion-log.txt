@@ -1,4 +1,0 @@
-/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController"
--- Configuring done
--- Generating done
--- Build files have been written to: /media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/cmake-build-debug
