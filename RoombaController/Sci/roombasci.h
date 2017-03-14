@@ -15,6 +15,8 @@ namespace sci {
 
         int connect() { return serial_.connect(); }
 
+        int close() { return serial_.disconnect(); }
+
         int sendCommand(std::string command, const byteVector &data) {
             if(serial_.getStatus() < 0) {
                 std::cerr << "Roomba SCI error: device not connected" << std::endl;
@@ -39,10 +41,22 @@ namespace sci {
                 sequence.push_back(byte);
             }
 
-            if (serial_.swrite(sequence) < 0) {
+            if (serial_.writeVector(sequence) < 0) {
                 return -1;
             }
 
+            return 1;
+        }
+
+        int readSensors() {
+            byteVector v;
+            serial_.readAll(v, 255);
+
+            std::cout << "received " << v.size() << " bytes: ";
+            for(const auto byte : v) {
+                std::cout << '[' << static_cast<int>(byte) << ']';
+            }
+            std::cout << std::endl;
             return 1;
         }
 

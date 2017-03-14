@@ -16,6 +16,7 @@
 #include <errno.h>      // Error number definitions
 #include <termios.h>    // POSIX terminal control definitions
 #include <vector>
+#include <future>
 
 namespace sci {
     using byteVector = std::vector<unsigned char>;
@@ -27,11 +28,11 @@ namespace sci {
 
         int connect();
 
-        void disconnect();
+        int disconnect();
 
-        int swrite(const std::vector<unsigned char> &data);
+        int writeVector(const std::vector<unsigned char> &data);
 
-        byteVector sread() const;
+        int readAll(byteVector &buffer, int limit) const;
 
         int getStatus() { return usbState_; }
 

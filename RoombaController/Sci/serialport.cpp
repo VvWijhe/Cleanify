@@ -9,9 +9,10 @@ int serialport::connect() {
     struct termios tty;
     memset(&tty, 0, sizeof tty);
 
+    // open: read/write, no control, no blocking
     usbState_ = open(port_.c_str(), O_RDWR | O_NOCTTY);
 
-    if(usbState_ < 0) {
+    if (usbState_ < 0) {
         std::cerr << "error opening port: " << strerror(errno) << " in path " << port_ << std::endl;
         return -1;
     }
@@ -32,9 +33,9 @@ int serialport::connect() {
     tty.c_cflag &= ~CSIZE;
     tty.c_cflag |= CS8;
 
-    tty.c_cflag &= ~CRTSCTS;           // no flow control
+    tty.c_cflag &= ~ICANON;           // no flow control
     tty.c_cc[VMIN] = 1;                  // read doesn't block
-    tty.c_cc[VTIME] = 5;                  // 0.5 seconds read timeout
+    tty.c_cc[VTIME] = 30;                  // 0.5 seconds read timeout
     tty.c_cflag |= CREAD | CLOCAL;     // turn on READ & ignore ctrl lines
 
     /* Make raw */
@@ -50,40 +51,41 @@ int serialport::connect() {
     return 1;
 }
 
-void serialport::disconnect() {
-    close(usbState_);
+int serialport::disconnect() {
+    if ((usbState_ = close(usbState_)) < 0) {
+        std::cerr << "error closing: " << strerror(errno) << std::endl;
+        return -1;
+    }
+
+    return 1;
 }
 
-byteVector serialport::sread() const {
+int serialport::readAll(byteVector &buffer, int limit) const {
     ssize_t n{};
     int index{};
     unsigned char c{};
 
     /* Whole response*/
-    byteVector buffer;
-
     do {
-        if ((n = read(usbState_, &c, 1)) < 0) {
+        n = read(usbState_, &c, 1);
+
+        if (n < 0 || index++ > limit) {
             break;
         }
 
-        buffer[index] = c;
-        index += n;
-    } while (c != '\r' && n > 0 && index < buffer.size());
+        buffer.push_back(c);
+    } while (c != '\r');
 
     if (n < 0) {
         std::cerr << "Error reading: " << strerror(errno) << std::endl;
-    } else if (n == 0) {
-        std::cerr << "Read nothing!" << std::endl;
-    } else {
-        std::cout << "Response: " << buffer.data() << std::endl;
+        return -1;
     }
 
-    return buffer;
+    return 1;
 }
 
-int serialport::swrite(const std::vector<unsigned char> &data) {
-    if(usbState_ < 0) {
+int serialport::writeVector(const std::vector<unsigned char> &data) {
+    if (usbState_ < 0) {
         std::cerr << "please connect before write" << std::endl;
         return -1;
     }
