@@ -35,5 +35,6 @@ rectangle roomba {
 
 user <-> website
 user <-> gui
+(bluetooth) <.> bluetoothmodule
 
 @enduml
