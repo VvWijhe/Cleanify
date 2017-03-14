@@ -1,5 +1,5 @@
 #include <iostream>
-#include "sci/roombasci.h"
+#include "Sci/roombasci.h"
 
 using namespace std;
 
