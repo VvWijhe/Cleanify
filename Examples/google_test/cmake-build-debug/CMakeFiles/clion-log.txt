@@ -1,4 +1,4 @@
-/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/Examples/google_test"
+/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/jamie/Documents/Project4/Cleanify/Examples/google_test
 -- The C compiler identification is GNU 5.4.0
 -- The CXX compiler identification is GNU 5.4.0
 -- Check for working C compiler: /usr/bin/cc
@@ -14,14 +14,9 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 CMake Error at CMakeLists.txt:5 (add_subdirectory):
-  add_subdirectory not given a binary directory but the given source
-  directory "/media/victor/harde
-  schijf/school/HBO2/semester_2/Cleanify/Libs/googletest-master" is not a
-  subdirectory of "/media/victor/harde
-  schijf/school/HBO2/semester_2/Cleanify/Examples/google_test".  When
-  specifying an out-of-tree source a binary directory must be explicitly
-  specified.
+  add_subdirectory given source "../../Libs/googletest-master" which is not
+  an existing directory.
 
 
 -- Configuring incomplete, errors occurred!
-See also "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/Examples/google_test/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/home/jamie/Documents/Project4/Cleanify/Examples/google_test/cmake-build-debug/CMakeFiles/CMakeOutput.log".
