@@ -58,7 +58,7 @@ RoombaServer::RoombaServer(unsigned short port) {
         //find length of content_stream (length received using content_stream.tellp())
         content_stream.seekp(0, ios::end);
 
-        *response <<  "HTTP/1.1 200 OK\r\nContent-Length: " << content_stream.tellp() << "\r\n\r\n" << content_stream.rdbuf();
+        *response << response200 << "Content-Length: " << content_stream.tellp() << "\r\n\r\n" << content_stream.rdbuf();
     };
 }
 
