@@ -27,6 +27,8 @@ namespace server {
 
         void run();
 
+        void stop();
+
         void htmlResponse(const httpServer &server, const std::shared_ptr<httpServer::Response> &response,
                           const std::shared_ptr<std::ifstream> &ifs);
 

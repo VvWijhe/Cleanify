@@ -73,7 +73,13 @@ void RoombaServer::run() {
 
     this_thread::sleep_for(chrono::seconds(1));
 
+    cout << "server started" << endl;
+}
+
+void RoombaServer::stop() {
+    server_.stop();
     thread_.join();
+    cout << "server stopped" << endl;
 }
 
 void RoombaServer::htmlResponse(const httpServer &server, const std::shared_ptr<httpServer::Response> &response,

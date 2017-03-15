@@ -17,5 +17,10 @@ int main() {
 
     server::RoombaServer server1(8080);
     server1.run();
+
+    //for(;;);
+    this_thread::sleep_for(chrono::seconds(30));
+    server1.stop();
+
     return 0;
 }

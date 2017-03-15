@@ -21,6 +21,7 @@ set(SOURCE_FILES
         Server/server.h Server/server.cpp Server/http_server.hpp
         main.cpp)
 
+## directory for testing
 add_subdirectory(Tests)
 
 add_executable(RoombaController ${SOURCE_FILES})
