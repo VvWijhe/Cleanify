@@ -1,3 +1,3 @@
 
 ## Dependencies
-- Boost asio(minimal 1.52)
+- [Boost](http://www.boost.org/) (minimum version 1.52)
