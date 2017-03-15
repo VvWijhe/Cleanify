@@ -1,2 +1,3 @@
 
-<h1>Dependencies<h2>
+## Dependencies
+- [Boost](http://www.boost.org/) (minimum version 1.52)
