@@ -5,19 +5,13 @@
 #ifndef ROOMBACONTROLLER_ROOMBASCI_H
 #define ROOMBACONTROLLER_ROOMBASCI_H
 
-#include "DataFrames.h"
+#include "commands.h"
 #include "SerialPort.h"
 
-//for commit
-
-
-namespace roombaSCI {
-
+namespace sci {
     class RoombaSCI {
     public:
         RoombaSCI(std::string portname, speed_t baud) : serial_(portname, baud) {}
-
-        
 
         int sendCommand(std::string command, const byteVector &data) {
             auto it = cmds_.getCommand(command);
@@ -38,7 +32,7 @@ namespace roombaSCI {
                 sequence.push_back(byte);
             }
 
-            if (serial_.swrite(sequence) < 0) {
+            if (serial_.writeVector(sequence) < 0) {
                 return -1;
             }
 

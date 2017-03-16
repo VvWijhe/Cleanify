@@ -1,11 +1,11 @@
 //
 // Created by raymon on 11-3-17.
 //
-#include "serialport.h"
+#include "SerialPort.h"
 
 using namespace sci;
 
-int serialport::connect() {
+int SerialPort::connect() {
     struct termios tty;
     memset(&tty, 0, sizeof tty);
 
@@ -51,7 +51,7 @@ int serialport::connect() {
     return 1;
 }
 
-int serialport::disconnect() {
+int SerialPort::disconnect() {
     if ((usbState_ = close(usbState_)) < 0) {
         std::cerr << "error closing: " << strerror(errno) << std::endl;
         return -1;
@@ -60,7 +60,7 @@ int serialport::disconnect() {
     return 1;
 }
 
-int serialport::readAll(byteVector &buffer, int limit) const {
+int SerialPort::readAll(byteVector &buffer, int limit) const {
     ssize_t n{};
     int index{};
     unsigned char c{};
@@ -84,7 +84,7 @@ int serialport::readAll(byteVector &buffer, int limit) const {
     return 1;
 }
 
-int serialport::writeVector(const std::vector<unsigned char> &data) {
+int SerialPort::writeVector(const std::vector<unsigned char> &data) {
     if (usbState_ < 0) {
         std::cerr << "please connect before write" << std::endl;
         return -1;

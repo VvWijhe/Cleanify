@@ -17,7 +17,7 @@ include_directories(SYSTEM ${Boost_INCLUDE_DIR})
 
 set(SOURCE_FILES
         Sci/commands.h
-        Sci/serialport.cpp Sci/serialport.h
+        Sci/SerialPort.cpp Sci/SerialPort.h
         Server/server.h Server/server.cpp Server/http_server.hpp
         main.cpp)
 

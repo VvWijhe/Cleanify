@@ -21,9 +21,9 @@
 namespace sci {
     using byteVector = std::vector<unsigned char>;
 
-    class serialport {
+    class SerialPort {
     public:
-        serialport(std::string portname, speed_t baud) : port_(portname),
+        SerialPort(std::string portname, speed_t baud) : port_(portname),
                                                          baud_(baud) {}
 
         int connect();

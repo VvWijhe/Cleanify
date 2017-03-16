@@ -30,8 +30,21 @@ namespace sci {
             commands_["Leds"] = 139;
             commands_["Song"] = 140;
             commands_["Play"] = 141;
-            commands_["Sensors"] = 142;
+            commands_["Query"] = 142;
             commands_["Dock"] = 143;
+            commands_["PwmMotors"] = 144;
+            commands_["DriveWheels"] = 145;
+            commands_["DrivePwm"] = 146;
+            commands_["Stream"] = 148;
+            commands_["QueryList"] = 149;
+            commands_["DoStream"] = 150;
+            commands_["SchedulingLeds"] = 162;
+            commands_["LedsRaw"] = 163;
+            commands_["LedsAscii"] = 164;
+            commands_["Buttons"] = 165;
+            commands_["Schedule"] = 167;
+            commands_["SetDay"] = 168;
+            commands_["Stop"] = 173;
         }
 
         std::map<std::string, unsigned char> getMap() const {
