@@ -5,28 +5,23 @@
 #ifndef ROOMBACONTROLLER_ROOMBASCI_H
 #define ROOMBACONTROLLER_ROOMBASCI_H
 
-#include "commands.h"
-#include "serialport.h"
+#include "DataFrames.h"
+#include "SerialPort.h"
 
-namespace sci {
+
+namespace roombaSCI {
+
     class RoombaSCI {
     public:
         RoombaSCI(std::string portname, speed_t baud) : serial_(portname, baud) {}
 
-        int connect() { return serial_.connect(); }
-
-        int close() { return serial_.disconnect(); }
+        
 
         int sendCommand(std::string command, const byteVector &data) {
-            if(serial_.getStatus() < 0) {
-                std::cerr << "Roomba SCI error: device not connected" << std::endl;
-                return -1;
-            }
-
             auto it = cmds_.getCommand(command);
 
             if (it == cmds_.getEnd()) {
-                std::cerr << "Roomba SCI error: command '" << command << "' not found" << std::endl;
+                std::cerr << "error: command not found" << std::endl;
                 return -1;
             }
 
@@ -41,28 +36,19 @@ namespace sci {
                 sequence.push_back(byte);
             }
 
-            if (serial_.writeVector(sequence) < 0) {
+            if (serial_.swrite(sequence) < 0) {
                 return -1;
             }
 
             return 1;
         }
 
-        int readSensors() {
-            byteVector v;
-            serial_.readAll(v, 255);
-
-            std::cout << "received " << v.size() << " bytes: ";
-            for(const auto byte : v) {
-                std::cout << '[' << static_cast<int>(byte) << ']';
-            }
-            std::cout << std::endl;
-            return 1;
-        }
-
     private:
+
+        byteVector data_;
+
         Commands cmds_;
-        serialport serial_;
+        SerialPort serial_;
     };
 }
 
