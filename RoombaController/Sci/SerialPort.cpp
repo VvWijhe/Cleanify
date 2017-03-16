@@ -90,15 +90,12 @@ int SerialPort::writeVector(const std::vector<unsigned char> &data) {
         return -1;
     }
 
-    std::cout << "sending: ";
     for (const auto byte : data) {
         if (write(usbState_, &byte, 1) < 0) {
             std::cerr << "error writing: " << strerror(errno) << std::endl;
             return -1;
         }
-        std::cout << '[' << static_cast<int>(byte) << ']';
     }
-    std::cout << std::endl;
 
     return 1;
 }
