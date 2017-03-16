@@ -3,24 +3,13 @@ project(Tests)
 
 set(CMAKE_CXX_STANDARD 11)
 
-find_package (Threads)
+add_subdirectory(tests)
+add_subdirectory(lib/googletest)
 
-set(BOOST_COMPONENTS system thread filesystem date_time)
-if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-    if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 4.9)
-        set(BOOST_COMPONENTS ${BOOST_COMPONENTS} regex)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DUSE_BOOST_REGEX")
-    endif()
-endif()
-find_package(Boost 1.53.0 COMPONENTS ${BOOST_COMPONENTS} REQUIRED)
-include_directories(SYSTEM ${Boost_INCLUDE_DIR})
+#include_directories(lib/googletest/googletest/include)
+#include_directories(lib/googletest/googlemock/include)
 
-set(SOURCE_FILES
-        ../Sci/commands.h
-        ../Sci/SerialPort.cpp ../Sci/SerialPort.h
-        ../Server/server.h ../Server/server.cpp ../Server/http_server.hpp
-        test.h test.cpp)
+#set(SOURCE_FILES  main.cpp tests/TestFunctions.cpp tests/TestFunctions.h)
 
-add_executable(Tests ${SOURCE_FILES})
-
-target_link_libraries(Tests ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES})
+#add_executable(Tests ${SOURCE_FILES} tests/TestFunctions.cpp tests/TestFunctions.h)
+#target_link_libraries(Tests gtest gtest_main)
