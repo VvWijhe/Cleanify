@@ -5,5 +5,9 @@
 using namespace std;
 
 int main() {
+    server::RoombaServer roombaServer(8080);
+    roombaServer.run();
+    cin.ignore();
+    roombaServer.stop();
     return 0;
 }

@@ -12,12 +12,10 @@
 #include <algorithm>
 
 #include "http_server.hpp"
+#include "responses.h"
 
 namespace server {
     using httpServer = SimpleWeb::Server<SimpleWeb::HTTP>;
-
-    const std::string response200("HTTP/1.1 200 OK\r\n");
-    const std::string response404("HTTP/1.1 404 Bad Request\r\n");
 
     class RoombaServer {
     public:
@@ -36,7 +34,6 @@ namespace server {
         httpServer server_;
         std::thread thread_;
     };
-
 }
 
 #endif //ROOMBACONTROLLER_SERVER_H

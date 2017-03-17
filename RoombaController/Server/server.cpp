@@ -5,6 +5,7 @@
 #include "server.h"
 
 using namespace server;
+using namespace responses;
 using namespace std;
 
 RoombaServer::RoombaServer(unsigned short port) {
@@ -41,25 +42,13 @@ RoombaServer::RoombaServer(unsigned short port) {
                 throw invalid_argument("could not read file");
         }
         catch (const exception &e) {
-            //string content = "Could not open path " + request->path + ": " + e.what();
-            *response << response404 << "Content-Length: ";// << content.length() << "\r\n\r\n" << content;
+            string content = "Error 404 Page not found";
+            *response << response404 << "Content-Length: " << content.length() << endh
+                      << content;
         }
     };
 
-    // info response
-    server_.resource["^/info$"]["GET"]=[](shared_ptr<httpServer::Response> response, shared_ptr<httpServer::Request> request) {
-        stringstream content_stream;
-        content_stream << "<h1>Request from " << request->remote_endpoint_address << " (" << request->remote_endpoint_port << ")</h1>";
-        content_stream << request->method << " " << request->path << " HTTP/" << request->http_version << "<br>";
-        for(auto& header: request->header) {
-            content_stream << header.first << ": " << header.second << "<br>";
-        }
-
-        //find length of content_stream (length received using content_stream.tellp())
-        content_stream.seekp(0, ios::end);
-
-        *response << response200 << "Content-Length: " << content_stream.tellp() << "\r\n\r\n" << content_stream.rdbuf();
-    };
+    server_.resource["^/status"]["GET"] = responseHandler(info);
 }
 
 RoombaServer::~RoombaServer() {
