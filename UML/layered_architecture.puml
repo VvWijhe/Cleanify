@@ -1,0 +1,35 @@
+@startuml
+
+title Roomba Controller layered architecture
+
+package "User Interface Layer" {
+  [Display]
+  [Speaker]
+}
+
+package "System Control Layer" {
+  [FSM] #red
+}
+
+package "Subsystems Layer" {
+  [Wheels]
+  [Brush]
+  [Sensors]
+}
+
+package "Hardware Abstraction Layer" {
+  [Hardware IO]
+}
+
+[FSM] -down-> [Wheels]
+[FSM] -down-> [Brush]
+[FSM] -down-> [Sensors]
+[FSM] -up-> [Display]
+[FSM] -up-> [Speaker]
+[Display] --> [Hardware IO]
+[Wheels] --> [Hardware IO]
+[Brush] --> [Hardware IO]
+[Sensors] --> [Hardware IO]
+[Speaker] --> [Hardware IO]
+
+@enduml

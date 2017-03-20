@@ -1,40 +1,37 @@
 @startuml
+
 left to right direction
+
 skinparam packageStyle rectangle
 
-actor user
-actor object
+actor wall
 actor cliff
-actor dock
+actor object
+actor user
+actor dockingstation
 
-rectangle gui {
+rectangle Roomba-650 {
+  object -- (moving)
+  cliff -- (moving)
+  wall -- (moving)
+  ' user -- (power on)
+  user -- (troubleshoot)
+  user -- (spot cleaning)
+  user -- (cleaning)
+  user -- (max cleaning)
+  user -- (scheduling)
+  user -- (clock)
+  user -- (docking)
+
+  dockingstation -- (docking)
+
+  (cleaning) .> (power on) : include
+
+  (cleaning) .> (moving) : include
+  (docking) .> (battery loading) : include
+
+ ' (cleaning) .> (spot cleaning) : include
+
+  ' (docking) .> (battery loading) : extends
 }
-
-rectangle website {
-}
-
-rectangle controller {
-   (bluetooth)
-}
-
-rectangle bluetoothmodule {
-
-}
-
-rectangle roomba {
-   (sci) - bluetoothmodule
-   (IR-bottom)
-   (IR-front)
-   (button-front)
-   cliff -> (IR-bottom)
-   object -> (button-front)
-   dock -> (IR-front)
-   user -> (on-off)
-   (on-off) .> (clean) : <<extends>>
-}
-
-user <-> website
-user <-> gui
-(bluetooth) <.> bluetoothmodule
-
 @enduml

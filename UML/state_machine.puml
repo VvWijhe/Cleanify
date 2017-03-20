@@ -1,0 +1,23 @@
+@startuml
+[*] --> Initialise : init()
+
+state Initialise {
+
+  Initialise -> WaitForMode : E_OK
+}
+
+state WaitForMode {
+  WaitForMode -> PCmode : E_PC_MODE
+  WaitForMode -> Websitemode : E_WEB_MODE
+}
+
+state PCmode {
+  [*] --> WaitForCmds1
+  WaitForCmds1 -up> WaitForMode : E_EXIT, E_TIMEOUT
+}
+
+state Websitemode {
+  [*] --> WaitForCmds2
+  WaitForCmds2 -up> WaitForMode : E_EXIT, E_TIMEOUT
+}
+@enduml

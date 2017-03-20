@@ -24,3 +24,7 @@ void responses::info(shrpResponse response, shrpRequest request) {
               << content_stream.rdbuf();
 }
 
+void responses::sensors(shrpResponse response, shrpRequest request) {
+
+}
+

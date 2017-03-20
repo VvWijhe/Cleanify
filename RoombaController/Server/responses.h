@@ -19,6 +19,7 @@ namespace responses {
 
     // response handlers
     void info(shrpResponse response, shrpRequest request);
+    void sensors(shrpResponse response, shrpRequest request);
 }
 
 #endif //ROOMBACONTROLLER_RESPONSES_H
