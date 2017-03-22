@@ -10,8 +10,6 @@
 namespace Io{
     class roombaIo{
     public:
-        //test
-        //test2
 
 
     private:
