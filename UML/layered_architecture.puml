@@ -3,7 +3,7 @@
 title Roomba Controller layered architecture
 
 package "User Interface Layer" {
-  [Display]
+  [Leds]
   [Speaker]
 }
 
@@ -24,9 +24,9 @@ package "Hardware Abstraction Layer" {
 [FSM] -down-> [Wheels]
 [FSM] -down-> [Brush]
 [FSM] -down-> [Sensors]
-[FSM] -up-> [Display]
+[FSM] -up-> [Leds]
 [FSM] -up-> [Speaker]
-[Display] --> [Hardware IO]
+[Leds] --> [Hardware IO]
 [Wheels] --> [Hardware IO]
 [Brush] --> [Hardware IO]
 [Sensors] --> [Hardware IO]

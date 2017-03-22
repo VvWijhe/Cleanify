@@ -1,0 +1,19 @@
+@startuml
+title Website - Server sequence
+
+actor User
+
+User -> Browser: click control button
+Browser -> Server: POST form
+Server -> Server: parse request
+Server -> Server: roomba status OK
+Server -> Server: set roomba parameters
+Server -> Browser: html
+
+User -> Browser: click control button
+Browser -> Server: POST form
+Server -> Server: parse request
+Server -> Server: roomba status BUSY
+Server -> Browser: html
+
+@enduml

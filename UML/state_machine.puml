@@ -3,7 +3,7 @@
 
 state Initialise {
 
-  Initialise -> WaitForMode : E_OK
+  Initialise -> WaitForMode : E_READY
 }
 
 state WaitForMode {

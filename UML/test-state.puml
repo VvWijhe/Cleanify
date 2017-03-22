@@ -1,7 +1,0 @@
-@startuml
-digraph foo {
-  subA;
-  subB;
-  Super;
-}
-@enduml

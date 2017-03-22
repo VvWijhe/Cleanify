@@ -1,0 +1,63 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+package Server {
+
+class HttpServer {
+
+}
+
+}
+
+package SystemControl {
+
+class RoombaProcessing {
+
+}
+
+class SensorParser {
+  + <<constructor>> SensorParser(buffer : vector<unsigned char>)
+  + parse(buffer : vector<unsigned char>) : void
+  + map() const : map<string, int>
+  - content_ : map<string, int>
+}
+
+class RoombaControl {
+  + setWheels(ls : short, rs : short) : void
+  + setWheels(speed : short) : void
+  + setRotation(speed : short, direction : enum) : void
+  + setLed(color : enum) : void
+  + readSensors() : SensorData
+}
+
+}
+
+package HAL {
+
+class SerialPort {
+  + <<constructor>> SerialPort(port : string, baud : baud_t)
+  + open() : int
+  + close() : int
+  + writeVector(data : const vector<unsigned char>&) : int
+  + read(buffer : vector<unsigned char>&) : int
+  + getStatus() const : int
+
+  - status_ : int
+}
+
+class SCI {
+  + <u>write(cmd : string, data : const vector<unsigned char>&) : int
+  + <u>read(buffer : vector<unsigned char>&) : int
+  + <u>etCmds() const : map<string, unsigned char>
+
+  - <u>commands_ : map<string, unsigned char>
+}
+
+}
+
+SerialPort *-- SCI : contains
+RoombaControl --* SCI : contains
+RoombaProcessing --* RoombaControl : contains
+
+@enduml
