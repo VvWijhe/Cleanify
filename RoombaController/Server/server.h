@@ -11,7 +11,7 @@
 #include <vector>
 #include <algorithm>
 
-#include "http_server.hpp"
+#include <restbed>
 #include "responses.h"
 
 namespace server {
