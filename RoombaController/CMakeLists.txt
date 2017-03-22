@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 11)
 find_package (Threads)
 
 ## restbed library
-add_subdirectory(restbed)
-include_directories(restbed/source)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../dependency/restbed ${CMAKE_CURRENT_BINARY_DIR}/restbed)
+include_directories(../dependency/restbed/source)
 
 ## source files
 set(SOURCE_FILES

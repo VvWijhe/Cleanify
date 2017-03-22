@@ -7,7 +7,7 @@
 
 #include <thread>
 #include <fstream>
-#include <boost/filesystem.hpp>
+#include <memory>
 #include <vector>
 #include <algorithm>
 
@@ -15,8 +15,6 @@
 #include "responses.h"
 
 namespace server {
-    using httpServer = SimpleWeb::Server<SimpleWeb::HTTP>;
-
     class RoombaServer {
     public:
         RoombaServer(unsigned short port);
@@ -27,11 +25,9 @@ namespace server {
 
         void stop();
 
-        void htmlResponse(const httpServer &server, const std::shared_ptr<httpServer::Response> &response,
-                          const std::shared_ptr<std::ifstream> &ifs);
-
     private:
-        httpServer server_;
+        restbed::Service service_;
+        std::shared_ptr<restbed::Settings> settings_;
         std::thread thread_;
     };
 }

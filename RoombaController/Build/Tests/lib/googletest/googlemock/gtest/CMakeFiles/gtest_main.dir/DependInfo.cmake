@@ -10,7 +10,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../restbed/source"
+  "../../dependency/restbed/source"
   "../Tests/lib/googletest/googletest/include"
   "../Tests/lib/googletest/googletest"
   )
