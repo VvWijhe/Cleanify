@@ -13,7 +13,7 @@ include_directories(restbed/source)
 set(SOURCE_FILES
         Sci/commands.h
         Sci/SerialPort.cpp Sci/SerialPort.h
-        Server/server.h Server/server.cpp Server/http_server.hpp
+        Server/server.h Server/server.cpp
         main.cpp Server/responses.h Server/responses.cpp)
 
 ## directory for testing
