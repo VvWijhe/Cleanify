@@ -84,7 +84,7 @@ namespace testing {
 // "(null)".
 class GTEST_API_ Message {
  private:
-  // The type of basic IO manipulators (endl, ends, and flush) for
+  // The type of basic Io manipulators (endl, ends, and flush) for
   // narrow streams.
   typedef std::ostream& (*BasicNarrowIoManip)(std::ostream&);
 
@@ -156,11 +156,11 @@ class GTEST_API_ Message {
   }
 #endif  // GTEST_OS_SYMBIAN
 
-  // Since the basic IO manipulators are overloaded for both narrow
+  // Since the basic Io manipulators are overloaded for both narrow
   // and wide streams, we have to provide this specialized definition
   // of operator <<, even though its body is the same as the
   // templatized version above.  Without this definition, streaming
-  // endl or other basic IO manipulators to Message will confuse the
+  // endl or other basic Io manipulators to Message will confuse the
   // compiler.
   Message& operator <<(BasicNarrowIoManip val) {
     *ss_ << val;
