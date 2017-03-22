@@ -11,10 +11,10 @@ include_directories(restbed/source)
 
 ## source files
 set(SOURCE_FILES
-        Sci/commands.h
-        Sci/SerialPort.cpp Sci/SerialPort.h
+        io/commands.h
+        io/SerialPort.cpp io/SerialPort.h
         Server/server.h Server/server.cpp
-        main.cpp Server/responses.h Server/responses.cpp Io/roombaIo.h)
+        main.cpp Server/responses.h Server/responses.cpp io/roombaio.h)
 
 ## directory for testing
 add_subdirectory(Tests)

@@ -3,6 +3,6 @@ include_directories(../../)
 
 add_executable(runTests
         sci_tests.cpp
-        ../../Sci/SerialPort.cpp)
+        ../../io/SerialPort.cpp)
 
 target_link_libraries(runTests gtest gtest_main)

@@ -3,7 +3,7 @@
 //
 #include "SerialPort.h"
 
-using namespace sci;
+using namespace io;
 
 int SerialPort::connect() {
     struct termios tty;

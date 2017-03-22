@@ -12,12 +12,11 @@
 #include <iterator>
 #include <vector>
 
-namespace sci {
+namespace io {
     class Commands {
     public:
         Commands() {
             commands_["Start"] = 128;
-            commands_["Baud"] = 129;
             commands_["Control"] = 130;
             commands_["Safe"] = 131;
             commands_["Full"] = 132;

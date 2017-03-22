@@ -4619,7 +4619,7 @@ TEST(StreamableTest, NullCharPtr) {
                        "(null)");
 }
 
-// Tests that basic Io manipulators (endl, ends, and flush) can be
+// Tests that basic io manipulators (endl, ends, and flush) can be
 // streamed to testing::Message.
 TEST(StreamableTest, BasicIoManip) {
   EXPECT_FATAL_FAILURE({  // NOLINT

@@ -18,7 +18,7 @@
 #include <vector>
 #include <future>
 
-namespace sci {
+namespace io {
     using byteVector = std::vector<unsigned char>;
 
     class SerialPort {

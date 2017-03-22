@@ -5,7 +5,7 @@
 #include <Sci/roombasci.h>
 #include "gtest/gtest.h"
 
-using namespace sci;
+using namespace io;
 
 TEST(sciTest, commands) {
     Commands cmds;

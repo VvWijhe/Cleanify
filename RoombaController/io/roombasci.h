@@ -8,7 +8,7 @@
 #include "commands.h"
 #include "SerialPort.h"
 
-namespace sci {
+namespace io {
     class RoombaSCI {
     public:
         RoombaSCI(std::string portname, speed_t baud) : serial_(portname, baud) {}
