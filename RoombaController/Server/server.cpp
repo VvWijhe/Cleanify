@@ -10,15 +10,15 @@ using namespace std;
 using namespace restbed;
 
 RoombaServer::RoombaServer(unsigned short port) {
-    auto resource = make_shared< Resource >( );
-    resource->set_path( "/resource" );
-    resource->set_method_handler( "POST", responses::info );
+    auto resource = make_shared<Resource>();
+    resource->set_path("/");
+    resource->set_method_handler("GET", responses::info);
 
-    settings_ = make_shared< Settings >( );
-    settings_->set_port( 1984 );
-    settings_->set_default_header( "Connection", "close" );
+    settings_ = make_shared<Settings>();
+    settings_->set_port(port);
+    settings_->set_default_header("Connection", "close");
 
-    service_.publish( resource );
+    service_.publish(resource);
 }
 
 RoombaServer::~RoombaServer() {
