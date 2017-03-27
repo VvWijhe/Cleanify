@@ -12,11 +12,11 @@ void responses::info(pSession session) {
 
     int content_length = request->get_header("Content-Length", 0);
 
-    session->fetch(content_length,
+    session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
                        s->close(OK,
-                                "Hello, World!",
-                                {{"Content-Length", "13"}});
+                                "<h1>Hello World!</h1>",
+                                {{"Content-Length", "21"}});
                    });
 }
 
@@ -25,7 +25,7 @@ void responses::error404(pSession session) {
 
     int content_length = request->get_header("Content-Length", 0);
 
-    session->fetch(content_length,
+    session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
                        std::string content("Error 404, page not found");
 
