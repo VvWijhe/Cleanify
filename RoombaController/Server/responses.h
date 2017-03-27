@@ -7,6 +7,7 @@
 
 #include <restbed>
 #include <memory>
+#include "file_handler.h"
 
 namespace responses {
     using pSession = std::shared_ptr<restbed::Session>;

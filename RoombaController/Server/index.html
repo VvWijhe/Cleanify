@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="NL-NL">
+<head>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+<script type="text/javascript">
+
+function AJAXtest()
+{
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.html", true);
+  xhttp.send();
+  setTimeout(AJAXtest,500);
+}
+
+</script>
+</head>
+<body>
+<header>
+<h1>Cleanify: Der Roomba</h1>
+</header>
+
+<nav>
+<div id="demo"> </div>
+
+<button type="button" onclick="AJAXtest()">JSON</button>
+
+</nav>
+</body>
+</html>
