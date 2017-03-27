@@ -1,3 +1,4 @@
 
 ## Dependencies
-- [Boost](http://www.boost.org/) (minimum version 1.52)
+- [Restbed](https://github.com/Corvusoft/restbed) (included as submodule)
+- Poco libraries
