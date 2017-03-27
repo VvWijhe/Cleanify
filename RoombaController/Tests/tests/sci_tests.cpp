@@ -2,7 +2,7 @@
 // Created by victor on 13.03.17.
 //
 
-#include <Sci/roombasci.h>
+#include <io/roombasci.h>
 #include "gtest/gtest.h"
 
 using namespace io;
