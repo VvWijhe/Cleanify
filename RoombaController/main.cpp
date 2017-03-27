@@ -9,5 +9,6 @@ int main() {
     roombaServer.run();
     cin.ignore();
     roombaServer.stop();
+
     return 0;
 }

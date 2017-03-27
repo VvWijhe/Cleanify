@@ -14,7 +14,7 @@ set(SOURCE_FILES
         io/commands.h
         io/SerialPort.cpp io/SerialPort.h
         Server/server.h Server/server.cpp
-        main.cpp Server/responses.h Server/responses.cpp io/roombaio.h)
+        main.cpp Server/responses.h Server/responses.cpp io/roombaio.h io/roombacontroller.h)
 
 ## directory for testing
 add_subdirectory(Tests)
