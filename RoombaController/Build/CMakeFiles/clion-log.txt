@@ -1,10 +1,7 @@
 /home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=NO -DBUILD_EXAMPLES=NO -DBUILD_SSL=NO -DBUILD_SHARED=NO -G "CodeBlocks - Unix Makefiles" /home/jamie/Documents/Project4/Cleanify/RoombaController
-CMake Error at CMakeLists.txt:9 (add_subdirectory):
-  add_subdirectory given source
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed"
-  which is not an existing directory.
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeOutput.log".
-See also "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeError.log".
+   [34mCopyright 2013-2017, Corvusoft Ltd, All Rights Reserved.[m
+-- [32mFound ASIO include at: /home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/asio/asio/include[m
+-- [32mFound Kashmir include at: /home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/kashmir[m
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build

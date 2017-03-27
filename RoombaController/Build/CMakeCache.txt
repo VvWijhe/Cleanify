@@ -14,8 +14,8 @@
 # EXTERNAL cache entries
 ########################
 
-//No help, variable specified on the command line.
-BUILD_EXAMPLES:UNINITIALIZED=NO
+//Build examples applications.
+BUILD_EXAMPLES:BOOL=NO
 
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
@@ -23,17 +23,17 @@ BUILD_GMOCK:BOOL=ON
 //Builds the googletest subproject
 BUILD_GTEST:BOOL=OFF
 
-//No help, variable specified on the command line.
-BUILD_SHARED:UNINITIALIZED=NO
+//Build shared library.
+BUILD_SHARED:BOOL=NO
 
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=OFF
 
-//No help, variable specified on the command line.
-BUILD_SSL:UNINITIALIZED=NO
+//Build secure socket layer support.
+BUILD_SSL:BOOL=NO
 
-//No help, variable specified on the command line.
-BUILD_TESTS:UNINITIALIZED=NO
+//Build all available test suites.
+BUILD_TESTS:BOOL=NO
 
 //Boost atomic library (debug)
 Boost_ATOMIC_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_atomic.so
@@ -327,7 +327,7 @@ restbed_BINARY_DIR:STATIC=/home/jamie/Documents/Project4/Cleanify/RoombaControll
 restbed_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake
-restbed_SOURCE_DIR:STATIC=/home/jamie/Documents/Project4/Cleanify/dependency/restbed
+restbed_SOURCE_DIR:STATIC=/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed
 
 //Path to a file.
 ssl_INCLUDE:PATH=ssl_INCLUDE-NOTFOUND
@@ -474,7 +474,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

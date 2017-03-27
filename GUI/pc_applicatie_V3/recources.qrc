@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>Images/arrow_down.bmp</file>
-        <file>Images/099579e4-e246-48da-be75-3a19a0aba392.jpg.w960.jpg</file>
-        <file>Images/clean.png</file>
-        <file>Images/switcht_off.png</file>
-        <file>Images/switches_on.png</file>
-    </qresource>
-</RCC>

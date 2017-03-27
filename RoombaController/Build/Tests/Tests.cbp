@@ -5,7 +5,7 @@
 		<Option title="Tests"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\dependency\;CMake Files\..\dependency\restbed\;CMake Files\..\dependency\restbed\cmake\;CMake Files\..\dependency\restbed\cmake\modules\;CMake Files\Tests\;CMake Files\Tests\tests\;CMake Files\Tests\lib\;CMake Files\Tests\lib\googletest\;CMake Files\Tests\lib\googletest\googlemock\;CMake Files\Tests\lib\googletest\googletest\;CMake Files\Tests\lib\googletest\googletest\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\restbed\;CMake Files\restbed\cmake\;CMake Files\restbed\cmake\modules\;CMake Files\Tests\;CMake Files\Tests\tests\;CMake Files\Tests\lib\;CMake Files\Tests\lib\googletest\;CMake Files\Tests\lib\googletest\googlemock\;CMake Files\Tests\lib\googletest\googletest\;CMake Files\Tests\lib\googletest\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests"/>
@@ -24,7 +24,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/../.."/>
@@ -51,7 +51,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/../.."/>
@@ -78,7 +78,7 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
@@ -106,7 +106,7 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
@@ -134,7 +134,7 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
@@ -162,7 +162,7 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
@@ -190,7 +190,7 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
@@ -216,7 +216,7 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
@@ -242,7 +242,7 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
@@ -268,7 +268,7 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
@@ -315,41 +315,41 @@
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\restbed\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\restbed\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/configuration.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/configuration.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/manifest.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/manifest.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/artifacts.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/artifacts.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/configuration.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/configuration.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/manifest.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/manifest.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/artifacts.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/artifacts.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/modules/Findasio.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\modules\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findasio.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/modules/Findkashmir.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\modules\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findkashmir.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/modules/Findasio.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\modules\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findasio.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/modules/Findkashmir.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\modules\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findkashmir.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\"/>

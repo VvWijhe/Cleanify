@@ -5,7 +5,7 @@
 		<Option title="restbed"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\dependency\;CMake Files\..\dependency\restbed\;CMake Files\..\dependency\restbed\cmake\;CMake Files\..\dependency\restbed\cmake\modules\;CMake Files\Tests\;CMake Files\Tests\tests\;CMake Files\Tests\lib\;CMake Files\Tests\lib\googletest\;CMake Files\Tests\lib\googletest\googlemock\;CMake Files\Tests\lib\googletest\googletest\;CMake Files\Tests\lib\googletest\googletest\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\restbed\;CMake Files\restbed\cmake\;CMake Files\restbed\cmake\modules\;CMake Files\Tests\;CMake Files\Tests\tests\;CMake Files\Tests\lib\;CMake Files\Tests\lib\googletest\;CMake Files\Tests\lib\googletest\googlemock\;CMake Files\Tests\lib\googletest\googletest\;CMake Files\Tests\lib\googletest\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/restbed"/>
@@ -26,7 +26,7 @@
 				<Compiler>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/asio/asio/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/kashmir"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -52,7 +52,7 @@
 				<Compiler>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/asio/asio/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/kashmir"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -70,164 +70,164 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/http_impl.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/http_impl.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/http_impl.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/http_impl.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/service_impl.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/service_impl.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/service_impl.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/service_impl.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/session_impl.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/session_impl.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/session_impl.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/session_impl.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/socket_impl.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/socket_impl.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/socket_impl.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/socket_impl.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/web_socket_impl.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/web_socket_impl.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/web_socket_impl.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/web_socket_impl.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/http.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/http.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/http.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/http.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/request.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/request.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/request.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/request.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/resource.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/resource.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/resource.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/resource.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/response.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/response.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/response.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/response.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/rule.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/rule.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/rule.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/rule.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/service.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/service.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/service.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/service.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/session.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/session.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/session.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/session.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/session_manager.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/session_manager.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/session_manager.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/session_manager.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/settings.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/settings.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/settings.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/settings.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/ssl_settings.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/ssl_settings.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/ssl_settings.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/ssl_settings.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/string.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/string.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/string.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/string.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/uri.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/uri.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/uri.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/uri.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/web_socket.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/web_socket.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/web_socket.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/web_socket.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/web_socket_message.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/web_socket_message.cpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/dependency/restbed/source/corvusoft/restbed/web_socket_message.hpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/web_socket_message.hpp">
 			<Option target="restbed"/>
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\restbed\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\restbed\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/configuration.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/configuration.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/manifest.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/manifest.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/artifacts.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/artifacts.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/configuration.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/configuration.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/manifest.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/manifest.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/artifacts.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/artifacts.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/modules/Findasio.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\modules\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findasio.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/modules/Findkashmir.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\modules\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findkashmir.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/modules/Findasio.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\modules\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findasio.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/../dependency/restbed/cmake/modules/Findkashmir.cmake">
-			<Option virtualFolder="CMake Files\..\dependency\restbed\cmake\modules\"/>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findkashmir.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\"/>

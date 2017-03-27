@@ -56,8 +56,8 @@ class SCI {
 
 }
 
-SerialPort *-- SCI : contains
-RoombaControl --* SCI : contains
-RoombaProcessing --* RoombaControl : contains
+SerialPort --* SCI : contains
+RoombaControl *-- SCI : contains
+RoombaProcessing *-- RoombaControl : contains
 
 @enduml
