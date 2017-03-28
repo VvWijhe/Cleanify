@@ -7,6 +7,7 @@ package Server {
 class Server {
   + <<constructor>> Server(port : unsigned short)
   + ~Server()
+  + addHandler(path: string, method : string, callback : function<session : pSession>) : void
   + run() : void
   + stop() : void
 
@@ -21,12 +22,14 @@ package SystemControl {
 
 class RoombaProcessing {
   + <<constructor>> RoombaProcessing()
+  + serverHandler(session : pSession) : void
 
+  - server_ : Server
   - roombaControl_ : RoombaControl
 }
 
 class SensorData {
-  + <<constructor>> SensorParser(buffer : vector<unsigned char>)
+  + <<constructor>> SensorData(buffer : vector<unsigned char>)
   + parse(buffer : vector<unsigned char>) : void
   + data() const : json
   - content_ : json
@@ -87,8 +90,9 @@ class Motor {
 
 SerialPort "1" --* Device : contains
 RoombaProcessing *-- "1" RoombaControl : contains
-RoombaControl -- SensorData : uses
+RoombaControl --> SensorData : uses
 RoombaControl *-- "*" Device
-RoombaControl *-- "1" SerialPort
+RoombaControl *-- "1" SerialPort : contains
+RoombaProcessing *-- "1" Server : contains
 
 @enduml

@@ -2,10 +2,9 @@
 title GUI - Server: upload settings
 
 GUI -> Server: POST /
-Server -> Server: parse request
-Server -> Server: check source
-Server -> Server: check roomba status
-Server -> Server: set roomba parameters
-Server -> GUI: json
+Server -> RoombaController: parse request
+RoombaController -> RoombaController: set roomba parameters
+RoombaController -> Server: send status
+Server -> GUI : json
 
 @enduml
