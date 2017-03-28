@@ -13,10 +13,9 @@ include_directories(restbed/source)
 
 ## source files
 set(SOURCE_FILES
-        io/commands.h
-        io/SerialPort.cpp io/SerialPort.h
+        IO/serial.cpp IO/serial.h
         Server/server.h Server/server.cpp
-        main.cpp Server/responses.h Server/responses.cpp io/roombaio.h io/roombacontroller.h Server/file_handler.h)
+        main.cpp Server/responses.h Server/responses.cpp Server/file_handler.h SystemControl/processing.h SystemControl/roomba_contol.h SystemControl/sensordata.h Subsystems/devices.h)
 
 ## directory for testing
 add_subdirectory(Tests)

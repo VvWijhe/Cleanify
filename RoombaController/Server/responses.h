@@ -5,8 +5,9 @@
 #ifndef ROOMBACONTROLLER_RESPONSES_H
 #define ROOMBACONTROLLER_RESPONSES_H
 
-#include <restbed>
 #include <memory>
+
+#include <restbed>
 #include "file_handler.h"
 
 namespace responses {

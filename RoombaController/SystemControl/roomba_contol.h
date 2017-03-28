@@ -5,8 +5,8 @@
 #ifndef ROOMBACONTROLLER_ROOMBACONTROLLER_H
 #define ROOMBACONTROLLER_ROOMBACONTROLLER_H
 
-namespace io {
-    class roombacontroller {
+namespace systemControl {
+    class RoombaControl {
     public:
         void setWheels(short, short);
 
@@ -17,7 +17,6 @@ namespace io {
         void setLed(enum color);
 
         void readSensors();
-
 
     private:
 

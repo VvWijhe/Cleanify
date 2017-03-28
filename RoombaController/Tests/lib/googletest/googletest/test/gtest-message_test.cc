@@ -127,7 +127,7 @@ TEST(MessageTest, StreamsInt) {
   EXPECT_EQ("123", (Message() << 123).GetString());
 }
 
-// Tests that basic io manipulators (endl, ends, and flush) can be
+// Tests that basic IO manipulators (endl, ends, and flush) can be
 // streamed to Message.
 TEST(MessageTest, StreamsBasicIoManip) {
   EXPECT_EQ("Line 1.\nA NUL char \\0 in line 2.",
