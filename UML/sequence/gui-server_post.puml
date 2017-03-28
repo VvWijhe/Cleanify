@@ -1,12 +1,11 @@
 @startuml
-title Website - Server: upload settings
+title GUI - Server: upload settings
 
-Browser -> Server: POST /
+GUI -> Server: POST /
 Server -> Server: parse request
 Server -> Server: check source
-
 Server -> Server: check roomba status
 Server -> Server: set roomba parameters
-Server -> Browser: html
+Server -> GUI: json
 
 @enduml

@@ -1,9 +1,6 @@
 @startuml
-title Website - Server sequence
+title Website - Server: get status
 
-actor User
-
-User -> Browser: open valid page
 Browser -> Server: GET /
 Server -> Server: parse request
 Server -> Browser: html

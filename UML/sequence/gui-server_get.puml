@@ -1,0 +1,8 @@
+@startuml
+title GUI - Server: get status
+
+GUI -> Server: GET /json
+Server -> Server: parse request
+Server -> GUI: json
+
+@enduml

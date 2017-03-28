@@ -4,8 +4,15 @@ skinparam classAttributeIconSize 0
 
 package Server {
 
-class HttpServer {
+class Server {
+  + <<constructor>> Server(port : unsigned short)
+  + ~Server()
+  + run() : void
+  + stop() : void
 
+  - service_ : Service
+  - settings_ : shared_ptr<Settings>
+  - thread_ : thread
 }
 
 }
@@ -13,27 +20,38 @@ class HttpServer {
 package SystemControl {
 
 class RoombaProcessing {
+  + <<constructor>> RoombaProcessing()
 
+  - roombaControl_ : RoombaControl
 }
 
-class SensorParser {
+class SensorData {
   + <<constructor>> SensorParser(buffer : vector<unsigned char>)
   + parse(buffer : vector<unsigned char>) : void
-  + map() const : map<string, int>
-  - content_ : map<string, int>
+  + data() const : json
+  - content_ : json
 }
 
 class RoombaControl {
+  + <<constructor>> RoombaControl()
+  + init() : int
+  + resetDevices() : void
+  + sendData(data : const vector<unsigned char>&)
   + setWheels(ls : short, rs : short) : void
   + setWheels(speed : short) : void
   + setRotation(speed : short, direction : enum) : void
   + setLed(color : enum) : void
-  + readSensors() : SensorData
+  + readSensors() const : SensorData
+  + getCmds() const : map<string, unsigned char>
+
+  - commands_ : map<string, unsigned char>
+  - devices_ : map< string, vector<shared_pointer<Device>> >
+  - <u>serial_ : SerialPort
 }
 
 }
 
-package HAL {
+package IO {
 
 class SerialPort {
   + <<constructor>> SerialPort(port : string, baud : baud_t)
@@ -46,18 +64,31 @@ class SerialPort {
   - status_ : int
 }
 
-class SCI {
-  + <u>write(cmd : string, data : const vector<unsigned char>&) : int
-  + <u>read(buffer : vector<unsigned char>&) : int
-  + <u>etCmds() const : map<string, unsigned char>
-
-  - <u>commands_ : map<string, unsigned char>
 }
 
+package subsystems {
+abstract class Device {
+  + <<constructor>>Device(serial : SerialPort)
+  + <i>~Device() : void
+  + <i>reset() : void
+  + <i>sendData(data : const vector<unsigned char>&) : void
+
+  - <u>serial_ : SerialPort
 }
 
-SerialPort --* SCI : contains
-RoombaControl *-- SCI : contains
-RoombaProcessing *-- RoombaControl : contains
+Motor --|> Device
+class Motor {
+  + <<constructor>>Motor(serial : SerialPort)
+  + <i>~Motor() : void
+  + <i>reset() : void
+  + <i>sendData(data : const vector<unsigned char>&) : void
+}
+}
+
+SerialPort "1" --* Device : contains
+RoombaProcessing *-- "1" RoombaControl : contains
+RoombaControl -- SensorData : uses
+RoombaControl *-- "*" Device
+RoombaControl *-- "1" SerialPort
 
 @enduml
