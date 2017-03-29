@@ -12,7 +12,7 @@ namespace systemControl {
     class mainProcessing{
     public:
         mainProcessing() : server_(80) { }
-        void serverHandler
+        void serverHandler();
 
     private:
         server::RoombaServer server_;
