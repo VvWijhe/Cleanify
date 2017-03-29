@@ -5,16 +5,9 @@
 #ifndef ROOMBACONTROLLER_ROOMBACONTROLLER_H
 #define ROOMBACONTROLLER_ROOMBACONTROLLER_H
 
-<<<<<<< Updated upstream:RoombaController/SystemControl/roomba_contol.h
 namespace systemControl {
     class RoombaControl {
-=======
-#include "roombasci.h"
 
-
-namespace io {
-    class roombacontroller {
->>>>>>> Stashed changes:RoombaController/io/roombacontroller.h
     public:
         roombacontroller(const RoombaSCI &Sci);
 
