@@ -14,6 +14,11 @@
 
 
 namespace systemControl {
+
+    enum direction_t{left, right};
+    enum color_t{red, blue, green, orange};
+
+
     class RoombaControl {
 
     public:
@@ -40,16 +45,11 @@ namespace systemControl {
 
         /// set the rotation of the roomba without forward movement.
         /// the value speed must be between -100 and 100, direction must be either right or left.
-        void setRotation(short speed, enum direction);
+        void setRotation(short speed, enum direenumction);
 
-        /**
-         * this functions sets the main led of the roomba.
-         * you must choose between: red
-         *                          blue
-         *                          green
-         *                          orange
-         */
-        void setLed(enum color);
+        ///this functions sets the main led of the roomba.
+        ///you must choose between: red, blue, green, orange
+        void setLed(color_t color);
 
         ///
         void readSensors();

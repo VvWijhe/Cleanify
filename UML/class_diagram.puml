@@ -20,8 +20,8 @@ class Server {
 
 package SystemControl {
 
-class RoombaProcessing {
-  + <<constructor>> RoombaProcessing()
+class mainProcessing {
+  + <<constructor>> mainProcessing()
   + serverHandler(session : pSession) : void
 
   - server_ : Server
@@ -89,10 +89,10 @@ class Motor {
 }
 
 SerialPort "1" --* Device : contains
-RoombaProcessing *-- "1" RoombaControl : contains
+mainProcessing *-- "1" RoombaControl : contains
 RoombaControl --> SensorData : uses
 RoombaControl *-- "*" Device
 RoombaControl *-- "1" SerialPort : contains
-RoombaProcessing *-- "1" Server : contains
+mainProcessing *-- "1" Server : contains
 
 @enduml
