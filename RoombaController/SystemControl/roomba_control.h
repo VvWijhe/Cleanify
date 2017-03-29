@@ -15,7 +15,6 @@
 
 namespace systemControl {
 
-    enum direction_t{left, right};
     enum color_t{red, blue, green, orange};
 
 
@@ -43,9 +42,11 @@ namespace systemControl {
         /// the value speed must be between -100 and 100.
         void setWheels(short speed);
 
-        /// set the rotation of the roomba without forward movement.
-        /// the value speed must be between -100 and 100, direction must be either right or left.
-        void setRotation(short speed, enum direenumction);
+        /** set the rotation of the roomba without forward movement.
+         * the value speed must be between -100 and 100, radial must be between -2000 and 2000.
+         * if the roomba must turn around itself set radius to clockwise:-1 counterclockwise:1
+         */
+        void setRotation(short speed, short radial);
 
         ///this functions sets the main led of the roomba.
         ///you must choose between: red, blue, green, orange
@@ -58,8 +59,8 @@ namespace systemControl {
 
     private:
 
-        io::SerialPort serial_ ;
-
+        io::SerialPort serial_;
+        Commands commands_;
     };
 
 
