@@ -34,7 +34,7 @@ namespace io {
 
         int writeVector(const std::vector<unsigned char> &data);
 
-        int readAll(byteVector &buffer, int limit) const;
+        int readAll(byteVector &buffer, int limit = 255) const;
 
         int getStatus() { return usbState_; }
 

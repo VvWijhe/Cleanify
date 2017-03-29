@@ -3,6 +3,6 @@ include_directories(../../)
 
 add_executable(runTests
         serial_tests.cpp
-        ../../IO/serial.cpp)
+        ../../IO/serial.cpp devices.cpp)
 
 target_link_libraries(runTests gtest gtest_main)
