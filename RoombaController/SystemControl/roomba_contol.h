@@ -5,10 +5,20 @@
 #ifndef ROOMBACONTROLLER_ROOMBACONTROLLER_H
 #define ROOMBACONTROLLER_ROOMBACONTROLLER_H
 
+<<<<<<< Updated upstream:RoombaController/SystemControl/roomba_contol.h
 namespace systemControl {
     class RoombaControl {
+=======
+#include "roombasci.h"
+
+
+namespace io {
+    class roombacontroller {
+>>>>>>> Stashed changes:RoombaController/io/roombacontroller.h
     public:
-        void setWheels(short, short);
+        roombacontroller(const RoombaSCI &Sci);
+
+        void setWheels(short ls, short rs);
 
         void setWheels(short speed);
 
@@ -19,7 +29,7 @@ namespace systemControl {
         void readSensors();
 
     private:
-
+        RoombaSCI Sci;
 
     };
 }
