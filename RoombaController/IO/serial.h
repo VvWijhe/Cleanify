@@ -30,6 +30,8 @@ namespace io {
 
         int disconnect();
 
+        int writeByte(unsigned char data);
+
         int writeVector(const std::vector<unsigned char> &data);
 
         int readAll(byteVector &buffer, int limit) const;

@@ -84,6 +84,20 @@ int SerialPort::readAll(byteVector &buffer, int limit) const {
     return 1;
 }
 
+int SerialPort::writeByte(unsigned char data) {
+    if (usbState_ < 0) {
+        std::cerr << "please connect before write" << std::endl;
+        return -1;
+    }
+
+    if (write(usbState_, &data, 1) < 0) {
+        std::cerr << "error writing: " << strerror(errno) << std::endl;
+        return -1;
+    }
+
+    return 1;
+}
+
 int SerialPort::writeVector(const std::vector<unsigned char> &data) {
     if (usbState_ < 0) {
         std::cerr << "please connect before write" << std::endl;
