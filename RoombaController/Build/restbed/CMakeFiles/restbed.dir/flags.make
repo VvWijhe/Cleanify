@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS =  -Wno-non-virtual-dtor -std=c++11 -g -O0 -Wall -Wextra -Weffc++ -pedantic -Wno-unknown-pragmas -pthread -DASIO_STANDALONE=YES -g   -std=gnu++11
 
-CXX_DEFINES = 
+CXX_DEFINES = -DBUILD_SSL=TRUE
 
-CXX_INCLUDES = -isystem /home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/asio/asio/include -isystem /home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/kashmir -I/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source 
+CXX_INCLUDES = -isystem /home/bas/CLionProjects/Cleanify/RoombaController/restbed/dependency/asio/asio/include -isystem /home/bas/CLionProjects/Cleanify/RoombaController/restbed/dependency/kashmir -I/home/bas/CLionProjects/Cleanify/RoombaController/restbed/source 
 

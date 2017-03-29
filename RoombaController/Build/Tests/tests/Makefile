@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E remove -f
+RM = /home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = /home/bas/CLionProjects/Cleanify/RoombaController
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/Build
+CMAKE_BINARY_DIR = /home/bas/CLionProjects/Cleanify/RoombaController/Build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/Buil
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -91,19 +91,19 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -P cmake_install.cmake
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -P cmake_install.cmake
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
@@ -114,7 +114,7 @@ install/local/fast: install/local
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
@@ -124,14 +124,14 @@ install/strip/fast: install/strip
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests/CMakeFiles/progress.marks
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f CMakeFiles/Makefile2 Tests/tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles 0
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(CMAKE_COMMAND) -E cmake_progress_start /home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests/CMakeFiles/progress.marks
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f CMakeFiles/Makefile2 Tests/tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f CMakeFiles/Makefile2 Tests/tests/clean
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f CMakeFiles/Makefile2 Tests/tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f CMakeFiles/Makefile2 Tests/tests/preinstall
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f CMakeFiles/Makefile2 Tests/tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f CMakeFiles/Makefile2 Tests/tests/preinstall
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f CMakeFiles/Makefile2 Tests/tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Tests/tests/CMakeFiles/runTests.dir/rule:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f CMakeFiles/Makefile2 Tests/tests/CMakeFiles/runTests.dir/rule
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f CMakeFiles/Makefile2 Tests/tests/CMakeFiles/runTests.dir/rule
 .PHONY : Tests/tests/CMakeFiles/runTests.dir/rule
 
 # Convenience name for target.
@@ -166,62 +166,62 @@ runTests: Tests/tests/CMakeFiles/runTests.dir/rule
 
 # fast build rule for target.
 runTests/fast:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/build
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/build
 .PHONY : runTests/fast
 
-__/__/Sci/SerialPort.o: __/__/Sci/SerialPort.cpp.o
+__/__/IO/serial.o: __/__/IO/serial.cpp.o
 
-.PHONY : __/__/Sci/SerialPort.o
-
-# target to build an object file
-__/__/Sci/SerialPort.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o
-.PHONY : __/__/Sci/SerialPort.cpp.o
-
-__/__/Sci/SerialPort.i: __/__/Sci/SerialPort.cpp.i
-
-.PHONY : __/__/Sci/SerialPort.i
-
-# target to preprocess a source file
-__/__/Sci/SerialPort.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.i
-.PHONY : __/__/Sci/SerialPort.cpp.i
-
-__/__/Sci/SerialPort.s: __/__/Sci/SerialPort.cpp.s
-
-.PHONY : __/__/Sci/SerialPort.s
-
-# target to generate assembly for a file
-__/__/Sci/SerialPort.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.s
-.PHONY : __/__/Sci/SerialPort.cpp.s
-
-sci_tests.o: sci_tests.cpp.o
-
-.PHONY : sci_tests.o
+.PHONY : __/__/IO/serial.o
 
 # target to build an object file
-sci_tests.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o
-.PHONY : sci_tests.cpp.o
+__/__/IO/serial.cpp.o:
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o
+.PHONY : __/__/IO/serial.cpp.o
 
-sci_tests.i: sci_tests.cpp.i
+__/__/IO/serial.i: __/__/IO/serial.cpp.i
 
-.PHONY : sci_tests.i
+.PHONY : __/__/IO/serial.i
 
 # target to preprocess a source file
-sci_tests.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.i
-.PHONY : sci_tests.cpp.i
+__/__/IO/serial.cpp.i:
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.i
+.PHONY : __/__/IO/serial.cpp.i
 
-sci_tests.s: sci_tests.cpp.s
+__/__/IO/serial.s: __/__/IO/serial.cpp.s
 
-.PHONY : sci_tests.s
+.PHONY : __/__/IO/serial.s
 
 # target to generate assembly for a file
-sci_tests.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.s
-.PHONY : sci_tests.cpp.s
+__/__/IO/serial.cpp.s:
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.s
+.PHONY : __/__/IO/serial.cpp.s
+
+serial_tests.o: serial_tests.cpp.o
+
+.PHONY : serial_tests.o
+
+# target to build an object file
+serial_tests.cpp.o:
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o
+.PHONY : serial_tests.cpp.o
+
+serial_tests.i: serial_tests.cpp.i
+
+.PHONY : serial_tests.i
+
+# target to preprocess a source file
+serial_tests.cpp.i:
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.i
+.PHONY : serial_tests.cpp.i
+
+serial_tests.s: serial_tests.cpp.s
+
+.PHONY : serial_tests.s
+
+# target to generate assembly for a file
+serial_tests.cpp.s:
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.s
+.PHONY : serial_tests.cpp.s
 
 # Help Target
 help:
@@ -236,12 +236,12 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... runTests"
-	@echo "... __/__/Sci/SerialPort.o"
-	@echo "... __/__/Sci/SerialPort.i"
-	@echo "... __/__/Sci/SerialPort.s"
-	@echo "... sci_tests.o"
-	@echo "... sci_tests.i"
-	@echo "... sci_tests.s"
+	@echo "... __/__/IO/serial.o"
+	@echo "... __/__/IO/serial.i"
+	@echo "... __/__/IO/serial.s"
+	@echo "... serial_tests.o"
+	@echo "... serial_tests.i"
+	@echo "... serial_tests.s"
 .PHONY : help
 
 
@@ -253,6 +253,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

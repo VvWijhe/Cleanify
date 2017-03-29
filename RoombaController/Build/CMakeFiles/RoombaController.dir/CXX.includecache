@@ -278,11 +278,11 @@ corvusoft/restbed/context_placeholder.hpp
 corvusoft/restbed/context_placeholder_base.hpp
 ../restbed/source/corvusoft/restbed/context_placeholder_base.hpp
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.cpp
-SerialPort.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.h
+/home/bas/CLionProjects/Cleanify/RoombaController/IO/serial.cpp
+serial.h
+/home/bas/CLionProjects/Cleanify/RoombaController/IO/serial.h
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.h
+/home/bas/CLionProjects/Cleanify/RoombaController/IO/serial.h
 iostream
 -
 array
@@ -308,45 +308,35 @@ vector
 future
 -
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/commands.h
-iostream
--
-map
--
+/home/bas/CLionProjects/Cleanify/RoombaController/Server/file_handler.h
 string
 -
-sstream
--
-iterator
--
-vector
--
-
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/roombasci.h
-commands.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/commands.h
-SerialPort.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.h
-
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/responses.cpp
 fstream
 -
-responses.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/responses.h
-
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/responses.h
-restbed
+streambuf
 -
+iostream
+-
+
+/home/bas/CLionProjects/Cleanify/RoombaController/Server/responses.cpp
+responses.h
+/home/bas/CLionProjects/Cleanify/RoombaController/Server/responses.h
+
+/home/bas/CLionProjects/Cleanify/RoombaController/Server/responses.h
 memory
 -
+restbed
+-
+file_handler.h
+/home/bas/CLionProjects/Cleanify/RoombaController/Server/file_handler.h
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/server.cpp
+/home/bas/CLionProjects/Cleanify/RoombaController/Server/server.cpp
 iostream
 -
 server.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/server.h
+/home/bas/CLionProjects/Cleanify/RoombaController/Server/server.h
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/server.h
+/home/bas/CLionProjects/Cleanify/RoombaController/Server/server.h
 thread
 -
 fstream
@@ -360,13 +350,11 @@ algorithm
 restbed
 -
 responses.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/responses.h
+/home/bas/CLionProjects/Cleanify/RoombaController/Server/responses.h
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/main.cpp
+/home/bas/CLionProjects/Cleanify/RoombaController/main.cpp
 iostream
 -
-Sci/roombasci.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/roombasci.h
 Server/server.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/server.h
+/home/bas/CLionProjects/Cleanify/RoombaController/Server/server.h
 

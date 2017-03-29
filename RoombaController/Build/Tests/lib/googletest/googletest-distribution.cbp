@@ -8,27 +8,27 @@
 		<Option virtualFolders="CMake Files\;CMake Files\restbed\;CMake Files\restbed\cmake\;CMake Files\restbed\cmake\modules\;CMake Files\Tests\;CMake Files\Tests\tests\;CMake Files\Tests\lib\;CMake Files\Tests\lib\googletest\;CMake Files\Tests\lib\googletest\googlemock\;CMake Files\Tests\lib\googletest\googletest\;CMake Files\Tests\lib\googletest\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest"/>
+				<Option working_dir="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock_main">
-				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock"/>
+				<Option output="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -39,24 +39,24 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock_main/fast">
-				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock"/>
+				<Option output="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -67,24 +67,24 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock">
-				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/libgmock.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock"/>
+				<Option output="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/libgmock.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -95,24 +95,24 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock/fast">
-				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/libgmock.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock"/>
+				<Option output="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/libgmock.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -123,22 +123,22 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main">
-				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest"/>
+				<Option output="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -149,22 +149,22 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main/fast">
-				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest"/>
+				<Option output="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -175,22 +175,22 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest">
-				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/libgtest.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest"/>
+				<Option output="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -201,22 +201,22 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest/fast">
-				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/libgtest.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest"/>
+				<Option output="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
+					<Add directory="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -227,128 +227,134 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/src/gmock-all.cc">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock_main"/>
 			<Option target="gmock"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/src/gmock_main.cc">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/src/gmock_main.cc">
 			<Option target="gmock_main"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/src/gtest-all.cc">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/src/gtest-all.cc">
 			<Option target="gmock_main"/>
 			<Option target="gmock"/>
 			<Option target="gtest"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/src/gtest_main.cc">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\restbed\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\restbed\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/configuration.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/configuration.cmake">
 			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/manifest.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/manifest.cmake">
 			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/artifacts.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/artifacts.cmake">
 			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/configuration.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/configuration.cmake">
 			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/manifest.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/manifest.cmake">
 			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/artifacts.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/artifacts.cmake">
 			<Option virtualFolder="CMake Files\restbed\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findasio.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/modules/Findasio.cmake">
 			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findkashmir.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/modules/Findkashmir.cmake">
 			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findasio.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/modules/Findopenssl.cmake">
 			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/cmake/modules/Findkashmir.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/modules/Findasio.cmake">
 			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/modules/Findkashmir.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
+		</Unit>
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/restbed/cmake/modules/Findopenssl.cmake">
+			<Option virtualFolder="CMake Files\restbed\cmake\modules\"/>
+		</Unit>
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/tests/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\tests\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/tests/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\tests\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googlemock\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googlemock\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googlemock\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googlemock\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googletest\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googletest\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googletest\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googletest\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/CMakeLists.txt">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googletest\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/cmake/internal_utils.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/cmake/internal_utils.cmake">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/cmake/internal_utils.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/cmake/internal_utils.cmake">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/cmake/internal_utils.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/cmake/internal_utils.cmake">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/cmake/internal_utils.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/cmake/internal_utils.cmake">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/cmake/internal_utils.cmake">
+		<Unit filename="/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/cmake/internal_utils.cmake">
 			<Option virtualFolder="CMake Files\Tests\lib\googletest\googletest\cmake\"/>
 		</Unit>
 	</Project>

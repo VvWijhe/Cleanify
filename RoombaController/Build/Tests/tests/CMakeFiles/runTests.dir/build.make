@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E remove -f
+RM = /home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = /home/bas/CLionProjects/Cleanify/RoombaController
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/Build
+CMAKE_BINARY_DIR = /home/bas/CLionProjects/Cleanify/RoombaController/Build
 
 # Include any dependencies generated for this target.
 include Tests/tests/CMakeFiles/runTests.dir/depend.make
@@ -57,87 +57,87 @@ include Tests/tests/CMakeFiles/runTests.dir/progress.make
 # Include the compile flags for this target's objects.
 include Tests/tests/CMakeFiles/runTests.dir/flags.make
 
-Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o: Tests/tests/CMakeFiles/runTests.dir/flags.make
-Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o: ../Tests/tests/sci_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/sci_tests.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/sci_tests.cpp
+Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o: Tests/tests/CMakeFiles/runTests.dir/flags.make
+Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o: ../Tests/tests/serial_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o"
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/serial_tests.cpp.o -c /home/bas/CLionProjects/Cleanify/RoombaController/Tests/tests/serial_tests.cpp
 
-Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/sci_tests.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/sci_tests.cpp > CMakeFiles/runTests.dir/sci_tests.cpp.i
+Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/serial_tests.cpp.i"
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bas/CLionProjects/Cleanify/RoombaController/Tests/tests/serial_tests.cpp > CMakeFiles/runTests.dir/serial_tests.cpp.i
 
-Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/sci_tests.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/sci_tests.cpp -o CMakeFiles/runTests.dir/sci_tests.cpp.s
+Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/serial_tests.cpp.s"
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bas/CLionProjects/Cleanify/RoombaController/Tests/tests/serial_tests.cpp -o CMakeFiles/runTests.dir/serial_tests.cpp.s
 
-Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o.requires:
+Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o.requires:
 
-.PHONY : Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o.requires
+.PHONY : Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o.requires
 
-Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o.provides: Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o.requires
-	$(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o.provides.build
-.PHONY : Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o.provides
+Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o.provides: Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o.requires
+	$(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o.provides.build
+.PHONY : Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o.provides
 
-Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o.provides.build: Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o
+Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o.provides.build: Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o
 
 
-Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o: Tests/tests/CMakeFiles/runTests.dir/flags.make
-Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o: ../Sci/SerialPort.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.cpp
+Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o: Tests/tests/CMakeFiles/runTests.dir/flags.make
+Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o: ../IO/serial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o"
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o -c /home/bas/CLionProjects/Cleanify/RoombaController/IO/serial.cpp
 
-Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.cpp > CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.i
+Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/__/__/IO/serial.cpp.i"
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bas/CLionProjects/Cleanify/RoombaController/IO/serial.cpp > CMakeFiles/runTests.dir/__/__/IO/serial.cpp.i
 
-Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.cpp -o CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.s
+Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/__/IO/serial.cpp.s"
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bas/CLionProjects/Cleanify/RoombaController/IO/serial.cpp -o CMakeFiles/runTests.dir/__/__/IO/serial.cpp.s
 
-Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o.requires:
+Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o.requires:
 
-.PHONY : Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o.requires
+.PHONY : Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o.requires
 
-Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o.provides: Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o.requires
-	$(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o.provides.build
-.PHONY : Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o.provides
+Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o.provides: Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o.requires
+	$(MAKE) -f Tests/tests/CMakeFiles/runTests.dir/build.make Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o.provides.build
+.PHONY : Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o.provides
 
-Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o.provides.build: Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o
+Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o.provides.build: Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o
 
 
 # Object files for target runTests
 runTests_OBJECTS = \
-"CMakeFiles/runTests.dir/sci_tests.cpp.o" \
-"CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o"
+"CMakeFiles/runTests.dir/serial_tests.cpp.o" \
+"CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o"
 
 # External object files for target runTests
 runTests_EXTERNAL_OBJECTS =
 
-Tests/tests/runTests: Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o
-Tests/tests/runTests: Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o
+Tests/tests/runTests: Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o
+Tests/tests/runTests: Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o
 Tests/tests/runTests: Tests/tests/CMakeFiles/runTests.dir/build.make
 Tests/tests/runTests: Tests/lib/googletest/googlemock/gtest/libgtest.a
 Tests/tests/runTests: Tests/lib/googletest/googlemock/gtest/libgtest_main.a
 Tests/tests/runTests: Tests/lib/googletest/googlemock/gtest/libgtest.a
 Tests/tests/runTests: Tests/tests/CMakeFiles/runTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable runTests"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/runTests.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable runTests"
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/runTests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Tests/tests/CMakeFiles/runTests.dir/build: Tests/tests/runTests
 
 .PHONY : Tests/tests/CMakeFiles/runTests.dir/build
 
-Tests/tests/CMakeFiles/runTests.dir/requires: Tests/tests/CMakeFiles/runTests.dir/sci_tests.cpp.o.requires
-Tests/tests/CMakeFiles/runTests.dir/requires: Tests/tests/CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o.requires
+Tests/tests/CMakeFiles/runTests.dir/requires: Tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o.requires
+Tests/tests/CMakeFiles/runTests.dir/requires: Tests/tests/CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o.requires
 
 .PHONY : Tests/tests/CMakeFiles/runTests.dir/requires
 
 Tests/tests/CMakeFiles/runTests.dir/clean:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests && $(CMAKE_COMMAND) -P CMakeFiles/runTests.dir/cmake_clean.cmake
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests && $(CMAKE_COMMAND) -P CMakeFiles/runTests.dir/cmake_clean.cmake
 .PHONY : Tests/tests/CMakeFiles/runTests.dir/clean
 
 Tests/tests/CMakeFiles/runTests.dir/depend:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jamie/Documents/Project4/Cleanify/RoombaController /home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests /home/jamie/Documents/Project4/Cleanify/RoombaController/Build /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests/CMakeFiles/runTests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bas/CLionProjects/Cleanify/RoombaController/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bas/CLionProjects/Cleanify/RoombaController /home/bas/CLionProjects/Cleanify/RoombaController/Tests/tests /home/bas/CLionProjects/Cleanify/RoombaController/Build /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests /home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/tests/CMakeFiles/runTests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Tests/tests/CMakeFiles/runTests.dir/depend
 

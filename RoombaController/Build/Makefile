@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E remove -f
+RM = /home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = /home/bas/CLionProjects/Cleanify/RoombaController
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/Build
+CMAKE_BINARY_DIR = /home/bas/CLionProjects/Cleanify/RoombaController/Build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/Buil
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,19 +80,19 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -P cmake_install.cmake
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -P cmake_install.cmake
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
@@ -103,7 +103,7 @@ install/local/fast: install/local
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
@@ -114,7 +114,7 @@ install/strip/fast: install/strip
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -124,9 +124,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles /home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -245,32 +245,32 @@ gtest/fast:
 	$(MAKE) -f Tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make Tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-Sci/SerialPort.o: Sci/SerialPort.cpp.o
+IO/serial.o: IO/serial.cpp.o
 
-.PHONY : Sci/SerialPort.o
+.PHONY : IO/serial.o
 
 # target to build an object file
-Sci/SerialPort.cpp.o:
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Sci/SerialPort.cpp.o
-.PHONY : Sci/SerialPort.cpp.o
+IO/serial.cpp.o:
+	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/IO/serial.cpp.o
+.PHONY : IO/serial.cpp.o
 
-Sci/SerialPort.i: Sci/SerialPort.cpp.i
+IO/serial.i: IO/serial.cpp.i
 
-.PHONY : Sci/SerialPort.i
+.PHONY : IO/serial.i
 
 # target to preprocess a source file
-Sci/SerialPort.cpp.i:
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Sci/SerialPort.cpp.i
-.PHONY : Sci/SerialPort.cpp.i
+IO/serial.cpp.i:
+	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/IO/serial.cpp.i
+.PHONY : IO/serial.cpp.i
 
-Sci/SerialPort.s: Sci/SerialPort.cpp.s
+IO/serial.s: IO/serial.cpp.s
 
-.PHONY : Sci/SerialPort.s
+.PHONY : IO/serial.s
 
 # target to generate assembly for a file
-Sci/SerialPort.cpp.s:
-	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Sci/SerialPort.cpp.s
-.PHONY : Sci/SerialPort.cpp.s
+IO/serial.cpp.s:
+	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/IO/serial.cpp.s
+.PHONY : IO/serial.cpp.s
 
 Server/responses.o: Server/responses.cpp.o
 
@@ -326,6 +326,33 @@ Server/server.cpp.s:
 	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/Server/server.cpp.s
 .PHONY : Server/server.cpp.s
 
+SystemControl/roomba_control.o: SystemControl/roomba_control.cpp.o
+
+.PHONY : SystemControl/roomba_control.o
+
+# target to build an object file
+SystemControl/roomba_control.cpp.o:
+	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/SystemControl/roomba_control.cpp.o
+.PHONY : SystemControl/roomba_control.cpp.o
+
+SystemControl/roomba_control.i: SystemControl/roomba_control.cpp.i
+
+.PHONY : SystemControl/roomba_control.i
+
+# target to preprocess a source file
+SystemControl/roomba_control.cpp.i:
+	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/SystemControl/roomba_control.cpp.i
+.PHONY : SystemControl/roomba_control.cpp.i
+
+SystemControl/roomba_control.s: SystemControl/roomba_control.cpp.s
+
+.PHONY : SystemControl/roomba_control.s
+
+# target to generate assembly for a file
+SystemControl/roomba_control.cpp.s:
+	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/SystemControl/roomba_control.cpp.s
+.PHONY : SystemControl/roomba_control.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -372,15 +399,18 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... Sci/SerialPort.o"
-	@echo "... Sci/SerialPort.i"
-	@echo "... Sci/SerialPort.s"
+	@echo "... IO/serial.o"
+	@echo "... IO/serial.i"
+	@echo "... IO/serial.s"
 	@echo "... Server/responses.o"
 	@echo "... Server/responses.i"
 	@echo "... Server/responses.s"
 	@echo "... Server/server.o"
 	@echo "... Server/server.i"
 	@echo "... Server/server.s"
+	@echo "... SystemControl/roomba_control.o"
+	@echo "... SystemControl/roomba_control.i"
+	@echo "... SystemControl/roomba_control.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -6,5 +6,5 @@ CXX_FLAGS = -g    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source -I/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include -I/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock -I/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include -I/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest 
+CXX_INCLUDES = -I/home/bas/CLionProjects/Cleanify/RoombaController/restbed/source -I/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock/include -I/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googlemock -I/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest/include -I/home/bas/CLionProjects/Cleanify/RoombaController/Tests/lib/googletest/googletest 
 

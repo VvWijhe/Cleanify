@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/runTests.dir/sci_tests.cpp.o"
-  "CMakeFiles/runTests.dir/__/__/Sci/SerialPort.cpp.o"
+  "CMakeFiles/runTests.dir/serial_tests.cpp.o"
+  "CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o"
   "runTests.pdb"
   "runTests"
 )
