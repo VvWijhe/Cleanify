@@ -15,7 +15,7 @@ include_directories(restbed/source)
 set(SOURCE_FILES
         IO/serial.cpp IO/serial.h
         Server/server.h Server/server.cpp
-        main.cpp Server/responses.h Server/responses.cpp Server/file_handler.h SystemControl/processing.h SystemControl/roomba_contol.h SystemControl/sensordata.h Subsystems/devices.h)
+        main.cpp Server/responses.h Server/responses.cpp Server/file_handler.h SystemControl/main_process.h SystemControl/roomba_contol.h SystemControl/sensordata.h Subsystems/devices.h)
 
 ## directory for testing
 add_subdirectory(Tests)
