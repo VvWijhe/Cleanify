@@ -8,6 +8,9 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <memory>
+
+#include "../Subsystems/devices.h"
 #include "../IO/serial.h"
 #include "commands.h"
 
@@ -15,14 +18,16 @@
 
 namespace systemControl {
 
-    enum color_t{red, blue, green, orange};
+    typedef enum : int {red, blue, green, orange} color_t;
 
 
     class RoombaControl {
 
     public:
 
-        RoombaControl();
+        RoombaControl(std::string usbName, speed_t baud);
+
+        ~RoombaControl();
 
         ///initialize the roomba by setting it in the right state
         int init();
@@ -58,7 +63,7 @@ namespace systemControl {
         const std::map<std::string, unsigned char> getCmds();
 
     private:
-
+        std::map<std::string, subsystems::Device*> devices_;
         io::SerialPort serial_;
         Commands commands_;
     };

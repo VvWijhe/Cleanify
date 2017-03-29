@@ -20,8 +20,8 @@ namespace subsystems {
          * @param serial A serial port object.
          * @param id The name of the device.
          */
-        Device(io::SerialPort &serial, const std::string &id) :
-                id_(id),
+        Device(io::SerialPort &serial, unsigned char opcode) :
+                opcode_(opcode),
                 serial_(serial) {}
 
         /**
@@ -39,18 +39,14 @@ namespace subsystems {
          * @param cmd The command opcode of the device.
          * @param data The data to be sent
          */
-        void sendData(unsigned char cmd, const io::byteVector &data) {
-            serial_.writeByte(cmd);
+        void sendData(const io::byteVector &data) {
+            serial_.writeByte(128);
+            serial_.writeByte(opcode_);
             serial_.writeVector(data);
         }
 
-        /**
-         * @return Id of the device
-         */
-        std::string getId() const { return id_; }
-
     private:
-        std::string id_;
+        unsigned char opcode_;
         io::SerialPort serial_;
     };
 
@@ -65,8 +61,8 @@ namespace subsystems {
          * @param serial A serial port object.
          * @param id The name of the device.
          */
-        Motor(io::SerialPort &serial, const std::string &id) :
-                Device(serial, id) {}
+        Motor(io::SerialPort &serial, unsigned char opcode) :
+                Device(serial, opcode) {}
 
         /**
          * @brief Destructor sets the device idle.
@@ -92,8 +88,8 @@ namespace subsystems {
          * @param serial A serial port object.
          * @param id The name of the device.
          */
-        Leds(io::SerialPort &serial, const std::string &id) :
-                Device(serial, id) {}
+        Leds(io::SerialPort &serial, unsigned char opcode) :
+                Device(serial, opcode) {}
 
         /**
          * @brief Destructor sets the device idle.
@@ -119,8 +115,8 @@ namespace subsystems {
          * @param serial A serial port object.
          * @param id The name of the device.
          */
-        Speaker(io::SerialPort &serial, const std::string &id) :
-                Device(serial, id) {}
+        Speaker(io::SerialPort &serial, unsigned char opcode) :
+                Device(serial, opcode) {}
 
         /**
          * @brief Destructor sets the device idle.

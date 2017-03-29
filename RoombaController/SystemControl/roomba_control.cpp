@@ -6,8 +6,20 @@
 
 using namespace systemControl;
 
-int RoombaControl::init() {
+RoombaControl::RoombaControl(std::string usbName, speed_t baud) :
+        serial_(usbName, baud) {
 
+}
+
+RoombaControl::~RoombaControl() {
+    for(auto &device : devices_) {
+        delete device.second;
+    }
+}
+
+int RoombaControl::init() {
+    // add devices
+    devices_["motors"] = new subsystems::Motor(serial_, commands_["DrivePwm"]);
 
     return 0;
 }
@@ -35,7 +47,10 @@ void RoombaControl::setWheels(short ls, short rs) {
     data.push_back(hexl_hb);
     data.push_back(hexl_lb);
 
-    sendData(data);
+    //sendData(data);
+
+    // kan zijn:
+    devices_["motor"]->sendData(data);
 }
 
 void RoombaControl::setWheels(short speed) {
@@ -46,14 +61,15 @@ void RoombaControl::setWheels(short speed) {
     unsigned char hexr_hb = hexl_hb;
     unsigned char hexr_lb = hexl_lb;
 
-    data.push_back(145);
     data.push_back(hexr_hb);
     data.push_back(hexr_lb);
     data.push_back(hexl_hb);
     data.push_back(hexl_lb);
 
-    sendData(data);
+    //sendData(data);
 
+    // kan zijn:
+    devices_["motor"]->sendData(data);
 }
 
 void RoombaControl::setRotation(short speed, short radial) {
@@ -71,13 +87,11 @@ void RoombaControl::setRotation(short speed, short radial) {
     data.push_back(rad_lb);
 
 
-
-
 }
 
 void RoombaControl::setLed(color_t color) {
 
-    switch(color){
+    switch (color) {
         case red:
 
             break;
@@ -103,7 +117,7 @@ void RoombaControl::readSensors() {
 
 }
 
-const std::map<std::string, unsigned char>  RoombaControl::getCmds() {
+const std::map<std::string, unsigned char> RoombaControl::getCmds() {
 
 
 }

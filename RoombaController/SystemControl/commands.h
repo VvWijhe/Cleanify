@@ -58,6 +58,11 @@ namespace systemControl {
             return commands_.end();
         }
 
+        unsigned char operator[](std::string cmd) {
+            if(commands_.find(cmd) == commands_.end()) std::cerr << "command not found" << std::endl;
+            return commands_[cmd];
+        }
+
     private:
         std::map<std::string, unsigned char> commands_;
     };
