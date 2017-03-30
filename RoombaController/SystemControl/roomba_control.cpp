@@ -19,38 +19,33 @@ RoombaControl::~RoombaControl() {
 
 int RoombaControl::init() {
     // add devices
-    devices_["motors"] = new subsystems::Motor(serial_, commands_["DrivePwm"]);
+    devices_[devices_t::wheels] = new subsystems::Motor(&serial_, commands_["DrivePwm"]);
 
+    // start
+    sendData({128});
     return 0;
+}
+
+void RoombaControl::setBaud(RoombaControl::baud_t baud) {
+
 }
 
 void RoombaControl::resetDevices() {
 
 }
 
-int RoombaControl::sendData(const std::vector<unsigned char> &) {
+int RoombaControl::sendData(const std::vector<unsigned char> &data) {
 
-
+    return 1;
 }
 
 void RoombaControl::setWheels(short ls, short rs) {
-    io::byteVector data;
+    auto hexl_hb = static_cast<unsigned char>(((ls * 5) >> 8) & 0xFF);
+    auto hexl_lb = static_cast<unsigned char>((ls * 5) & 0xFF);
+    auto hexr_hb = static_cast<unsigned char>(((rs * 5) >> 8) & 0xFF);
+    auto hexr_lb = static_cast<unsigned char>((rs * 5) & 0xFF);
 
-    unsigned char hexl_hb = ((ls * 5) >> 8) & 0xFF;
-    unsigned char hexl_lb = (ls * 5) & 0xFF;
-    unsigned char hexr_hb = ((rs * 5) >> 8) & 0xFF;
-    unsigned char hexr_lb = (rs * 5) & 0xFF;
-
-    data.push_back(145);
-    data.push_back(hexr_hb);
-    data.push_back(hexr_lb);
-    data.push_back(hexl_hb);
-    data.push_back(hexl_lb);
-
-    //sendData(data);
-
-    // kan zijn:
-    devices_["motor"]->sendData(data);
+    devices_[devices_t::wheels]->sendData({hexr_hb, hexr_lb, hexl_hb, hexl_lb});
 }
 
 void RoombaControl::setWheels(short speed) {
@@ -69,7 +64,7 @@ void RoombaControl::setWheels(short speed) {
     //sendData(data);
 
     // kan zijn:
-    devices_["motor"]->sendData(data);
+    devices_[devices_t::wheels]->sendData(data);
 }
 
 void RoombaControl::setRotation(short speed, short radial) {

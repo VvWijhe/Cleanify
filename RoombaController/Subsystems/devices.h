@@ -39,7 +39,6 @@ namespace subsystems {
          * @param data The data to be sent
          */
         void sendData(const io::byteVector &data) {
-            serial_->writeByte(128);
             serial_->writeByte(opcode_);
             serial_->writeVector(data);
         }
@@ -49,7 +48,6 @@ namespace subsystems {
         io::SerialPort *serial_;
     };
 
-    /// TODO
     /**
      * @brief Roomba device for controlling the motors.
      */
@@ -78,7 +76,6 @@ namespace subsystems {
         }
     };
 
-    /// TODO
     /**
      * @brief Roomba device for controlling the leds.
      */
@@ -107,7 +104,6 @@ namespace subsystems {
         }
     };
 
-    /// TODO
     /**
      * @brief Roomba device for controlling the leds.
      */

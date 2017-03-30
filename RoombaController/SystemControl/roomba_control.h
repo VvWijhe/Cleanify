@@ -15,63 +15,88 @@
 #include "commands.h"
 
 
-
 namespace systemControl {
-
-    typedef enum : int {red, blue, green, orange} color_t;
-
-
     class RoombaControl {
-
     public:
+        typedef enum : int {
+            wheels, leds
+        } devices_t;
+
+        typedef enum : int {
+            red, blue, green, orange
+        } color_t;
+
+        typedef enum : int {
+            b19200, b115200
+        } baud_t;
 
         RoombaControl(std::string usbName, speed_t baud);
 
         ~RoombaControl();
 
-        ///initialize the roomba by setting it in the right state
+        /**
+         * @brief Initialize the roomba by setting it in the right state.
+         * @return 1 if succesfull, -1 if failed
+         */
         int init();
 
-        ///reset the device by restarting it
+        /**
+         * @brief Sets the baudrate.
+         * @param baud Choices: 19200 and 115200
+         */
+        void setBaud(baud_t baud);
+
+        /**
+         * @brief reset the device by restarting it
+         */
         void resetDevices();
 
-        /// send the vector with data to the roomba via serial.cpp
-        int sendData(const std::vector<unsigned char>&);
+        /**
+         * @brief Sends bytes in a vector to the roomba.
+         * @param data
+         * @return -1 if failed, 1 if succesfull.
+         */
+        int sendData(const std::vector<unsigned char> &data);
 
-
-        /// controll the roomba by changing the speed of each wheel seperately.
-        /// the value ls and rs must be between -100 and 100.
+        /**
+         * @brief Control the roomba by changing the speed of each wheel seperately.
+         * @param ls Speed of left wheel between -100 and 100.
+         * @param rs Speed of right wheel between -100 and 100.
+         */
         void setWheels(short ls, short rs);
 
-        /// set the forward speed of the roomba.
-        /// the value speed must be between -100 and 100.
+        /**
+         * @brief Sets the speed of both wheels.
+         * @param speed Speed of the wheels between -100 and 100.
+         */
         void setWheels(short speed);
 
-        /** set the rotation of the roomba without forward movement.
+        /**
+         * set the rotation of the roomba without forward movement.
          * the value speed must be between -100 and 100, radial must be between -2000 and 2000.
          * if the roomba must turn around itself set radius to clockwise:-1 counterclockwise:1
          */
         void setRotation(short speed, short radial);
 
-        ///this functions sets the main led of the roomba.
-        ///you must choose between: red, blue, green, orange
+        /**
+         * @brief This functions sets the main led of the roomba.
+         * @param color: red, blue, green, orange
+         */
         void setLed(color_t color);
 
-        ///
+        /// TODO
         void readSensors();
 
         const std::map<std::string, unsigned char> getCmds();
 
     private:
-        std::map<std::string, subsystems::Device*> devices_;
+        std::map<devices_t, subsystems::Device *> devices_;
         io::SerialPort serial_;
         Commands commands_;
     };
 
 
 }
-
-
 
 
 #endif //ROOMBACONTROLLER_ROOMBACONTROLLER_H
