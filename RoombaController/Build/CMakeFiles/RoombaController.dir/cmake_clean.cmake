@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/RoombaController.dir/Sci/SerialPort.cpp.o"
+  "CMakeFiles/RoombaController.dir/IO/serial.cpp.o"
   "CMakeFiles/RoombaController.dir/Server/server.cpp.o"
   "CMakeFiles/RoombaController.dir/main.cpp.o"
   "CMakeFiles/RoombaController.dir/Server/responses.cpp.o"
+  "CMakeFiles/RoombaController.dir/SystemControl/roomba_control.cpp.o"
   "RoombaController.pdb"
   "RoombaController"
 )

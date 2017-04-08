@@ -4,9 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/Sci/SerialPort.cpp.o"
+  "/home/jamie/Documents/Project4/Cleanify/RoombaController/IO/serial.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/IO/serial.cpp.o"
   "/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/responses.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/Server/responses.cpp.o"
   "/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/server.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/Server/server.cpp.o"
+  "/home/jamie/Documents/Project4/Cleanify/RoombaController/SystemControl/roomba_control.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/SystemControl/roomba_control.cpp.o"
   "/home/jamie/Documents/Project4/Cleanify/RoombaController/main.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

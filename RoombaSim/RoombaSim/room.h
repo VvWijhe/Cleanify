@@ -4,6 +4,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsLineItem>
 #include <vector>
+#include <memory>
 
 #include "roomba.h"
 #include "helper.h"
@@ -17,18 +18,9 @@ public:
    Room();
 
    ~Room() {
-      // delete wall
-      for(auto &wall : _walls) {
-         delete wall;
-      }
-
-      // delete routes
-      for(auto &route : _route) {
-         delete route;
-      }
    }
 
-   Roomba* getRoomba() const { return _roomba; }
+   Roomba* getRoomba() const { return _roomba.get(); }
 
 public slots:
    void update();
@@ -37,10 +29,10 @@ signals:
    void updated();
 
 private:
-   vector<Line *> _walls;
-   Roomba *_roomba;
+   vector<std::shared_ptr<Line>> _walls;
+   std::shared_ptr<Roomba> _roomba;
    int _lastRouteX, _lastRouteY;
-   vector<Line *> _route;
+   vector<std::shared_ptr<Line>> _route;
 };
 
 #endif // ROOM_H

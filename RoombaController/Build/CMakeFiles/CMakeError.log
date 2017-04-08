@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5e998/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5e998.dir/build.make CMakeFiles/cmTC_5e998.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_47164/fast"
+/usr/bin/make -f CMakeFiles/cmTC_47164.dir/build.make CMakeFiles/cmTC_47164.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5e998.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_5e998.dir/CheckSymbolExists.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_5e998
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e998.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_5e998.dir/CheckSymbolExists.c.o  -o cmTC_5e998 
-CMakeFiles/cmTC_5e998.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_47164.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_47164.dir/CheckSymbolExists.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_47164
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47164.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_47164.dir/CheckSymbolExists.c.o  -o cmTC_47164 
+CMakeFiles/cmTC_47164.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_5e998.dir/build.make:97: recipe for target 'cmTC_5e998' failed
-make[1]: *** [cmTC_5e998] Error 1
+CMakeFiles/cmTC_47164.dir/build.make:97: recipe for target 'cmTC_47164' failed
+make[1]: *** [cmTC_47164] Error 1
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_5e998/fast' failed
-make: *** [cmTC_5e998/fast] Error 2
+Makefile:126: recipe for target 'cmTC_47164/fast' failed
+make: *** [cmTC_47164/fast] Error 2
 
 File /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3654e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3654e.dir/build.make CMakeFiles/cmTC_3654e.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_8fef3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8fef3.dir/build.make CMakeFiles/cmTC_8fef3.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3654e.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_3654e.dir/CheckFunctionExists.c.o   -c /home/jamie/programs/clion-2016.2.2/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
-Linking C executable cmTC_3654e
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3654e.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_3654e.dir/CheckFunctionExists.c.o  -o cmTC_3654e -lpthreads 
+Building C object CMakeFiles/cmTC_8fef3.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8fef3.dir/CheckFunctionExists.c.o   -c /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8fef3
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8fef3.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_8fef3.dir/CheckFunctionExists.c.o  -o cmTC_8fef3 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_3654e.dir/build.make:97: recipe for target 'cmTC_3654e' failed
-make[1]: *** [cmTC_3654e] Error 1
+CMakeFiles/cmTC_8fef3.dir/build.make:97: recipe for target 'cmTC_8fef3' failed
+make[1]: *** [cmTC_8fef3] Error 1
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_3654e/fast' failed
-make: *** [cmTC_3654e/fast] Error 2
+Makefile:126: recipe for target 'cmTC_8fef3/fast' failed
+make: *** [cmTC_8fef3/fast] Error 2
 
 

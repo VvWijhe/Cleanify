@@ -3,6 +3,7 @@
 
 #include <QGraphicsItem>
 #include <vector>
+#include <memory>
 
 #include "helper.h"
 
@@ -16,6 +17,8 @@ public:
 
    Roomba(int posx, int posy, int width, int height);
 
+   ~Roomba() {}
+
    void setAngle(double angle);
 
    double getAngle() const { return _angle; }
@@ -24,7 +27,7 @@ public:
 
    void setDistance(long distance) { _distance = distance; }
 
-   status_t move(vector<QGraphicsLineItem *> walls);
+   status_t move(vector<std::shared_ptr<QGraphicsLineItem>> walls);
 
 private:
    double _angle{};

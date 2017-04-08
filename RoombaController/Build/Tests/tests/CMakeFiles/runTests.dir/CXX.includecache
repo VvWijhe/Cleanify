@@ -278,7 +278,7 @@ cxxabi.h
 acxx_demangle.h
 -
 
-../Tests/tests/../../Sci/SerialPort.h
+../Tests/tests/../../IO/serial.h
 iostream
 -
 array
@@ -304,31 +304,17 @@ vector
 future
 -
 
-../Tests/tests/../../Sci/commands.h
-iostream
--
-map
--
+../Tests/tests/../../Subsystems/devices.h
 string
 -
-sstream
--
-iterator
--
-vector
--
+../IO/serial.h
+../Tests/tests/../../IO/serial.h
 
-../Tests/tests/../../Sci/roombasci.h
-commands.h
-../Tests/tests/../../Sci/commands.h
-SerialPort.h
-../Tests/tests/../../Sci/SerialPort.h
+/home/jamie/Documents/Project4/Cleanify/RoombaController/IO/serial.cpp
+serial.h
+/home/jamie/Documents/Project4/Cleanify/RoombaController/IO/serial.h
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.cpp
-SerialPort.h
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.h
-
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.h
+/home/jamie/Documents/Project4/Cleanify/RoombaController/IO/serial.h
 iostream
 -
 array
@@ -354,8 +340,16 @@ vector
 future
 -
 
-/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/sci_tests.cpp
-Sci/roombasci.h
+/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/devices.cpp
+iostream
+-
+Subsystems/devices.h
+/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/Subsystems/devices.h
+gtest/gtest.h
+/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/gtest/gtest.h
+
+/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/serial_tests.cpp
+IO/serial.h
 -
 gtest/gtest.h
 /home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/gtest/gtest.h

@@ -35,7 +35,7 @@ void Roomba::setAngle(double angle) {
    _angle = angle;
 }
 
-status_t Roomba::move(vector<QGraphicsLineItem *> walls) {
+status_t Roomba::move(vector<shared_ptr<QGraphicsLineItem>> walls) {
    // set center point
    QRectF br = boundingRect();
    setTransformOriginPoint(br.center());
@@ -67,7 +67,7 @@ status_t Roomba::move(vector<QGraphicsLineItem *> walls) {
       int maxSteps{};
 
       // if a collision occurs, move maxSteps backwards
-      while(collidesWithItem(wall) && maxSteps++ < 2) {
+      while(collidesWithItem(wall.get()) && maxSteps++ < 2) {
          setPen(QPen(Qt::red));
          setPos(pos().x() - cos(_angle), pos().y() - sin(_angle));
          isColliding = true;

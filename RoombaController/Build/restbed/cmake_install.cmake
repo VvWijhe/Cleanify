@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,26 +34,26 @@ endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/local/include/restbed")
+   "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/restbed")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/include" TYPE FILE FILES "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/restbed")
+file(INSTALL DESTINATION "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include" TYPE FILE FILES "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/restbed")
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/local/include/corvusoft/restbed/uri.hpp;/usr/local/include/corvusoft/restbed/byte.hpp;/usr/local/include/corvusoft/restbed/http.hpp;/usr/local/include/corvusoft/restbed/rule.hpp;/usr/local/include/corvusoft/restbed/common.hpp;/usr/local/include/corvusoft/restbed/string.hpp;/usr/local/include/corvusoft/restbed/logger.hpp;/usr/local/include/corvusoft/restbed/request.hpp;/usr/local/include/corvusoft/restbed/service.hpp;/usr/local/include/corvusoft/restbed/session.hpp;/usr/local/include/corvusoft/restbed/settings.hpp;/usr/local/include/corvusoft/restbed/response.hpp;/usr/local/include/corvusoft/restbed/resource.hpp;/usr/local/include/corvusoft/restbed/web_socket.hpp;/usr/local/include/corvusoft/restbed/status_code.hpp;/usr/local/include/corvusoft/restbed/ssl_settings.hpp;/usr/local/include/corvusoft/restbed/context_value.hpp;/usr/local/include/corvusoft/restbed/session_manager.hpp;/usr/local/include/corvusoft/restbed/web_socket_message.hpp;/usr/local/include/corvusoft/restbed/context_placeholder.hpp;/usr/local/include/corvusoft/restbed/context_placeholder_base.hpp")
+   "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/uri.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/byte.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/http.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/rule.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/common.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/string.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/logger.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/request.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/service.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/session.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/settings.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/response.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/resource.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/web_socket.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/status_code.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/ssl_settings.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/context_value.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/session_manager.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/web_socket_message.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/context_placeholder.hpp;/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed/context_placeholder_base.hpp")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/include/corvusoft/restbed" TYPE FILE FILES
+file(INSTALL DESTINATION "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution/include/corvusoft/restbed" TYPE FILE FILES
     "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/uri.hpp"
     "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/byte.hpp"
     "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source/corvusoft/restbed/http.hpp"

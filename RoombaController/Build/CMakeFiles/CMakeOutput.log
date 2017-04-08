@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/3.6.3/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/3.7.1/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/3.6.3/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/3.7.1/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_66145/fast"
-/usr/bin/make -f CMakeFiles/cmTC_66145.dir/build.make CMakeFiles/cmTC_66145.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_3eb85/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3eb85.dir/build.make CMakeFiles/cmTC_3eb85.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_66145.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_66145.dir/testCCompiler.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_66145
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66145.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_66145.dir/testCCompiler.c.o  -o cmTC_66145 
+Building C object CMakeFiles/cmTC_3eb85.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_3eb85.dir/testCCompiler.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_3eb85
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3eb85.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_3eb85.dir/testCCompiler.c.o  -o cmTC_3eb85 
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a67e9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a67e9.dir/build.make CMakeFiles/cmTC_a67e9.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c170f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c170f.dir/build.make CMakeFiles/cmTC_c170f.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a67e9.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_a67e9.dir/CMakeCCompilerABI.c.o   -c /home/jamie/programs/clion-2016.2.2/bin/cmake/share/cmake-3.6/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_a67e9
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a67e9.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_a67e9.dir/CMakeCCompilerABI.c.o  -o cmTC_a67e9  
+Building C object CMakeFiles/cmTC_c170f.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_c170f.dir/CMakeCCompilerABI.c.o   -c /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_c170f
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c170f.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_c170f.dir/CMakeCCompilerABI.c.o  -o cmTC_c170f  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -59,8 +59,8 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a67e9' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccwzt2TX.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_a67e9 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_a67e9.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c170f' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cchOsQ1R.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_c170f /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_c170f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
@@ -68,14 +68,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_a67e9/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_a67e9.dir/build.make CMakeFiles/cmTC_a67e9.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_c170f/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_c170f.dir/build.make CMakeFiles/cmTC_c170f.dir/build]
   ignore line: [make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_a67e9.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_a67e9.dir/CMakeCCompilerABI.c.o   -c /home/jamie/programs/clion-2016.2.2/bin/cmake/share/cmake-3.6/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_a67e9]
-  ignore line: [/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a67e9.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_a67e9.dir/CMakeCCompilerABI.c.o  -o cmTC_a67e9  ]
+  ignore line: [Building C object CMakeFiles/cmTC_c170f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_c170f.dir/CMakeCCompilerABI.c.o   -c /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_c170f]
+  ignore line: [/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c170f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_c170f.dir/CMakeCCompilerABI.c.o  -o cmTC_c170f  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -85,13 +85,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a67e9' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccwzt2TX.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_a67e9 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_a67e9.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c170f' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cchOsQ1R.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_c170f /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_c170f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccwzt2TX.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cchOsQ1R.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -108,7 +108,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_a67e9] ==> ignore
+    arg [cmTC_c170f] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -120,7 +120,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_a67e9.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_c170f.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -154,14 +154,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f2f94/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f2f94.dir/build.make CMakeFiles/cmTC_f2f94.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_ac3b2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ac3b2.dir/build.make CMakeFiles/cmTC_ac3b2.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f2f94.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_f2f94.dir/feature_tests.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_f2f94
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2f94.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_f2f94.dir/feature_tests.c.o  -o cmTC_f2f94 
+Building C object CMakeFiles/cmTC_ac3b2.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_ac3b2.dir/feature_tests.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_ac3b2
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac3b2.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_ac3b2.dir/feature_tests.c.o  -o cmTC_ac3b2 
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
@@ -174,14 +174,14 @@ make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaContro
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3a4e0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3a4e0.dir/build.make CMakeFiles/cmTC_3a4e0.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a8d96/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a8d96.dir/build.make CMakeFiles/cmTC_a8d96.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3a4e0.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_3a4e0.dir/feature_tests.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_3a4e0
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a4e0.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_3a4e0.dir/feature_tests.c.o  -o cmTC_3a4e0 
+Building C object CMakeFiles/cmTC_a8d96.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_a8d96.dir/feature_tests.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a8d96
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8d96.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_a8d96.dir/feature_tests.c.o  -o cmTC_a8d96 
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
@@ -194,14 +194,14 @@ make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaContro
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b777c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b777c.dir/build.make CMakeFiles/cmTC_b777c.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d074f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d074f.dir/build.make CMakeFiles/cmTC_d074f.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b777c.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_b777c.dir/feature_tests.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_b777c
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b777c.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_b777c.dir/feature_tests.c.o  -o cmTC_b777c 
+Building C object CMakeFiles/cmTC_d074f.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_d074f.dir/feature_tests.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d074f
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d074f.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_d074f.dir/feature_tests.c.o  -o cmTC_d074f 
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
@@ -212,28 +212,28 @@ make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaContro
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7f996/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7f996.dir/build.make CMakeFiles/cmTC_7f996.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_7dc62/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7dc62.dir/build.make CMakeFiles/cmTC_7dc62.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_7f996.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_7f996.dir/testCXXCompiler.cxx.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_7f996
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f996.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_7f996.dir/testCXXCompiler.cxx.o  -o cmTC_7f996 
+Building CXX object CMakeFiles/cmTC_7dc62.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_7dc62.dir/testCXXCompiler.cxx.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_7dc62
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7dc62.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_7dc62.dir/testCXXCompiler.cxx.o  -o cmTC_7dc62 
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a1842/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a1842.dir/build.make CMakeFiles/cmTC_a1842.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_32e26/fast"
+/usr/bin/make -f CMakeFiles/cmTC_32e26.dir/build.make CMakeFiles/cmTC_32e26.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_a1842.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_a1842.dir/CMakeCXXCompilerABI.cpp.o -c /home/jamie/programs/clion-2016.2.2/bin/cmake/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_a1842
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1842.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_a1842.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_a1842  
+Building CXX object CMakeFiles/cmTC_32e26.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_32e26.dir/CMakeCXXCompilerABI.cpp.o -c /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_32e26
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32e26.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_32e26.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_32e26  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -243,8 +243,8 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a1842' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAMsZPc.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_a1842 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_a1842.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_32e26' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRm3Wd8.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_32e26 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_32e26.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
@@ -252,14 +252,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_a1842/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_a1842.dir/build.make CMakeFiles/cmTC_a1842.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_32e26/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_32e26.dir/build.make CMakeFiles/cmTC_32e26.dir/build]
   ignore line: [make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_a1842.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_a1842.dir/CMakeCXXCompilerABI.cpp.o -c /home/jamie/programs/clion-2016.2.2/bin/cmake/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_a1842]
-  ignore line: [/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1842.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_a1842.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_a1842  ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_32e26.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_32e26.dir/CMakeCXXCompilerABI.cpp.o -c /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_32e26]
+  ignore line: [/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32e26.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_32e26.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_32e26  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -269,13 +269,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a1842' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAMsZPc.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_a1842 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_a1842.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_32e26' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRm3Wd8.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_32e26 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_32e26.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccAMsZPc.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccRm3Wd8.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -292,7 +292,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_a1842] ==> ignore
+    arg [cmTC_32e26] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -304,7 +304,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_a1842.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_32e26.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -336,14 +336,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a698a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a698a.dir/build.make CMakeFiles/cmTC_a698a.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_f6a82/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f6a82.dir/build.make CMakeFiles/cmTC_f6a82.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_a698a.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_a698a.dir/feature_tests.cxx.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_a698a
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a698a.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_a698a.dir/feature_tests.cxx.o  -o cmTC_a698a 
+Building CXX object CMakeFiles/cmTC_f6a82.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_f6a82.dir/feature_tests.cxx.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_f6a82
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f6a82.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_f6a82.dir/feature_tests.cxx.o  -o cmTC_f6a82 
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
@@ -409,14 +409,14 @@ make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaContro
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_58cb0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_58cb0.dir/build.make CMakeFiles/cmTC_58cb0.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_285b8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_285b8.dir/build.make CMakeFiles/cmTC_285b8.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_58cb0.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_58cb0.dir/feature_tests.cxx.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_58cb0
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58cb0.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_58cb0.dir/feature_tests.cxx.o  -o cmTC_58cb0 
+Building CXX object CMakeFiles/cmTC_285b8.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_285b8.dir/feature_tests.cxx.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_285b8
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_285b8.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_285b8.dir/feature_tests.cxx.o  -o cmTC_285b8 
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
@@ -482,14 +482,14 @@ make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaContro
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4c2ac/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4c2ac.dir/build.make CMakeFiles/cmTC_4c2ac.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_e4c75/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e4c75.dir/build.make CMakeFiles/cmTC_e4c75.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4c2ac.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_4c2ac.dir/feature_tests.cxx.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_4c2ac
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c2ac.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_4c2ac.dir/feature_tests.cxx.o  -o cmTC_4c2ac 
+Building CXX object CMakeFiles/cmTC_e4c75.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_e4c75.dir/feature_tests.cxx.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_e4c75
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4c75.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_e4c75.dir/feature_tests.cxx.o  -o cmTC_e4c75 
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
@@ -553,28 +553,28 @@ make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaContro
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_28fa9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_28fa9.dir/build.make CMakeFiles/cmTC_28fa9.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_7c184/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7c184.dir/build.make CMakeFiles/cmTC_7c184.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_28fa9.dir/CheckIncludeFile.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_28fa9.dir/CheckIncludeFile.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_28fa9
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28fa9.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_28fa9.dir/CheckIncludeFile.c.o  -o cmTC_28fa9 
+Building C object CMakeFiles/cmTC_7c184.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_7c184.dir/CheckIncludeFile.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_7c184
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c184.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_7c184.dir/CheckIncludeFile.c.o  -o cmTC_7c184 
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_179c7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_179c7.dir/build.make CMakeFiles/cmTC_179c7.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_26a6d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_26a6d.dir/build.make CMakeFiles/cmTC_26a6d.dir/build
 make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_179c7.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_179c7.dir/CheckFunctionExists.c.o   -c /home/jamie/programs/clion-2016.2.2/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
-Linking C executable cmTC_179c7
-/home/jamie/programs/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_179c7.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_179c7.dir/CheckFunctionExists.c.o  -o cmTC_179c7 -lpthread 
+Building C object CMakeFiles/cmTC_26a6d.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_26a6d.dir/CheckFunctionExists.c.o   -c /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_26a6d
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26a6d.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_26a6d.dir/CheckFunctionExists.c.o  -o cmTC_26a6d -lpthread 
 make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/CMakeTmp'
 
 

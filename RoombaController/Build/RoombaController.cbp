@@ -17,31 +17,11 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
+			<Target title="install/strip">
 				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="list_install_components">
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 list_install_components"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install">
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 install"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 install/strip"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
@@ -57,11 +37,31 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="install/strip">
+			<Target title="install">
 				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 clean"/>
@@ -85,14 +85,14 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 RoombaController"/>
@@ -109,14 +109,14 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Makefile&quot;  VERBOSE=1 RoombaController/fast"/>
@@ -135,14 +135,14 @@
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/asio/asio/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/kashmir"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/restbed/Makefile&quot;  VERBOSE=1 restbed"/>
@@ -161,14 +161,14 @@
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/asio/asio/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/kashmir"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/restbed/Makefile&quot;  VERBOSE=1 restbed/fast"/>
@@ -178,24 +178,24 @@
 				</MakeCommands>
 			</Target>
 			<Target title="runTests">
-				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests/runTests" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests"/>
+				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/runTests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/../.."/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests/Makefile&quot;  VERBOSE=1 runTests"/>
@@ -205,24 +205,24 @@
 				</MakeCommands>
 			</Target>
 			<Target title="runTests/fast">
-				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests/runTests" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests"/>
+				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/runTests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/Build"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/../.."/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/tests/Makefile&quot;  VERBOSE=1 runTests/fast"/>
@@ -243,14 +243,14 @@
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
@@ -271,14 +271,14 @@
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
@@ -299,14 +299,14 @@
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
@@ -327,14 +327,14 @@
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
@@ -353,14 +353,14 @@
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
@@ -379,14 +379,14 @@
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
@@ -405,14 +405,14 @@
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
@@ -431,14 +431,14 @@
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/source"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/include"/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
@@ -448,17 +448,14 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Io/roombaIo.h">
-			<Option target="RoombaController"/>
-		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/IO/serial.cpp">
 			<Option target="RoombaController"/>
 			<Option target="runTests"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/SerialPort.h">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/IO/serial.h">
 			<Option target="RoombaController"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Sci/commands.h">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/file_handler.h">
 			<Option target="RoombaController"/>
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/responses.cpp">
@@ -471,6 +468,21 @@
 			<Option target="RoombaController"/>
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/server.h">
+			<Option target="RoombaController"/>
+		</Unit>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Subsystems/devices.h">
+			<Option target="RoombaController"/>
+		</Unit>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/SystemControl/main_process.h">
+			<Option target="RoombaController"/>
+		</Unit>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/SystemControl/roomba_control.cpp">
+			<Option target="RoombaController"/>
+		</Unit>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/SystemControl/roomba_control.h">
+			<Option target="RoombaController"/>
+		</Unit>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/SystemControl/sensordata.h">
 			<Option target="RoombaController"/>
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googlemock/src/gmock-all.cc">
@@ -488,7 +500,10 @@
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/lib/googletest/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/sci_tests.cpp">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/devices.cpp">
+			<Option target="runTests"/>
+		</Unit>
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/Tests/tests/serial_tests.cpp">
 			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/main.cpp">
