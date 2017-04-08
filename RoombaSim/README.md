@@ -25,6 +25,10 @@ added grid
 
 scaled the speeds
 
+- 0.0.4
+
+replaced new with std shared pointers
+
 
 
 

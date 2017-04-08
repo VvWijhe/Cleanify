@@ -1,5 +1,6 @@
 #include "roombasim.h"
 #include "ui_roombasim.h"
+#include "version.h"
 
 #include <QTimer>
 #include <iostream>
@@ -11,7 +12,7 @@ RoombaSim::RoombaSim(QWidget *parent) :
    ui(make_shared<Ui::RoombaSim>()) {
    ui->setupUi(this);
 
-   setWindowTitle("RoombaSim");
+   setWindowTitle(WINDOW_TITLE);
 
    // Create room
    _room = make_shared<Room>();
