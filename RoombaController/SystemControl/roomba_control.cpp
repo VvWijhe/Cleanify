@@ -20,6 +20,7 @@ RoombaControl::~RoombaControl() {
 int RoombaControl::init() {
     // add devices
     devices_[devices_t::wheels] = new subsystems::Motor(&serial_, commands_["DrivePwm"]);
+    devices_[devices_t::rotation] = new subsystems::Motor(&serial_, commands_["Drive"]);
 
     // start
     sendData({128});
@@ -56,15 +57,7 @@ void RoombaControl::setWheels(short speed) {
     unsigned char hexr_hb = hexl_hb;
     unsigned char hexr_lb = hexl_lb;
 
-    data.push_back(hexr_hb);
-    data.push_back(hexr_lb);
-    data.push_back(hexl_hb);
-    data.push_back(hexl_lb);
-
-    //sendData(data);
-
-    // kan zijn:
-    devices_[devices_t::wheels]->sendData(data);
+    devices_[devices_t::wheels]->sendData({hexr_hb, hexr_lb, hexl_hb, hexl_lb});
 }
 
 void RoombaControl::setRotation(short speed, short radial) {

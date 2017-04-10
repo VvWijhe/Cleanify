@@ -19,7 +19,7 @@ namespace systemControl {
     class RoombaControl {
     public:
         typedef enum : int {
-            wheels, leds
+            wheels, rotation, leds
         } devices_t;
 
         typedef enum : int {
