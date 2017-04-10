@@ -1,5 +1,6 @@
 #include "roombasim.h"
 #include "ui_roombasim.h"
+#include "version.h"
 
 #include <QTimer>
 #include <iostream>
@@ -8,17 +9,17 @@ using namespace std;
 
 RoombaSim::RoombaSim(QWidget *parent) :
    QMainWindow(parent),
-   ui(new Ui::RoombaSim) {
+   ui(make_shared<Ui::RoombaSim>()) {
    ui->setupUi(this);
 
-   setWindowTitle("RoombaSim");
+   setWindowTitle(WINDOW_TITLE);
 
    // Create room
-   _room = new Room;
+   _room = make_shared<Room>();
    _room->setBackgroundBrush(QBrush(Qt::black));
    _room->setSceneRect(0, 0, 698, 698);
 
-   ui->view->setScene(_room);
+   ui->view->setScene(_room.get());
    ui->view->scale(1, -1);
    ui->view->setRenderHint(QPainter::Antialiasing);
    ui->view->setFixedSize(700, 700);
@@ -26,11 +27,11 @@ RoombaSim::RoombaSim(QWidget *parent) :
 
    // draw grid
    for(int i = 0; i < ui->view->height(); i++) {
-      _grid.push_back(new Line(0, SCALE(i), ui->view->height(), SCALE(i)));
+      _grid.push_back(make_shared<Line>(0, SCALE(i), ui->view->height(), SCALE(i)));
    }
 
    for(int i = 0; i < ui->view->width(); i++) {
-      _grid.push_back(new Line(SCALE(i), 0, SCALE(i), ui->view->width()));
+      _grid.push_back(make_shared<Line>(SCALE(i), 0, SCALE(i), ui->view->width()));
    }
 
    for(auto grid : _grid) {
@@ -38,25 +39,21 @@ RoombaSim::RoombaSim(QWidget *parent) :
       pen.setColor(QColor("#cccdce"));
       grid->setPen(pen);
       grid->setOpacity(0.1);
-      _room->addItem(grid);
+      _room->addItem(grid.get());
    }
 
    // Update all objects in the room
-   _updater = new QTimer;
-   QObject::connect(_updater, SIGNAL(timeout()), _room, SLOT(update()));
+   _updater = make_shared<QTimer>();
+   QObject::connect(_updater.get(), SIGNAL(timeout()), _room.get(), SLOT(update()));
    _updater->setInterval(ui->speedSlider->value());
 
-   QObject::connect(_room, SIGNAL(updated()), this, SLOT(roomUpdated()));
+   QObject::connect(_room.get(), SIGNAL(updated()), this, SLOT(roomUpdated()));
 
    ui->dt->setText(QString::number(DELTA_t_sec));
    ui->statusbar->showMessage("Scale 1:100 cm");
 }
 
 RoombaSim::~RoombaSim() {
-   for(auto &grid : _grid) {
-      delete grid;
-   }
-   delete ui;
 }
 
 void RoombaSim::on_startButton_clicked() {

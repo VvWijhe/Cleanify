@@ -20,7 +20,7 @@ namespace subsystems {
          * @param serial A serial port object.
          * @param id The name of the device.
          */
-        Device(io::SerialPort &serial, unsigned char opcode) :
+        Device(io::SerialPort *serial, unsigned char opcode) :
                 opcode_(opcode),
                 serial_(serial) {}
 
@@ -35,22 +35,19 @@ namespace subsystems {
         virtual void reset() = 0;
 
         /**
-         * @brief Sends data to the roomba.
-         * @param cmd The command opcode of the device.
+         * @brief Sends a dataframe to the roomba.
          * @param data The data to be sent
          */
         void sendData(const io::byteVector &data) {
-            serial_.writeByte(128);
-            serial_.writeByte(opcode_);
-            serial_.writeVector(data);
+            serial_->writeByte(opcode_);
+            serial_->writeVector(data);
         }
 
     private:
         unsigned char opcode_;
-        io::SerialPort serial_;
+        io::SerialPort *serial_;
     };
 
-    /// TODO
     /**
      * @brief Roomba device for controlling the motors.
      */
@@ -61,23 +58,24 @@ namespace subsystems {
          * @param serial A serial port object.
          * @param id The name of the device.
          */
-        Motor(io::SerialPort &serial, unsigned char opcode) :
+        Motor(io::SerialPort *serial, unsigned char opcode) :
                 Device(serial, opcode) {}
 
         /**
          * @brief Destructor sets the device idle.
          */
-        virtual ~Motor() {}
+        virtual ~Motor() {
+            reset();
+        }
 
         /**
          * @brief Sets the device idle.
          */
         virtual void reset() override {
-
+            sendData({0, 0, 0, 0});
         }
     };
 
-    /// TODO
     /**
      * @brief Roomba device for controlling the leds.
      */
@@ -88,23 +86,24 @@ namespace subsystems {
          * @param serial A serial port object.
          * @param id The name of the device.
          */
-        Leds(io::SerialPort &serial, unsigned char opcode) :
+        Leds(io::SerialPort *serial, unsigned char opcode) :
                 Device(serial, opcode) {}
 
         /**
          * @brief Destructor sets the device idle.
          */
-        virtual ~Leds() {}
+        virtual ~Leds() {
+            reset();
+        }
 
         /**
          * @brief Sets the device idle.
          */
         virtual void reset() override {
-
+            sendData({0, 0, 0});
         }
     };
 
-    /// TODO
     /**
      * @brief Roomba device for controlling the leds.
      */
@@ -115,19 +114,21 @@ namespace subsystems {
          * @param serial A serial port object.
          * @param id The name of the device.
          */
-        Speaker(io::SerialPort &serial, unsigned char opcode) :
+        Speaker(io::SerialPort *serial, unsigned char opcode) :
                 Device(serial, opcode) {}
 
         /**
          * @brief Destructor sets the device idle.
          */
-        virtual ~Speaker() {}
+        virtual ~Speaker() {
+            reset();
+        }
 
         /**
          * @brief Sets the device idle.
          */
         virtual void reset() override {
-
+            // empty
         }
     };
 }

@@ -23,7 +23,8 @@ HEADERS  += \
     room.h \
     roomba.h \
     roombasim.h \
-    helper.h
+    helper.h \
+    version.h
 
 FORMS    += \
     roombasim.ui

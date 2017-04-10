@@ -2,6 +2,7 @@
 #define ROOMBASIM_H
 
 #include <QMainWindow>
+#include <memory>
 
 #include "room.h"
 
@@ -28,10 +29,10 @@ private slots:
    void roomUpdated();
 
 private:
-   Ui::RoombaSim *ui;
-   Room *_room;
-   QTimer *_updater;
-   vector<Line *> _grid;
+   std::shared_ptr<Ui::RoombaSim> ui;
+   std::shared_ptr<Room> _room;
+   std::shared_ptr<QTimer> _updater;
+   vector<std::shared_ptr<Line>> _grid;
 };
 
 #endif // ROOMBASIM_H

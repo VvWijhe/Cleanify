@@ -209,6 +209,7 @@ DIST          = /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf \
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf \
+		../RoombaSim/.qmake.stash \
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf \
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf \
@@ -231,7 +232,8 @@ DIST          = /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf
 		../RoombaSim/RoombaSim.pro ../RoombaSim/room.h \
 		../RoombaSim/roomba.h \
 		../RoombaSim/roombasim.h \
-		../RoombaSim/helper.h ../RoombaSim/main.cpp \
+		../RoombaSim/helper.h \
+		../RoombaSim/version.h ../RoombaSim/main.cpp \
 		../RoombaSim/room.cpp \
 		../RoombaSim/roomba.cpp \
 		../RoombaSim/roombasim.cpp
@@ -396,6 +398,7 @@ Makefile: ../RoombaSim/RoombaSim.pro /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf \
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf \
 		/home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf \
@@ -570,6 +573,7 @@ Makefile: ../RoombaSim/RoombaSim.pro /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/
 /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf:
 /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf:
 /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf:
@@ -608,7 +612,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/jamie/programs/Qt/5.8/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../RoombaSim/room.h ../RoombaSim/roomba.h ../RoombaSim/roombasim.h ../RoombaSim/helper.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../RoombaSim/room.h ../RoombaSim/roomba.h ../RoombaSim/roombasim.h ../RoombaSim/helper.h ../RoombaSim/version.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../RoombaSim/main.cpp ../RoombaSim/room.cpp ../RoombaSim/roomba.cpp ../RoombaSim/roombasim.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../RoombaSim/roombasim.ui $(DISTDIR)/
 
@@ -1403,6 +1407,7 @@ roombasim.o: ../RoombaSim/roombasim.cpp ../RoombaSim/roombasim.h \
 		/home/jamie/programs/Qt/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
 		/home/jamie/programs/Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
 		/home/jamie/programs/Qt/5.8/gcc_64/include/QtWidgets/QWidget \
+		../RoombaSim/version.h \
 		/home/jamie/programs/Qt/5.8/gcc_64/include/QtCore/QTimer \
 		/home/jamie/programs/Qt/5.8/gcc_64/include/QtCore/qtimer.h \
 		/home/jamie/programs/Qt/5.8/gcc_64/include/QtCore/qbasictimer.h
