@@ -4,20 +4,26 @@
 
 #include "../Server/server.h"
 #include "roomba_control.h"
+#include "statemachine.hpp"
 
 #ifndef ROOMBACONTROLLER_PROCESSING_H
 #define ROOMBACONTROLLER_PROCESSING_H
 
 namespace systemControl {
-    class mainProcessing{
+    class RoombaProcessing : public Statemachine {
     public:
-        mainProcessing() : server_(80) { }
-        void serverHandler();
+        enum states {init_s, test_s};
+        enum events {timeout_e};
+
+        RoombaProcessing();
+
+        static void init(State *currentState);
+
+        static void test(State *currentState);
 
     private:
-        server::RoombaServer server_;
-        RoombaControl roombacontrol_;
-
+        static server::RoombaServer server_;
+        static RoombaControl control_;
     };
 }
 
