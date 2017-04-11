@@ -12,14 +12,14 @@ RoombaProcessing::RoombaProcessing() {
     add(test_s, std::make_shared<State>(test));
 }
 
-static void RoombaProcessing::init(State *currentState) {
+void RoombaProcessing::init(State *currentState) {
     cout << "init" << endl;
 
     currentState->setNextState(test_s);
     currentState->setEvent(timeout_e);
 }
 
-static void RoombaProcessing::test(State *currentState) {
+void RoombaProcessing::test(State *currentState) {
     cout << "test" << endl;
 
     switch (currentState->event()) {
