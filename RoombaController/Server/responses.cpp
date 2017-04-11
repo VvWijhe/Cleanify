@@ -3,20 +3,41 @@
 //
 
 #include "responses.h"
+#include "../json.hpp"
+#include <iostream>
 
 using namespace std;
 using namespace restbed;
+
+using json = nlohmann::json;
 
 void responses::info(pSession session) {
     const auto request = session->get_request();
 
     int content_length = request->get_header("Content-Length", 0);
+    FileHandler page("../web/index.html");
+    session->fetch(static_cast<const size_t >(content_length),
+                   [&page](const shared_ptr<Session> s, const Bytes &body) {
+                       s->close(OK,
+                                page.getcontent(),
+                                {{"Content-Length", std::to_string(page.getcontent().size())}});
+                   });
+}
 
+void responses::ajax(pSession session) {
+    const auto request = session->get_request();
+
+    int content_length = request->get_header("Content-Length", 0);
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
+                       string j(body.begin(), body.end());
+                       json json2 = j;
+                       cout << j << endl;
+                       cout << json2["left"].get<std::string>() << endl;
+                       std::string page = "succes";
                        s->close(OK,
-                                "<h1>Hello World!</h1>",
-                                {{"Content-Length", "21"}});
+                                page,
+                                {{"Content-Length", std::to_string(page.size())}});
                    });
 }
 

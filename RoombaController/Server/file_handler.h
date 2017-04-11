@@ -8,12 +8,17 @@
 #include <string>
 #include <fstream>
 #include <streambuf>
+#include <iostream>
 
 class FileHandler{
 public:
     FileHandler(const std::string &path) {
-        open(path);
+        if (open(path) < 0){
+            std::cerr << "FileHandler:  can't open file '" << path << "'" << std::endl;
+        }
     }
+
+    ~FileHandler() = default;
 
     int open(const std::string &path){
         std::ifstream website(path);
