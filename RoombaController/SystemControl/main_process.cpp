@@ -9,27 +9,23 @@ using namespace std;
 
 RoombaProcessing::RoombaProcessing() {
     add(init_s, std::make_shared<State>(init));
-    add(test_s, std::make_shared<State>(test));
+    add(waitForMode_s, std::make_shared<State>(waitForMode));
 }
 
 void RoombaProcessing::init(State *currentState) {
     cout << "init" << endl;
 
-    currentState->setNextState(test_s);
-    currentState->setEvent(timeout_e);
+    currentState->setNextState(waitForMode_s);
 }
 
-void RoombaProcessing::test(State *currentState) {
-    cout << "test" << endl;
+void RoombaProcessing::waitForMode(State *currentState) {
 
-    switch (currentState->event()) {
-        case timeout_e:
-            cout << "timeout" << endl;
-            currentState->setNextState(State::nstate);
-            break;
+}
 
-        default:
-            currentState->setNextState(State::nstate);
-            break;
-    }
+void RoombaProcessing::clean(State *currentState) {
+
+}
+
+void RoombaProcessing::spot(State *currentState) {
+
 }

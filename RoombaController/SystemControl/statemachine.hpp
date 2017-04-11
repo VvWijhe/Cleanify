@@ -19,7 +19,8 @@ public:
 
     State() : nextState_(nstate) {}
 
-    State(std::function<void(State *)> callback) : nextState_(0),
+    State(std::function<void(State *)> callback) : nextState_(nstate),
+                                                   event_(nevent),
                                                    callback_(callback) {}
 
     ~State() {}
