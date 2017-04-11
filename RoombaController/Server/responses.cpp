@@ -31,9 +31,9 @@ void responses::ajax(pSession session) {
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
                        string j(body.begin(), body.end());
-                       json json2 = j;
+                       json json2 = json::parse(j);
                        cout << j << endl;
-                       cout << json2["left"].get<std::string>() << endl;
+                       cout << json2["left"] << endl;
                        std::string page = "succes";
                        s->close(OK,
                                 page,
