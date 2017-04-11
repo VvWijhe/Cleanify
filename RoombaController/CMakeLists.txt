@@ -14,6 +14,7 @@ include_directories(restbed/source)
 ## source files
 set(SOURCE_FILES
         IO/serial.cpp IO/serial.h
+        json.hpp
         Server/server.h Server/server.cpp
         main.cpp Server/responses.h Server/responses.cpp Server/file_handler.h SystemControl/main_process.h SystemControl/roomba_control.h SystemControl/sensordata.h Subsystems/devices.h SystemControl/roomba_control.cpp)
 
