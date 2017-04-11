@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/IO/serial.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/IO/serial.cpp.o"
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/responses.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/Server/responses.cpp.o"
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/Server/server.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/Server/server.cpp.o"
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/SystemControl/roomba_control.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/SystemControl/roomba_control.cpp.o"
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/main.cpp" "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/main.cpp.o"
+  "/home/bas/CLionProjects/Cleanify/RoombaController/IO/serial.cpp" "/home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/IO/serial.cpp.o"
+  "/home/bas/CLionProjects/Cleanify/RoombaController/Server/responses.cpp" "/home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/Server/responses.cpp.o"
+  "/home/bas/CLionProjects/Cleanify/RoombaController/Server/server.cpp" "/home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/Server/server.cpp.o"
+  "/home/bas/CLionProjects/Cleanify/RoombaController/SystemControl/roomba_control.cpp" "/home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/SystemControl/roomba_control.cpp.o"
+  "/home/bas/CLionProjects/Cleanify/RoombaController/main.cpp" "/home/bas/CLionProjects/Cleanify/RoombaController/Build/CMakeFiles/RoombaController.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,7 +19,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/restbed/CMakeFiles/restbed.dir/DependInfo.cmake"
+  "/home/bas/CLionProjects/Cleanify/RoombaController/Build/restbed/CMakeFiles/restbed.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

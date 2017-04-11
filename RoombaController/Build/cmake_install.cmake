@@ -1,8 +1,8 @@
-# Install script for directory: /home/jamie/Documents/Project4/Cleanify/RoombaController
+# Install script for directory: /home/bas/CLionProjects/Cleanify/RoombaController
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/distribution")
+  set(CMAKE_INSTALL_PREFIX "/home/bas/CLionProjects/Cleanify/RoombaController/restbed/distribution")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/restbed/cmake_install.cmake")
-  include("/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/Tests/cmake_install.cmake")
+  include("/home/bas/CLionProjects/Cleanify/RoombaController/Build/restbed/cmake_install.cmake")
+  include("/home/bas/CLionProjects/Cleanify/RoombaController/Build/Tests/cmake_install.cmake")
 
 endif()
 
@@ -47,5 +47,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jamie/Documents/Project4/Cleanify/RoombaController/Build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/bas/CLionProjects/Cleanify/RoombaController/Build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

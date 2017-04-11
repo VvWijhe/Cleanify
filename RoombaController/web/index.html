@@ -1,112 +1,20 @@
 <!DOCTYPE html>
-<html lang="NL-NL">
-<meta charset="UTF-8">
+<html>
 <head>
-    <style>
-        .button {
-            display: inline-block;
-            padding: 10px 15px;
-            font-size: 40px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-        }
-        .button2 {background-color: #008CBA;}
-        .button:hover {background-color: #3e8e41}
-
-        .button:active {
-            background-color: #3e8e41;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-        }
-        table, th, td {
-            border-collapse: collapse;
-            text-align: center;
-        }
-        div.container {
-            width: 100%;
-            border: 1px solid gray;
-        }
-
-        header, footer {
-            padding: 1em;
-            color: white;
-            background-color: black;
-            clear: left;
-            text-align: center;
-        }
-
-        nav {
-            float: left;
-            max-width: 160px;
-            margin: 0;
-            padding: 1em;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul a {
-            text-decoration: none;
-        }
-
-        article {
-            margin-left: 170px;
-            border-left: 1px solid gray;
-            padding: 1em;
-            overflow: hidden;
-        }
-    </style>
-    <script type="text/javascript">
-
-        function AJAXtest(button)
-        {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("demo").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "ajax_info.html", true);
-            xhttp.send();
-            setTimeout(AJAXtest,500);
-        }
-
+    <script src="/ajax_info"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $.get("/ajax_info", function(data, status){
+                    alert("Data " );
+                });
+            });
+        });
     </script>
 </head>
 <body>
-<header>
-    <h1>Cleanify: Der Roomba</h1>
-</header>
 
-<article>
+<button>Send an HTTP GET request to a page and get the result back</button>
 
-    <table style="width:10%">
-        <tr>
-            <th><button onclick="AJAXtest(up)" class="button" >&#8598;</button></th>
-            <th><button class="button" >&#8593;</button></th>
-            <th><button class="button" >&#8599;</button></th>
-        </tr>
-        <tr>
-            <td><button class="button" >&#8592;</button></td>
-            <td><button class="button" >&nbsp&#183;&nbsp</button></td>
-            <td><button class="button" >&#8594;</button></td>
-        </tr>
-        <tr>
-            <td><button class="button" >&#8601;</button></td>
-            <td><button class="button" >&#8595;</button></td>
-            <td><button class="button" >&#8600;</button></td>
-        </tr>
-    </table>
-    <div id="demo"> </div>
-</article>
 </body>
 </html>
