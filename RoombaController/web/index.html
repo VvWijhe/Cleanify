@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="/ajax_info"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script>
+//        function httpPOST(data){
+//            var client = new XMLHttpRequest();
+//            var url = "/ajax_info";
+//            client.open("POST", url, true);
+//            client.setRequestHeader("Content-Type", "application/x-form-urlencoded");
+//            client.send(data);
+//        }
         $(document).ready(function(){
             $("button").click(function(){
-                $.get("/ajax_info", function(data, status){
-                    alert("Data " );
-                });
+                var form = "{\"" + this.id + "\" : 500}";
+
+                $.post("/ajax_info",
+                    form,
+                    function(data,status){
+                        alert("Data: " + data + "\nStatus: " + status);
+                    });
             });
         });
     </script>
 </head>
 <body>
 
-<button>Send an HTTP GET request to a page and get the result back</button>
+<button ID="left">Send an HTTP POST request to a page and get the result back</button>
 
 </body>
 </html>
