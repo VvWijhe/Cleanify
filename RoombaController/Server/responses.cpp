@@ -25,6 +25,7 @@ void responses::info(pSession session) {
 }
 
 void responses::ajax(pSession session) {
+    cout << "hoi";
     const auto request = session->get_request();
 
     int content_length = request->get_header("Content-Length", 0);
@@ -33,7 +34,7 @@ void responses::ajax(pSession session) {
                        string j(body.begin(), body.end());
                        json json2 = json::parse(j);
                        cout << j << endl;
-                       cout << json2["left"] << endl;
+                       cout << json2["direction"] << endl;
                        std::string page = "succes";
                        s->close(OK,
                                 page,

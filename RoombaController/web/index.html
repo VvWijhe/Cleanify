@@ -1,6 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 40px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        .button2 {background-color: #008CBA;}
+        .button:hover {background-color: #3e8e41}
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        table, th, td {
+            border-collapse: collapse;
+            text-align: center;
+        }
+        div.container {
+            width: 100%;
+            border: 1px solid gray;
+        }
+
+        header, footer {
+            padding: 1em;
+            color: white;
+            background-color: black;
+            clear: left;
+            text-align: center;
+        }
+
+        nav {
+            float: left;
+            max-width: 160px;
+            margin: 0;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul a {
+            text-decoration: none;
+        }
+
+        article {
+            margin-left: 170px;
+            border-left: 1px solid gray;
+            padding: 1em;
+            overflow: hidden;
+        }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script>
 //        function httpPOST(data){
@@ -12,20 +75,44 @@
 //        }
         $(document).ready(function(){
             $("button").click(function(){
-                var form = "{\"" + this.id + "\" : 500}";
+                var form = "{\"direction\" : \"" + this.id + "\"}";
 
                 $.post("/ajax_info",
                     form,
-                    function(data,status){
-                        alert("Data: " + data + "\nStatus: " + status);
+                    function(data,status) {
+                        if (data != "succes") {
+                            alert("Data: " + data + "\nStatus: " + status);
+                        }
                     });
             });
         });
     </script>
 </head>
 <body>
+<header>
+    <h1>Cleanify: Der Roomba</h1>
+</header>
 
-<button ID="left">Send an HTTP POST request to a page and get the result back</button>
+<article>
 
+    <table style="width:10%">
+        <tr>
+            <th><button id="LF" class="button" >&#8598;</button></th>
+            <th><button id="F" class="button" >&#8593;</button></th>
+            <th><button id="RF" class="button" >&#8599;</button></th>
+        </tr>
+        <tr>
+            <td><button id="L" class="button" >&#8592;</button></td>
+            <td><button id="Useless button" class="button" >&nbsp&#183;&nbsp</button></td>
+            <td><button id="R" class="button" >&#8594;</button></td>
+        </tr>
+        <tr>
+            <td><button id="LB" class="button" >&#8601;</button></td>
+            <td><button id="B" class="button" >&#8595;</button></td>
+            <td><button id="RB" class="button" >&#8600;</button></td>
+        </tr>
+    </table>
+    <div id="result" style="color:red"></div>
+</article>
 </body>
 </html>
