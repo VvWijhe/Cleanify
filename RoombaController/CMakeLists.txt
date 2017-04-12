@@ -18,7 +18,7 @@ set(SOURCE_FILES
         json.hpp
         Server/server.h Server/server.cpp
         Server/responses.h Server/responses.cpp Server/file_handler.h
-        SystemControl/main_process.h SystemControl/roomba_control.h SystemControl/sensordata.h Subsystems/devices.h
+        SystemControl/main_process.h SystemControl/roomba_control.h SystemControl/sensorparser.h Subsystems/devices.h
         SystemControl/roomba_control.cpp SystemControl/main_process.cpp)
 
 ## directory for testing

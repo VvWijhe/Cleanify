@@ -20,12 +20,12 @@ namespace statemachine {
         virtual void handle(std::shared_ptr<Context> context, event_t event) = 0;
     };
 
-    class Context {
+    class Context : public std::enable_shared_from_this<Context> {
     public:
         Context() {}
 
         void handleState(event_t event) {
-            currentState_->handle(std::shared_from_this(), event);
+            currentState_->handle(shared_from_this(), event);
         }
 
         void setState(std::shared_ptr<State> nextState) { currentState_ = nextState; }
