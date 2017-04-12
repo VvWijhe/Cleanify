@@ -18,9 +18,6 @@
 namespace systemControl {
     class RoombaControl {
     public:
-        typedef enum : int {
-            wheels, rotation, leds
-        } devices_t;
 
         typedef enum : int {
             red, blue, green, orange
@@ -90,7 +87,7 @@ namespace systemControl {
         const std::map<std::string, unsigned char> getCmds();
 
     private:
-        std::map<devices_t, subsystems::Device *> devices_;
+
         io::SerialPort serial_;
         Commands commands_;
     };
