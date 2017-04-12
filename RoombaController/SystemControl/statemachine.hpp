@@ -5,73 +5,37 @@
 #ifndef ROCKET_STATEMACHINE_HPP
 #define ROCKET_STATEMACHINE_HPP
 
-#include <map>
 #include <memory>
 
-class State {
-public:
-    /**
-     * @brief nstate is the largest possible int value. It can be used as a nextstate in final states. The
-     * statemachine is exited when the state is finished.
-     */
-    static const auto nstate = static_cast<unsigned int>(-1);
+namespace statemachine {
+    class Context;
+
+    using event_t = unsigned int;
     static const auto nevent = static_cast<unsigned int>(-1);
 
-    State() : nextState_(nstate) {}
+    class State {
+    public:
+        virtual ~State() = default;
 
-    State(std::function<void(State *)> callback) : nextState_(nstate),
-                                                   event_(nevent),
-                                                   callback_(callback) {}
+        virtual void handle(std::shared_ptr<Context> context, event_t event) = 0;
+    };
 
-    ~State() {}
+    class Context {
+    public:
+        Context() {}
 
-    void action() { callback_(this); }
-
-    unsigned int nextState() const { return nextState_; }
-
-    void setNextState(unsigned int ns) { nextState_ = ns; }
-
-    unsigned int event() const { return  event_; }
-
-    void setEvent(unsigned int event) { event_ = event; }
-
-protected:
-    unsigned int event_;
-    unsigned int nextState_;
-
-private:
-    std::function<void(State *)> callback_;
-};
-
-class Statemachine {
-public:
-    Statemachine() {}
-
-    ~Statemachine() {}
-
-    void add(unsigned int id, const std::shared_ptr<State> &state) {
-        if (states_.find(id) != states_.end())
-            throw std::invalid_argument("Can'myCallback add state: id already used");
-
-        states_[id] = state;
-    }
-
-    void run(unsigned int initial) {
-        currentState_ = initial;
-
-        while (currentState_ != State::nstate) {
-            if (states_.find(currentState_) == states_.end())
-                throw std::invalid_argument("Invalid next state");
-
-            states_[currentState_]->action();
-
-            currentState_ = states_[currentState_]->nextState();
+        void handleState(event_t event) {
+            currentState_->handle(std::shared_from_this(), event);
         }
-    }
 
-private:
-    unsigned int currentState_;
-    std::map<unsigned int, std::shared_ptr<State>> states_;
-};
+        void setState(std::shared_ptr<State> nextState) { currentState_ = nextState; }
+
+        std::shared_ptr<State> getState() const { return currentState_; }
+
+    private:
+        event_t event_;
+        std::shared_ptr<State> currentState_;
+    };
+}
 
 #endif //ROCKET_STATEMACHINE_HPP

@@ -2,6 +2,8 @@
 // Created by jamie on 3/28/17.
 //
 
+#include <memory>
+
 #include "../Server/server.h"
 #include "roomba_control.h"
 #include "statemachine.hpp"
@@ -11,51 +13,51 @@
 
 namespace systemControl {
     /**
-     * @brief The RoombaProcessing class contains the main program for the roomba. A statemachine handles the
-     * states using member callback functions. Every state can set a nextstate and event using the State object that
-     * is passed to a callback function. The default next state is 'nstate' which shuts down the statemachine
+     * @brief RoombaContext contains variables and classes that can be accessed by every state.
      */
-    class RoombaProcessing : public Statemachine {
+    class RoombaContext : public statemachine::Context {
     public:
         /**
-         * @brief Enumeration of states, which makes it easier to identify states by ID
+         * @brief Constructor allocates the server and roomba control.
          */
-        enum states {init_s, waitForMode_s};
+        RoombaContext() {
+            server_ = std::make_shared<server::RoombaServer>(8000);
+            control_ = std::make_shared<RoombaControl>("/dev/ttyUSB0", RoombaControl::b115200);
+        }
 
         /**
-         * @brief Enumeration of events. Every state can exit with an event. The next state can receive this event.
+         * @return A shared pointer that owns the server object.
          */
-        enum events {ready_e, timeout_e};
-
-        RoombaProcessing();
+        std::shared_ptr<server::RoombaServer>  getServer() const { return server_; }
 
         /**
-         * @brief State connects the serial port and starts the server.
-         * @param currentState
+         * @return A shared pointer that owns the roomba control object
          */
-        static void init(State *currentState);
-
-        /**
-         * @brief State waits for a flag change that determines the mode.
-         * @param currentState
-         */
-        static void waitForMode(State *currentState);
-
-        /**
-         * @brief State that lets the roomba clean a room.
-         * @param currentState
-         */
-        static void clean(State *currentState);
-
-        /**
-         * @brief State that lets the roomba clean a small area.
-         * @param currentState
-         */
-        static void spot(State *currentState);
+        std::shared_ptr<RoombaControl> getControl() const { return control_; }
 
     private:
-        static server::RoombaServer server_;
-        static RoombaControl control_;
+        std::shared_ptr<server::RoombaServer> server_;
+        std::shared_ptr<RoombaControl> control_;
+    };
+
+    /**
+     * @brief State class that waits for a signal of a PC or website
+     */
+    class WaitForCmd : public statemachine::State {
+    public:
+        ~WaitForCmd() {}
+
+        void handle(std::shared_ptr<statemachine::Context> context, statemachine::event_t event) override;
+    };
+
+    /**
+     * @brief State class that handles the cleaning.
+     */
+    class Clean : public statemachine::State {
+    public:
+        ~Clean() {}
+
+        void handle(std::shared_ptr<statemachine::Context> context, statemachine::event_t event) override;
     };
 }
 
