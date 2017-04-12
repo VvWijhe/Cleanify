@@ -10,15 +10,12 @@
 #include <string>
 #include <memory>
 
-#include "../Subsystems/devices.h"
-#include "../IO/serial.h"
+#include "../Serial/serial.h"
 #include "commands.h"
 
-
-namespace systemControl {
+namespace systemcontrol {
     class RoombaControl {
     public:
-
         typedef enum : int {
             red, blue, green, orange
         } color_t;
@@ -87,12 +84,9 @@ namespace systemControl {
         const std::map<std::string, unsigned char> getCmds();
 
     private:
-
         io::SerialPort serial_;
         Commands commands_;
     };
-
-
 }
 
 

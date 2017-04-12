@@ -5,7 +5,7 @@
 #include "roomba_control.h"
 
 using namespace std;
-using namespace systemControl;
+using namespace systemcontrol;
 
 RoombaControl::RoombaControl(std::string usbName, speed_t baud) :
         serial_(usbName, baud) {
@@ -14,9 +14,7 @@ RoombaControl::RoombaControl(std::string usbName, speed_t baud) :
 
 RoombaControl::~RoombaControl() {}
 
-
 int RoombaControl::init() {
-
     if(serial_.connect()< 0){
         cerr<<"not connected"<< endl;
     }
@@ -96,7 +94,6 @@ void RoombaControl::setRotation(short speed, short radial) {
 }
 
 void RoombaControl::setLed(color_t color) {
-
     switch (color) {
         case red:
 
@@ -113,10 +110,7 @@ void RoombaControl::setLed(color_t color) {
         default:
             //error
             break;
-
-
     }
-
 }
 
 void RoombaControl::readSensors() {
@@ -124,6 +118,5 @@ void RoombaControl::readSensors() {
 }
 
 const std::map<std::string, unsigned char> RoombaControl::getCmds() {
-
-
+    return commands_.getMap();
 }

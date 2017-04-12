@@ -5,7 +5,7 @@
 #ifndef ROOMBACONTROLLER_SENSORDATA_H
 #define ROOMBACONTROLLER_SENSORDATA_H
 
-namespace systemControl {
+namespace systemcontrol {
 
 }
 

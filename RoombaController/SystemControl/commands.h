@@ -12,7 +12,7 @@
 #include <iterator>
 #include <vector>
 
-namespace systemControl {
+namespace systemcontrol {
     class Commands {
     public:
         Commands() {
