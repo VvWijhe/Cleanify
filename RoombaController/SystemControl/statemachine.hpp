@@ -17,20 +17,31 @@ namespace statemachine {
     public:
         virtual ~State() = default;
 
-        virtual void handle(std::shared_ptr<Context> context, event_t event) = 0;
+        virtual void handle(std::shared_ptr<Context> context) = 0;
     };
 
     class Context : public std::enable_shared_from_this<Context> {
     public:
         Context() {}
 
-        void handleState(event_t event) {
-            currentState_->handle(shared_from_this(), event);
+        int handleState(event_t event) {
+            if(currentState_ == nullptr) return -1;
+
+            currentState_->handle(shared_from_this());
+            return 1;
         }
 
-        void setState(std::shared_ptr<State> nextState) { currentState_ = nextState; }
+        void runAll() {
+            while(handleState(event_) > 0);
+        }
+
+        void setNextState(std::shared_ptr<State> nextState) { currentState_ = nextState; }
 
         std::shared_ptr<State> getState() const { return currentState_; }
+
+        void setEvent(event_t event) { event_ = event; }
+
+        event_t getEvent() const { return event_; }
 
     private:
         event_t event_;
