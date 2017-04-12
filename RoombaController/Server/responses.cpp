@@ -11,6 +11,26 @@ using namespace restbed;
 
 using json = nlohmann::json;
 
+std::vector<std::string> HTML_Commands = {"LF",
+                                          "F",
+                                          "RF",
+                                          "L",
+                                          "STOP",
+                                          "R",
+                                          "LB",
+                                          "B",
+                                          "RB",
+                                          "BRUSH",
+                                          "STOP",
+                                          "MUSIC",
+                                          "CLEAN",
+                                          "SPOT",
+                                          "DOCK",
+                                          "GREEN",
+                                          "ORANGE",
+                                          "RED",
+                                          "BLUE"};
+
 void responses::info(pSession session) {
     const auto request = session->get_request();
 
@@ -24,15 +44,24 @@ void responses::info(pSession session) {
                    });
 }
 
-void responses::ajax(pSession session) {
+void responses::request(pSession session) {
     const auto request = session->get_request();
 
     int content_length = request->get_header("Content-Length", 0);
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
-                       json json2 = json::parse( string(body.begin(), body.end()) );
+                       json json2 = json::parse(string(body.begin(), body.end()));
                        cout << json2["direction"] << endl;
-                       std::string page = "succes";
+                       std::string page = "FAILED";
+                       for(auto c: HTML_Commands){
+                           if (c == json2["direction"]){
+                               page = "succes";
+                               break;
+                           }
+                           else{
+                               page = "Command doesn't exist";
+                           }
+                       }
                        s->close(OK,
                                 page,
                                 {{"Content-Length", std::to_string(page.size())}});
@@ -53,3 +82,5 @@ void responses::error404(pSession session) {
                                 {{"Content-Length", std::to_string(content.size())}});
                    });
 }
+
+
