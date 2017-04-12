@@ -12,17 +12,21 @@
 #define ROOMBACONTROLLER_PROCESSING_H
 
 namespace systemControl {
+    class WaitForCmd;
+
     /**
-     * @brief RoombaContext contains variables and classes that can be accessed by every state.
+     * @brief RoombaContext holds variables and classes that can be accessed by every state.
      */
-    class RoombaContext : public statemachine::Context {
+    class RoombaStateContext : public statemachine::Context {
     public:
         /**
          * @brief Constructor allocates the server and roomba control.
          */
-        RoombaContext() {
+        RoombaStateContext(std::shared_ptr<statemachine::State> initial)  {
             server_ = std::make_shared<server::RoombaServer>(8000);
             control_ = std::make_shared<RoombaControl>("/dev/ttyUSB0", RoombaControl::b115200);
+
+            setNextState(initial);
         }
 
         /**
@@ -47,7 +51,7 @@ namespace systemControl {
     public:
         ~WaitForCmd() {}
 
-        void handle(std::shared_ptr<statemachine::Context> context, statemachine::event_t event) override;
+        void handle(std::shared_ptr<statemachine::Context> context) override;
     };
 
     /**
@@ -57,7 +61,7 @@ namespace systemControl {
     public:
         ~Clean() {}
 
-        void handle(std::shared_ptr<statemachine::Context> context, statemachine::event_t event) override;
+        void handle(std::shared_ptr<statemachine::Context> context) override;
     };
 }
 

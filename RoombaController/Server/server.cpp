@@ -21,8 +21,8 @@ RoombaServer::RoombaServer(unsigned short port) {
     service_.publish(resource);
 
     auto resource1 = make_shared<Resource>();
-    resource1->set_path("/ajax_info");
-    resource1->set_method_handler("POST", responses::ajax);
+    resource1->set_path("/request");
+    resource1->set_method_handler("POST", responses::request);
     service_.publish(resource1);
 
     // 404 page not found

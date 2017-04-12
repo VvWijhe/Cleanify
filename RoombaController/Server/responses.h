@@ -6,8 +6,9 @@
 #define ROOMBACONTROLLER_RESPONSES_H
 
 #include <memory>
-
+#include <vector>
 #include <restbed>
+#include <string>
 #include "file_handler.h"
 
 namespace responses {
@@ -16,7 +17,9 @@ namespace responses {
 
     // response handlers
     void info(pSession session);
-    void ajax(pSession session);
+
+    void request(pSession session);
+
     void error404(pSession session);
 }
 
