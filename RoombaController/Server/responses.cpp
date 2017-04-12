@@ -25,15 +25,12 @@ void responses::info(pSession session) {
 }
 
 void responses::ajax(pSession session) {
-    cout << "hoi";
     const auto request = session->get_request();
 
-    int content_length = request->get_header("Content-Length", 0);
+    int content_length = request->get_header("Conten                       cout << j << endl;t-Length", 0);
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
-                       string j(body.begin(), body.end());
-                       json json2 = json::parse(j);
-                       cout << j << endl;
+                       json json2 = json::parse( string(body.begin(), body.end()) );
                        cout << json2["direction"] << endl;
                        std::string page = "succes";
                        s->close(OK,
