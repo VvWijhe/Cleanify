@@ -28,10 +28,11 @@ int SerialPort::connect() {
     cfsetispeed(&tty, baud_);
 
     /* Setting other Port Stuff */
-    tty.c_cflag &= ~PARENB;            // Make 8n1
+    tty.c_cflag |= (CLOCAL | CREAD);// ignore modem controls,
+    tty.c_cflag &= ~(PARENB | PARODD);      // shut off parity
+    tty.c_cflag |= 0;
     tty.c_cflag &= ~CSTOPB;
-    tty.c_cflag &= ~CSIZE;
-    tty.c_cflag |= CS8;
+    tty.c_cflag &= ~CRTSCTS;
 
     tty.c_cflag &= ~ICANON;           // no flow control
     tty.c_cc[VMIN] = 1;                  // read doesn't block
@@ -53,7 +54,7 @@ int SerialPort::connect() {
 
 int SerialPort::disconnect() {
     if ((usbState_ = close(usbState_)) < 0) {
-        std::cerr << "error closing: " << strerror(errno) << std::endl;
+        std::cerr << "close error: " << strerror(errno) << std::endl;
         return -1;
     }
 
@@ -77,7 +78,7 @@ int SerialPort::readAll(byteVector &buffer, int limit) const {
     } while (c != '\r');
 
     if (n < 0) {
-        std::cerr << "Error reading: " << strerror(errno) << std::endl;
+        std::cerr << "read error: " << strerror(errno) << std::endl;
         return -1;
     }
 
@@ -86,12 +87,12 @@ int SerialPort::readAll(byteVector &buffer, int limit) const {
 
 int SerialPort::writeByte(unsigned char data) {
     if (usbState_ < 0) {
-        std::cerr << "please connect before write" << std::endl;
+        std::cerr << "write error: please connect before write" << std::endl;
         return -1;
     }
 
     if (write(usbState_, &data, 1) < 0) {
-        std::cerr << "error writing: " << strerror(errno) << std::endl;
+        std::cerr << "write error: " << strerror(errno) << std::endl;
         return -1;
     }
 

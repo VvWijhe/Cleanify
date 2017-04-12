@@ -23,8 +23,8 @@ namespace systemControl {
             red, blue, green, orange
         } color_t;
 
-        typedef enum : int {
-            b19200, b115200
+        typedef enum : speed_t {
+            b19200 = B19200, b115200 = B115200
         } baud_t;
 
         RoombaControl(std::string usbName, speed_t baud);

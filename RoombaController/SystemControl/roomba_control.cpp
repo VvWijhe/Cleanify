@@ -20,12 +20,10 @@ int RoombaControl::init() {
     if(serial_.connect()< 0){
         cerr<<"not connected"<< endl;
     }
-    else{
-        cerr<<"connected" << endl;
-    }
-    // start
-    sendData({128});
-    sendData({132});
+
+    serial_.writeByte(128);
+    serial_.writeByte(130);
+    serial_.writeByte(135);
 
     return 0;
 }
