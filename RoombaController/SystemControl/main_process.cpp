@@ -4,28 +4,12 @@
 
 #include "main_process.h"
 
-using namespace systemControl;
 using namespace std;
 
-RoombaProcessing::RoombaProcessing() {
-    add(init_s, std::make_shared<State>(init));
-    add(waitForMode_s, std::make_shared<State>(waitForMode));
+void systemControl::WaitForCmd::handle(shared_ptr<statemachine::Context> context, statemachine::event_t event) {
+    context->setState(make_shared<Clean>());
 }
 
-void RoombaProcessing::init(State *currentState) {
-    cout << "init" << endl;
-
-    currentState->setNextState(waitForMode_s);
-}
-
-void RoombaProcessing::waitForMode(State *currentState) {
-
-}
-
-void RoombaProcessing::clean(State *currentState) {
-
-}
-
-void RoombaProcessing::spot(State *currentState) {
+void systemControl::Clean::handle(shared_ptr<statemachine::Context> context, statemachine::event_t event) {
 
 }
