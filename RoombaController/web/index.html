@@ -58,8 +58,7 @@
         }
 
         article {
-            margin-left: 170px;
-            border-left: 1px solid gray;
+
             padding: 1em;
             overflow: hidden;
         }
@@ -89,14 +88,15 @@
     </script>
 </head>
 <body>
+<center>
 <header>
     <h1>Cleanify: Der Roomba</h1>
 </header>
-<nav>
-    <h2 >Automatic Drive</h2>
-    <button id="AUT_ON" class="button">ON&nbsp</button>
-    <button id="AUT_OFF" class="button">OFF</button>
-</nav>
+<!--<nav>-->
+    <!--<h2 >Automatic Drive</h2>-->
+    <!--<button id="AUT_ON" class="button">ON&nbsp</button>-->
+    <!--<button id="AUT_OFF" class="button">OFF</button>-->
+<!--</nav>-->
 <article>
     <h2>Manuel Drive</h2>
     <table style="width:10%">
@@ -118,5 +118,25 @@
     </table>
     <div id="result" style="color:red"></div>
 </article>
+<buttons>
+    <h2>Help Buttons</h2>
+    <table style="width:10%">
+        <tr>
+            <th><button id="BRUSH" class="button" >BRUSH</button></th>
+            <th><button id="STOP" class="button" >STOP</button></th>
+            <th><button id="MUSIC" class="button" >MUSIC</button></th>
+        </tr>
+        <tr>
+            <td><button id="CLEAN" class="button" >CLEAN</button></td>
+            <td><button id="SPOT" class="button" >SPOT</button></td>
+            <td><button id="DOCK" class="button" >DOCK</button></td>
+        </tr>
+    </table>
+    <td><button style="color:green" id="GREEN" class="button">      &nbsp&nbsp&nbsp&#x25cf;&nbsp&nbsp</button></td>
+    <td><button style="color:orange" id="ORANGE" class="button" >   &nbsp&nbsp&#x25cf;&nbsp&nbsp</button></td>
+    <td><button style="color:red" id="RED" class="button" >         &nbsp&nbsp&#x25cf;&nbsp&nbsp</button></td>
+    <td><button style="color:blue" id="BLUE" class="button" >       &nbsp&nbsp&#x25cf;&nbsp&nbsp&nbsp</button></td>
+</buttons>
+</center>
 </body>
 </html>
