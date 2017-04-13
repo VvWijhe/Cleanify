@@ -3,6 +3,8 @@ include_directories(../../)
 
 add_executable(runTests
         serial_tests.cpp
-        ../../Serial/serial.cpp)
+        control_test.cpp
+        ../../Serial/serial.cpp
+        ../../SystemControl/roomba_control.cpp)
 
 target_link_libraries(runTests gtest gtest_main)

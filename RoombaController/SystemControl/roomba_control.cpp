@@ -9,7 +9,7 @@ using namespace systemcontrol;
 
 RoombaControl::RoombaControl(std::string usbName, speed_t baud) :
         serial_(usbName, baud) {
-
+        motors = 0;
 }
 
 RoombaControl::~RoombaControl() {}
@@ -28,69 +28,41 @@ int RoombaControl::init() {
 
 void RoombaControl::setBaud(RoombaControl::baud_t baud) {
 
+
+
+    serial_.writeVector({129, });
 }
 
 void RoombaControl::resetDevices() {
-
-}
-
-int RoombaControl::sendData(const std::vector<unsigned char> &data) {
-
-    return 1;
+    serial_.writeByte({7});
 }
 
 void RoombaControl::setWheels(short ls, short rs) {
-    io::byteVector data;
 
     auto hexl_hb = static_cast<unsigned char>(((ls * 5) >> 8) & 0xFF);
     auto hexl_lb = static_cast<unsigned char>((ls * 5) & 0xFF);
     auto hexr_hb = static_cast<unsigned char>(((rs * 5) >> 8) & 0xFF);
     auto hexr_lb = static_cast<unsigned char>((rs * 5) & 0xFF);
 
-    data.push_back({145});
-    data.push_back(hexl_hb);
-    data.push_back(hexl_lb);
-    data.push_back(hexr_hb);
-    data.push_back(hexr_lb);
-
-    serial_.writeVector(data);
-
-
+    serial_.writeVector({145, hexl_hb, hexl_lb, hexr_hb, hexr_lb});
 }
 
 void RoombaControl::setWheels(short speed) {
-    io::byteVector data;
 
     unsigned char hexl_hb = ((speed * 5) >> 8) & 0xFF;
     unsigned char hexl_lb = (speed * 5) & 0xFF;
 
-    data.push_back({145});
-    data.push_back(hexl_hb);
-    data.push_back(hexl_lb);
-    data.push_back(hexl_hb);
-    data.push_back(hexl_lb);
-
-    serial_.writeVector(data);
-
+    serial_.writeVector({145, hexl_hb, hexl_lb, hexl_hb, hexl_lb});
 }
 
 void RoombaControl::setRotation(short speed, short radial) {
-    io::byteVector data = {};
 
     unsigned char vel_hb = ((speed * 5) >> 8) & 0xFF;
     unsigned char vel_lb = (speed * 5) & 0xFF;
     unsigned char rad_hb = ((radial * 5) >> 8) & 0xFF;
     unsigned char rad_lb = (radial * 5) & 0xFF;
 
-    data.push_back(137);
-    data.push_back(vel_hb);
-    data.push_back(vel_lb);
-    data.push_back(rad_hb);
-    data.push_back(rad_lb);
-
-    serial_.writeVector(data);
-
-
+    serial_.writeVector({137, vel_hb, vel_lb, rad_hb, rad_lb});
 }
 
 void RoombaControl::setLed(color_t color) {
@@ -116,6 +88,29 @@ void RoombaControl::setLed(color_t color) {
 void RoombaControl::readSensors() {
 
 }
+
+void RoombaControl::setMotors(char motor, bool state) {
+    char current = RoombaControl::getMotors();
+    char data = 0;
+    if(state){
+        data = current | motor;
+        serial_.writeByte(data);
+        RoombaControl::setMotors(data);
+
+
+    }else{
+        motor = motor ^ 31;
+        data = current & motor;
+        RoombaControl::setMotors(data);
+
+    }
+    serial_.writeByte(data);
+
+
+}
+
+
+
 
 const std::map<std::string, unsigned char> RoombaControl::getCmds() {
     return commands_.getMap();

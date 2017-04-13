@@ -2,7 +2,7 @@
 // Created by victor on 13.03.17.
 //
 
-#include <IO/serial.h>
+#include <Serial/serial.h>
 #include "gtest/gtest.h"
 
 TEST(serial_test, connect) {
