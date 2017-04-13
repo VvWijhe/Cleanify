@@ -9,19 +9,17 @@ using namespace systemcontrol;
 
 RoombaControl::RoombaControl(std::string usbName, speed_t baud) :
         serial_(usbName, baud) {
-        motors_ = 0;
+    currentMotor_ = 0;
 }
 
 RoombaControl::~RoombaControl() {}
 
 int RoombaControl::init() {
-    if(serial_.connect()< 0){
-        cerr<<"not connected"<< endl;
+    if (serial_.connect() < 0) {
+        cerr << "not connected" << endl;
     }
 
-    serial_.writeByte(128);
-    serial_.writeByte(130);
-    serial_.writeByte(135);
+    serial_.writeVector({128, 130, 7});
 
     return 0;
 }
@@ -29,8 +27,7 @@ int RoombaControl::init() {
 void RoombaControl::setBaud(RoombaControl::baud_t baud) {
 
 
-
-    serial_.writeVector({129, });
+    serial_.writeVector({129,});
 }
 
 void RoombaControl::resetDevices() {
@@ -89,27 +86,20 @@ void RoombaControl::readSensors() {
 
 }
 
-void RoombaControl::setMotors(char motor, bool state) {
-    char current = RoombaControl::getMotors();
+void RoombaControl::setMotors(motors_t motor, bool state) {
+    char current = currentMotor_;
     char data = 0;
-    if(state){
+    if (state) {
         data = current | motor;
         serial_.writeByte(data);
-        RoombaControl::setMotors(data);
-
-
-    }else{
+        currentMotor_ = data;
+    } else {
         motor = motor ^ 31;
         data = current & motor;
-        RoombaControl::setMotors(data);
-
+        currentMotor_ = data;
     }
     serial_.writeByte(data);
-
-
 }
-
-
 
 
 const std::map<std::string, unsigned char> RoombaControl::getCmds() {

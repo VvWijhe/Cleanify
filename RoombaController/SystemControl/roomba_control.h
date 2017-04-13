@@ -16,7 +16,6 @@
 namespace systemcontrol {
     class RoombaControl {
     public:
-
         typedef enum : int {
             red, blue, green, orange
         } color_t;
@@ -28,7 +27,7 @@ namespace systemcontrol {
             side_direction = 8,
             main_direction = 16,
             all = 15
-        };
+        } motors_t;
 
         typedef enum : speed_t {
             b300 = B300,
@@ -40,8 +39,7 @@ namespace systemcontrol {
             b19200 = B19200,
             b38400 = B38400,
             b57600 = B57600,
-            b115200 = B115200}
-
+            b115200 = B115200
         } baud_t;
 
         RoombaControl(std::string usbName, speed_t baud);
@@ -96,20 +94,17 @@ namespace systemcontrol {
          * @param motor: side, vacuum, main, side_direction, main_direction
          * @param state: on = 1, off = 0
          */
-        void setMotors(char motor, bool state);
+        void setMotors(motors_t motor, bool state);
 
         /// TODO
         void readSensors();
 
         const std::map<std::string, unsigned char> getCmds();
 
-        char getMotors() const {return motors_;}
-        void setMotors(char motors){motors_ = motors;}
-
     private:
         io::SerialPort serial_;
         Commands commands_;
-        char motors_;
+        char currentMotor_;
     };
 }
 
