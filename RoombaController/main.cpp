@@ -7,6 +7,14 @@ using namespace std;
 using namespace systemcontrol;
 
 int main() {
+
+    systemcontrol::RoombaControl control("/dev/ttyUSB0",systemcontrol::RoombaControl::b115200);
+
+    control.init();
+    control.setMotors(control.all, true);
+
+
+
     try {
         shared_ptr<RoombaStateContext> process = make_shared<RoombaStateContext>(make_shared<states::Initialise>());
 

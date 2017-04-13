@@ -94,7 +94,7 @@ namespace systemcontrol {
          * @param motor: side, vacuum, main, side_direction, main_direction
          * @param state: on = 1, off = 0
          */
-        void setMotors(motors_t motor, bool state);
+        char setMotors(motors_t motor, bool state);
 
         /// TODO
         void readSensors();

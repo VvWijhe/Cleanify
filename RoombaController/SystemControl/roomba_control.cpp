@@ -19,7 +19,7 @@ int RoombaControl::init() {
         cerr << "not connected" << endl;
     }
 
-    serial_.writeVector({128, 130, 7});
+    serial_.writeVector({128, 130, 137, 255, 56, 1, 244});
 
     return 0;
 }
@@ -86,19 +86,25 @@ void RoombaControl::readSensors() {
 
 }
 
-void RoombaControl::setMotors(motors_t motor, bool state) {
+char RoombaControl::setMotors(motors_t motor, bool state) {
     char current = currentMotor_;
     char data = 0;
+    char temp_motor = motor;
+    char full = 31;
     if (state) {
         data = current | motor;
+        serial_.writeByte({138});
         serial_.writeByte(data);
         currentMotor_ = data;
     } else {
-        motor ^= 31;
-        data = current & motor;
+        temp_motor = temp_motor ^ full;
+        data = current & temp_motor;
         currentMotor_ = data;
     }
+    serial_.writeByte({138});
     serial_.writeByte(data);
+
+    return data;
 }
 
 
