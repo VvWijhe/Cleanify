@@ -57,9 +57,9 @@ namespace systemcontrol {
         /**
          * @brief State class that waits for a signal from a PC or website
          */
-        class WaitForCmd : public statemachine::State {
+        class WaitMode : public statemachine::State {
         public:
-            ~WaitForCmd() {}
+            ~WaitMode() {}
 
             void handle(const std::shared_ptr<statemachine::Context> &context) override;
         };

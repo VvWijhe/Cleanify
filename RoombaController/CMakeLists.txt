@@ -19,7 +19,7 @@ set(SOURCE_FILES
         Server/server.h Server/server.cpp
         Server/responses.h Server/responses.cpp Server/file_handler.h
         SystemControl/roomba_statemachine.h SystemControl/roomba_control.h SystemControl/sensorparser.h
-        SystemControl/roomba_control.cpp SystemControl/roomba_statemachine.cpp)
+        SystemControl/roomba_control.cpp SystemControl/roomba_statemachine.cpp globals.cpp globals.h)
 
 ## directory for testing
 add_subdirectory(Tests)
