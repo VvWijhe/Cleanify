@@ -38,7 +38,7 @@ void RoombaServer::run() {
         this->service_.start(settings_);
     });
 
-    this_thread::sleep_for(chrono::seconds(1));
+    this_thread::sleep_for(chrono::milliseconds(300));
 
     cout << "server started" << endl;
 }

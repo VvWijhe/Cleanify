@@ -9,16 +9,15 @@ int SerialPort::connect() {
     struct termios tty;
     memset(&tty, 0, sizeof tty);
 
-    // open: read/write, no control, no blocking
-    usbState_ = open(port_.c_str(), O_RDWR | O_NOCTTY);
+    fd_ = open(port_.c_str(), O_RDWR | O_NOCTTY);
 
-    if (usbState_ < 0) {
+    if (fd_ < 0) {
         std::cerr << "error opening port: " << strerror(errno) << " in path " << port_ << std::endl;
         return -1;
     }
 
     /* Error Handling */
-    if (tcgetattr(usbState_, &tty) != 0) {
+    if (tcgetattr(fd_, &tty) != 0) {
         std::cerr << "Error " << errno << " from tcgetattr: " << strerror(errno) << std::endl;
         return -1;
     }
@@ -28,23 +27,22 @@ int SerialPort::connect() {
     cfsetispeed(&tty, baud_);
 
     /* Setting other Port Stuff */
-    tty.c_cflag |= (CLOCAL | CREAD);// ignore modem controls,
-    tty.c_cflag &= ~(PARENB | PARODD);      // shut off parity
-    tty.c_cflag |= 0;
-    tty.c_cflag &= ~CSTOPB;
-    tty.c_cflag &= ~CRTSCTS;
+    tty.c_cflag     &=  ~PARENB;            // Make 8n1
+    tty.c_cflag     &=  ~CSTOPB;
+    tty.c_cflag     &=  ~CSIZE;
+    tty.c_cflag     |=  CS8;
 
-    tty.c_cflag &= ~ICANON;           // no flow control
-    tty.c_cc[VMIN] = 1;                  // read doesn't block
-    tty.c_cc[VTIME] = 30;                  // 0.5 seconds read timeout
-    tty.c_cflag |= CREAD | CLOCAL;     // turn on READ & ignore ctrl lines
+    tty.c_cflag     &=  ~CRTSCTS;           // no flow control
+    tty.c_cc[VMIN]   =  0;                  // read doesn't block
+    tty.c_cc[VTIME]  =  5;                  // 0.5 seconds read timeout
+    tty.c_cflag     |=  CREAD | CLOCAL;     // turn on READ & ignore ctrl lines
 
     /* Make raw */
     cfmakeraw(&tty);
 
     /* Flush Port, then applies attributes */
-    tcflush(usbState_, TCIFLUSH);
-    if (tcsetattr(usbState_, TCSANOW, &tty) != 0) {
+    tcflush(fd_, TCIFLUSH);
+    if (tcsetattr(fd_, TCSANOW, &tty) != 0) {
         std::cerr << "Error " << errno << " from tcsetattr" << std::endl;
         return -1;
     }
@@ -53,7 +51,7 @@ int SerialPort::connect() {
 }
 
 int SerialPort::disconnect() {
-    if ((usbState_ = close(usbState_)) < 0) {
+    if ((fd_ = close(fd_)) < 0) {
         std::cerr << "close error: " << strerror(errno) << std::endl;
         return -1;
     }
@@ -68,7 +66,7 @@ int SerialPort::readAll(byteVector &buffer, int limit) const {
 
     /* Whole response*/
     do {
-        n = read(usbState_, &c, 1);
+        n = read(fd_, &c, 1);
 
         if (n < 0 || index++ > limit) {
             break;
@@ -86,12 +84,12 @@ int SerialPort::readAll(byteVector &buffer, int limit) const {
 }
 
 int SerialPort::writeByte(unsigned char data) {
-    if (usbState_ < 0) {
+    if (fd_ < 0) {
         std::cerr << "write error: please connect before write" << std::endl;
         return -1;
     }
 
-    if (write(usbState_, &data, 1) < 0) {
+    if (write(fd_, &data, 1) < 0) {
         std::cerr << "write error: " << strerror(errno) << std::endl;
         return -1;
     }
@@ -100,13 +98,13 @@ int SerialPort::writeByte(unsigned char data) {
 }
 
 int SerialPort::writeVector(const std::vector<unsigned char> &data) {
-    if (usbState_ < 0) {
+    if (fd_ < 0) {
         std::cerr << "please connect before write" << std::endl;
         return -1;
     }
 
     for (const auto byte : data) {
-        if (write(usbState_, &byte, 1) < 0) {
+        if (write(fd_, &byte, 1) < 0) {
             std::cerr << "error writing: " << strerror(errno) << std::endl;
             return -1;
         }

@@ -14,7 +14,7 @@ void Initialise::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbServer = rmbContext->getServer();
 
     rmbServer->run();
-    //rmbControl->init();
+    rmbControl->init();
 
     cout << "initialise " << context->getEvent() << endl;
     context->setNextState(make_shared<WaitForCmd>());

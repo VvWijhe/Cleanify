@@ -36,12 +36,12 @@ namespace io {
 
         int readAll(byteVector &buffer, int limit = 255) const;
 
-        int getStatus() { return usbState_; }
+        int getStatus() { return fd_; }
 
     private:
         std::string port_;
         speed_t baud_;
-        int usbState_{};
+        int fd_{};
     };
 }
 
