@@ -20,7 +20,7 @@ namespace systemcontrol {
             red, blue, green, orange
         } color_t;
 
-        typedef enum : int {
+        typedef enum : char {
             side = 1,
             vacuum = 2,
             main = 4,

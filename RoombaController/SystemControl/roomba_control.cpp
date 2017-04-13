@@ -94,7 +94,7 @@ void RoombaControl::setMotors(motors_t motor, bool state) {
         serial_.writeByte(data);
         currentMotor_ = data;
     } else {
-        motor = motor ^ 31;
+        motor ^= 31;
         data = current & motor;
         currentMotor_ = data;
     }
