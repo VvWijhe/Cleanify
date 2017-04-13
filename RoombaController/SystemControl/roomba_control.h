@@ -16,10 +16,6 @@
 namespace systemcontrol {
     class RoombaControl {
     public:
-        typedef struct {
-            int code;
-            speed_t baud;
-        } bauds_t;
 
         typedef enum : int {
             red, blue, green, orange
@@ -41,9 +37,7 @@ namespace systemcontrol {
             b2400 = B2400,
             b4800 = B4800,
             b9600 = B9600,
-            b14400 = B14400,
             b19200 = B19200,
-            b28800 = B28800,
             b38400 = B38400,
             b57600 = B57600,
             b115200 = B115200}
@@ -109,7 +103,7 @@ namespace systemcontrol {
 
         const std::map<std::string, unsigned char> getCmds();
 
-        const char getMotors() const {return motors_;}
+        char getMotors() const {return motors_;}
         void setMotors(char motors){motors_ = motors;}
 
     private:

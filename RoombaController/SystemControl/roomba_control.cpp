@@ -9,7 +9,7 @@ using namespace systemcontrol;
 
 RoombaControl::RoombaControl(std::string usbName, speed_t baud) :
         serial_(usbName, baud) {
-        motors = 0;
+        motors_ = 0;
 }
 
 RoombaControl::~RoombaControl() {}
