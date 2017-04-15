@@ -19,33 +19,25 @@ void Initialise::handle(const shared_ptr<statemachine::Context> &context) {
     rmbControl->init();
 
     cout << "initialise " << context->getEvent() << endl;
-    context->setNextState(make_shared<WaitMode>());
+    context->setState(make_shared<WaitMode>());
 }
 
 void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto control = rmbContext->getControl();
 
-    // wait for pc website or press on enter
-    thread cli([]{
-        cout << "Waiting for signal from PC, website or press ENTER" << endl;
-        cin.ignore();
-        std::unique_lock<std::mutex> lk(globals::m_roomba_ready);
-        globals::roomba_ready = true;
-        globals::cv_roomba_ready.notify_one();
-    });
+    // wait for pc website
+    cout << "Waiting for signal from PC" << endl;
 
-    unique_lock<std::mutex> lk(globals::m_roomba_ready);
-    globals::cv_roomba_ready.wait(lk);
-    if (globals::roomba_ready) cout << "Roomba going to next state" << endl;
-    cli.join();
+    unique_lock<std::mutex> lk(globals::mut_roomba_session);
+    globals::cv_roomba_session.wait(lk);
 
-    context->setNextState(make_shared<Clean>());
+    context->setState(make_shared<Clean>());
 }
 
 void Clean::handle(const shared_ptr<statemachine::Context> &context) {
-    cout << "clean " << context->getEvent() << endl;
-    context->setNextState(make_shared<ShutDown>());
+    cout << "clean " << globals::roomba_session << endl;
+    context->setState(make_shared<ShutDown>());
 }
 
 void ShutDown::handle(const shared_ptr<statemachine::Context> &context) {
@@ -54,8 +46,7 @@ void ShutDown::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbServer = rmbContext->getServer();
 
     rmbServer->stop();
+    rmbControl->disconnect();
 
-    globals::roomba_ready = false;
-
-    context->setNextState(make_shared<WaitMode>());
+    context->setState(nullptr);
 }

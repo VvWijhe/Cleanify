@@ -23,8 +23,7 @@ namespace io {
 
     class SerialPort {
     public:
-        SerialPort(std::string portname, speed_t baud) : port_(portname),
-                                                         baud_(baud) {}
+        SerialPort(std::string portname, speed_t baud);
 
         int connect();
 
@@ -34,9 +33,9 @@ namespace io {
 
         int writeVector(const std::vector<unsigned char> &data);
 
-        int readAll(byteVector &buffer, int limit = 255) const;
+        int readAll(byteVector &buffer, size_t limit = 255) const;
 
-        int getStatus() { return fd_; }
+        int fd() { return fd_; }
 
     private:
         std::string port_;

@@ -24,7 +24,7 @@ namespace systemcontrol {
             server_ = std::make_shared<server::RoombaServer>(8000);
             control_ = std::make_shared<RoombaControl>("/dev/ttyUSB0", RoombaControl::b115200);
 
-            setNextState(initial);
+            setState(initial);
         }
 
         /**

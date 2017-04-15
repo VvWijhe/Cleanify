@@ -30,6 +30,10 @@ void RoombaControl::setBaud(RoombaControl::baud_t baud) {
     serial_.writeVector({129,});
 }
 
+void RoombaControl::disconnect() {
+    serial_.disconnect();
+}
+
 void RoombaControl::resetDevices() {
     serial_.writeByte({7});
 }

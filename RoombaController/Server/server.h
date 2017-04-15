@@ -29,6 +29,7 @@ namespace server {
         restbed::Service service_;
         std::shared_ptr<restbed::Settings> settings_;
         std::thread thread_;
+        bool isStarted{false};
     };
 }
 

@@ -5,79 +5,59 @@
 
 using namespace io;
 
+SerialPort::SerialPort(std::string portname, speed_t baud) : port_(portname),
+                                                             baud_(baud) {
+
+}
+
 int SerialPort::connect() {
+    fd_ = open(port_.c_str(), O_RDWR | O_NOCTTY | O_SYNC);
+
     struct termios tty;
     memset(&tty, 0, sizeof tty);
 
-    fd_ = open(port_.c_str(), O_RDWR | O_NOCTTY);
-
-    if (fd_ < 0) {
-        std::cerr << "error opening port: " << strerror(errno) << " in path " << port_ << std::endl;
-        return -1;
-    }
-
-    /* Error Handling */
     if (tcgetattr(fd_, &tty) != 0) {
-        std::cerr << "Error " << errno << " from tcgetattr: " << strerror(errno) << std::endl;
-        return -1;
+        return errno;
     }
 
-    /* Set Baud Rate */
     cfsetospeed(&tty, baud_);
     cfsetispeed(&tty, baud_);
 
-    /* Setting other Port Stuff */
-    tty.c_cflag     &=  ~PARENB;            // Make 8n1
-    tty.c_cflag     &=  ~CSTOPB;
-    tty.c_cflag     &=  ~CSIZE;
-    tty.c_cflag     |=  CS8;
+    tty.c_cflag = (tty.c_cflag & ~CSIZE) | CS8;     // 8-bit chars
+    tty.c_iflag &= ~IGNBRK;         // disable break processing
+    tty.c_lflag = 0;                // no signaling chars, no echo,
+    tty.c_oflag = 0;                // no remapping, no delays
+    tty.c_cc[VMIN] = 1;            // read doesn't block
+    tty.c_cc[VTIME] = 5;            // 0.5 seconds read timeout
 
-    tty.c_cflag     &=  ~CRTSCTS;           // no flow control
-    tty.c_cc[VMIN]   =  0;                  // read doesn't block
-    tty.c_cc[VTIME]  =  5;                  // 0.5 seconds read timeout
-    tty.c_cflag     |=  CREAD | CLOCAL;     // turn on READ & ignore ctrl lines
+    tty.c_iflag &= ~(IXON | IXOFF | IXANY); // shut off xon/xoff ctrl
+    tty.c_cflag |= (CLOCAL | CREAD);// ignore modem controls,
+    tty.c_cflag &= ~(PARENB | PARODD);      // shut off parity
+    tty.c_cflag |= 0; // no blocking
+    tty.c_cflag &= ~CSTOPB;
+    tty.c_cflag &= ~CRTSCTS;
 
-    /* Make raw */
-    cfmakeraw(&tty);
-
-    /* Flush Port, then applies attributes */
-    tcflush(fd_, TCIFLUSH);
     if (tcsetattr(fd_, TCSANOW, &tty) != 0) {
-        std::cerr << "Error " << errno << " from tcsetattr" << std::endl;
-        return -1;
+        return errno;
     }
 
     return 1;
 }
 
 int SerialPort::disconnect() {
-    if ((fd_ = close(fd_)) < 0) {
-        std::cerr << "close error: " << strerror(errno) << std::endl;
-        return -1;
-    }
-
-    return 1;
+    return close(fd_) < 0 ? errno : 1;
 }
 
-int SerialPort::readAll(byteVector &buffer, int limit) const {
-    ssize_t n{};
-    int index{};
-    unsigned char c{};
+int SerialPort::readAll(byteVector &buffer, size_t limit) const {
+    unsigned char c[limit];
 
-    /* Whole response*/
-    do {
-        n = read(fd_, &c, 1);
+    ssize_t nRead = read(fd_, c, limit);
+    if(nRead < 0) {
+        return errno;
+    }
 
-        if (n < 0 || index++ > limit) {
-            break;
-        }
-
-        buffer.push_back(c);
-    } while (c != '\r');
-
-    if (n < 0) {
-        std::cerr << "read error: " << strerror(errno) << std::endl;
-        return -1;
+    for (int i = 0; i < nRead; i++) {
+        buffer.push_back(c[i]);
     }
 
     return 1;
@@ -85,13 +65,11 @@ int SerialPort::readAll(byteVector &buffer, int limit) const {
 
 int SerialPort::writeByte(unsigned char data) {
     if (fd_ < 0) {
-        std::cerr << "write error: please connect before write" << std::endl;
-        return -1;
+        return errno;
     }
 
     if (write(fd_, &data, 1) < 0) {
-        std::cerr << "write error: " << strerror(errno) << std::endl;
-        return -1;
+        return errno;
     }
 
     return 1;
@@ -99,16 +77,16 @@ int SerialPort::writeByte(unsigned char data) {
 
 int SerialPort::writeVector(const std::vector<unsigned char> &data) {
     if (fd_ < 0) {
-        std::cerr << "please connect before write" << std::endl;
-        return -1;
+        return errno;
     }
 
     for (const auto byte : data) {
         if (write(fd_, &byte, 1) < 0) {
-            std::cerr << "error writing: " << strerror(errno) << std::endl;
-            return -1;
+            return errno;
         }
     }
+
+    usleep(static_cast<useconds_t>(data.size() * 100));
 
     return 1;
 }

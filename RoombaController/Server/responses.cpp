@@ -4,7 +4,7 @@
 
 #include "responses.h"
 #include "../json.hpp"
-#include <iostream>
+#include "../globals.h"
 
 using namespace std;
 using namespace restbed;
@@ -55,6 +55,11 @@ void responses::request(pSession session) {
                        std::string page = "FAILED";
                        for(auto c: HTML_Commands){
                            if (c == json2["direction"]){
+                               // obtain acces to the roomba session variable
+                               unique_lock<std::mutex> lk(globals::mut_roomba_session);
+                               globals::roomba_session = globals::WEB;
+                               globals::cv_roomba_session.notify_one();
+
                                page = "succes";
                                break;
                            }

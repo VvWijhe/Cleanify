@@ -58,6 +58,8 @@ namespace systemcontrol {
          */
         void setBaud(baud_t baud);
 
+        void disconnect();
+
         /**
          * @brief reset the device by restarting it
          */

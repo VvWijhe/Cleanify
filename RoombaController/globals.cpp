@@ -4,6 +4,8 @@
 
 #include "globals.h"
 
-bool globals::roomba_ready;
-std::mutex globals::m_roomba_ready;
-std::condition_variable globals::cv_roomba_ready;
+using namespace globals;
+
+session globals::roomba_session = MAN;
+std::mutex globals::mut_roomba_session;
+std::condition_variable globals::cv_roomba_session;

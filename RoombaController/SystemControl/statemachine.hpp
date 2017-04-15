@@ -11,7 +11,6 @@ namespace statemachine {
     class Context;
 
     using event_t = unsigned int;
-    static const auto nevent = static_cast<unsigned int>(-1);
 
     class State {
     public:
@@ -22,7 +21,7 @@ namespace statemachine {
 
     class Context : public std::enable_shared_from_this<Context> {
     public:
-        Context() : event_(nevent) {}
+        Context() : event_(0), currentState_(nullptr) {}
 
         int handleState(event_t event) {
             if(currentState_ == nullptr) return -1;
@@ -35,7 +34,7 @@ namespace statemachine {
             while(handleState(event_) > 0);
         }
 
-        void setNextState(const std::shared_ptr<State> &nextState) { currentState_ = nextState; }
+        void setState(const std::shared_ptr<State> &nextState) { currentState_ = nextState; }
 
         std::shared_ptr<State> getState() const { return currentState_; }
 

@@ -8,11 +8,11 @@ using namespace systemcontrol;
 
 int main() {
 
-    systemcontrol::RoombaControl control("/dev/ttyUSB0",systemcontrol::RoombaControl::b115200);
-
-    control.init();
-    control.setMotors(control.all, true);
-
+//    systemcontrol::RoombaControl control("/dev/ttyUSB0",systemcontrol::RoombaControl::b115200);
+//
+//    control.init();
+//    control.setMotors(control.all, true);
+//
 
 
     try {

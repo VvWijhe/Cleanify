@@ -40,11 +40,14 @@ void RoombaServer::run() {
 
     this_thread::sleep_for(chrono::milliseconds(300));
 
+    isStarted = true;
     cout << "server started" << endl;
 }
 
 void RoombaServer::stop() {
+    if(!isStarted) return;
     service_.stop();
     thread_.join();
+    isStarted = false;
     cout << "server stopped" << endl;
 }

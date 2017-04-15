@@ -12,9 +12,12 @@
 #include <thread>
 
 namespace globals {
-    extern bool roomba_ready;
-    extern std::mutex m_roomba_ready;
-    extern std::condition_variable cv_roomba_ready;
+    enum session {
+        MAN, PC, WEB
+    };
+    extern session roomba_session;
+    extern std::mutex mut_roomba_session;
+    extern std::condition_variable cv_roomba_session;
 }
 
 #endif //ROOMBACONTROLLER_GLOBALS_H
