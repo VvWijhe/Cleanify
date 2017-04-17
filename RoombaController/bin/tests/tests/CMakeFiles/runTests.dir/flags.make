@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source -I/include -I/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/../.. -I/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest/include 
+CXX_INCLUDES = -I/home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source -I/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest/include -I/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest -I/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/../.. 
 

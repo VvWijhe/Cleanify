@@ -25,9 +25,9 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source"/>
-					<Add directory="/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/../.."/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest/include"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/../.."/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -52,9 +52,9 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source"/>
-					<Add directory="/include"/>
-					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/../.."/>
 					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest/include"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest"/>
+					<Add directory="/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/../.."/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
