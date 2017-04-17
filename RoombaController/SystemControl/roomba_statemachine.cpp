@@ -26,11 +26,22 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto control = rmbContext->getControl();
 
-    // wait for pc website
-    cout << "Waiting for signal from PC" << endl;
+    cout << "Waiting for signal from PC or webapp" << endl;
 
+    // roomba starts manually if ENTER key is pressed
+    thread cli([]{
+        cin.ignore();
+
+        unique_lock<std::mutex> lk(globals::mut_roomba_session);
+        globals::roomba_session = globals::MAN;
+        globals::cv_roomba_session.notify_one();
+    });
+
+    // roomba starts pc or web session if the server notified the condition variable
     unique_lock<std::mutex> lk(globals::mut_roomba_session);
     globals::cv_roomba_session.wait(lk);
+
+    cli.detach();
 
     context->setState(make_shared<Clean>());
 }

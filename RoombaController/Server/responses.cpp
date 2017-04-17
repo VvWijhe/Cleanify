@@ -11,25 +11,25 @@ using namespace restbed;
 
 using json = nlohmann::json;
 
-std::vector<std::string> HTML_Commands = {"LF",
-                                          "F",
-                                          "RF",
-                                          "L",
-                                          "STOP",
-                                          "R",
-                                          "LB",
-                                          "B",
-                                          "RB",
-                                          "BRUSH",
-                                          "STOP",
-                                          "MUSIC",
-                                          "CLEAN",
-                                          "SPOT",
-                                          "DOCK",
-                                          "GREEN",
-                                          "ORANGE",
-                                          "RED",
-                                          "BLUE"};
+const std::vector<std::string> HTML_Commands = {"LF",
+                                                "F",
+                                                "RF",
+                                                "L",
+                                                "STOP",
+                                                "R",
+                                                "LB",
+                                                "B",
+                                                "RB",
+                                                "BRUSH",
+                                                "STOP",
+                                                "MUSIC",
+                                                "CLEAN",
+                                                "SPOT",
+                                                "DOCK",
+                                                "GREEN",
+                                                "ORANGE",
+                                                "RED",
+                                                "BLUE"};
 
 void responses::info(pSession session) {
     const auto request = session->get_request();
@@ -53,8 +53,8 @@ void responses::request(pSession session) {
                        json json2 = json::parse(string(body.begin(), body.end()));
                        cout << json2["direction"] << endl;
                        std::string page = "FAILED";
-                       for(auto c: HTML_Commands){
-                           if (c == json2["direction"]){
+                       for (auto c: HTML_Commands) {
+                           if (c == json2["direction"]) {
                                // obtain acces to the roomba session variable
                                unique_lock<std::mutex> lk(globals::mut_roomba_session);
                                globals::roomba_session = globals::WEB;
@@ -62,8 +62,7 @@ void responses::request(pSession session) {
 
                                page = "succes";
                                break;
-                           }
-                           else{
+                           } else {
                                page = "Command doesn't exist";
                            }
                        }
