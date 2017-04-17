@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/runTests.dir/serial_tests.cpp.o"
-  "CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o"
-  "CMakeFiles/runTests.dir/devices.cpp.o"
+  "CMakeFiles/runTests.dir/control_test.cpp.o"
+  "CMakeFiles/runTests.dir/__/__/Serial/serial.cpp.o"
+  "CMakeFiles/runTests.dir/__/__/SystemControl/roomba_control.cpp.o"
   "../../runTests.pdb"
   "../../runTests"
 )

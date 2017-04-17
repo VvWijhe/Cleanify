@@ -1,34 +1,7 @@
-/home/bas/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/bas/CLionProjects/Cleanify/RoombaController
--- The C compiler identification is GNU 5.4.0
--- The CXX compiler identification is GNU 5.4.0
--- Check for working C compiler: /usr/bin/cc
--- Check for working C compiler: /usr/bin/cc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /usr/bin/c++
--- Check for working CXX compiler: /usr/bin/c++ -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Looking for pthread.h
--- Looking for pthread.h - found
--- Looking for pthread_create
--- Looking for pthread_create - not found
--- Looking for pthread_create in pthreads
--- Looking for pthread_create in pthreads - not found
--- Looking for pthread_create in pthread
--- Looking for pthread_create in pthread - found
--- Found Threads: TRUE  
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=NO -DBUILD_EXAMPLES=NO -DBUILD_SSL=NO -DBUILD_SHARED=NO -G "CodeBlocks - Unix Makefiles" /home/jamie/Documents/Project4/Cleanify/RoombaController
    [34mCopyright 2013-2017, Corvusoft Ltd, All Rights Reserved.[m
--- [32mFound ASIO include at: /home/bas/CLionProjects/Cleanify/RoombaController/restbed/dependency/asio/asio/include[m
--- [32mFound Kashmir include at: /home/bas/CLionProjects/Cleanify/RoombaController/restbed/dependency/kashmir[m
--- [32mFound OpenSSL library at: /usr/lib/x86_64-linux-gnu/libssl.so[m
--- [32mFound OpenSSL include at: /usr/include[m
--- [32mFound Crypto library at: /usr/lib/x86_64-linux-gnu/libcrypto.so[m
--- Found PythonInterp: /usr/bin/python (found version "2.7.12") 
+-- [32mFound ASIO include at: /home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/asio/asio/include[m
+-- [32mFound Kashmir include at: /home/jamie/Documents/Project4/Cleanify/RoombaController/restbed/dependency/kashmir[m
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/bas/CLionProjects/Cleanify/RoombaController/Build
+-- Build files have been written to: /home/jamie/Documents/Project4/Cleanify/RoombaController/Build
