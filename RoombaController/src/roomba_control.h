@@ -10,7 +10,7 @@
 #include <string>
 #include <memory>
 
-#include "../Serial/serial.h"
+#include "serial.h"
 #include "commands.h"
 
 namespace systemcontrol {

@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "Server/server.h"
-#include "SystemControl/roomba_statemachine.h"
+#include "server.h"
+#include "roomba_statemachine.h"
 
 using namespace std;
 using namespace systemcontrol;

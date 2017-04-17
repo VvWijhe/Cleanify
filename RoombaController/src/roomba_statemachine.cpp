@@ -4,7 +4,7 @@
 
 #include "roomba_statemachine.h"
 
-#include "../globals.h"
+#include "globals.h"
 
 using namespace std;
 using namespace systemcontrol;

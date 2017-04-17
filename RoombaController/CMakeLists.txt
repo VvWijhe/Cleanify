@@ -3,26 +3,26 @@ project(RoombaController)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Build")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 
 find_package (Threads)
 
 ## restbed library
-add_subdirectory(restbed)
-include_directories(restbed/source)
+add_subdirectory(dependencies/restbed)
+include_directories(dependencies/restbed/source)
 
 ## source files
 set(SOURCE_FILES
-        main.cpp
-        Serial/serial.cpp Serial/serial.h
-        json.hpp
-        Server/server.h Server/server.cpp
-        Server/responses.h Server/responses.cpp Server/file_handler.h
-        SystemControl/roomba_statemachine.h SystemControl/roomba_control.h SystemControl/sensorparser.h
-        SystemControl/roomba_control.cpp SystemControl/roomba_statemachine.cpp globals.cpp globals.h)
+        src/main.cpp
+        src/serial.cpp src/serial.h
+        src/json.hpp
+        src/server.h src/server.cpp
+        src/responses.h src/responses.cpp src/file_handler.h
+        src/roomba_statemachine.h src/roomba_control.h src/sensorparser.h
+        src/roomba_control.cpp src/roomba_statemachine.cpp src/globals.cpp src/globals.h)
 
 ## directory for testing
-add_subdirectory(Tests)
+add_subdirectory(tests)
 
 add_executable(RoombaController ${SOURCE_FILES})
 

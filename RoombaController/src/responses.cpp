@@ -3,8 +3,8 @@
 //
 
 #include "responses.h"
-#include "../json.hpp"
-#include "../globals.h"
+#include "json.hpp"
+#include "globals.h"
 
 using namespace std;
 using namespace restbed;

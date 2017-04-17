@@ -4,7 +4,7 @@
 
 #include <memory>
 
-#include "../Server/server.h"
+#include "server.h"
 #include "roomba_control.h"
 #include "statemachine.hpp"
 
