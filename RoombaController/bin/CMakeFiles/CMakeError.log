@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f9cba/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f9cba.dir/build.make CMakeFiles/cmTC_f9cba.dir/build
+make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f9cba.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_f9cba.dir/CheckSymbolExists.c.o   -c /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_f9cba
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9cba.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_f9cba.dir/CheckSymbolExists.c.o  -o cmTC_f9cba 
+CMakeFiles/cmTC_f9cba.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f9cba.dir/build.make:97: recipe for target 'cmTC_f9cba' failed
+make[1]: *** [cmTC_f9cba] Error 1
+make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f9cba/fast' failed
+make: *** [cmTC_f9cba/fast] Error 2
+
+File /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5c36b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5c36b.dir/build.make CMakeFiles/cmTC_5c36b.dir/build
+make[1]: Entering directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5c36b.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5c36b.dir/CheckFunctionExists.c.o   -c /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5c36b
+/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c36b.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_5c36b.dir/CheckFunctionExists.c.o  -o cmTC_5c36b -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_5c36b.dir/build.make:97: recipe for target 'cmTC_5c36b' failed
+make[1]: *** [cmTC_5c36b] Error 1
+make[1]: Leaving directory '/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_5c36b/fast' failed
+make: *** [cmTC_5c36b/fast] Error 2
+
+
