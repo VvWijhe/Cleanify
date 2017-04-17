@@ -14,7 +14,6 @@ int main() {
 //    control.setMotors(control.all, true);
 //
 
-
     try {
         shared_ptr<RoombaStateContext> process = make_shared<RoombaStateContext>(make_shared<states::Initialise>());
 
