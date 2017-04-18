@@ -17,7 +17,7 @@ RoombaServer::RoombaServer(unsigned short port) {
     // main page reponse
     auto resource = make_shared<Resource>();
     resource->set_path("/");
-    resource->set_method_handler("GET", responses::info);
+    resource->set_method_handler("GET", responses::index);
     service_.publish(resource);
 
     auto resource1 = make_shared<Resource>();

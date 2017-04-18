@@ -3,7 +3,6 @@
 //
 
 #include "roomba_statemachine.h"
-
 #include "globals.h"
 
 using namespace std;
@@ -48,6 +47,7 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
 
 void Clean::handle(const shared_ptr<statemachine::Context> &context) {
     cout << "clean " << globals::roomba_session << endl;
+    cin.ignore();
     context->setState(make_shared<ShutDown>());
 }
 

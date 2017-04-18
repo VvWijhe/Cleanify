@@ -15,8 +15,11 @@ namespace responses {
     using pSession = std::shared_ptr<restbed::Session>;
     using responseHandler = std::function<void(const pSession session)>;
 
-    // response handlers
-    void info(pSession session);
+    /**
+     * @brief Response to http get /. It sends an html page.
+     * @param session contains http request information.
+     */
+    void index(pSession session);
 
     void request(pSession session);
 

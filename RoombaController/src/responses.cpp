@@ -31,7 +31,7 @@ const std::vector<std::string> HTML_Commands = {"LF",
                                                 "RED",
                                                 "BLUE"};
 
-void responses::info(pSession session) {
+void responses::index(pSession session) {
     const auto request = session->get_request();
 
     int content_length = request->get_header("Content-Length", 0);
