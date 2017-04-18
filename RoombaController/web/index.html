@@ -16,18 +16,26 @@
             border-radius: 15px;
             box-shadow: 0 9px #999;
         }
-        .button2 {background-color: #008CBA;}
-        .button:hover {background-color: #3e8e41}
+
+        .button2 {
+            background-color: #008CBA;
+        }
+
+        .button:hover {
+            background-color: #3e8e41
+        }
 
         .button:active {
             background-color: #3e8e41;
             box-shadow: 0 5px #666;
             transform: translateY(4px);
         }
+
         table, th, td {
             border-collapse: collapse;
             text-align: center;
         }
+
         div.container {
             width: 100%;
             border: 1px solid gray;
@@ -65,89 +73,125 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $("button").click(function(){
-                var form = "{\"direction\" : \"" + this.id + "\"}";
+        $(document).ready(function () {
+            $("button").click(function () {
+                var form = "{\"Direction\" : \"" + this.id + "\"}";
 
-                $.post("/request",
+                $.post("/control",
                     form,
-                    function(data,status) {
-                        if (data != "succes") {
-                            alert("Error: " + data + "\nConnection status: " + status);
-                        }
-                    }, "text" ).fail( function(jqXHR, textStatus, errorThrown) {
-                alert("ERROR: NO CONNECTION");
+                    function (data) {
+                        console.log(data);
+                    }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+                    alert("ERROR: NO CONNECTION");
+                });
             });
         });
-        });
-//        $.post('http://ip.jsontest.com', {username: myusername, password: mypassword}, function(data) {
-//            alert(data.ip);
-//            console.log(data);
-//            if (data.flag == true) {
-//                alert('123');
-//                console.log(data);
-//                jQuery.mobile.changePage('#page1');
-//            }
-//            else {
-//                alert('12345');
-//                console.log(data);
-//                $('#errmsg_login').html(data.msg);
-//            }
-//        }, "json" ).fail( function(jqXHR, textStatus, errorThrown) {
-//            alert(textStatus);
-//        });
+        //        $.post('http://ip.jsontest.com', {username: myusername, password: mypassword}, function(data) {
+        //            alert(data.ip);
+        //            console.log(data);
+        //            if (data.flag == true) {
+        //                alert('123');
+        //                console.log(data);
+        //                jQuery.mobile.changePage('#page1');
+        //            }
+        //            else {
+        //                alert('12345');
+        //                console.log(data);
+        //                $('#errmsg_login').html(data.msg);
+        //            }
+        //        }, "json" ).fail( function(jqXHR, textStatus, errorThrown) {
+        //            alert(textStatus);
+        //        });
     </script>
 </head>
 <body>
 <center>
-<header>
-    <h1>Cleanify: Der Roomba</h1>
-</header>
-<!--<nav>-->
+    <header>
+        <h1>Cleanify: Der Roomba</h1>
+    </header>
+    <!--<nav>-->
     <!--<h2 >Automatic Drive</h2>-->
     <!--<button id="AUT_ON" class="button">ON&nbsp</button>-->
     <!--<button id="AUT_OFF" class="button">OFF</button>-->
-<!--</nav>-->
-<article>
-    <h2>Manuel Drive</h2>
-    <table style="width:10%">
-        <tr>
-            <th><button id="LF" class="button" >&#8598;</button></th>
-            <th><button id="F" class="button" >&#8593;</button></th>
-            <th><button id="RF" class="button" >&#8599;</button></th>
-        </tr>
-        <tr>
-            <td><button id="L" class="button" >&#8592;</button></td>
-            <td><button id="STOP" class="button" >&nbsp&#183;&nbsp</button></td>
-            <td><button id="R" class="button" >&#8594;</button></td>
-        </tr>
-        <tr>
-            <td><button id="LB" class="button" >&#8601;</button></td>
-            <td><button id="B" class="button" >&#8595;</button></td>
-            <td><button id="RB" class="button" >&#8600;</button></td>
-        </tr>
-    </table>
-    <div id="result" style="color:red"></div>
-</article>
-<buttons>
-    <h2>Help Buttons</h2>
-    <table style="width:10%">
-        <tr>
-            <th><button id="BRUSH" class="button" >BRUSH</button></th>
-            <th><button id="STOP" class="button" >STOP</button></th>
-            <th><button id="MUSIC" class="button" >MUSIC</button></th>
-        </tr>
-        <tr>
-            <td><button id="CLEAN" class="button" >CLEAN</button></td>
-            <td><button id="SPOT" class="button" >SPOT</button></td>
-            <td><button id="DOCK" class="button" >DOCK</button></td>
-        </tr>
-    </table>
-    <td><button style="color:green" id="GREEN" class="button">      &nbsp&nbsp&nbsp&#x25cf;&nbsp&nbsp</button></td>
-    <td><button style="color:orange" id="ORANGE" class="button" >   &nbsp&nbsp&#x25cf;&nbsp&nbsp</button></td>
-    <td><button style="color:red" id="RED" class="button" >         &nbsp&nbsp&#x25cf;&nbsp&nbsp</button></td>
-    <td><button style="color:blue" id="BLUE" class="button" >       &nbsp&nbsp&#x25cf;&nbsp&nbsp&nbsp</button></td>
-</buttons>
+    <!--</nav>-->
+    <article>
+        <h2>Manuel Drive</h2>
+        <table style="width:10%">
+            <tr>
+                <th>
+                    <button id="LF" class="button">&#8598;</button>
+                </th>
+                <th>
+                    <button id="F" class="button">&#8593;</button>
+                </th>
+                <th>
+                    <button id="RF" class="button">&#8599;</button>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <button id="L" class="button">&#8592;</button>
+                </td>
+                <td>
+                    <button id="Stop" class="button">&nbsp&#183;&nbsp</button>
+                </td>
+                <td>
+                    <button id="R" class="button">&#8594;</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="LB" class="button">&#8601;</button>
+                </td>
+                <td>
+                    <button id="B" class="button">&#8595;</button>
+                </td>
+                <td>
+                    <button id="RB" class="button">&#8600;</button>
+                </td>
+            </tr>
+        </table>
+        <div id="result" style="color:red"></div>
+    </article>
+    <buttons>
+        <h2>Help Buttons</h2>
+        <table style="width:10%">
+            <tr>
+                <th>
+                    <button id="BRUSH" class="button">BRUSH</button>
+                </th>
+                <th>
+                    <button id="STOP" class="button">STOP</button>
+                </th>
+                <th>
+                    <button id="MUSIC" class="button">MUSIC</button>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <button id="CLEAN" class="button">CLEAN</button>
+                </td>
+                <td>
+                    <button id="SPOT" class="button">SPOT</button>
+                </td>
+                <td>
+                    <button id="DOCK" class="button">DOCK</button>
+                </td>
+            </tr>
+        </table>
+        <td>
+            <button style="color:green" id="GREEN" class="button"> &nbsp&nbsp&nbsp&#x25cf;&nbsp&nbsp</button>
+        </td>
+        <td>
+            <button style="color:orange" id="ORANGE" class="button"> &nbsp&nbsp&#x25cf;&nbsp&nbsp</button>
+        </td>
+        <td>
+            <button style="color:red" id="RED" class="button"> &nbsp&nbsp&#x25cf;&nbsp&nbsp</button>
+        </td>
+        <td>
+            <button style="color:blue" id="BLUE" class="button"> &nbsp&nbsp&#x25cf;&nbsp&nbsp&nbsp</button>
+        </td>
+    </buttons>
 </center>
 </body>
 </html>

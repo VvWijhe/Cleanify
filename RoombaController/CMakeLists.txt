@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 
 find_package (Threads)
-find_package(Doxygen)
 
 # find boost
 find_package(Boost 1.58 COMPONENTS program_options REQUIRED)
@@ -39,6 +38,7 @@ set(SOURCE_FILES
 add_subdirectory(tests)
 
 ## check if doxygen is available
+find_package(Doxygen)
 if(DOXYGEN_FOUND)
     set(DOXYGEN_INPUT ${SOURCE_FILES})
     set(DOXYGEN_OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/doc)

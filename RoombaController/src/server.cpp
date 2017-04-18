@@ -20,10 +20,16 @@ RoombaServer::RoombaServer(unsigned short port) {
     resource->set_method_handler("GET", responses::index);
     service_.publish(resource);
 
+    // post instruction
     auto resource1 = make_shared<Resource>();
-    resource1->set_path("/request");
-    resource1->set_method_handler("POST", responses::request);
+    resource1->set_path("/control");
+    resource1->set_method_handler("POST", responses::handle_post);
     service_.publish(resource1);
+
+    auto resource2 = make_shared<Resource>();
+    resource2->set_path("/status");
+    resource2->set_method_handler("GET", responses::status);
+    service_.publish(resource2);
 
     // 404 page not found
     service_.set_not_found_handler(responses::error404);

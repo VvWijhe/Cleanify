@@ -3,6 +3,7 @@
 //
 
 #include <memory>
+#include <Poco/Logger.h>
 
 #include "server.h"
 #include "roomba_control.h"
@@ -20,7 +21,8 @@ namespace systemcontrol {
         /**
          * @brief Constructor allocates the server and roomba control.
          */
-        RoombaStateContext(const std::shared_ptr<statemachine::State> &initial) {
+        RoombaStateContext(const std::shared_ptr<statemachine::State> &initial) :
+                logger_(Poco::Logger::get("logger")) {
             server_ = std::make_shared<server::RoombaServer>(8000);
             control_ = std::make_shared<RoombaControl>("/dev/ttyUSB0", RoombaControl::b115200);
 
@@ -37,9 +39,12 @@ namespace systemcontrol {
          */
         std::shared_ptr<RoombaControl> getControl() const { return control_; }
 
+        Poco::Logger & getLogger() const { return logger_; }
+
     private:
         std::shared_ptr<server::RoombaServer> server_;
         std::shared_ptr<RoombaControl> control_;
+        Poco::Logger &logger_;
     };
 
     namespace states {
