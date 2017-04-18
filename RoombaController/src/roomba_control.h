@@ -42,6 +42,20 @@ namespace systemcontrol {
             b115200 = B115200
         } baud_t;
 
+        typedef enum : int {
+            Start = 128,
+            Control = 130,
+            Safe = 131,
+            Full = 132,
+            Power = 133,
+            Spot = 134,
+            Clean = 135,
+            Max_Clean = 136,
+            Seek_Dock = 143,
+            Stop = 173
+
+        } commands_t;
+
         RoombaControl(std::string usbName, speed_t baud);
 
         ~RoombaControl();

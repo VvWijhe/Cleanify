@@ -17,7 +17,8 @@ int main() {
     systemcontrol::RoombaControl control("/dev/rfcomm1", systemcontrol::RoombaControl::b115200);
 
     control.init();
-    control.setMotors(control.all, false);
+    control.setMotors(control.side, true);
+    control.setWheels(0);
 
     t.join();
 
