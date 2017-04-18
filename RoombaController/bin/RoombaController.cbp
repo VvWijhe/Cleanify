@@ -125,6 +125,26 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="apidoc_forced">
+				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/bin"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/Makefile&quot;  VERBOSE=1 apidoc_forced"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="apidoc">
+				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/bin"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/Makefile&quot;  VERBOSE=1 apidoc"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="restbed">
 				<Option output="/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed/librestbed.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed"/>
@@ -568,9 +588,6 @@
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket_message.hpp">
 			<Option target="restbed"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/src/file_handler.h">
-			<Option target="RoombaController"/>
-		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/src/globals.cpp">
 			<Option target="RoombaController"/>
 		</Unit>
@@ -595,6 +612,7 @@
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/src/roomba_control.h">
 			<Option target="RoombaController"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/src/roomba_statemachine.cpp">
 			<Option target="RoombaController"/>
@@ -602,7 +620,7 @@
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/src/roomba_statemachine.h">
 			<Option target="RoombaController"/>
 		</Unit>
-		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/src/sensorparser.h">
+		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/src/sensorparser.hpp">
 			<Option target="RoombaController"/>
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/src/serial.cpp">
@@ -611,6 +629,7 @@
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/src/serial.h">
 			<Option target="RoombaController"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/jamie/Documents/Project4/Cleanify/RoombaController/src/server.cpp">
 			<Option target="RoombaController"/>

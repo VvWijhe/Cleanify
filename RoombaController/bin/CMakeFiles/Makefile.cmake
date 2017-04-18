@@ -23,6 +23,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/Compiler/GNU-C.cmake"
   "/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/Compiler/GNU-CXX.cmake"
   "/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/Compiler/GNU.cmake"
+  "/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/FindBoost.cmake"
+  "/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/FindDoxygen.cmake"
   "/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/FindPackageHandleStandardArgs.cmake"
   "/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/FindPackageMessage.cmake"
   "/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/share/cmake-3.7/Modules/FindPythonInterp.cmake"
@@ -71,6 +73,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/RoombaController.dir/DependInfo.cmake"
+  "CMakeFiles/apidoc_forced.dir/DependInfo.cmake"
+  "CMakeFiles/apidoc.dir/DependInfo.cmake"
   "dependencies/restbed/CMakeFiles/restbed.dir/DependInfo.cmake"
   "tests/tests/CMakeFiles/runTests.dir/DependInfo.cmake"
   "tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"

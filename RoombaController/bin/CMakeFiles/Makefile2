@@ -97,6 +97,75 @@ clean: CMakeFiles/RoombaController.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/apidoc_forced.dir
+
+# All Build rule for target.
+CMakeFiles/apidoc_forced.dir/all:
+	$(MAKE) -f CMakeFiles/apidoc_forced.dir/build.make CMakeFiles/apidoc_forced.dir/depend
+	$(MAKE) -f CMakeFiles/apidoc_forced.dir/build.make CMakeFiles/apidoc_forced.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num= "Built target apidoc_forced"
+.PHONY : CMakeFiles/apidoc_forced.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/apidoc_forced.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/apidoc_forced.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+.PHONY : CMakeFiles/apidoc_forced.dir/rule
+
+# Convenience name for target.
+apidoc_forced: CMakeFiles/apidoc_forced.dir/rule
+
+.PHONY : apidoc_forced
+
+# clean rule for target.
+CMakeFiles/apidoc_forced.dir/clean:
+	$(MAKE) -f CMakeFiles/apidoc_forced.dir/build.make CMakeFiles/apidoc_forced.dir/clean
+.PHONY : CMakeFiles/apidoc_forced.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/apidoc_forced.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/apidoc.dir
+
+# All Build rule for target.
+CMakeFiles/apidoc.dir/all:
+	$(MAKE) -f CMakeFiles/apidoc.dir/build.make CMakeFiles/apidoc.dir/depend
+	$(MAKE) -f CMakeFiles/apidoc.dir/build.make CMakeFiles/apidoc.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=9 "Built target apidoc"
+.PHONY : CMakeFiles/apidoc.dir/all
+
+# Include target in all.
+all: CMakeFiles/apidoc.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/apidoc.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/apidoc.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+.PHONY : CMakeFiles/apidoc.dir/rule
+
+# Convenience name for target.
+apidoc: CMakeFiles/apidoc.dir/rule
+
+.PHONY : apidoc
+
+# clean rule for target.
+CMakeFiles/apidoc.dir/clean:
+	$(MAKE) -f CMakeFiles/apidoc.dir/build.make CMakeFiles/apidoc.dir/clean
+.PHONY : CMakeFiles/apidoc.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/apidoc.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory dependencies/restbed
 
 # Convenience name for "all" pass in the directory.
@@ -121,7 +190,7 @@ dependencies/restbed/preinstall:
 dependencies/restbed/CMakeFiles/restbed.dir/all:
 	$(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/depend
 	$(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40 "Built target restbed"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 "Built target restbed"
 .PHONY : dependencies/restbed/CMakeFiles/restbed.dir/all
 
 # Include target in all.
@@ -198,7 +267,7 @@ tests/tests/CMakeFiles/runTests.dir/all: tests/lib/googletest/googlemock/gtest/C
 tests/tests/CMakeFiles/runTests.dir/all: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f tests/tests/CMakeFiles/runTests.dir/build.make tests/tests/CMakeFiles/runTests.dir/depend
 	$(MAKE) -f tests/tests/CMakeFiles/runTests.dir/build.make tests/tests/CMakeFiles/runTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=41,42,43,44,45 "Built target runTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=42,43,44,45,46 "Built target runTests"
 .PHONY : tests/tests/CMakeFiles/runTests.dir/all
 
 # Include target in all.
@@ -275,7 +344,7 @@ tests/lib/googletest/googlemock/preinstall: tests/lib/googletest/googlemock/gtes
 tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=12,13,14,15 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=13,14,15,16 "Built target gmock_main"
 .PHONY : tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Include target in all.
@@ -312,7 +381,7 @@ clean: tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
 tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=9,10,11 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=10,11,12 "Built target gmock"
 .PHONY : tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/all
 
 # Include target in all.
@@ -369,7 +438,7 @@ tests/lib/googletest/googlemock/gtest/preinstall:
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=18,19 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=19,20 "Built target gtest_main"
 .PHONY : tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Include target in all.
@@ -406,7 +475,7 @@ clean: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=16,17 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=17,18 "Built target gtest"
 .PHONY : tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Include target in all.
