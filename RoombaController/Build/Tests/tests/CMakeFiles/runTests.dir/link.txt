@@ -1,1 +1,0 @@
-/usr/bin/c++   -g   CMakeFiles/runTests.dir/serial_tests.cpp.o CMakeFiles/runTests.dir/__/__/IO/serial.cpp.o CMakeFiles/runTests.dir/devices.cpp.o  -o ../../runTests ../lib/googletest/googlemock/gtest/libgtest.a ../lib/googletest/googlemock/gtest/libgtest_main.a ../lib/googletest/googlemock/gtest/libgtest.a -lpthread 

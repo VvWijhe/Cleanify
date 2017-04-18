@@ -3,26 +3,56 @@ project(RoombaController)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Build")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 
 find_package (Threads)
+find_package(Doxygen)
 
 ## restbed library
-add_subdirectory(restbed)
-include_directories(restbed/source)
+add_subdirectory(dependencies/restbed)
+include_directories(dependencies/restbed/source)
 
 ## source files
 set(SOURCE_FILES
-        main.cpp
-        Serial/serial.cpp Serial/serial.h
-        json.hpp
-        Server/server.h Server/server.cpp
-        Server/responses.h Server/responses.cpp Server/file_handler.h
-        SystemControl/roomba_statemachine.h SystemControl/roomba_control.h SystemControl/sensorparser.h
-        SystemControl/roomba_control.cpp SystemControl/roomba_statemachine.cpp globals.cpp globals.h)
+        src/main.cpp
+        src/serial.cpp
+        src/json.hpp
+        src/server.cpp
+        src/responses.cpp
+        src/sensorparser.hpp
+        src/roomba_control.cpp
+        src/roomba_statemachine.cpp
+        src/globals.cpp)
 
 ## directory for testing
-add_subdirectory(Tests)
+add_subdirectory(tests)
+
+## check if doxygen is available
+if(DOXYGEN_FOUND)
+    set(DOXYGEN_INPUT ${SOURCE_FILES})
+    set(DOXYGEN_OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/doc)
+
+    add_custom_command(
+            OUTPUT ${DOXYGEN_OUTPUT}
+            COMMAND ${CMAKE_COMMAND} -E echo_append "Building API Documentation..."
+            COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_INPUT}
+            COMMAND ${CMAKE_COMMAND} -E echo "Done."
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            DEPENDS ${DOXYGEN_INPUT}
+    )
+
+    add_custom_target(apidoc ALL DEPENDS ${DOXYGEN_OUTPUT})
+
+    add_custom_target(apidoc_forced
+            COMMAND ${CMAKE_COMMAND} -E echo_append "Building API Documentation..."
+            COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_INPUT}
+            COMMAND ${CMAKE_COMMAND} -E echo "Done."
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            )
+else()
+    message(WARNING "Doxygen not found")
+
+endif(DOXYGEN_FOUND)
 
 add_executable(RoombaController ${SOURCE_FILES})
 
