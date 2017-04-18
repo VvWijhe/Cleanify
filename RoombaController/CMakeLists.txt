@@ -16,6 +16,13 @@ include_directories(${Boost_INCLUDE_DIR})
 add_subdirectory(dependencies/restbed)
 include_directories(dependencies/restbed/source)
 
+# set the POCO paths and libs
+set(POCO_PREFIX      "/usr/local") # the directory containing "include" and "lib"
+set(POCO_INCLUDE_DIR "${POCO_PREFIX}/include")
+set(POCO_LIB_DIR     "${POCO_PREFIX}/lib")
+set(POCO_LIBS        "${POCO_LIB_DIR}/libPocoFoundationd.so")
+include_directories(${POCO_INCLUDE_DIR})
+
 ## source files
 set(SOURCE_FILES
         src/main.cpp
@@ -60,4 +67,4 @@ endif(DOXYGEN_FOUND)
 
 add_executable(RoombaController ${SOURCE_FILES})
 
-target_link_libraries(RoombaController ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES} restbed)
+target_link_libraries(RoombaController ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES} ${POCO_LIBS} restbed)
