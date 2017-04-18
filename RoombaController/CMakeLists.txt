@@ -8,6 +8,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 find_package (Threads)
 find_package(Doxygen)
 
+# find boost
+find_package(Boost 1.58 COMPONENTS program_options REQUIRED)
+include_directories(${Boost_INCLUDE_DIR})
+
 ## restbed library
 add_subdirectory(dependencies/restbed)
 include_directories(dependencies/restbed/source)
@@ -56,4 +60,4 @@ endif(DOXYGEN_FOUND)
 
 add_executable(RoombaController ${SOURCE_FILES})
 
-target_link_libraries(RoombaController ${CMAKE_THREAD_LIBS_INIT} restbed)
+target_link_libraries(RoombaController ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES} restbed)

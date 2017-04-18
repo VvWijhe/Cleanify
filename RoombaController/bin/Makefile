@@ -168,6 +168,32 @@ RoombaController/fast:
 .PHONY : RoombaController/fast
 
 #=============================================================================
+# Target rules for targets named apidoc_forced
+
+# Build rule for target.
+apidoc_forced: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 apidoc_forced
+.PHONY : apidoc_forced
+
+# fast build rule for target.
+apidoc_forced/fast:
+	$(MAKE) -f CMakeFiles/apidoc_forced.dir/build.make CMakeFiles/apidoc_forced.dir/build
+.PHONY : apidoc_forced/fast
+
+#=============================================================================
+# Target rules for targets named apidoc
+
+# Build rule for target.
+apidoc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 apidoc
+.PHONY : apidoc
+
+# fast build rule for target.
+apidoc/fast:
+	$(MAKE) -f CMakeFiles/apidoc.dir/build.make CMakeFiles/apidoc.dir/build
+.PHONY : apidoc/fast
+
+#=============================================================================
 # Target rules for targets named restbed
 
 # Build rule for target.
@@ -447,6 +473,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... RoombaController"
+	@echo "... apidoc_forced"
+	@echo "... apidoc"
 	@echo "... restbed"
 	@echo "... runTests"
 	@echo "... gmock_main"
