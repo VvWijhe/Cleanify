@@ -15,11 +15,12 @@ RoombaControl::RoombaControl(std::string usbName, speed_t baud) :
 RoombaControl::~RoombaControl() {}
 
 int RoombaControl::init() {
-    if (serial_.connect() < 0) {
+    if (serial_.connect() != 1) {
+        perror("error: ");
         cerr << "not connected" << endl;
     }
 
-    serial_.writeVector({128, 130, 137, 255, 56, 1, 244});
+    serial_.writeVector({128, 130});
 
     return 0;
 }
