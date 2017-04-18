@@ -5,7 +5,8 @@
 
 ## Build
 - `$ git clone https://github.com/VvWijhe/Cleanify`
-- `$ git submodule update --init recursive`
+- `$ cd Cleanify`
+- `$ git submodule update --init --recursive`
 - `$ cd RoombaController/bin`
 - `$ cmake ..`
 
