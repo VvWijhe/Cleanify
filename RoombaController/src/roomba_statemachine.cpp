@@ -69,10 +69,10 @@ void Manuel::handle(const shared_ptr<statemachine::Context> &context) {
 
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto rmbControl = rmbContext->getControl();
-    rmbControl->setMotors(RoombaParameters::getParameter(RoombaParameters::Brushes));
+    rmbControl->setMotors(RoombaParameters::getParameter(RoombaParameters::BRUSHES));
     rmbControl->setWheels(RoombaParameters::getParameter(RoombaParameters::M_LEFT),
-                          RoombaParameters::getParameter(M_Right));
-    rmbControl->sendCommands(RoombaParameters::getParameter(RoombaParameters::commands));
+                          RoombaParameters::getParameter(RoombaParameters::M_RIGHT));
+    rmbControl->sendCommands(RoombaParameters::getParameter(RoombaParameters::COMMAND));
 
     cin.ignore();
     context->setState(make_shared<WaitMode>());
@@ -83,10 +83,10 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
 
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto rmbControl = rmbContext->getControl();
-    rmbControl->setMotors(RoombaParameters::getParameter(RoombaParameters::Brushes));
+    rmbControl->setMotors(RoombaParameters::getParameter(RoombaParameters::BRUSHES));
     rmbControl->setWheels(RoombaParameters::getParameter(RoombaParameters::M_LEFT),
-                          RoombaParameters::getParameter(M_Right));
-    rmbControl->sendCommands(RoombaParameters::getParameter(RoombaParameters::commands));
+                          RoombaParameters::getParameter(RoombaParameters::M_RIGHT));
+    rmbControl->sendCommands(RoombaParameters::getParameter(RoombaParameters::COMMAND));
 
     cin.ignore();
     context->setState(make_shared<WaitMode>());
