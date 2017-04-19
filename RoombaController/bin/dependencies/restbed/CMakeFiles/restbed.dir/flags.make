@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wno-non-virtual-dtor -std=c++11 -g -O0 -Wall -Wextra -Weffc++ -ped
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/dependency/asio/asio/include -isystem /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/dependency/kashmir -I/home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source 
+CXX_INCLUDES = -isystem "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/dependency/asio/asio/include" -isystem "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/dependency/kashmir" -I"/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source" 
 

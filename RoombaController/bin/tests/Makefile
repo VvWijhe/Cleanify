@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E remove -f
+RM = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/bin
+CMAKE_BINARY_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/bin
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
@@ -70,7 +70,7 @@ install/strip/fast: install/strip
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
@@ -81,13 +81,13 @@ install/local/fast: install/local
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -P cmake_install.cmake
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -P cmake_install.cmake
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
@@ -103,7 +103,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -114,7 +114,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -124,14 +124,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/CMakeFiles/progress.marks
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/CMakeFiles/progress.marks"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,17 +141,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -8,27 +8,24 @@
 using namespace std;
 using namespace systemcontrol;
 using namespace states;
-using namespace Poco;
 
 void Initialise::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto rmbControl = rmbContext->getControl();
-    auto rmbServer = rmbContext->getServer();
-    auto &logger = rmbContext->getLogger();
+    auto rmbServer = rmbContext->getServer();   A
 
     rmbServer->run();
     rmbControl->init();
 
-    logger.information("System initialised");
+    cout << "initialise " << context->getEvent() << endl;
     context->setState(make_shared<WaitMode>());
 }
 
 void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto control = rmbContext->getControl();
-    auto &logger = rmbContext->getLogger();
 
-    logger.information("Waiting for signal from PC or webapp...");
+    cout << "Waiting for signal from PC or webapp" << endl;
 
     // roomba starts manually if ENTER key is pressed
     thread cli([]{
@@ -44,6 +41,8 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
     globals::cv_roomba_session.wait(lk);
 
     cli.detach();
+
+    context->getEvent();
 
     context->setState(make_shared<Clean>());
 }

@@ -42,7 +42,7 @@ namespace systemcontrol {
             b115200 = B115200
         } baud_t;
 
-        typedef enum : int {
+        typedef enum : unsigned char {
             Start = 128,
             Control = 130,
             Safe = 131,
@@ -111,6 +111,13 @@ namespace systemcontrol {
          * @param state: on = 1, off = 0
          */
         char setMotors(motors_t motor, bool state);
+
+
+        /**
+         * @brief This functions sends simple commands
+         * @param command: fill in a commands_t command
+         */
+        void sendCommands(commands_t command);
 
         /// TODO
         void readSensors();

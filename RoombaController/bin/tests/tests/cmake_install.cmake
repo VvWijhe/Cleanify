@@ -1,8 +1,8 @@
-# Install script for directory: /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests
+# Install script for directory: /media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/distribution")
+  set(CMAKE_INSTALL_PREFIX "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/distribution")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

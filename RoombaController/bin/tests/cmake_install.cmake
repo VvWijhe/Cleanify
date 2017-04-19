@@ -1,8 +1,8 @@
-# Install script for directory: /home/jamie/Documents/Project4/Cleanify/RoombaController/tests
+# Install script for directory: /media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/distribution")
+  set(CMAKE_INSTALL_PREFIX "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/distribution")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests/cmake_install.cmake")
-  include("/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/cmake_install.cmake")
+  include("/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests/cmake_install.cmake")
+  include("/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/cmake_install.cmake")
 
 endif()
 

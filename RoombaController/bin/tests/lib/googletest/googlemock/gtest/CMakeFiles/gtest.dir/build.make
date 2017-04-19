@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E remove -f
+RM = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/bin
+CMAKE_BINARY_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin"
 
 # Include any dependencies generated for this target.
 include tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend.make
@@ -59,16 +59,16 @@ include tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/flags.make
 
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/flags.make
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: ../tests/lib/googletest/googletest/src/gtest-all.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest/src/gtest-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/lib/googletest/googletest/src/gtest-all.cc"
 
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest.dir/src/gtest-all.cc.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/lib/googletest/googletest/src/gtest-all.cc" > CMakeFiles/gtest.dir/src/gtest-all.cc.i
 
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest.dir/src/gtest-all.cc.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/lib/googletest/googletest/src/gtest-all.cc" -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
 
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.requires:
 
@@ -91,9 +91,9 @@ gtest_EXTERNAL_OBJECTS =
 tests/lib/googletest/googlemock/gtest/libgtest.a: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 tests/lib/googletest/googlemock/gtest/libgtest.a: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make
 tests/lib/googletest/googlemock/gtest/libgtest.a: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgtest.a"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean_target.cmake
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgtest.a"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest" && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean_target.cmake
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build: tests/lib/googletest/googlemock/gtest/libgtest.a
@@ -105,10 +105,10 @@ tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/requires: tests/lib/g
 .PHONY : tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/requires
 
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/clean:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean.cmake
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest" && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean.cmake
 .PHONY : tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/clean
 
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jamie/Documents/Project4/Cleanify/RoombaController /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest /home/jamie/Documents/Project4/Cleanify/RoombaController/bin /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/lib/googletest/googletest" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 

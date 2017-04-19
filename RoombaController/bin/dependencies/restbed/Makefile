@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E remove -f
+RM = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/bin
+CMAKE_BINARY_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/bin
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
@@ -70,7 +70,7 @@ install/strip/fast: install/strip
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
@@ -81,13 +81,13 @@ install/local/fast: install/local
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -P cmake_install.cmake
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -P cmake_install.cmake
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
@@ -103,7 +103,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -114,7 +114,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -124,14 +124,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed/CMakeFiles/progress.marks
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed/CMakeFiles/progress.marks"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/clean
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/preinstall
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/preinstall
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 dependencies/restbed/CMakeFiles/restbed.dir/rule:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/CMakeFiles/restbed.dir/rule
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/CMakeFiles/restbed.dir/rule
 .PHONY : dependencies/restbed/CMakeFiles/restbed.dir/rule
 
 # Convenience name for target.
@@ -166,7 +166,7 @@ restbed: dependencies/restbed/CMakeFiles/restbed.dir/rule
 
 # fast build rule for target.
 restbed/fast:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/build
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/build
 .PHONY : restbed/fast
 
 source/corvusoft/restbed/detail/http_impl.o: source/corvusoft/restbed/detail/http_impl.cpp.o
@@ -175,7 +175,7 @@ source/corvusoft/restbed/detail/http_impl.o: source/corvusoft/restbed/detail/htt
 
 # target to build an object file
 source/corvusoft/restbed/detail/http_impl.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.o
 .PHONY : source/corvusoft/restbed/detail/http_impl.cpp.o
 
 source/corvusoft/restbed/detail/http_impl.i: source/corvusoft/restbed/detail/http_impl.cpp.i
@@ -184,7 +184,7 @@ source/corvusoft/restbed/detail/http_impl.i: source/corvusoft/restbed/detail/htt
 
 # target to preprocess a source file
 source/corvusoft/restbed/detail/http_impl.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.i
 .PHONY : source/corvusoft/restbed/detail/http_impl.cpp.i
 
 source/corvusoft/restbed/detail/http_impl.s: source/corvusoft/restbed/detail/http_impl.cpp.s
@@ -193,7 +193,7 @@ source/corvusoft/restbed/detail/http_impl.s: source/corvusoft/restbed/detail/htt
 
 # target to generate assembly for a file
 source/corvusoft/restbed/detail/http_impl.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.s
 .PHONY : source/corvusoft/restbed/detail/http_impl.cpp.s
 
 source/corvusoft/restbed/detail/service_impl.o: source/corvusoft/restbed/detail/service_impl.cpp.o
@@ -202,7 +202,7 @@ source/corvusoft/restbed/detail/service_impl.o: source/corvusoft/restbed/detail/
 
 # target to build an object file
 source/corvusoft/restbed/detail/service_impl.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.o
 .PHONY : source/corvusoft/restbed/detail/service_impl.cpp.o
 
 source/corvusoft/restbed/detail/service_impl.i: source/corvusoft/restbed/detail/service_impl.cpp.i
@@ -211,7 +211,7 @@ source/corvusoft/restbed/detail/service_impl.i: source/corvusoft/restbed/detail/
 
 # target to preprocess a source file
 source/corvusoft/restbed/detail/service_impl.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.i
 .PHONY : source/corvusoft/restbed/detail/service_impl.cpp.i
 
 source/corvusoft/restbed/detail/service_impl.s: source/corvusoft/restbed/detail/service_impl.cpp.s
@@ -220,7 +220,7 @@ source/corvusoft/restbed/detail/service_impl.s: source/corvusoft/restbed/detail/
 
 # target to generate assembly for a file
 source/corvusoft/restbed/detail/service_impl.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.s
 .PHONY : source/corvusoft/restbed/detail/service_impl.cpp.s
 
 source/corvusoft/restbed/detail/session_impl.o: source/corvusoft/restbed/detail/session_impl.cpp.o
@@ -229,7 +229,7 @@ source/corvusoft/restbed/detail/session_impl.o: source/corvusoft/restbed/detail/
 
 # target to build an object file
 source/corvusoft/restbed/detail/session_impl.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.o
 .PHONY : source/corvusoft/restbed/detail/session_impl.cpp.o
 
 source/corvusoft/restbed/detail/session_impl.i: source/corvusoft/restbed/detail/session_impl.cpp.i
@@ -238,7 +238,7 @@ source/corvusoft/restbed/detail/session_impl.i: source/corvusoft/restbed/detail/
 
 # target to preprocess a source file
 source/corvusoft/restbed/detail/session_impl.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.i
 .PHONY : source/corvusoft/restbed/detail/session_impl.cpp.i
 
 source/corvusoft/restbed/detail/session_impl.s: source/corvusoft/restbed/detail/session_impl.cpp.s
@@ -247,7 +247,7 @@ source/corvusoft/restbed/detail/session_impl.s: source/corvusoft/restbed/detail/
 
 # target to generate assembly for a file
 source/corvusoft/restbed/detail/session_impl.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.s
 .PHONY : source/corvusoft/restbed/detail/session_impl.cpp.s
 
 source/corvusoft/restbed/detail/socket_impl.o: source/corvusoft/restbed/detail/socket_impl.cpp.o
@@ -256,7 +256,7 @@ source/corvusoft/restbed/detail/socket_impl.o: source/corvusoft/restbed/detail/s
 
 # target to build an object file
 source/corvusoft/restbed/detail/socket_impl.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.o
 .PHONY : source/corvusoft/restbed/detail/socket_impl.cpp.o
 
 source/corvusoft/restbed/detail/socket_impl.i: source/corvusoft/restbed/detail/socket_impl.cpp.i
@@ -265,7 +265,7 @@ source/corvusoft/restbed/detail/socket_impl.i: source/corvusoft/restbed/detail/s
 
 # target to preprocess a source file
 source/corvusoft/restbed/detail/socket_impl.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.i
 .PHONY : source/corvusoft/restbed/detail/socket_impl.cpp.i
 
 source/corvusoft/restbed/detail/socket_impl.s: source/corvusoft/restbed/detail/socket_impl.cpp.s
@@ -274,7 +274,7 @@ source/corvusoft/restbed/detail/socket_impl.s: source/corvusoft/restbed/detail/s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/detail/socket_impl.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.s
 .PHONY : source/corvusoft/restbed/detail/socket_impl.cpp.s
 
 source/corvusoft/restbed/detail/web_socket_impl.o: source/corvusoft/restbed/detail/web_socket_impl.cpp.o
@@ -283,7 +283,7 @@ source/corvusoft/restbed/detail/web_socket_impl.o: source/corvusoft/restbed/deta
 
 # target to build an object file
 source/corvusoft/restbed/detail/web_socket_impl.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.o
 .PHONY : source/corvusoft/restbed/detail/web_socket_impl.cpp.o
 
 source/corvusoft/restbed/detail/web_socket_impl.i: source/corvusoft/restbed/detail/web_socket_impl.cpp.i
@@ -292,7 +292,7 @@ source/corvusoft/restbed/detail/web_socket_impl.i: source/corvusoft/restbed/deta
 
 # target to preprocess a source file
 source/corvusoft/restbed/detail/web_socket_impl.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.i
 .PHONY : source/corvusoft/restbed/detail/web_socket_impl.cpp.i
 
 source/corvusoft/restbed/detail/web_socket_impl.s: source/corvusoft/restbed/detail/web_socket_impl.cpp.s
@@ -301,7 +301,7 @@ source/corvusoft/restbed/detail/web_socket_impl.s: source/corvusoft/restbed/deta
 
 # target to generate assembly for a file
 source/corvusoft/restbed/detail/web_socket_impl.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.s
 .PHONY : source/corvusoft/restbed/detail/web_socket_impl.cpp.s
 
 source/corvusoft/restbed/detail/web_socket_manager_impl.o: source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o
@@ -310,7 +310,7 @@ source/corvusoft/restbed/detail/web_socket_manager_impl.o: source/corvusoft/rest
 
 # target to build an object file
 source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o
 .PHONY : source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o
 
 source/corvusoft/restbed/detail/web_socket_manager_impl.i: source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.i
@@ -319,7 +319,7 @@ source/corvusoft/restbed/detail/web_socket_manager_impl.i: source/corvusoft/rest
 
 # target to preprocess a source file
 source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.i
 .PHONY : source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.i
 
 source/corvusoft/restbed/detail/web_socket_manager_impl.s: source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.s
@@ -328,7 +328,7 @@ source/corvusoft/restbed/detail/web_socket_manager_impl.s: source/corvusoft/rest
 
 # target to generate assembly for a file
 source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.s
 .PHONY : source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.s
 
 source/corvusoft/restbed/http.o: source/corvusoft/restbed/http.cpp.o
@@ -337,7 +337,7 @@ source/corvusoft/restbed/http.o: source/corvusoft/restbed/http.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/http.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.o
 .PHONY : source/corvusoft/restbed/http.cpp.o
 
 source/corvusoft/restbed/http.i: source/corvusoft/restbed/http.cpp.i
@@ -346,7 +346,7 @@ source/corvusoft/restbed/http.i: source/corvusoft/restbed/http.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/http.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.i
 .PHONY : source/corvusoft/restbed/http.cpp.i
 
 source/corvusoft/restbed/http.s: source/corvusoft/restbed/http.cpp.s
@@ -355,7 +355,7 @@ source/corvusoft/restbed/http.s: source/corvusoft/restbed/http.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/http.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.s
 .PHONY : source/corvusoft/restbed/http.cpp.s
 
 source/corvusoft/restbed/request.o: source/corvusoft/restbed/request.cpp.o
@@ -364,7 +364,7 @@ source/corvusoft/restbed/request.o: source/corvusoft/restbed/request.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/request.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.o
 .PHONY : source/corvusoft/restbed/request.cpp.o
 
 source/corvusoft/restbed/request.i: source/corvusoft/restbed/request.cpp.i
@@ -373,7 +373,7 @@ source/corvusoft/restbed/request.i: source/corvusoft/restbed/request.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/request.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.i
 .PHONY : source/corvusoft/restbed/request.cpp.i
 
 source/corvusoft/restbed/request.s: source/corvusoft/restbed/request.cpp.s
@@ -382,7 +382,7 @@ source/corvusoft/restbed/request.s: source/corvusoft/restbed/request.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/request.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.s
 .PHONY : source/corvusoft/restbed/request.cpp.s
 
 source/corvusoft/restbed/resource.o: source/corvusoft/restbed/resource.cpp.o
@@ -391,7 +391,7 @@ source/corvusoft/restbed/resource.o: source/corvusoft/restbed/resource.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/resource.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.o
 .PHONY : source/corvusoft/restbed/resource.cpp.o
 
 source/corvusoft/restbed/resource.i: source/corvusoft/restbed/resource.cpp.i
@@ -400,7 +400,7 @@ source/corvusoft/restbed/resource.i: source/corvusoft/restbed/resource.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/resource.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.i
 .PHONY : source/corvusoft/restbed/resource.cpp.i
 
 source/corvusoft/restbed/resource.s: source/corvusoft/restbed/resource.cpp.s
@@ -409,7 +409,7 @@ source/corvusoft/restbed/resource.s: source/corvusoft/restbed/resource.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/resource.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.s
 .PHONY : source/corvusoft/restbed/resource.cpp.s
 
 source/corvusoft/restbed/response.o: source/corvusoft/restbed/response.cpp.o
@@ -418,7 +418,7 @@ source/corvusoft/restbed/response.o: source/corvusoft/restbed/response.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/response.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.o
 .PHONY : source/corvusoft/restbed/response.cpp.o
 
 source/corvusoft/restbed/response.i: source/corvusoft/restbed/response.cpp.i
@@ -427,7 +427,7 @@ source/corvusoft/restbed/response.i: source/corvusoft/restbed/response.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/response.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.i
 .PHONY : source/corvusoft/restbed/response.cpp.i
 
 source/corvusoft/restbed/response.s: source/corvusoft/restbed/response.cpp.s
@@ -436,7 +436,7 @@ source/corvusoft/restbed/response.s: source/corvusoft/restbed/response.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/response.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.s
 .PHONY : source/corvusoft/restbed/response.cpp.s
 
 source/corvusoft/restbed/rule.o: source/corvusoft/restbed/rule.cpp.o
@@ -445,7 +445,7 @@ source/corvusoft/restbed/rule.o: source/corvusoft/restbed/rule.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/rule.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.o
 .PHONY : source/corvusoft/restbed/rule.cpp.o
 
 source/corvusoft/restbed/rule.i: source/corvusoft/restbed/rule.cpp.i
@@ -454,7 +454,7 @@ source/corvusoft/restbed/rule.i: source/corvusoft/restbed/rule.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/rule.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.i
 .PHONY : source/corvusoft/restbed/rule.cpp.i
 
 source/corvusoft/restbed/rule.s: source/corvusoft/restbed/rule.cpp.s
@@ -463,7 +463,7 @@ source/corvusoft/restbed/rule.s: source/corvusoft/restbed/rule.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/rule.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.s
 .PHONY : source/corvusoft/restbed/rule.cpp.s
 
 source/corvusoft/restbed/service.o: source/corvusoft/restbed/service.cpp.o
@@ -472,7 +472,7 @@ source/corvusoft/restbed/service.o: source/corvusoft/restbed/service.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/service.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.o
 .PHONY : source/corvusoft/restbed/service.cpp.o
 
 source/corvusoft/restbed/service.i: source/corvusoft/restbed/service.cpp.i
@@ -481,7 +481,7 @@ source/corvusoft/restbed/service.i: source/corvusoft/restbed/service.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/service.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.i
 .PHONY : source/corvusoft/restbed/service.cpp.i
 
 source/corvusoft/restbed/service.s: source/corvusoft/restbed/service.cpp.s
@@ -490,7 +490,7 @@ source/corvusoft/restbed/service.s: source/corvusoft/restbed/service.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/service.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.s
 .PHONY : source/corvusoft/restbed/service.cpp.s
 
 source/corvusoft/restbed/session.o: source/corvusoft/restbed/session.cpp.o
@@ -499,7 +499,7 @@ source/corvusoft/restbed/session.o: source/corvusoft/restbed/session.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/session.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.o
 .PHONY : source/corvusoft/restbed/session.cpp.o
 
 source/corvusoft/restbed/session.i: source/corvusoft/restbed/session.cpp.i
@@ -508,7 +508,7 @@ source/corvusoft/restbed/session.i: source/corvusoft/restbed/session.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/session.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.i
 .PHONY : source/corvusoft/restbed/session.cpp.i
 
 source/corvusoft/restbed/session.s: source/corvusoft/restbed/session.cpp.s
@@ -517,7 +517,7 @@ source/corvusoft/restbed/session.s: source/corvusoft/restbed/session.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/session.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.s
 .PHONY : source/corvusoft/restbed/session.cpp.s
 
 source/corvusoft/restbed/session_manager.o: source/corvusoft/restbed/session_manager.cpp.o
@@ -526,7 +526,7 @@ source/corvusoft/restbed/session_manager.o: source/corvusoft/restbed/session_man
 
 # target to build an object file
 source/corvusoft/restbed/session_manager.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.o
 .PHONY : source/corvusoft/restbed/session_manager.cpp.o
 
 source/corvusoft/restbed/session_manager.i: source/corvusoft/restbed/session_manager.cpp.i
@@ -535,7 +535,7 @@ source/corvusoft/restbed/session_manager.i: source/corvusoft/restbed/session_man
 
 # target to preprocess a source file
 source/corvusoft/restbed/session_manager.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.i
 .PHONY : source/corvusoft/restbed/session_manager.cpp.i
 
 source/corvusoft/restbed/session_manager.s: source/corvusoft/restbed/session_manager.cpp.s
@@ -544,7 +544,7 @@ source/corvusoft/restbed/session_manager.s: source/corvusoft/restbed/session_man
 
 # target to generate assembly for a file
 source/corvusoft/restbed/session_manager.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.s
 .PHONY : source/corvusoft/restbed/session_manager.cpp.s
 
 source/corvusoft/restbed/settings.o: source/corvusoft/restbed/settings.cpp.o
@@ -553,7 +553,7 @@ source/corvusoft/restbed/settings.o: source/corvusoft/restbed/settings.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/settings.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.o
 .PHONY : source/corvusoft/restbed/settings.cpp.o
 
 source/corvusoft/restbed/settings.i: source/corvusoft/restbed/settings.cpp.i
@@ -562,7 +562,7 @@ source/corvusoft/restbed/settings.i: source/corvusoft/restbed/settings.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/settings.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.i
 .PHONY : source/corvusoft/restbed/settings.cpp.i
 
 source/corvusoft/restbed/settings.s: source/corvusoft/restbed/settings.cpp.s
@@ -571,7 +571,7 @@ source/corvusoft/restbed/settings.s: source/corvusoft/restbed/settings.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/settings.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.s
 .PHONY : source/corvusoft/restbed/settings.cpp.s
 
 source/corvusoft/restbed/ssl_settings.o: source/corvusoft/restbed/ssl_settings.cpp.o
@@ -580,7 +580,7 @@ source/corvusoft/restbed/ssl_settings.o: source/corvusoft/restbed/ssl_settings.c
 
 # target to build an object file
 source/corvusoft/restbed/ssl_settings.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.o
 .PHONY : source/corvusoft/restbed/ssl_settings.cpp.o
 
 source/corvusoft/restbed/ssl_settings.i: source/corvusoft/restbed/ssl_settings.cpp.i
@@ -589,7 +589,7 @@ source/corvusoft/restbed/ssl_settings.i: source/corvusoft/restbed/ssl_settings.c
 
 # target to preprocess a source file
 source/corvusoft/restbed/ssl_settings.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.i
 .PHONY : source/corvusoft/restbed/ssl_settings.cpp.i
 
 source/corvusoft/restbed/ssl_settings.s: source/corvusoft/restbed/ssl_settings.cpp.s
@@ -598,7 +598,7 @@ source/corvusoft/restbed/ssl_settings.s: source/corvusoft/restbed/ssl_settings.c
 
 # target to generate assembly for a file
 source/corvusoft/restbed/ssl_settings.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.s
 .PHONY : source/corvusoft/restbed/ssl_settings.cpp.s
 
 source/corvusoft/restbed/string.o: source/corvusoft/restbed/string.cpp.o
@@ -607,7 +607,7 @@ source/corvusoft/restbed/string.o: source/corvusoft/restbed/string.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/string.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.o
 .PHONY : source/corvusoft/restbed/string.cpp.o
 
 source/corvusoft/restbed/string.i: source/corvusoft/restbed/string.cpp.i
@@ -616,7 +616,7 @@ source/corvusoft/restbed/string.i: source/corvusoft/restbed/string.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/string.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.i
 .PHONY : source/corvusoft/restbed/string.cpp.i
 
 source/corvusoft/restbed/string.s: source/corvusoft/restbed/string.cpp.s
@@ -625,7 +625,7 @@ source/corvusoft/restbed/string.s: source/corvusoft/restbed/string.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/string.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.s
 .PHONY : source/corvusoft/restbed/string.cpp.s
 
 source/corvusoft/restbed/uri.o: source/corvusoft/restbed/uri.cpp.o
@@ -634,7 +634,7 @@ source/corvusoft/restbed/uri.o: source/corvusoft/restbed/uri.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/uri.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.o
 .PHONY : source/corvusoft/restbed/uri.cpp.o
 
 source/corvusoft/restbed/uri.i: source/corvusoft/restbed/uri.cpp.i
@@ -643,7 +643,7 @@ source/corvusoft/restbed/uri.i: source/corvusoft/restbed/uri.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/uri.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.i
 .PHONY : source/corvusoft/restbed/uri.cpp.i
 
 source/corvusoft/restbed/uri.s: source/corvusoft/restbed/uri.cpp.s
@@ -652,7 +652,7 @@ source/corvusoft/restbed/uri.s: source/corvusoft/restbed/uri.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/uri.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.s
 .PHONY : source/corvusoft/restbed/uri.cpp.s
 
 source/corvusoft/restbed/web_socket.o: source/corvusoft/restbed/web_socket.cpp.o
@@ -661,7 +661,7 @@ source/corvusoft/restbed/web_socket.o: source/corvusoft/restbed/web_socket.cpp.o
 
 # target to build an object file
 source/corvusoft/restbed/web_socket.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.o
 .PHONY : source/corvusoft/restbed/web_socket.cpp.o
 
 source/corvusoft/restbed/web_socket.i: source/corvusoft/restbed/web_socket.cpp.i
@@ -670,7 +670,7 @@ source/corvusoft/restbed/web_socket.i: source/corvusoft/restbed/web_socket.cpp.i
 
 # target to preprocess a source file
 source/corvusoft/restbed/web_socket.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.i
 .PHONY : source/corvusoft/restbed/web_socket.cpp.i
 
 source/corvusoft/restbed/web_socket.s: source/corvusoft/restbed/web_socket.cpp.s
@@ -679,7 +679,7 @@ source/corvusoft/restbed/web_socket.s: source/corvusoft/restbed/web_socket.cpp.s
 
 # target to generate assembly for a file
 source/corvusoft/restbed/web_socket.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.s
 .PHONY : source/corvusoft/restbed/web_socket.cpp.s
 
 source/corvusoft/restbed/web_socket_message.o: source/corvusoft/restbed/web_socket_message.cpp.o
@@ -688,7 +688,7 @@ source/corvusoft/restbed/web_socket_message.o: source/corvusoft/restbed/web_sock
 
 # target to build an object file
 source/corvusoft/restbed/web_socket_message.cpp.o:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.o
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.o
 .PHONY : source/corvusoft/restbed/web_socket_message.cpp.o
 
 source/corvusoft/restbed/web_socket_message.i: source/corvusoft/restbed/web_socket_message.cpp.i
@@ -697,7 +697,7 @@ source/corvusoft/restbed/web_socket_message.i: source/corvusoft/restbed/web_sock
 
 # target to preprocess a source file
 source/corvusoft/restbed/web_socket_message.cpp.i:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.i
 .PHONY : source/corvusoft/restbed/web_socket_message.cpp.i
 
 source/corvusoft/restbed/web_socket_message.s: source/corvusoft/restbed/web_socket_message.cpp.s
@@ -706,7 +706,7 @@ source/corvusoft/restbed/web_socket_message.s: source/corvusoft/restbed/web_sock
 
 # target to generate assembly for a file
 source/corvusoft/restbed/web_socket_message.cpp.s:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.s
 .PHONY : source/corvusoft/restbed/web_socket_message.cpp.s
 
 # Help Target
@@ -793,6 +793,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

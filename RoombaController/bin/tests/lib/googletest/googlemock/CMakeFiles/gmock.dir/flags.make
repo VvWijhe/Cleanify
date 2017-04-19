@@ -6,5 +6,5 @@ CXX_FLAGS = -g    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source -I/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googlemock/include -I/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googlemock -I/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest/include -I/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest 
+CXX_INCLUDES = -I"/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source" -I"/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/lib/googletest/googlemock/include" -I"/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/lib/googletest/googlemock" -I"/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/lib/googletest/googletest/include" -I"/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/lib/googletest/googletest" 
 

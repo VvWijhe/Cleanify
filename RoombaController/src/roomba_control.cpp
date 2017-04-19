@@ -112,6 +112,13 @@ char RoombaControl::setMotors(motors_t motor, bool state) {
     return data;
 }
 
+void RoombaControl::sendCommands(commands_t command) {
+
+    unsigned char com = command;
+    serial_.writeByte(com);
+
+}
+
 
 const std::map<std::string, unsigned char> RoombaControl::getCmds() {
     return commands_.getMap();

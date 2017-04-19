@@ -45,19 +45,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E remove -f
+RM = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/bin
+CMAKE_BINARY_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin"
 
 #=============================================================================
 # Target rules for target CMakeFiles/RoombaController.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/bin
 CMakeFiles/RoombaController.dir/all: dependencies/restbed/CMakeFiles/restbed.dir/all
 	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/depend
 	$(MAKE) -f CMakeFiles/RoombaController.dir/build.make CMakeFiles/RoombaController.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target RoombaController"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8 "Built target RoombaController"
 .PHONY : CMakeFiles/RoombaController.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/RoombaController.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/RoombaController.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 29
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 29
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RoombaController.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : CMakeFiles/RoombaController.dir/rule
 
 # Convenience name for target.
@@ -103,14 +103,14 @@ clean: CMakeFiles/RoombaController.dir/clean
 CMakeFiles/apidoc_forced.dir/all:
 	$(MAKE) -f CMakeFiles/apidoc_forced.dir/build.make CMakeFiles/apidoc_forced.dir/depend
 	$(MAKE) -f CMakeFiles/apidoc_forced.dir/build.make CMakeFiles/apidoc_forced.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num= "Built target apidoc_forced"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num= "Built target apidoc_forced"
 .PHONY : CMakeFiles/apidoc_forced.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/apidoc_forced.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/apidoc_forced.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : CMakeFiles/apidoc_forced.dir/rule
 
 # Convenience name for target.
@@ -135,7 +135,7 @@ clean: CMakeFiles/apidoc_forced.dir/clean
 CMakeFiles/apidoc.dir/all:
 	$(MAKE) -f CMakeFiles/apidoc.dir/build.make CMakeFiles/apidoc.dir/depend
 	$(MAKE) -f CMakeFiles/apidoc.dir/build.make CMakeFiles/apidoc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=9 "Built target apidoc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=9 "Built target apidoc"
 .PHONY : CMakeFiles/apidoc.dir/all
 
 # Include target in all.
@@ -145,9 +145,9 @@ all: CMakeFiles/apidoc.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/apidoc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/apidoc.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : CMakeFiles/apidoc.dir/rule
 
 # Convenience name for target.
@@ -190,7 +190,7 @@ dependencies/restbed/preinstall:
 dependencies/restbed/CMakeFiles/restbed.dir/all:
 	$(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/depend
 	$(MAKE) -f dependencies/restbed/CMakeFiles/restbed.dir/build.make dependencies/restbed/CMakeFiles/restbed.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 "Built target restbed"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 "Built target restbed"
 .PHONY : dependencies/restbed/CMakeFiles/restbed.dir/all
 
 # Include target in all.
@@ -200,9 +200,9 @@ all: dependencies/restbed/CMakeFiles/restbed.dir/all
 
 # Build rule for subdir invocation for target.
 dependencies/restbed/CMakeFiles/restbed.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 21
 	$(MAKE) -f CMakeFiles/Makefile2 dependencies/restbed/CMakeFiles/restbed.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : dependencies/restbed/CMakeFiles/restbed.dir/rule
 
 # Convenience name for target.
@@ -267,7 +267,7 @@ tests/tests/CMakeFiles/runTests.dir/all: tests/lib/googletest/googlemock/gtest/C
 tests/tests/CMakeFiles/runTests.dir/all: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f tests/tests/CMakeFiles/runTests.dir/build.make tests/tests/CMakeFiles/runTests.dir/depend
 	$(MAKE) -f tests/tests/CMakeFiles/runTests.dir/build.make tests/tests/CMakeFiles/runTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=42,43,44,45,46 "Built target runTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=42,43,44,45,46 "Built target runTests"
 .PHONY : tests/tests/CMakeFiles/runTests.dir/all
 
 # Include target in all.
@@ -277,9 +277,9 @@ all: tests/tests/CMakeFiles/runTests.dir/all
 
 # Build rule for subdir invocation for target.
 tests/tests/CMakeFiles/runTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 9
 	$(MAKE) -f CMakeFiles/Makefile2 tests/tests/CMakeFiles/runTests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : tests/tests/CMakeFiles/runTests.dir/rule
 
 # Convenience name for target.
@@ -344,7 +344,7 @@ tests/lib/googletest/googlemock/preinstall: tests/lib/googletest/googlemock/gtes
 tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=13,14,15,16 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=13,14,15,16 "Built target gmock_main"
 .PHONY : tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Include target in all.
@@ -354,9 +354,9 @@ all: tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
 tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 4
 	$(MAKE) -f CMakeFiles/Makefile2 tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
@@ -381,7 +381,7 @@ clean: tests/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
 tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=10,11,12 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=10,11,12 "Built target gmock"
 .PHONY : tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/all
 
 # Include target in all.
@@ -391,9 +391,9 @@ all: tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 3
 	$(MAKE) -f CMakeFiles/Makefile2 tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : tests/lib/googletest/googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
@@ -438,7 +438,7 @@ tests/lib/googletest/googlemock/gtest/preinstall:
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=19,20 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=19,20 "Built target gtest_main"
 .PHONY : tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Include target in all.
@@ -448,9 +448,9 @@ all: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 4
 	$(MAKE) -f CMakeFiles/Makefile2 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.
@@ -475,7 +475,7 @@ clean: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=17,18 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=17,18 "Built target gtest"
 .PHONY : tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Include target in all.
@@ -485,9 +485,9 @@ all: tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 2
 	$(MAKE) -f CMakeFiles/Makefile2 tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" 0
 .PHONY : tests/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.

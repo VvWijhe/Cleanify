@@ -1,8 +1,8 @@
-# Install script for directory: /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest
+# Install script for directory: /media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/lib/googletest/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/distribution")
+  set(CMAKE_INSTALL_PREFIX "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/distribution")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,14 +33,14 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest/libgtest.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest/libgtest.a")
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest/libgtest_main.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/lib/googletest/googlemock/gtest/libgtest_main.a")
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/jamie/Documents/Project4/Cleanify/RoombaController/tests/lib/googletest/googletest/include/gtest")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/lib/googletest/googletest/include/gtest")
 endif()
 

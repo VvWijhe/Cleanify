@@ -14,6 +14,8 @@
 
 namespace systemcontrol {
     /**
+     *
+     *
      * @brief RoombaContext holds variables and classes that can be accessed by every state.
      */
     class RoombaStateContext : public statemachine::Context {

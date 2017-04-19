@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E remove -f
+RM = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/bin
+CMAKE_BINARY_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin"
 
 # Include any dependencies generated for this target.
 include dependencies/restbed/CMakeFiles/restbed.dir/depend.make
@@ -59,16 +59,16 @@ include dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/uri.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/uri.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/uri.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/uri.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/uri.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/uri.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/uri.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.o.requires:
 
@@ -83,16 +83,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/uri.cpp.o.p
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/rule.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/rule.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/rule.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/rule.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/rule.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/rule.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/rule.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.o.requires:
 
@@ -107,16 +107,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/rule.cpp.o.
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/http.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/http.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/http.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/http.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/http.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/http.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/http.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.o.requires:
 
@@ -131,16 +131,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/http.cpp.o.
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/string.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/string.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/string.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/string.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/string.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/string.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/string.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.o.requires:
 
@@ -155,16 +155,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/string.cpp.
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/request.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/request.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/request.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/request.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/request.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/request.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/request.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp.o.requires:
 
@@ -179,16 +179,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/request.cpp
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/service.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/service.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/service.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/service.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/service.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/service.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/service.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp.o.requires:
 
@@ -203,16 +203,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/service.cpp
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/session.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp.o.requires:
 
@@ -227,16 +227,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session.cpp
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/resource.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/resource.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/resource.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/resource.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/resource.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/resource.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/resource.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cpp.o.requires:
 
@@ -251,16 +251,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/resource.cp
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/response.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/response.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/response.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/response.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/response.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/response.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/response.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cpp.o.requires:
 
@@ -275,16 +275,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/response.cp
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/settings.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/settings.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/settings.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/settings.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/settings.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/settings.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/settings.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cpp.o.requires:
 
@@ -299,16 +299,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/settings.cp
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/web_socket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.cpp.o.requires:
 
@@ -323,16 +323,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket.
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/ssl_settings.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/ssl_settings.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/ssl_settings.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/ssl_settings.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/ssl_settings.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/ssl_settings.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/ssl_settings.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_settings.cpp.o.requires:
 
@@ -347,16 +347,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/ssl_setting
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/session_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session_manager.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session_manager.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session_manager.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session_manager.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/session_manager.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_manager.cpp.o.requires:
 
@@ -371,16 +371,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/session_man
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/detail/http_impl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/http_impl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/http_impl.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/http_impl.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/http_impl.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/http_impl.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/http_impl.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http_impl.cpp.o.requires:
 
@@ -395,16 +395,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/http
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/web_socket_message.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket_message.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket_message.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket_message.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket_message.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket_message.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/web_socket_message.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_message.cpp.o.requires:
 
@@ -419,16 +419,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/web_socket_
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/detail/socket_impl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/socket_impl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/socket_impl.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/socket_impl.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/socket_impl.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/socket_impl.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/socket_impl.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/socket_impl.cpp.o.requires:
 
@@ -443,16 +443,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/sock
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/detail/service_impl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/service_impl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/service_impl.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/service_impl.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/service_impl.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/service_impl.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/service_impl.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/service_impl.cpp.o.requires:
 
@@ -467,16 +467,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/serv
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/detail/session_impl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/session_impl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/session_impl.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/session_impl.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/session_impl.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/session_impl.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/session_impl.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/session_impl.cpp.o.requires:
 
@@ -491,16 +491,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/sess
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/detail/web_socket_impl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_impl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_impl.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_impl.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_impl.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_impl.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_impl.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_impl.cpp.o.requires:
 
@@ -515,16 +515,16 @@ dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o: dependencies/restbed/CMakeFiles/restbed.dir/flags.make
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o: ../dependencies/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp"
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp" > CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.i
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp" -o CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.s
 
 dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o.requires:
 
@@ -585,9 +585,9 @@ dependencies/restbed/librestbed.a: dependencies/restbed/CMakeFiles/restbed.dir/s
 dependencies/restbed/librestbed.a: dependencies/restbed/CMakeFiles/restbed.dir/source/corvusoft/restbed/detail/web_socket_manager_impl.cpp.o
 dependencies/restbed/librestbed.a: dependencies/restbed/CMakeFiles/restbed.dir/build.make
 dependencies/restbed/librestbed.a: dependencies/restbed/CMakeFiles/restbed.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX static library librestbed.a"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && $(CMAKE_COMMAND) -P CMakeFiles/restbed.dir/cmake_clean_target.cmake
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/restbed.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX static library librestbed.a"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && $(CMAKE_COMMAND) -P CMakeFiles/restbed.dir/cmake_clean_target.cmake
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/restbed.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 dependencies/restbed/CMakeFiles/restbed.dir/build: dependencies/restbed/librestbed.a
@@ -618,10 +618,10 @@ dependencies/restbed/CMakeFiles/restbed.dir/requires: dependencies/restbed/CMake
 .PHONY : dependencies/restbed/CMakeFiles/restbed.dir/requires
 
 dependencies/restbed/CMakeFiles/restbed.dir/clean:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed && $(CMAKE_COMMAND) -P CMakeFiles/restbed.dir/cmake_clean.cmake
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" && $(CMAKE_COMMAND) -P CMakeFiles/restbed.dir/cmake_clean.cmake
 .PHONY : dependencies/restbed/CMakeFiles/restbed.dir/clean
 
 dependencies/restbed/CMakeFiles/restbed.dir/depend:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jamie/Documents/Project4/Cleanify/RoombaController /home/jamie/Documents/Project4/Cleanify/RoombaController/dependencies/restbed /home/jamie/Documents/Project4/Cleanify/RoombaController/bin /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/dependencies/restbed/CMakeFiles/restbed.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/dependencies/restbed" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/dependencies/restbed/CMakeFiles/restbed.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : dependencies/restbed/CMakeFiles/restbed.dir/depend
 

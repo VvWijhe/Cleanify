@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/jamie/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E remove -f
+RM = /home/victor/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController
+CMAKE_SOURCE_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jamie/Documents/Project4/Cleanify/RoombaController/bin
+CMAKE_BINARY_DIR = "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin"
 
 # Include any dependencies generated for this target.
 include tests/tests/CMakeFiles/runTests.dir/depend.make
@@ -59,16 +59,16 @@ include tests/tests/CMakeFiles/runTests.dir/flags.make
 
 tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o: tests/tests/CMakeFiles/runTests.dir/flags.make
 tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o: ../tests/tests/serial_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/serial_tests.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/serial_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/serial_tests.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/tests/serial_tests.cpp"
 
 tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/serial_tests.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/serial_tests.cpp > CMakeFiles/runTests.dir/serial_tests.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/tests/serial_tests.cpp" > CMakeFiles/runTests.dir/serial_tests.cpp.i
 
 tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/serial_tests.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/serial_tests.cpp -o CMakeFiles/runTests.dir/serial_tests.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/tests/serial_tests.cpp" -o CMakeFiles/runTests.dir/serial_tests.cpp.s
 
 tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o.requires:
 
@@ -83,16 +83,16 @@ tests/tests/CMakeFiles/runTests.dir/serial_tests.cpp.o.provides.build: tests/tes
 
 tests/tests/CMakeFiles/runTests.dir/control_test.cpp.o: tests/tests/CMakeFiles/runTests.dir/flags.make
 tests/tests/CMakeFiles/runTests.dir/control_test.cpp.o: ../tests/tests/control_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/tests/CMakeFiles/runTests.dir/control_test.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/control_test.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/control_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/tests/CMakeFiles/runTests.dir/control_test.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/control_test.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/tests/control_test.cpp"
 
 tests/tests/CMakeFiles/runTests.dir/control_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/control_test.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/control_test.cpp > CMakeFiles/runTests.dir/control_test.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/tests/control_test.cpp" > CMakeFiles/runTests.dir/control_test.cpp.i
 
 tests/tests/CMakeFiles/runTests.dir/control_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/control_test.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests/control_test.cpp -o CMakeFiles/runTests.dir/control_test.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/tests/control_test.cpp" -o CMakeFiles/runTests.dir/control_test.cpp.s
 
 tests/tests/CMakeFiles/runTests.dir/control_test.cpp.o.requires:
 
@@ -107,16 +107,16 @@ tests/tests/CMakeFiles/runTests.dir/control_test.cpp.o.provides.build: tests/tes
 
 tests/tests/CMakeFiles/runTests.dir/__/__/src/serial.cpp.o: tests/tests/CMakeFiles/runTests.dir/flags.make
 tests/tests/CMakeFiles/runTests.dir/__/__/src/serial.cpp.o: ../src/serial.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/tests/CMakeFiles/runTests.dir/__/__/src/serial.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/__/src/serial.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/src/serial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/tests/CMakeFiles/runTests.dir/__/__/src/serial.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/__/src/serial.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/src/serial.cpp"
 
 tests/tests/CMakeFiles/runTests.dir/__/__/src/serial.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/__/__/src/serial.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/src/serial.cpp > CMakeFiles/runTests.dir/__/__/src/serial.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/src/serial.cpp" > CMakeFiles/runTests.dir/__/__/src/serial.cpp.i
 
 tests/tests/CMakeFiles/runTests.dir/__/__/src/serial.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/__/src/serial.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/src/serial.cpp -o CMakeFiles/runTests.dir/__/__/src/serial.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/src/serial.cpp" -o CMakeFiles/runTests.dir/__/__/src/serial.cpp.s
 
 tests/tests/CMakeFiles/runTests.dir/__/__/src/serial.cpp.o.requires:
 
@@ -131,16 +131,16 @@ tests/tests/CMakeFiles/runTests.dir/__/__/src/serial.cpp.o.provides.build: tests
 
 tests/tests/CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.o: tests/tests/CMakeFiles/runTests.dir/flags.make
 tests/tests/CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.o: ../src/roomba_control.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/tests/CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.o"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.o -c /home/jamie/Documents/Project4/Cleanify/RoombaController/src/roomba_control.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/tests/CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.o"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.o -c "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/src/roomba_control.cpp"
 
 tests/tests/CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.i"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jamie/Documents/Project4/Cleanify/RoombaController/src/roomba_control.cpp > CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.i
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/src/roomba_control.cpp" > CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.i
 
 tests/tests/CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.s"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jamie/Documents/Project4/Cleanify/RoombaController/src/roomba_control.cpp -o CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.s
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/src/roomba_control.cpp" -o CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.s
 
 tests/tests/CMakeFiles/runTests.dir/__/__/src/roomba_control.cpp.o.requires:
 
@@ -172,8 +172,8 @@ runTests: tests/lib/googletest/googlemock/gtest/libgtest.a
 runTests: tests/lib/googletest/googlemock/gtest/libgtest_main.a
 runTests: tests/lib/googletest/googlemock/gtest/libgtest.a
 runTests: tests/tests/CMakeFiles/runTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jamie/Documents/Project4/Cleanify/RoombaController/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../../runTests"
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/runTests.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../../runTests"
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/runTests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/tests/CMakeFiles/runTests.dir/build: runTests
@@ -188,10 +188,10 @@ tests/tests/CMakeFiles/runTests.dir/requires: tests/tests/CMakeFiles/runTests.di
 .PHONY : tests/tests/CMakeFiles/runTests.dir/requires
 
 tests/tests/CMakeFiles/runTests.dir/clean:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests && $(CMAKE_COMMAND) -P CMakeFiles/runTests.dir/cmake_clean.cmake
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" && $(CMAKE_COMMAND) -P CMakeFiles/runTests.dir/cmake_clean.cmake
 .PHONY : tests/tests/CMakeFiles/runTests.dir/clean
 
 tests/tests/CMakeFiles/runTests.dir/depend:
-	cd /home/jamie/Documents/Project4/Cleanify/RoombaController/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jamie/Documents/Project4/Cleanify/RoombaController /home/jamie/Documents/Project4/Cleanify/RoombaController/tests/tests /home/jamie/Documents/Project4/Cleanify/RoombaController/bin /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests /home/jamie/Documents/Project4/Cleanify/RoombaController/bin/tests/tests/CMakeFiles/runTests.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/tests/tests" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests" "/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/RoombaController/bin/tests/tests/CMakeFiles/runTests.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : tests/tests/CMakeFiles/runTests.dir/depend
 
