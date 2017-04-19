@@ -16,8 +16,7 @@ RoombaControl::~RoombaControl() {}
 
 int RoombaControl::init() {
     if (serial_.connect() != 1) {
-        perror("error: ");
-        cerr << "not connected" << endl;
+        return -1;
     }
 
     serial_.writeVector({128, 130});
