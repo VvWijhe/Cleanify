@@ -34,7 +34,7 @@ void responses::handle_post(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 " + request->get_host());
+    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
@@ -43,7 +43,7 @@ void responses::handle_post(pSession session) {
 
                        // obtain acces to the roomba session variable
                        unique_lock<std::mutex> lk(globals::mut_roomba_session);
-                       globals::roomba_session = globals::WEB;
+                       globals::roomba_session = globals::SESSION;
                        globals::cv_roomba_session.notify_one();
 
                        // parse direction
@@ -52,6 +52,8 @@ void responses::handle_post(pSession session) {
                                auto data = postData["Direction"];
 
                                if (data == "L") {
+                                   // set shared variable shared.setParameter(M_LEFT, 10);
+                                   // set M_RIGHT, 40
                                    response["Message"] = "Succes";
                                }
                                else if (data == "F") {
@@ -79,6 +81,9 @@ void responses::handle_post(pSession session) {
 void responses::status(pSession session) {
     const auto request = session->get_request();
     int content_length = request->get_header("Content-Length", 0);
+    auto &logger = Poco::Logger::get("logger");
+
+    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 " + request->get_host());
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
@@ -95,8 +100,10 @@ void responses::status(pSession session) {
 
 void responses::error404(pSession session) {
     const auto request = session->get_request();
-
     int content_length = request->get_header("Content-Length", 0);
+    auto &logger = Poco::Logger::get("logger");
+
+    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 " + request->get_host());
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {

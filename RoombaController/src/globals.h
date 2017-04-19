@@ -13,7 +13,7 @@
 
 namespace globals {
     enum session {
-        IDLE, MAN, PC, WEB
+        IDLE, MAN, SESSION
     };
     extern session roomba_session;
     extern std::mutex mut_roomba_session;

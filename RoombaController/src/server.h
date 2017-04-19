@@ -10,8 +10,8 @@
 #include <memory>
 #include <vector>
 #include <algorithm>
-
 #include <restbed>
+
 #include "responses.h"
 
 namespace server {
@@ -25,11 +25,15 @@ namespace server {
 
         void stop();
 
+        bool started() const;
+
+        std::string getAdress();
+
     private:
         restbed::Service service_;
         std::shared_ptr<restbed::Settings> settings_;
         std::thread thread_;
-        bool isStarted{false};
+        bool isStarted;
     };
 }
 

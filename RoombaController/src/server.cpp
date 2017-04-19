@@ -47,7 +47,6 @@ void RoombaServer::run() {
     this_thread::sleep_for(chrono::milliseconds(300));
 
     isStarted = true;
-    cout << "server started" << endl;
 }
 
 void RoombaServer::stop() {
@@ -56,4 +55,12 @@ void RoombaServer::stop() {
     thread_.join();
     isStarted = false;
     cout << "server stopped" << endl;
+}
+
+bool RoombaServer::started() const {
+    return isStarted;
+}
+
+std::string RoombaServer::getAdress() {
+    return settings_->get_bind_address();
 }

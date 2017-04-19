@@ -17,6 +17,7 @@ void Initialise::handle(const shared_ptr<statemachine::Context> &context) {
     auto &logger = rmbContext->getLogger();
 
     rmbServer->run();
+    if(rmbServer->started()) logger.information("Server started");
 
     if(rmbControl->init() < 0) logger.error("Serial port failed to connect to the roomba");
 
@@ -28,7 +29,7 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
     auto control = rmbContext->getControl();
     auto &logger = rmbContext->getLogger();
 
-    logger.information("Waiting for signal from PC or webapp...");
+    logger.information("Waiting for signal from SESSION or webapp...");
 
     // roomba starts manually if ENTER key is pressed
     thread cli([]{
@@ -46,6 +47,20 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
     cli.detach();
 
     context->setState(make_shared<Clean>());
+    switch (globals::roomba_session){
+        case globals::MAN:
+            rmbContext->setState(make_shared<Clean>());
+            break;
+
+        case globals::SESSION:
+            rmbContext->setState(make_shared<Session>());
+            break;
+
+        default:
+            logger.fatal("Invalid state, shutting down");
+            rmbContext->setState(make_shared<ShutDown>());
+            break;
+    }
 }
 
 void Clean::handle(const shared_ptr<statemachine::Context> &context) {
