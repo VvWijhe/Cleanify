@@ -53,7 +53,7 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
             break;
 
         case globals::SESSION:
-            rmbContext->setState(make_shared<Session>());
+            //rmbContext->setState(make_shared<Session>());
             break;
 
         default:
