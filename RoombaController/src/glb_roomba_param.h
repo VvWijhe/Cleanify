@@ -19,18 +19,19 @@ namespace globals {
 
         RoombaParameters() {}
 
+        std::mutex& mutex() {
+            return mutex_;
+        }
+
         void setParameter(paramaters parameter, int val) {
-            std::unique_lock<std::mutex> lk(mutex_);
             parameters_[parameter] = val;
         }
 
         int getParameter(paramaters parameter) {
-            std::unique_lock<std::mutex> lk(mutex_);
             return parameters_[parameter];
         }
 
         void clear() {
-            std::unique_lock<std::mutex> lk(mutex_);
             for(auto &parameter : parameters_) {
                 parameter.second = 0;
             }

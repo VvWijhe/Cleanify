@@ -66,6 +66,7 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
 void Manuel::handle(const shared_ptr<statemachine::Context> &context) {
     cout << "Manuel " << globals::roomba_session << endl;
 
+    unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
 
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto rmbControl = rmbContext->getControl();
@@ -80,6 +81,8 @@ void Manuel::handle(const shared_ptr<statemachine::Context> &context) {
 
 void Session::handle(const shared_ptr<statemachine::Context> &context) {
     cout << "Session " << globals::roomba_session << endl;
+
+    unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
 
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto rmbControl = rmbContext->getControl();

@@ -47,6 +47,8 @@ void responses::handle_post(pSession session) {
                        globals::roomba_session = globals::SESSION;
                        globals::cv_roomba_session.notify_one();
 
+                       unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
+
                        // parse direction
                        if (postData["Direction"] != nullptr) {
                            if (postData["Direction"].is_string()) {
