@@ -96,7 +96,7 @@ void RoombaControl::setMotors(int PWM) {
 
 }
 
-void RoombaControl::sendCommands(commands_t command) {
+void RoombaControl::sendCommands(int command) {
 
     unsigned char com = command;
     serial_.writeByte(com);

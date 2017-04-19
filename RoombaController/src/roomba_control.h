@@ -117,7 +117,7 @@ namespace systemcontrol {
          * @brief This functions sends simple commands
          * @param command: fill in a commands_t command
          */
-        void sendCommands(commands_t command);
+        void sendCommands(int command);
 
         /// TODO
         void readSensors();
