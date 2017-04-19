@@ -3,7 +3,7 @@
 //
 
 #include "roomba_statemachine.h"
-#include "globals.h"
+#include "glb_session.h"
 
 using namespace std;
 using namespace systemcontrol;

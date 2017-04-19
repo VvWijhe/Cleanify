@@ -6,7 +6,8 @@
 
 #include "responses.h"
 #include "json.hpp"
-#include "globals.h"
+#include "glb_session.h"
+#include "glb_roomba_param.h"
 
 using namespace std;
 using namespace restbed;

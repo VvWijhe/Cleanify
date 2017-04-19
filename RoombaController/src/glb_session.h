@@ -15,6 +15,8 @@ namespace globals {
     enum session {
         IDLE, MAN, SESSION
     };
+
+    // global variables with mutexes
     extern session roomba_session;
     extern std::mutex mut_roomba_session;
     extern std::condition_variable cv_roomba_session;

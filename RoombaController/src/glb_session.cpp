@@ -2,7 +2,7 @@
 // Created by jamie on 4/13/17.
 //
 
-#include "globals.h"
+#include "glb_session.h"
 
 using namespace globals;
 
