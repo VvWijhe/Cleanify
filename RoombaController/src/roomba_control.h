@@ -11,7 +11,6 @@
 #include <memory>
 
 #include "serial.h"
-#include "commands.h"
 
 namespace systemcontrol {
     class RoombaControl {
