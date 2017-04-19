@@ -8,6 +8,8 @@
 #include "server.h"
 #include "roomba_control.h"
 #include "statemachine.hpp"
+#include "glb_session.h"
+#include "glb_roomba_param.h"
 
 #ifndef ROOMBACONTROLLER_PROCESSING_H
 #define ROOMBACONTROLLER_PROCESSING_H
@@ -74,9 +76,19 @@ namespace systemcontrol {
         /**
          * @brief State class that handles the cleaning.
          */
-        class Clean : public statemachine::State {
+        class Manuel : public statemachine::State {
         public:
-            ~Clean() {}
+            ~Manuel() {}
+
+            void handle(const std::shared_ptr<statemachine::Context> &context) override;
+        };
+
+        /**
+        * @brief State class that handles the cleaning.
+        */
+        class Session : public statemachine::State {
+        public:
+            ~Session() {}
 
             void handle(const std::shared_ptr<statemachine::Context> &context) override;
         };
