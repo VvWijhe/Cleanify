@@ -18,7 +18,7 @@ void responses::index(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1");
+    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1" + request->get_host());
 
     FileHandler page("../web/index.html");
     session->fetch(static_cast<const size_t >(content_length),
@@ -34,7 +34,7 @@ void responses::handle_post(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1");
+    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 " + request->get_host());
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
