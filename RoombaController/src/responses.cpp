@@ -55,6 +55,7 @@ void responses::handle_post(pSession session) {
                                if (data == "L") {
                                    // set shared variable shared.setParameter(M_LEFT, 10);
                                    // set M_RIGHT, 40
+                                   globals::roomba_param.setParameter(globals::RoombaParameters::M_LEFT, 50);
                                    response["Message"] = "Succes";
                                }
                                else if (data == "F") {

@@ -122,11 +122,8 @@ namespace systemcontrol {
         /// TODO
         void readSensors();
 
-        const std::map<std::string, unsigned char> getCmds();
-
     private:
         io::SerialPort serial_;
-        Commands commands_;
         char currentMotor_;
     };
 }

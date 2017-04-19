@@ -117,8 +117,3 @@ void RoombaControl::sendCommands(commands_t command) {
     serial_.writeByte(com);
 
 }
-
-
-const std::map<std::string, unsigned char> RoombaControl::getCmds() {
-    return commands_.getMap();
-}
