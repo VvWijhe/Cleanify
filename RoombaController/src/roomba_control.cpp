@@ -90,25 +90,10 @@ void RoombaControl::readSensors() {
 
 }
 
-char RoombaControl::setMotors(motors_t motor, bool state) {
-    char current = currentMotor_;
-    char data = 0;
-    char temp_motor = motor;
-    char full = 31;
-    if (state) {
-        data = current | motor;
-        serial_.writeByte({138});
-        serial_.writeByte(data);
-        currentMotor_ = data;
-    } else {
-        temp_motor = temp_motor ^ full;
-        data = current & temp_motor;
-        currentMotor_ = data;
-    }
-    serial_.writeByte({138});
-    serial_.writeByte(data);
+void RoombaControl::setMotors(int PWM) {
+    unsigned char pwm = PWM;
+    serial_.writeVector({145, pwm, pwm, pwm});
 
-    return data;
 }
 
 void RoombaControl::sendCommands(commands_t command) {
