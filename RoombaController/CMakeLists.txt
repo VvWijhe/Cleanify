@@ -29,11 +29,11 @@ set(SOURCE_FILES
         src/json.hpp
         src/server.cpp
         src/responses.cpp
-        src/sensorparser.hpp
         src/roomba_control.cpp
         src/roomba_statemachine.cpp
         src/glb_session.cpp
-        src/glb_roomba_param.cpp src/sensorparser.cpp)
+        src/glb_roomba_param.cpp
+        src/sensorparser.cpp)
 
 ## directory for testing
 add_subdirectory(tests)

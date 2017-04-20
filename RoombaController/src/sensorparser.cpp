@@ -6,7 +6,7 @@
 
 using namespace std;
 
-sensors::sensors(){
+sensors::sensors() : logger_(Poco::Logger::get("logger")){
     sensors_[Bumps_wheeldrops]          = static_cast<unsigned char>(0);
     sensors_[Wall]                      = static_cast<unsigned char>(0);
     sensors_[Cliff_left]                = static_cast<unsigned char>(0);
@@ -72,7 +72,7 @@ vector<unsigned char> sensors::CreateVector(vector<sensor> sens){
 }
 
 vector<unsigned char> sensors::CreateVector(sensor sens){
-    return {142, sens};\
+    return {142, sens};
 }
 
 vector<unsigned char> sensors::CreateVectorStream(vector<sensor> sens){
@@ -86,11 +86,11 @@ vector<unsigned char> sensors::CreateVectorStream(vector<sensor> sens){
 
 int sensors::ParseData(vector<unsigned char> input){
     if(input.at(0) != 19){
-        cout << "FORMAT ERROR sensors::ParseData: first byte isn't equal to 19" << endl;
+        logger_.error("FORMAT ERROR sensors::ParseData: first byte isn't equal to 19");
         return -1;
     }
     else if(ChecksumCheck(input) !=1){
-        cout << "CHECKSUM ERROR sensors::ParseData: cant complete ChecksumCheck" << endl;
+        logger_.error("CHECKSUM ERROR sensors::ParseData: cant complete ChecksumCheck");
         return -2;
     }
     for(int i = 2; i < (2+input.at(1)); i++){
@@ -116,10 +116,6 @@ int sensors::ParseData(vector<unsigned char> input){
 }
 
 int sensors::ChecksumCheck(vector<unsigned char> data){
-    if(data.at(0) != 19){
-        cout << "FORMAT ERROR sensors::ChecksumCheck: first byte isn't equal to 19" << endl;
-        return -1;
-    }
     unsigned char som = 0;
     for(int i = 0; i < (2+data.at(1)); i++){
         som -= data.at(i);
@@ -127,7 +123,8 @@ int sensors::ChecksumCheck(vector<unsigned char> data){
     if (data.back() == som){
         return 1;
     }
-    cout << "CHECKSUM ERROR sensors::ChecksumCheck: Calculated checksum is '" << +som << "' and should be '" << +data.back() << "'" << endl;
-    return -2;
+    string error = "CHECKSUM ERROR sensors::ChecksumCheck: Calculated checksum is '";
+    error += to_string(+som) + "' and should be '" + to_string(+data.back()) + "' ";
+    logger_.error(error);
+    return -1;
 }
-

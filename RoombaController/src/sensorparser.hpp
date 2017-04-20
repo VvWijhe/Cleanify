@@ -10,6 +10,7 @@
 #include <vector>
 #include <boost/variant.hpp>
 #include <map>
+#include <Poco/Logger.h>
 
 using namespace std;
 
@@ -73,6 +74,7 @@ private:
     using sensorvariant = boost::variant<unsigned char, char, unsigned short, short>;
     map<sensor, sensorvariant> sensors_;
     vector<unsigned char> send_vector_ = {0, 0};
+    Poco::Logger &logger_;
 public:
     sensors();
     ~sensors() = default;
