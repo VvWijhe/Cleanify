@@ -9,6 +9,12 @@
 #include <mutex>
 
 namespace globals {
+    /**
+     * @brief Stores values of the roomba open interface commands. To avoid a parameter is set while reading, a mutex
+     * is included.
+     *
+     * Note: this class does not send the values.
+     */
     class RoombaParameters {
     public:
         enum paramaters {
@@ -21,6 +27,14 @@ namespace globals {
 
         std::mutex& mutex() {
             return mutex_;
+        }
+
+        void lock() {
+            mutex_.lock();
+        }
+
+        void unlock() {
+            mutex_.unlock();
         }
 
         void setParameter(paramaters parameter, int val) {
@@ -42,7 +56,7 @@ namespace globals {
         std::map<paramaters, int> parameters_;
     };
 
-    extern RoombaParameters roomba_param;
+    extern RoombaParameters rmbPrm;
 }
 
 #endif //ROOMBACONTROLLER_GLB_ROOMBA_PARAM_H

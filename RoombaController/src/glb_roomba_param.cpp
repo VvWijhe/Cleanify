@@ -4,4 +4,4 @@
 
 #include "glb_roomba_param.h"
 
-globals::RoombaParameters globals::roomba_param;
+globals::RoombaParameters globals::rmbPrm;

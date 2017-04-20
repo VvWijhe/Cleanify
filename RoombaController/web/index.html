@@ -74,7 +74,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("button").click(function () {
+            $(".dir").click(function () {
                 var form = "{\"Direction\" : \"" + this.id + "\", \"Session\" : \"Webapp\"}";
 
                 $.post("/control",
@@ -86,7 +86,7 @@
                 });
             });
 
-            $(".button-stop").click(function () {
+            $("#EXIT").click(function () {
                 var form = "{\"Exit\" : \"true\"}";
 
                 $.post("/control",
@@ -131,35 +131,35 @@
         <table style="width:10%">
             <tr>
                 <th>
-                    <button id="LF" class="button">&#8598;</button>
+                    <button id="LF" class="button dir">&#8598;</button>
                 </th>
                 <th>
-                    <button id="F" class="button">&#8593;</button>
+                    <button id="F" class="button dir">&#8593;</button>
                 </th>
                 <th>
-                    <button id="RF" class="button">&#8599;</button>
+                    <button id="RF" class="button dir">&#8599;</button>
                 </th>
             </tr>
             <tr>
                 <td>
-                    <button id="L" class="button">&#8592;</button>
+                    <button id="L" class="button dir">&#8592;</button>
                 </td>
                 <td>
-                    <button id="Stop" class="button">&nbsp&#183;&nbsp</button>
+                    <button id="Stop-wheels" class="button dir">&nbsp&#183;&nbsp</button>
                 </td>
                 <td>
-                    <button id="R" class="button">&#8594;</button>
+                    <button id="R" class="button dir">&#8594;</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button id="LB" class="button">&#8601;</button>
+                    <button id="LB" class="button dir">&#8601;</button>
                 </td>
                 <td>
-                    <button id="B" class="button">&#8595;</button>
+                    <button id="B" class="button dir">&#8595;</button>
                 </td>
                 <td>
-                    <button id="RB" class="button">&#8600;</button>
+                    <button id="RB" class="button dir">&#8600;</button>
                 </td>
             </tr>
         </table>
@@ -173,7 +173,7 @@
                     <button id="BRUSH" class="button">BRUSH</button>
                 </th>
                 <th>
-                    <button id="STOP" class="button-stop">STOP</button>
+                    <button id="EXIT" class="button">STOP</button>
                 </th>
                 <th>
                     <button id="MUSIC" class="button">MUSIC</button>

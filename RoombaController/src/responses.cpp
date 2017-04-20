@@ -19,7 +19,7 @@ void responses::index(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1");
+    logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1");
 
     FileHandler page("../web/index.html");
     session->fetch(static_cast<const size_t >(content_length),
@@ -35,40 +35,38 @@ void responses::handle_post(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
+    logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
-                       bool errorFlag{false};
                        json response,
                                postData = json::parse(string(body.begin(), body.end()));
 
                        // set session
                        if (postData["Session"] == nullptr) {
-                           response["Message"].push_back("Can't determine session PC or webapp");
-                           errorFlag = true;
+                           response["Message"].push_back("Can't determine source PC or webapp");
                        } else {
                            if (postData["Session"].is_string()) {
                                globals::session_id = postData["Session"];
                            } else {
                                response["Message"].push_back("Session type must be a string");
-                               errorFlag = true;
                            }
                        }
 
-                       // start session if not already started
-                       if(globals::roomba_session == globals::IDLE) {
+                       // check if user wants to quit
+                       if(postData["Exit"] == "true") {
+                           globals::roomba_session = globals::IDLE;
+                           response["Message"].push_back("Session closed");
+                       } else if(globals::roomba_session == globals::IDLE) {
                            unique_lock<std::mutex> lk(globals::mut_roomba_session);
                            globals::roomba_session = globals::SESSION;
                            globals::cv_roomba_session.notify_one();
-                       } else {
-                           errorFlag = true;
                        }
 
                        if (globals::roomba_session == globals::SESSION && globals::session_id == postData["Session"]) {
-                           unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
+                           unique_lock<std::mutex> param_lk(globals::rmbPrm.mutex());
 
-                           globals::roomba_param.clear();
+                           globals::rmbPrm.clear();
 
                            // parse direction
                            if (postData["Direction"] != nullptr) {
@@ -76,7 +74,7 @@ void responses::handle_post(pSession session) {
                                    auto data = postData["Direction"];
 
                                    if (data == "L") {
-                                       globals::roomba_param.setParameter(globals::RoombaParameters::M_LEFT, 50);
+                                       globals::rmbPrm.setParameter(globals::RoombaParameters::M_LEFT, 50);
                                        response["Message"].push_back("Succes");
                                    } else if (data == "F") {
                                        response["Message"].push_back("Succes");
@@ -89,13 +87,6 @@ void responses::handle_post(pSession session) {
                                    } else response["Message"].push_back("Unsupported direction");
                                } else response["Message"].push_back("Direction must be a string");
                            }
-
-//                           // check if user wants to quit
-//                           if(postData["Exit"] = "true") {
-//                               std::cout << "exit button" << std::endl;
-//                               response["Message"].push_back("Pressed");
-//                           }
-
                        } else {
                            response["Message"].push_back("Busy");
                        }
@@ -111,7 +102,7 @@ void responses::status(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
+    logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
@@ -131,7 +122,7 @@ void responses::error404(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
+    logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {

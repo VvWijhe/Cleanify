@@ -10,7 +10,7 @@ TEST(sensorparser_test, parsing_vector){
     EXPECT_EQ(testsensors.ParseData({19, 5, 29, 2, 25, 13, 0, 163}), 1);
 }
 
-TEST(sensorparser_Test, create_vector){
+TEST(sensorparser_test, create_vector){
     sensors testsensors;
     vector<sensor> input = {Wall, Cliff_front_left, Cliff_front_left_signal, Virtual_wall};
     vector<unsigned char> expected_output = {149, 4, Wall, Cliff_front_left, Cliff_front_left_signal, Virtual_wall};

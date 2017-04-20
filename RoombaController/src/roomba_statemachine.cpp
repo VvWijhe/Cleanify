@@ -77,14 +77,16 @@ void Manuel::handle(const shared_ptr<statemachine::Context> &context) {
 
     logger.information("Manual mode started");
 
-    unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
+    unique_lock<std::mutex> param_lk(rmbPrm.mutex());
 
-    rmbControl->setMotors(roomba_param.getParameter(roomba_param.BRUSHES));
-    rmbControl->setWheels(roomba_param.getParameter(roomba_param.M_LEFT),
-                          roomba_param.getParameter(roomba_param.M_RIGHT));
-    rmbControl->sendCommands(roomba_param.getParameter(roomba_param.COMMAND));
+    rmbControl->setMotors(rmbPrm.getParameter(RoombaParameters::BRUSHES));
+    rmbControl->setWheels(rmbPrm.getParameter(RoombaParameters::M_LEFT),
+                          rmbPrm.getParameter(RoombaParameters::M_RIGHT));
+    rmbControl->sendCommands(rmbPrm.getParameter(RoombaParameters::COMMAND));
 
     cin.ignore();
+
+    roomba_session = IDLE;
     context->setState(make_shared<WaitMode>());
 }
 
@@ -98,14 +100,14 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
 
     logger.information("PC/websession started");
 
-    while(1) {
+    while(roomba_session == SESSION) {
         logger.information("Paramater lock");
-        unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
+        unique_lock<std::mutex> param_lk(globals::rmbPrm.mutex());
 
-        rmbControl->setMotors(roomba_param.getParameter(roomba_param.BRUSHES));
-        rmbControl->setWheels(roomba_param.getParameter(roomba_param.M_LEFT),
-                              roomba_param.getParameter(roomba_param.M_RIGHT));
-        rmbControl->sendCommands(roomba_param.getParameter(roomba_param.COMMAND));
+        rmbControl->setMotors(rmbPrm.getParameter(rmbPrm.BRUSHES));
+        rmbControl->setWheels(rmbPrm.getParameter(rmbPrm.M_LEFT),
+                              rmbPrm.getParameter(rmbPrm.M_RIGHT));
+        rmbControl->sendCommands(rmbPrm.getParameter(rmbPrm.COMMAND));
 
         param_lk.unlock();
         this_thread::sleep_for(chrono::seconds(1));
