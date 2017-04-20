@@ -112,7 +112,7 @@ int sensors::ParseData(vector<unsigned char> input){
             i++;
         }
     }
-    return 0;
+    return 1;
 }
 
 int sensors::ChecksumCheck(vector<unsigned char> data){
