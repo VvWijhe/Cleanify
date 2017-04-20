@@ -8,7 +8,7 @@
 using namespace std;
 using namespace systemcontrol;
 using namespace states;
-using namespace globals;
+//using namespace globals;
 using namespace Poco;
 
 void Initialise::handle(const shared_ptr<statemachine::Context> &context) {
@@ -68,6 +68,9 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
 }
 
 void Manuel::handle(const shared_ptr<statemachine::Context> &context) {
+    // use local namespace for convenience
+    using namespace globals;
+
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto rmbControl = rmbContext->getControl();
     auto &logger = rmbContext->getLogger();
@@ -86,20 +89,28 @@ void Manuel::handle(const shared_ptr<statemachine::Context> &context) {
 }
 
 void Session::handle(const shared_ptr<statemachine::Context> &context) {
+    // use local namespace for convenience
+    using namespace globals;
+
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto rmbControl = rmbContext->getControl();
     auto &logger = rmbContext->getLogger();
 
     logger.information("PC/websession started");
 
-    unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
+    while(1) {
+        logger.information("Paramater lock");
+        unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
 
-    rmbControl->setMotors(roomba_param.getParameter(roomba_param.BRUSHES));
-    rmbControl->setWheels(roomba_param.getParameter(roomba_param.M_LEFT),
-                          roomba_param.getParameter(roomba_param.M_RIGHT));
-    rmbControl->sendCommands(roomba_param.getParameter(roomba_param.COMMAND));
+        rmbControl->setMotors(roomba_param.getParameter(roomba_param.BRUSHES));
+        rmbControl->setWheels(roomba_param.getParameter(roomba_param.M_LEFT),
+                              roomba_param.getParameter(roomba_param.M_RIGHT));
+        rmbControl->sendCommands(roomba_param.getParameter(roomba_param.COMMAND));
 
-    cin.ignore();
+        param_lk.unlock();
+        this_thread::sleep_for(chrono::seconds(1));
+    }
+
     globals::roomba_session = globals::IDLE;
     context->setState(make_shared<WaitMode>());
 }

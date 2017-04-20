@@ -20,7 +20,7 @@ int main() {
         system("rfcomm connect /dev/rfcomm0 00:06:66:60:07:81");
     });
 
-    this_thread::sleep_for(chrono::seconds(6));
+//    this_thread::sleep_for(chrono::seconds(6));
 
 
 

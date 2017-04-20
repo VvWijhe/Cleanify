@@ -56,12 +56,16 @@ void responses::handle_post(pSession session) {
                            }
                        }
 
-                       if (!errorFlag && globals::roomba_session == globals::IDLE &&
-                           globals::session_id == postData["Session"]) {
+                       // start session if not already started
+                       if(globals::roomba_session == globals::IDLE) {
                            unique_lock<std::mutex> lk(globals::mut_roomba_session);
                            globals::roomba_session = globals::SESSION;
                            globals::cv_roomba_session.notify_one();
+                       } else {
+                           errorFlag = true;
+                       }
 
+                       if (globals::roomba_session == globals::SESSION && globals::session_id == postData["Session"]) {
                            unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
 
                            globals::roomba_param.clear();
@@ -85,6 +89,13 @@ void responses::handle_post(pSession session) {
                                    } else response["Message"].push_back("Unsupported direction");
                                } else response["Message"].push_back("Direction must be a string");
                            }
+
+//                           // check if user wants to quit
+//                           if(postData["Exit"] = "true") {
+//                               std::cout << "exit button" << std::endl;
+//                               response["Message"].push_back("Pressed");
+//                           }
+
                        } else {
                            response["Message"].push_back("Busy");
                        }

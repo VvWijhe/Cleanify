@@ -85,6 +85,18 @@
                     alert("ERROR: NO CONNECTION");
                 });
             });
+
+            $(".button-stop").click(function () {
+                var form = "{\"Exit\" : \"true\"}";
+
+                $.post("/control",
+                    form,
+                    function (data) {
+                        console.log(data);
+                    }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+                    alert("ERROR: NO CONNECTION");
+                });
+            });
         });
         //        $.post('http://ip.jsontest.com', {username: myusername, password: mypassword}, function(data) {
         //            alert(data.ip);
@@ -161,7 +173,7 @@
                     <button id="BRUSH" class="button">BRUSH</button>
                 </th>
                 <th>
-                    <button id="STOP" class="button">STOP</button>
+                    <button id="STOP" class="button-stop">STOP</button>
                 </th>
                 <th>
                     <button id="MUSIC" class="button">MUSIC</button>
