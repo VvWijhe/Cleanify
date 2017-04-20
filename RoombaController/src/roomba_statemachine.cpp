@@ -57,19 +57,21 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
             break;
 
         default:
-            logger.fatal("Invalid state, shutting down");
             rmbContext->setState(make_shared<ShutDown>());
+            logger.fatal("Invalid message");
             break;
     }
 }
 
 void Manuel::handle(const shared_ptr<statemachine::Context> &context) {
-    cout << "Manuel " << globals::roomba_session << endl;
+    auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
+    auto rmbControl = rmbContext->getControl();
+    auto &logger = rmbContext->getLogger();
+
+    logger.information("Manual mode started");
 
     unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
 
-    auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
-    auto rmbControl = rmbContext->getControl();
     rmbControl->setMotors(roomba_param.getParameter(roomba_param.BRUSHES));
     rmbControl->setWheels(roomba_param.getParameter(roomba_param.M_LEFT),
                           roomba_param.getParameter(roomba_param.M_RIGHT));
@@ -80,18 +82,21 @@ void Manuel::handle(const shared_ptr<statemachine::Context> &context) {
 }
 
 void Session::handle(const shared_ptr<statemachine::Context> &context) {
-    cout << "Session " << globals::roomba_session << endl;
+    auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
+    auto rmbControl = rmbContext->getControl();
+    auto &logger = rmbContext->getLogger();
+
+    logger.information("PC/websession started");
 
     unique_lock<std::mutex> param_lk(globals::roomba_param.mutex());
 
-    auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
-    auto rmbControl = rmbContext->getControl();
     rmbControl->setMotors(roomba_param.getParameter(roomba_param.BRUSHES));
     rmbControl->setWheels(roomba_param.getParameter(roomba_param.M_LEFT),
                           roomba_param.getParameter(roomba_param.M_RIGHT));
     rmbControl->sendCommands(roomba_param.getParameter(roomba_param.COMMAND));
 
     cin.ignore();
+    globals::roomba_session = globals::IDLE;
     context->setState(make_shared<WaitMode>());
 }
 
