@@ -1,0 +1,60 @@
+@startuml
+skinparam classAttributeIconSize 0
+namespace Ui{
+class MainWindow{
++MainWindow(QWidget *parent = 0): explicit
++~MainWindow(): void
++startRequest(): void
++startPost(QJsonObject jWrite): void
++utf8_url_memory: std::string
+--
+-ui_: Ui::MainWindow*
+-url_: QUrl
+-qnam_: QNetworkAccessManager
+-reply_: QNetworkReply*
+-response_data_: QByteArray
+-sLog_: Poco::Logger&
+httpRequestAborted_: bool
+Wheel_Speed_Value_: int
+Brush_Speed_Value_: int
+-- private slots --
+-on_button_open_ClientDialog_triggered(): void
+-httpRead(): void
+- driveFunctionCommand(const QJsonValue &Direction): void
+-stopDriving(): void
+-on_pushButton_Forward_pressed(): void
+-on_pushButton_Forward_released(): void
+-on_pushButton_Stop_pressed(): void
+-on_pushButton_Backward_pressed(): void
+-on_pushButton_Backward_released(): void
+-on_pushButton_Left_pressed(): void
+-on_pushButton_Left_released(): void
+-on_pushButton_Right_pressed(): void
+-on_pushButton_Right_released(): void
+-on_pushButton_Stop_2_pressed(): void
+-on_pushButton_Spot_pressed(): void
+-on_pushButton_Clean_pressed(): void
+-on_pushButton_Dock_pressed(): void
+-on_pushButton_Forward_Left_pressed(): void
+-on_pushButton_Forward_Left_released(): void
+-on_pushButton_Forward_Right_pressed(): void
+-on_pushButton_Forward_Right_released(): void
+-on_pushButton_Backward_Left_pressed(): void
+-on_pushButton_Backward_Left_released(): void
+-on_pushButton_Backward_Right_pressed(): void
+-on_pushButton_Backward_Right_released(): void
+}
+class ClientDialog{
++ClientDialog(QWidget *parent = 0): explicit
++~ClientDialog(): void
++utf8_url: std::string
+--
+-ui_: Ui::ClientDialog*
+-sLog_: Poco::Logger&
+-- private slots --
+-on_OK_clicked(): void
+-on_Cancel_clicked(): void
+}
+MainWindow -* ClientDialog
+}
+@enduml

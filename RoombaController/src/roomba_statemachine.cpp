@@ -20,7 +20,11 @@ void Initialise::handle(const shared_ptr<statemachine::Context> &context) {
     rmbServer->run();
     if(rmbServer->started()) logger.information("Server started");
 
+
+
     if(rmbControl->init() < 0) logger.error("Serial port failed to connect to the roomba");
+
+
 
     context->setState(make_shared<WaitMode>());
 }
