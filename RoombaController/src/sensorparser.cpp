@@ -123,8 +123,7 @@ int sensors::ChecksumCheck(vector<unsigned char> data){
     if (data.back() == som){
         return 1;
     }
-    string error = "CHECKSUM ERROR sensors::ChecksumCheck: Calculated checksum is '";
-    error += to_string(+som) + "' and should be '" + to_string(+data.back()) + "' ";
-    logger_.error(error);
+    logger_.error(string("CHECKSUM ERROR sensors::ChecksumCheck: Calculated checksum is '") +=
+                          to_string(+som) + "' and should be '" + to_string(+data.back()) + "' ");
     return -1;
 }
