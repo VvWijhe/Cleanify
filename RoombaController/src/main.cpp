@@ -16,19 +16,16 @@ using namespace systemcontrol;
 using namespace Poco;
 
 int main() {
-//    thread t([]{
-//        system("rfcomm connect /dev/rfcomm1 00:06:66:60:07:81");
-//    });
-//
-//    this_thread::sleep_for(chrono::seconds(6));
-//
-//    systemcontrol::RoombaControl control("/dev/rfcomm1", systemcontrol::RoombaControl::b115200);
-//
-//    control.init();
-//    control.setMotors(control.side, true);
-//    control.setWheels(0);
-//
-//    t.join();
+    thread t([]{
+        system("rfcomm connect /dev/rfcomm0 00:06:66:60:07:81");
+    });
+
+    this_thread::sleep_for(chrono::seconds(6));
+
+
+
+
+
     //121cdcd
 
     try {
@@ -51,6 +48,7 @@ int main() {
     } catch (exception &e) {
         cerr << e.what() << endl;
     }
+    t.join();
 
     return 0;
 }

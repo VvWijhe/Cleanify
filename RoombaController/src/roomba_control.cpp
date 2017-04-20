@@ -19,7 +19,7 @@ int RoombaControl::init() {
         return -1;
     }
 
-    serial_.writeVector({128, 130});
+    serial_.writeVector({128, 130, 140, 0, 1 , 62, 32, 141, 0});
 
     return 0;
 }
@@ -50,18 +50,18 @@ void RoombaControl::setWheels(int ls, int rs) {
 
 void RoombaControl::setWheels(int speed) {
 
-    unsigned char hexl_hb = ((speed * 5) >> 8) & 0xFF;
-    unsigned char hexl_lb = (speed * 5) & 0xFF;
+    auto hexl_hb = static_cast<unsigned char>((speed * 5 >> 8) & 0xFF);
+    auto hexl_lb = static_cast<unsigned char>(speed * 5 & 0xFF);
 
     serial_.writeVector({145, hexl_hb, hexl_lb, hexl_hb, hexl_lb});
 }
 
-void RoombaControl::setRotation(short speed, short radial) {
+void RoombaControl::setRotation(int speed, int radial) {
 
-    auto vel_hb = static_cast<unsigned char>((speed * 5) >> 8) & 0xFF;
-    auto vel_lb = static_cast<unsigned char>(speed * 5) & 0xFF;
-    auto rad_hb = static_cast<unsigned char>((radial * 5) >> 8) & 0xFF;
-    auto rad_lb = static_cast<unsigned char>(radial * 5) & 0xFF;
+    auto vel_hb = static_cast<unsigned char>((speed * 5 >> 8) & 0xFF);
+    auto vel_lb = static_cast<unsigned char>(speed * 5 & 0xFF);
+    auto rad_hb = static_cast<unsigned char>((radial * 5 >> 8) & 0xFF);
+    auto rad_lb = static_cast<unsigned char>(radial * 5 & 0xFF);
 
     serial_.writeVector({137, vel_hb, vel_lb, rad_hb, rad_lb});
 }

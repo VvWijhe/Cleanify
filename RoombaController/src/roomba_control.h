@@ -96,7 +96,7 @@ namespace systemcontrol {
          * the value speed must be between -100 and 100, radial must be between -2000 and 2000.
          * if the roomba must turn around itself set radius to clockwise:-1 counterclockwise:1
          */
-        void setRotation(short speed, short radial);
+        void setRotation(int speed, int radial);
 
         /**
          * @brief This functions sets the main led of the roomba.
