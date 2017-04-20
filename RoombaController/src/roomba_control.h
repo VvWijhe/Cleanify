@@ -83,13 +83,13 @@ namespace systemcontrol {
          * @param ls Speed of left wheel between -100 and 100.
          * @param rs Speed of right wheel between -100 and 100.
          */
-        void setWheels(short ls, short rs);
+        void setWheels(int ls, int rs);
 
         /**
          * @brief Sets the speed of both wheels.
          * @param speed Speed of the wheels between -100 and 100.
          */
-        void setWheels(short speed);
+        void setWheels(int speed);
 
         /**
          * set the rotation of the roomba without forward movement.
