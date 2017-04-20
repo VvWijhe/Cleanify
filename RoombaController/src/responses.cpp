@@ -19,7 +19,7 @@ void responses::index(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1" + request->get_host());
+    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1");
 
     FileHandler page("../web/index.html");
     session->fetch(static_cast<const size_t >(content_length),
@@ -39,10 +39,25 @@ void responses::handle_post(pSession session) {
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
-                       json response;
-                       json postData = json::parse(string(body.begin(), body.end()));
+                       bool errorFlag{false};
+                       json response,
+                               postData = json::parse(string(body.begin(), body.end()));
 
-                       if(globals::roomba_session == globals::IDLE) {
+                       // set session
+                       if (postData["Session"] == nullptr) {
+                           response["Message"].push_back("Can't determine session PC or webapp");
+                           errorFlag = true;
+                       } else {
+                           if (postData["Session"].is_string()) {
+                               globals::session_id = postData["Session"];
+                           } else {
+                               response["Message"].push_back("Session type must be a string");
+                               errorFlag = true;
+                           }
+                       }
+
+                       if (!errorFlag && globals::roomba_session == globals::IDLE &&
+                           globals::session_id == postData["Session"]) {
                            unique_lock<std::mutex> lk(globals::mut_roomba_session);
                            globals::roomba_session = globals::SESSION;
                            globals::cv_roomba_session.notify_one();
@@ -58,20 +73,20 @@ void responses::handle_post(pSession session) {
 
                                    if (data == "L") {
                                        globals::roomba_param.setParameter(globals::RoombaParameters::M_LEFT, 50);
-                                       response["Message"] = "Succes";
+                                       response["Message"].push_back("Succes");
                                    } else if (data == "F") {
-                                       response["Message"] = "Succes";
+                                       response["Message"].push_back("Succes");
                                    } else if (data == "R") {
-                                       response["Message"] = "Succes";
+                                       response["Message"].push_back("Succes");
                                    } else if (data == "B") {
-                                       response["Message"] = "Succes";
+                                       response["Message"].push_back("Succes");
                                    } else if (data == "Stop") {
-                                       response["Message"] = "Succes";
-                                   } else response["Message"] = "Unsupported direction";
-                               } else response["Message"] = "Direction must be a string";
+                                       response["Message"].push_back("Succes");
+                                   } else response["Message"].push_back("Unsupported direction");
+                               } else response["Message"].push_back("Direction must be a string");
                            }
                        } else {
-                           response["Message"] = "busy";
+                           response["Message"].push_back("Busy");
                        }
 
                        s->close(OK,
@@ -85,7 +100,7 @@ void responses::status(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 " + request->get_host());
+    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
@@ -105,7 +120,7 @@ void responses::error404(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 " + request->get_host());
+    logger.information(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {

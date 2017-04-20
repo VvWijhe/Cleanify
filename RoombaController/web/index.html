@@ -75,7 +75,7 @@
     <script>
         $(document).ready(function () {
             $("button").click(function () {
-                var form = "{\"Direction\" : \"" + this.id + "\"}";
+                var form = "{\"Direction\" : \"" + this.id + "\", \"Session\" : \"Webapp\"}";
 
                 $.post("/control",
                     form,
