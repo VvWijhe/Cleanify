@@ -83,7 +83,7 @@ public:
         if(typeid(T) == sensorvariant(sensors_.find(sens)->second).type() ){
             return boost::get<T>(sensors_.find(sens)->second);
         }
-        cout << "ERROR: BOOST HAS FAILED" << endl;
+        logger_.error("BOOST ERROR sensors::GetValue: Boost has failed");
         return 0;
     }
     vector<unsigned char> CreateVector(vector<sensor> sens);
