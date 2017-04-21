@@ -10,6 +10,7 @@
 #include "statemachine.hpp"
 #include "glb_session.h"
 #include "glb_roomba_param.h"
+#include "glb_events.h"
 
 #ifndef ROOMBACONTROLLER_PROCESSING_H
 #define ROOMBACONTROLLER_PROCESSING_H
@@ -66,9 +67,9 @@ namespace systemcontrol {
         /**
          * @brief State class that waits for a signal from a PC or website
          */
-        class WaitMode : public statemachine::State {
+        class WaitForSession : public statemachine::State {
         public:
-            ~WaitMode() {}
+            ~WaitForSession() {}
 
             void handle(const std::shared_ptr<statemachine::Context> &context) override;
         };
@@ -76,9 +77,9 @@ namespace systemcontrol {
         /**
          * @brief State class that handles the cleaning.
          */
-        class Manuel : public statemachine::State {
+        class Manual : public statemachine::State {
         public:
-            ~Manuel() {}
+            ~Manual() {}
 
             void handle(const std::shared_ptr<statemachine::Context> &context) override;
         };

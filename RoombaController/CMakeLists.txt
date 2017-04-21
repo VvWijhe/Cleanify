@@ -33,7 +33,7 @@ set(SOURCE_FILES
         src/roomba_statemachine.cpp
         src/glb_session.cpp
         src/glb_roomba_param.cpp
-        src/sensorparser.cpp)
+        src/sensorparser.cpp src/glb_events.h src/glb_events.cpp)
 
 ## directory for testing
 add_subdirectory(tests)

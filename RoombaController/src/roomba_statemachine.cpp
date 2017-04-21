@@ -4,7 +4,6 @@
 
 #include "roomba_statemachine.h"
 
-
 using namespace std;
 using namespace systemcontrol;
 using namespace states;
@@ -19,17 +18,12 @@ void Initialise::handle(const shared_ptr<statemachine::Context> &context) {
 
     rmbServer->run();
     if(rmbServer->started()) logger.information("Server started");
-
-
-
     if(rmbControl->init() < 0) logger.error("Serial port failed to connect to the roomba");
 
-
-
-    context->setState(make_shared<WaitMode>());
+    context->setState(make_shared<WaitForSession>());
 }
 
-void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
+void WaitForSession::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto control = rmbContext->getControl();
     auto &logger = rmbContext->getLogger();
@@ -53,7 +47,7 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
 
     switch (globals::roomba_session){
         case globals::MAN:
-            rmbContext->setState(make_shared<Manuel>());
+            rmbContext->setState(make_shared<Manual>());
             break;
 
         case globals::SESSION:
@@ -62,12 +56,12 @@ void WaitMode::handle(const shared_ptr<statemachine::Context> &context) {
 
         default:
             rmbContext->setState(make_shared<ShutDown>());
-            logger.fatal("Invalid message");
+            logger.fatal("Invalid session");
             break;
     }
 }
 
-void Manuel::handle(const shared_ptr<statemachine::Context> &context) {
+void Manual::handle(const shared_ptr<statemachine::Context> &context) {
     // use local namespace for convenience
     using namespace globals;
 
@@ -87,7 +81,7 @@ void Manuel::handle(const shared_ptr<statemachine::Context> &context) {
     cin.ignore();
 
     roomba_session = IDLE;
-    context->setState(make_shared<WaitMode>());
+    context->setState(make_shared<WaitForSession>());
 }
 
 void Session::handle(const shared_ptr<statemachine::Context> &context) {
@@ -98,23 +92,37 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbControl = rmbContext->getControl();
     auto &logger = rmbContext->getLogger();
 
-    logger.information("PC/websession started");
+    logger.information("PC/Web session started");
 
     while(roomba_session == SESSION) {
-        logger.information("Paramater lock");
-        unique_lock<std::mutex> param_lk(globals::rmbPrm.mutex());
+        unique_lock<std::mutex> param_lk(rmbPrm.mutex());
+        unique_lock<std::mutex> event_lk(server_event.mutex());
+
+        switch (server_event.getEvent()) {
+            case ServerEvents::E_EXIT:
+                roomba_session = IDLE;
+                logger.information("Exit session");
+                break;
+
+            case ServerEvents::E_RIGHT:
+                logger.information("Right button pressed");
+                break;
+
+            default:
+                break;
+        }
 
         rmbControl->setMotors(rmbPrm.getParameter(rmbPrm.BRUSHES));
-        rmbControl->setWheels(rmbPrm.getParameter(rmbPrm.M_LEFT),
-                              rmbPrm.getParameter(rmbPrm.M_RIGHT));
+        rmbControl->setWheels(rmbPrm.getParameter(rmbPrm.M_LEFT), rmbPrm.getParameter(rmbPrm.M_RIGHT));
         rmbControl->sendCommands(rmbPrm.getParameter(rmbPrm.COMMAND));
 
         param_lk.unlock();
-        this_thread::sleep_for(chrono::seconds(1));
+        event_lk.unlock();
+
+        this_thread::sleep_for(chrono::milliseconds(33));
     }
 
-    globals::roomba_session = globals::IDLE;
-    context->setState(make_shared<WaitMode>());
+    context->setState(make_shared<WaitForSession>());
 }
 
 

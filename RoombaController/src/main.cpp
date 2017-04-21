@@ -22,12 +22,6 @@ int main() {
 
 //    this_thread::sleep_for(chrono::seconds(6));
 
-
-
-
-
-    //121cdcd
-
     try {
         //initialise logger
         AutoPtr<SplitterChannel> splitterChannel(new SplitterChannel());
