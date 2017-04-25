@@ -1,0 +1,23 @@
+@startuml
+scale 350 width
+[*] --> Init : init();
+
+state Init {
+  Init -down> DetermineMap
+}
+
+state DetermineMap {
+DetermineMap: do / putBumpCoordinatesInVector();
+  [*] --> FindFirstWall
+  FindFirstWall -> FollowWall : E_FirstWallFound
+  FollowWall -> CleanRoom : E_MapCreated
+  DetermineMap -up> Init
+}
+
+state CleanRoom {
+CleanRoom: entry / calculateRoute();
+CleanRoom: do / cleanRoom();
+CleanRoom: exit / goToDock();
+CleanRoom -left> Init
+}
+@enduml
