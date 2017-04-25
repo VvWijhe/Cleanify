@@ -1,23 +1,43 @@
 @startuml
 scale 350 width
-[*] --> Init : init();
+[*] --down> Init
 
 state Init {
-  Init -down> DetermineMap
+    Init: entry / init();
+    Init -down> Map: E_CleanButtonPressed
 }
 
-state DetermineMap {
-DetermineMap: do / putBumpCoordinatesInVector();
-  [*] --> FindFirstWall
-  FindFirstWall -> FollowWall : E_FirstWallFound
-  FollowWall -> CleanRoom : E_MapCreated
-  DetermineMap -up> Init
+state Map {
+    [*] --down> DetermineMap: E_MapUnknown
+    [*] -right> DetermineLocation: E_MapKnown
+    Map -up> Init: E_CleaningCancelled
+    state DetermineMap {
+        [*] -> FindFirstWall: startDriving();
+        FindFirstWall: entry / driveForward();
+        FindFirstWall: exit / putBumpCoordinatesInVector();
+        FollowWall: entry / driveCircleLeft();
+        FollowWall: exit / putBumpCoordinatesInVector();
+
+        FindFirstWall -right> FollowWall : E_FirstWallFound
+        FollowWall -up> CleanRoom : E_MapCreated
+        FollowWall -> FollowWall: E_MapNotComplete
+    }
+
+    state DetermineLocation {
+        DetermineLocation: entry / getMapFromServer();
+        DetermineLocation: do / goToDock();
+        DetermineLocation -> CleanRoom
+    }
 }
 
 state CleanRoom {
-CleanRoom: entry / calculateRoute();
-CleanRoom: do / cleanRoom();
-CleanRoom: exit / goToDock();
-CleanRoom -left> Init
+    CleanRoom: entry / calculateRoute();
+    CleanRoom: do / cleanRoom();
+    CleanRoom -up> GoToDock : E_CleaningFinished
+}
+
+state GoToDock {
+    GoToDock -up> Init: E_Docked
+    GoToDock: do / goToDock();
 }
 @enduml
