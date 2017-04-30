@@ -8,6 +8,7 @@
 - `$ git clone https://github.com/VvWijhe/Cleanify`
 - `$ cd Cleanify`
 - `$ git submodule update --init --recursive`
+- `$ mkdir bin`
 - `$ cd RoombaController/bin`
 - `$ cmake ..`
 
