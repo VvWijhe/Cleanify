@@ -1,18 +1,21 @@
 @startuml
-  [*] --> Initialise : init()
 
-  Initialise -> WaitForMode : E_READY
+title main statemachine
 
-  WaitForMode -> Clean : E_AUTO
-  WaitForMode -> Session : E_SESSION
+[*] --> Initialise : init()
 
-  Session -> WaitForMode : E_EXIT
-  Session -> Clean : E_CLEAN
-  Session -> Spot : E_SPOT
+Initialise -> WaitForMode : E_READY
 
-  Clean -> WaitForMode : E_STOP
-  Clean -> Session : E_STOP
+WaitForMode -> Clean : E_AUTO
+WaitForMode -> Session : E_SESSION
 
-  Spot -> Session : E_STOP
+Session -> WaitForMode : E_EXIT
+Session -> Clean : E_CLEAN
+Session -> Spot : E_SPOT
+
+Clean -> WaitForMode : E_STOP
+Clean -> Session : E_STOP
+
+Spot -> Session : E_STOP
 
 @enduml
