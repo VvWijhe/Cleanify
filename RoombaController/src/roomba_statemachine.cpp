@@ -17,6 +17,7 @@ void Initialise::handle(const shared_ptr<statemachine::Context> &context) {
     auto &logger = rmbContext->getLogger();
 
     rmbServer->run();
+
     if(rmbServer->started()) logger.information("Server started");
     if(rmbControl->init() < 0) logger.error("Serial port failed to connect to the roomba");
 
@@ -105,7 +106,7 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 break;
 
             case ServerEvents::E_RIGHT:
-                logger.information("Right button pressed");
+                logger.debug("Right button pressed");
                 break;
 
             default:
@@ -124,8 +125,6 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
 
     context->setState(make_shared<WaitForSession>());
 }
-
-
 
 void ShutDown::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);

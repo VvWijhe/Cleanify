@@ -1,23 +1,18 @@
 @startuml
-[*] --> Initialise : init()
-
-state Initialise {
+  [*] --> Initialise : init()
 
   Initialise -> WaitForMode : E_READY
-}
 
-state WaitForMode {
-  WaitForMode -> PCmode : E_PC_MODE
-  WaitForMode -> Websitemode : E_WEB_MODE
-}
+  WaitForMode -> Clean : E_AUTO
+  WaitForMode -> Session : E_SESSION
 
-state PCmode {
-  [*] --> WaitForCmds1
-  WaitForCmds1 -up> WaitForMode : E_EXIT, E_TIMEOUT
-}
+  Session -> WaitForMode : E_EXIT
+  Session -> Clean : E_CLEAN
+  Session -> Spot : E_SPOT
 
-state Websitemode {
-  [*] --> WaitForCmds2
-  WaitForCmds2 -up> WaitForMode : E_EXIT, E_TIMEOUT
-}
+  Clean -> WaitForMode : E_STOP
+  Clean -> Session : E_STOP
+
+  Spot -> Session : E_STOP
+
 @enduml
