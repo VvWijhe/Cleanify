@@ -75,21 +75,21 @@ namespace systemcontrol {
         };
 
         /**
-         * @brief State class that handles the cleaning.
-         */
-        class Manual : public statemachine::State {
-        public:
-            ~Manual() {}
-
-            void handle(const std::shared_ptr<statemachine::Context> &context) override;
-        };
-
-        /**
         * @brief State class that handles the cleaning.
         */
         class Session : public statemachine::State {
         public:
             ~Session() {}
+
+            void handle(const std::shared_ptr<statemachine::Context> &context) override;
+        };
+
+        /**
+         * @brief State class that handles the cleaning.
+         */
+        class Clean : public statemachine::State {
+        public:
+            ~Clean() {}
 
             void handle(const std::shared_ptr<statemachine::Context> &context) override;
         };

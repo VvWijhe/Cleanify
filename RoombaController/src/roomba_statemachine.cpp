@@ -1,13 +1,14 @@
 //
 // Created by jamie on 4/11/17.
 //
+#include <boost/asio.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
 
 #include "roomba_statemachine.h"
 
 using namespace std;
 using namespace systemcontrol;
 using namespace states;
-//using namespace globals;
 using namespace Poco;
 
 void Initialise::handle(const shared_ptr<statemachine::Context> &context) {
@@ -31,12 +32,14 @@ void WaitForSession::handle(const shared_ptr<statemachine::Context> &context) {
 
     logger.information("Waiting for signal from SESSION or webapp...");
 
+    globals::roomba_session = globals::IDLE;
+
     // roomba starts manually if ENTER key is pressed
     thread cli([]{
         cin.ignore();
 
         unique_lock<std::mutex> lk(globals::mut_roomba_session);
-        globals::roomba_session = globals::MAN;
+        globals::roomba_session = globals::AUTO;
         globals::cv_roomba_session.notify_one();
     });
 
@@ -47,11 +50,11 @@ void WaitForSession::handle(const shared_ptr<statemachine::Context> &context) {
     cli.detach();
 
     switch (globals::roomba_session){
-        case globals::MAN:
-            rmbContext->setState(make_shared<Manual>());
+        case globals::AUTO:
+            rmbContext->setState(make_shared<Clean>());
             break;
 
-        case globals::SESSION:
+        case globals::PC_WEB:
             rmbContext->setState(make_shared<Session>());
             break;
 
@@ -62,29 +65,6 @@ void WaitForSession::handle(const shared_ptr<statemachine::Context> &context) {
     }
 }
 
-void Manual::handle(const shared_ptr<statemachine::Context> &context) {
-    // use local namespace for convenience
-    using namespace globals;
-
-    auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
-    auto rmbControl = rmbContext->getControl();
-    auto &logger = rmbContext->getLogger();
-
-    logger.information("Manual mode started");
-
-    unique_lock<std::mutex> param_lk(rmbPrm.mutex());
-
-    rmbControl->setMotors(rmbPrm.getParameter(RoombaParameters::BRUSHES));
-    rmbControl->setWheels(rmbPrm.getParameter(RoombaParameters::M_LEFT),
-                          rmbPrm.getParameter(RoombaParameters::M_RIGHT));
-    rmbControl->sendCommands(rmbPrm.getParameter(RoombaParameters::COMMAND));
-
-    cin.ignore();
-
-    roomba_session = IDLE;
-    context->setState(make_shared<WaitForSession>());
-}
-
 void Session::handle(const shared_ptr<statemachine::Context> &context) {
     // use local namespace for convenience
     using namespace globals;
@@ -92,10 +72,12 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto rmbControl = rmbContext->getControl();
     auto &logger = rmbContext->getLogger();
+    boost::asio::io_service io;
 
     logger.information("PC/Web session started");
 
-    while(roomba_session == SESSION) {
+    while(roomba_session == PC_WEB) {
+        boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
         unique_lock<std::mutex> param_lk(rmbPrm.mutex());
         unique_lock<std::mutex> event_lk(server_event.mutex());
 
@@ -113,15 +95,28 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 break;
         }
 
-        rmbControl->setMotors(rmbPrm.getParameter(rmbPrm.BRUSHES));
-        rmbControl->setWheels(rmbPrm.getParameter(rmbPrm.M_LEFT), rmbPrm.getParameter(rmbPrm.M_RIGHT));
-        rmbControl->sendCommands(rmbPrm.getParameter(rmbPrm.COMMAND));
-
         param_lk.unlock();
         event_lk.unlock();
 
-        this_thread::sleep_for(chrono::milliseconds(33));
+        loopFrequency.wait();
     }
+
+    context->setState(make_shared<WaitForSession>());
+}
+
+void Clean::handle(const shared_ptr<statemachine::Context> &context) {
+    // use local namespace for convenience
+    using namespace globals;
+
+    auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
+    auto rmbControl = rmbContext->getControl();
+    auto &logger = rmbContext->getLogger();
+
+    logger.information("Cleaning started");
+
+    unique_lock<std::mutex> param_lk(rmbPrm.mutex());
+    param_lk.unlock();
+    cin.ignore();
 
     context->setState(make_shared<WaitForSession>());
 }

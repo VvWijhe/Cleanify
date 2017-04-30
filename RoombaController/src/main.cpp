@@ -15,14 +15,18 @@ using namespace std;
 using namespace systemcontrol;
 using namespace Poco;
 
+/**
+ * @brief Main entry of the program
+ * @return 
+ */
 int main() {
-    thread t([]{
-        system("rfcomm connect /dev/rfcomm0 00:06:66:60:07:81");
-    });
+    try {
+        thread t([]{
+            system("rfcomm connect /dev/rfcomm0 00:06:66:60:07:81");
+        });
 
 //    this_thread::sleep_for(chrono::seconds(6));
 
-    try {
         //initialise logger
         AutoPtr<SplitterChannel> splitterChannel(new SplitterChannel());
 
@@ -39,10 +43,11 @@ int main() {
         shared_ptr<RoombaStateContext> process = make_shared<RoombaStateContext>(make_shared<states::Initialise>());
 
         process->runAll();
+
+        t.join();
     } catch (exception &e) {
         cerr << e.what() << endl;
     }
-    t.join();
 
     return 0;
 }

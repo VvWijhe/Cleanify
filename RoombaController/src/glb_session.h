@@ -13,7 +13,7 @@
 
 namespace globals {
     enum session {
-        IDLE, MAN, SESSION
+        IDLE, AUTO, PC_WEB
     };
 
     // global variables with mutexes

@@ -11,6 +11,7 @@
 #include <string>
 
 #include "file_handler.h"
+#include "../dependencies/json.hpp"
 
 namespace responses {
     using pSession = std::shared_ptr<restbed::Session>;
@@ -43,6 +44,23 @@ namespace responses {
      * @param session contains http request information.
      */
     void error404(pSession session);
+
+    /**
+     * @brief Contains a json with a an ok or error status that can be responsed to the client.
+     */
+    class json_response {
+    public:
+        void ok(std::string message = "");
+
+        void error(std::string message);
+
+        std::string to_string() const;
+
+        unsigned long size() const;
+
+    private:
+        nlohmann::json response_;
+    };
 }
 
 #endif //ROOMBACONTROLLER_RESPONSES_H

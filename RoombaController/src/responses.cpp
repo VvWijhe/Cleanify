@@ -5,7 +5,6 @@
 #include <Poco/Logger.h>
 
 #include "responses.h"
-#include "json.hpp"
 #include "glb_session.h"
 #include "glb_roomba_param.h"
 #include "glb_events.h"
@@ -40,70 +39,73 @@ void responses::handle_post(pSession session) {
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
-                       json response,
-                               postData = json::parse(string(body.begin(), body.end()));
+                       bool exitFlag{};
+                       json postData = json::parse(string(body.begin(), body.end()));
+                       json_response response;
 
                        // set session
-                       if (postData["Session"] == nullptr) {
-                           response["Message"].push_back("Can't determine source PC or webapp");
+                       if (postData["session"] == nullptr) {
+                           response.error("can't determine source pc or web");
                        } else {
-                           if (postData["Session"].is_string()) {
-                               globals::session_id = postData["Session"];
+                           if (postData["session"].is_string()) {
+                               globals::session_id = postData["session"];
                            } else {
-                               response["Message"].push_back("Session type must be a string");
+                               response.error("value not a string");
                            }
                        }
 
                        // check if user wants to quit
-                       if(postData["Exit"] == "true") {
+                       if(postData["exit"] == "true") {
                            globals::server_event = globals::ServerEvents::E_EXIT;
-                           response["Message"].push_back("Session closed");
+                           response.ok();
+                           exitFlag = true;
                        } else if(globals::roomba_session == globals::IDLE) {
                            unique_lock<std::mutex> lk(globals::mut_roomba_session);
-                           globals::roomba_session = globals::SESSION;
+                           globals::roomba_session = globals::PC_WEB;
                            globals::cv_roomba_session.notify_one();
                        }
 
                        // set global variables if session is ok
-                       if (globals::roomba_session == globals::SESSION && globals::session_id == postData["Session"]) {
+                       if (globals::roomba_session == globals::PC_WEB && globals::session_id == postData["session"]) {
                            unique_lock<std::mutex> param_lk(globals::rmbPrm.mutex());
                            unique_lock<std::mutex> event_lk(globals::server_event.mutex());
 
                            // parse direction
-                           if (postData["Direction"] != nullptr) {
-                               if (postData["Direction"].is_string()) {
-                                   auto data = postData["Direction"];
+                           if (postData["direction"] != nullptr) {
+                               if (postData["direction"].is_string()) {
+                                   auto direc = postData["direction"];
 
-                                   if (data == "Left") {
+                                   if (direc == "left") {
                                        globals::server_event = globals::ServerEvents::E_LEFT;
-                                       response["Message"].push_back("Succes");
-                                   } else if (data == "Forward") {
+                                       response.ok();
+                                   } else if (direc == "forward") {
                                        globals::server_event = globals::ServerEvents::E_FORWARD;
-                                       response["Message"].push_back("Succes");
-                                   } else if (data == "Right") {
+                                       response.ok();
+                                   } else if (direc == "right") {
                                        globals::server_event = globals::ServerEvents::E_RIGHT;
-                                       response["Message"].push_back("Succes");
-                                   } else if (data == "Backward") {
+                                       response.ok();
+                                   } else if (direc == "backward") {
                                        globals::server_event = globals::ServerEvents::E_BACKWARD;
-                                       response["Message"].push_back("Succes");
-                                   } else if (data == "Stop") {
+                                       response.ok();
+                                   } else if (direc == "stop") {
                                        globals::server_event = globals::ServerEvents::E_STOP;
-                                       response["Message"].push_back("Succes");
+                                       response.ok();
                                    } else {
-                                       response["Message"].push_back("Unsupported direction");
+                                       response.error("unsupported direction");
                                    }
                                } else {
-                                   response["Message"].push_back("Direction must be a string");
+                                   response.error("direction must be a string");
                                }
                            }
                        } else {
-                           response["Message"].push_back("Busy");
+                           if(exitFlag) response.ok("closing session");
+                           else response.error("busy");
                        }
 
                        // send response variables
                        s->close(OK,
-                                response.dump(),
-                                {{"Content-Length", std::to_string(response.dump().size())}});
+                                response.to_string(),
+                                {{"Content-Length", std::to_string(response.size())}});
                    });
 }
 
@@ -118,8 +120,8 @@ void responses::status(pSession session) {
                    [](const shared_ptr<Session> s, const Bytes &body) {
                        json response;
 
-                       response["Status"] = "Idle";
-                       response["Battery"] = 71;
+                       response["status"] = "idle";
+                       response["sattery"] = 71;
 
                        s->close(OK,
                                 response.dump(),
@@ -145,3 +147,20 @@ void responses::error404(pSession session) {
 }
 
 
+void responses::json_response::ok(std::string message) {
+    response_["status"] = "ok";
+    response_["message"] = message;
+}
+
+void responses::json_response::error(std::string message) {
+    response_["status"] = "error";
+    response_["message"] = message;
+}
+
+std::string responses::json_response::to_string() const {
+    return response_.dump();
+}
+
+unsigned long responses::json_response::size() const {
+    return response_.dump().size();
+}
