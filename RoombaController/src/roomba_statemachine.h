@@ -29,7 +29,7 @@ namespace systemcontrol {
         RoombaStateContext(const std::shared_ptr<statemachine::State> &initial) :
                 logger_(Poco::Logger::get("logger")) {
             server_ = std::make_shared<server::RoombaServer>(8000);
-            control_ = std::make_shared<RoombaControl>("/dev/rfcomm1", systemcontrol::RoombaControl::b115200);
+            control_ = std::make_shared<RoombaControl>("/dev/rfcomm3", systemcontrol::RoombaControl::b115200);
 
             setState(initial);
         }

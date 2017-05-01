@@ -53,6 +53,15 @@ namespace systemcontrol {
 
         } commands_t;
 
+        struct parameters {
+            int Drive_speed;
+            int Drive_rotation;
+            int Brushes_speed;
+            color_t color;
+
+
+        } par_t;
+
         RoombaControl(std::string usbName, speed_t baud);
 
         ~RoombaControl();
@@ -77,17 +86,11 @@ namespace systemcontrol {
         void resetDevices();
 
         /**
-         * @brief Control the roomba by changing the speed of each wheel seperately.
-         * @param ls Speed of left wheel between -100 and 100.
-         * @param rs Speed of right wheel between -100 and 100.
+         * @brief fills in roombacontrol function from algorithm
+         * @param parameters struct from algorithm
          */
-        void setWheels(int ls, int rs);
 
-        /**
-         * @brief Sets the speed of both wheels.
-         * @param speed Speed of the wheels between -100 and 100.
-         */
-        void setWheels(int speed);
+        void setDevices(parameters par);
 
         /**
          * set the rotation of the roomba without forward movement.
@@ -114,6 +117,8 @@ namespace systemcontrol {
          * @param command: fill in a commands_t command
          */
         void sendCommands(commands_t command);
+
+        void beep();
 
         /// TODO
         void readSensors();
