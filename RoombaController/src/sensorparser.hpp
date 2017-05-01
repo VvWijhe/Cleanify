@@ -69,28 +69,40 @@ enum sensor{
     Statis                  = 58
 };
 
-class sensors{
-private:
-    using sensorvariant = boost::variant<unsigned char, char, unsigned short, short>;
-    map<sensor, sensorvariant> sensors_;
-    vector<unsigned char> send_vector_ = {0, 0};
-    Poco::Logger &logger_;
+class Sensors{
 public:
-    sensors();
-    ~sensors() = default;
+
+    Sensors();
+
+    ~Sensors() = default;
+
     template<typename T>
-    T GetValue(sensor sens){
+    T getvalue(sensor sens){
         if(typeid(T) == sensorvariant(sensors_.find(sens)->second).type() ){
             return boost::get<T>(sensors_.find(sens)->second);
         }
         logger_.error("BOOST ERROR sensors::GetValue: Boost has failed");
         return 0;
     }
-    vector<unsigned char> CreateVector(vector<sensor> sens);
-    vector<unsigned char> CreateVector(sensor sens);
-    vector<unsigned char> CreateVectorStream(vector<sensor> sens);
-    int ParseData(vector<unsigned char> input);
-    int ChecksumCheck(vector<unsigned char> data);
+
+    vector<unsigned char> createvector(vector<sensor> sens);
+
+    vector<unsigned char> createvector(sensor sens);
+
+    vector<unsigned char> createvectorstream(vector<sensor> sens);
+
+    int parsedata(vector<unsigned char> input);
+
+    int checksumcheck(vector<unsigned char> data);
+
+private:
+    using sensorvariant = boost::variant<unsigned char, char, unsigned short, short>;
+
+    map<sensor, sensorvariant> sensors_;
+
+    vector<unsigned char> send_vector_ = {0, 0};
+
+    Poco::Logger &logger_;
 };
 
 #endif //ROOMBACONTROLLER_SENSORDATA_H
