@@ -10,7 +10,7 @@
 - `$ git submodule update --init --recursive`
 - `$ cd RoombaController`
 - `$ mkdir bin`
-- `$ cd RoombaController/bin`
+- `$ cd bin`
 - `$ cmake ..`
 
 ## Run
