@@ -9,7 +9,7 @@ using namespace systemcontrol;
 
 RoombaControl::RoombaControl(std::string usbName, speed_t baud) :
         serial_(usbName, baud) {
-    currentMotor_ = 0;
+
 }
 
 RoombaControl::~RoombaControl() {}
@@ -24,10 +24,10 @@ int RoombaControl::init() {
     return 0;
 }
 
-void RoombaControl::setBaud(RoombaControl::baud_t baud) {
+void RoombaControl::setBaud() {
 
 
-    serial_.writeVector({Set_Baud, baud});
+    serial_.writeVector({Set_Baud, 11});
 }
 
 void RoombaControl::disconnect() {
@@ -90,8 +90,8 @@ void RoombaControl::readSensors() {
 
 }
 
-void RoombaControl::setMotors(unsigned char PWM) {
-    serial_.writeVector({Pwm_Motors, PWM, PWM, PWM});
+void RoombaControl::setBrushes(unsigned char PWM) {
+    serial_.writeVector({Pwm_Brushes, PWM, PWM, PWM});
 
 }
 

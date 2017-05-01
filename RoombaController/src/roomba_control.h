@@ -46,7 +46,7 @@ namespace systemcontrol {
             Max_Clean = 136,
             Drive = 137,
             Seek_Dock = 143,
-            Pwm_Motors = 144,
+            Pwm_Brushes = 144,
             Drive_Wheels = 145,
 
             Stop = 173
@@ -67,7 +67,7 @@ namespace systemcontrol {
          * @brief Sets the baudrate.
          * @param baud Choices: 19200 and 115200
          */
-        void setBaud(baud_t baud);
+        void setBaud();
 
         void disconnect();
 
@@ -106,7 +106,7 @@ namespace systemcontrol {
          * @brief This function set the brushes and vacuum
          * @param PWM: 0 for brushes of and 127 for full power
          */
-        void setMotors(unsigned char PWM);
+        void setBrushes(unsigned char PWM);
 
 
         /**
