@@ -89,6 +89,7 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
 
             case ServerEvents::E_RIGHT:
                 logger.debug("Right button pressed");
+                rmbControl->setBrushes(244);
                 break;
 
             default:
