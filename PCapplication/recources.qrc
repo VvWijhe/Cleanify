@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/arrow_left.png</file>
+        <file>Images/arrow_right.png</file>
+        <file>Images/arrow_forward_right.png</file>
+        <file>Images/arrow_forward_left.png</file>
+        <file>Images/arrow_forward.png</file>
+        <file>Images/arrow_backward_right.png</file>
+        <file>Images/arrow_backward_left.png</file>
+        <file>Images/arrow_backward.png</file>
+    </qresource>
+</RCC>
