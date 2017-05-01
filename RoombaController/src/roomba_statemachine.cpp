@@ -103,8 +103,11 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 rmbControl->setRotation(500, 0x8000);
                 break;
 
-            default:
+            case ServerEvents::E_STOP:
                 rmbControl->setRotation(0, 0x8000);
+                break;
+
+            default:
                 break;
         }
 
