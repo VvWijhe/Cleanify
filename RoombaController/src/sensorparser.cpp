@@ -6,7 +6,7 @@
 
 using namespace std;
 
-sensors::sensors() : logger_(Poco::Logger::get("logger")){
+Sensors::Sensors() : logger_(Poco::Logger::get("logger")){
     sensors_[Bumps_wheeldrops]          = static_cast<unsigned char>(0);
     sensors_[Wall]                      = static_cast<unsigned char>(0);
     sensors_[Cliff_left]                = static_cast<unsigned char>(0);
@@ -62,7 +62,7 @@ sensors::sensors() : logger_(Poco::Logger::get("logger")){
 }
 
 
-vector<unsigned char> sensors::CreateVector(vector<sensor> sens){
+vector<unsigned char> Sensors::createvector(vector<sensor> sens){
     vector<unsigned char> send_vector_ = {149, 0};
     send_vector_.at(1) = sens.size();
     for(auto s: sens){
@@ -71,11 +71,11 @@ vector<unsigned char> sensors::CreateVector(vector<sensor> sens){
     return send_vector_;
 }
 
-vector<unsigned char> sensors::CreateVector(sensor sens){
+vector<unsigned char> Sensors::createvector(sensor sens){
     return {142, sens};
 }
 
-vector<unsigned char> sensors::CreateVectorStream(vector<sensor> sens){
+vector<unsigned char> Sensors::createvectorstream(vector<sensor> sens){
     vector<unsigned char> send_vector_ = {148, 0};
     send_vector_.at(1) = sens.size();
     for(auto s: sens){
@@ -84,13 +84,13 @@ vector<unsigned char> sensors::CreateVectorStream(vector<sensor> sens){
     return send_vector_;
 }
 
-int sensors::ParseData(vector<unsigned char> input){
+int Sensors::parsedata(vector<unsigned char> input){
     if(input.at(0) != 19){
-        logger_.error("FORMAT ERROR sensors::ParseData: first byte isn't equal to 19");
+        logger_.error("FORMAT ERROR Sensors::ParseData: first byte isn't equal to 19");
         return -1;
     }
-    else if(ChecksumCheck(input) !=1){
-        logger_.error("CHECKSUM ERROR sensors::ParseData: cant complete ChecksumCheck");
+    else if(checksumcheck(input) !=1){
+        logger_.error("CHECKSUM ERROR Sensors::ParseData: cant complete ChecksumCheck");
         return -2;
     }
     for(int i = 2; i < (2+input.at(1)); i++){
@@ -115,7 +115,7 @@ int sensors::ParseData(vector<unsigned char> input){
     return 1;
 }
 
-int sensors::ChecksumCheck(vector<unsigned char> data){
+int Sensors::checksumcheck(vector<unsigned char> data){
     unsigned char som = 0;
     for(int i = 0; i < (2+data.at(1)); i++){
         som -= data.at(i);
@@ -123,7 +123,7 @@ int sensors::ChecksumCheck(vector<unsigned char> data){
     if (data.back() == som){
         return 1;
     }
-    logger_.error(string("CHECKSUM ERROR sensors::ChecksumCheck: Calculated checksum is '") +=
+    logger_.error(string("CHECKSUM ERROR Sensors::ChecksumCheck: Calculated checksum is '") +=
                           to_string(+som) + "' and should be '" + to_string(+data.back()) + "' ");
     return -1;
 }
