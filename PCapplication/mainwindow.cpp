@@ -69,26 +69,27 @@ void MainWindow::httpRead() {
     sLog_.debug("Data " + body.toStdString());
 }
 
-void MainWindow::driveFunctionCommand(const QJsonValue &Direction) {
+void MainWindow::driveFunctionCommand(const QJsonValue &direction) {
     QJsonObject jWrite;
     Wheel_Speed_Value_ = ui_->horizontalSlider_Wheel_Speed->value();
     Brush_Speed_Value_ = ui_->horizontalSlider_Brush_Speed->value();
-    jWrite.insert("Session", "PC");
-    jWrite.insert("Direction", Direction);
-    jWrite.insert("Wheel_Speed", Wheel_Speed_Value_);
-    jWrite.insert("Brush_Speed", Brush_Speed_Value_);
+    jWrite.insert("session", "PC");
+    jWrite.insert("direction", direction);
+    jWrite.insert("wheel_speed", Wheel_Speed_Value_);
+    jWrite.insert("brush_speed", Brush_Speed_Value_);
     startPost(jWrite);
-    sLog_.debug("Wheel_Speed: " + std::to_string(Wheel_Speed_Value_) +
-               ", Brush_Speed: " + std::to_string(Brush_Speed_Value_));
+    sLog_.debug("wheel_speed: " + std::to_string(Wheel_Speed_Value_) +
+               ", brush_speed: " + std::to_string(Brush_Speed_Value_));
 }
 
 void MainWindow::stopDriving() {
     QJsonObject jWrite;
-    jWrite.insert("Session", "PC");
-    jWrite.insert("Wheel_Speed", 0);
-    jWrite.insert("Brush_Speed", 0);
+    jWrite.insert("session", "PC");
+    jWrite.insert("wheel_speed", 0);
+    jWrite.insert("brush_speed", 0);
     startPost(jWrite);
     sLog_.trace("Function stopDriving()");
+    Server_Exit();
 }
 
 void MainWindow::on_pushButton_Stop_pressed() {
@@ -99,37 +100,36 @@ void MainWindow::on_pushButton_Stop_pressed() {
 }
 
 void MainWindow::on_pushButton_Forward_pressed() {
-    startRequest();
-    //driveFunctionCommand("Forward");
-    //sLog.trace("Pressed Forward");
+    driveFunctionCommand("forward");
+    sLog_.trace("Pressed forward");
 }
 void MainWindow::on_pushButton_Backward_pressed() {
-    driveFunctionCommand("Backward");
-    sLog_.trace("Pressed Backward");
+    driveFunctionCommand("backward");
+    sLog_.trace("Pressed backward");
 }
 void MainWindow::on_pushButton_Left_pressed() {
-    driveFunctionCommand("Left");
-    sLog_.trace("Pressed Left");
+    driveFunctionCommand("left");
+    sLog_.trace("Pressed left");
 }
 void MainWindow::on_pushButton_Right_pressed() {
-    driveFunctionCommand("Right");
-    sLog_.trace("Pressed Right");
+    driveFunctionCommand("right");
+    sLog_.trace("Pressed right");
 }
 void MainWindow::on_pushButton_Forward_Left_pressed() {
-    driveFunctionCommand("Forward_Left");
-    sLog_.trace("Pressed Forward-Left");
+    driveFunctionCommand("forward_left");
+    sLog_.trace("Pressed forward-left");
 }
 void MainWindow::on_pushButton_Forward_Right_pressed() {
-    driveFunctionCommand("Forward_Right");
-    sLog_.trace("Pressed Forward-Right");
+    driveFunctionCommand("forward_right");
+    sLog_.trace("Pressed rorward-right");
 }
 void MainWindow::on_pushButton_Backward_Left_pressed() {
-    driveFunctionCommand("Backward_Left");
-    sLog_.trace("Pressed Backward-Left");
+    driveFunctionCommand("backward_left");
+    sLog_.trace("Pressed backward-left");
 }
 void MainWindow::on_pushButton_Backward_Right_pressed() {
-    driveFunctionCommand("Backward_Right");
-    sLog_.trace("Pressed Backward-Right");
+    driveFunctionCommand("backward_right");
+    sLog_.trace("Pressed backward-right");
 }
 
 void MainWindow::on_pushButton_Stop_2_pressed() {
@@ -141,8 +141,8 @@ void MainWindow::on_pushButton_Spot_pressed() {
     QJsonObject jWrite;
     sLog_.trace("Pressed Spot");
     stopDriving();
-    jWrite.insert("Session", "PC");
-    jWrite.insert("Pre-Commands", "Spot");
+    jWrite.insert("session", "PC");
+    jWrite.insert("pre-commands", "spot");
     startPost(jWrite);
 }
 
@@ -150,8 +150,8 @@ void MainWindow::on_pushButton_Clean_pressed() {
     QJsonObject jWrite;
     sLog_.trace("Pressed Clean-Man");
     stopDriving();
-    jWrite.insert("Session", "PC");
-    jWrite.insert("Pre-Commands", "Clean-Man");
+    jWrite.insert("session", "PC");
+    jWrite.insert("pre-commands", "clean-man");
     startPost(jWrite);
 }
 
@@ -159,8 +159,8 @@ void MainWindow::on_pushButton_Dock_pressed() {
     QJsonObject jWrite;
     sLog_.trace("Pressed Dock-Man");
     stopDriving();
-    jWrite.insert("Session", "PC");
-    jWrite.insert("Pre-Commands", "Dock-Man");
+    jWrite.insert("session", "PC");
+    jWrite.insert("pre-commands", "dock-man");
     startPost(jWrite);
 }
 
@@ -168,27 +168,30 @@ void MainWindow::on_pushButton_Spot_Man_clicked(){
     QJsonObject jWrite;
     sLog_.trace("Pressed Spot-Man");
     stopDriving();
-    jWrite.insert("Session", "PC");
-    jWrite.insert("Pre-Commands", "Spot-Man");
+    jWrite.insert("session", "PC");
+    jWrite.insert("pre-commands", "spot-man");
     startPost(jWrite);
+    Server_Exit();
 }
 
 void MainWindow::on_pushButton_Clean_Man_clicked(){
     QJsonObject jWrite;
     sLog_.trace("Pressed Clean-Man");
     stopDriving();
-    jWrite.insert("Session", "PC");
-    jWrite.insert("Pre-Commands", "Clean-Man");
+    jWrite.insert("session", "PC");
+    jWrite.insert("pre-commands", "clean-man");
     startPost(jWrite);
+    Server_Exit();
 }
 
 void MainWindow::on_pushButton_Dock_Man_clicked(){
     QJsonObject jWrite;
     sLog_.trace("Pressed Dock-Man");
     stopDriving();
-    jWrite.insert("Session", "PC");
-    jWrite.insert("Pre-Commands", "Dock-Man");
+    jWrite.insert("session", "PC");
+    jWrite.insert("pre-commands", "dock-man");
     startPost(jWrite);
+    Server_Exit();
 }
 
 void MainWindow::on_pushButton_Forward_released() { stopDriving(); }
@@ -199,6 +202,27 @@ void MainWindow::on_pushButton_Forward_Left_released() { stopDriving(); }
 void MainWindow::on_pushButton_Forward_Right_released() { stopDriving(); }
 void MainWindow::on_pushButton_Backward_Left_released() { stopDriving(); }
 void MainWindow::on_pushButton_Backward_Right_released() { stopDriving(); }
+
+void MainWindow::Server_Exit(){
+    QJsonObject jWrite;
+    jWrite.insert("exit", "true");
+    QString jsonString;
+    // Send data server
+    url_ = QUrl(url_page_post.c_str());
+    QNetworkRequest request(url_);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    reply_ = qnam_.post(request, QJsonDocument(jWrite).toJson());
+    while (!reply_->isFinished()) {
+        qApp->processEvents();
+    }
+    // Server response
+    response_data_ = reply_->readAll();
+    QJsonDocument jsave = QJsonDocument::fromJson(response_data_);
+    reply_->deleteLater();
+    jsonString = jsave.toJson(QJsonDocument::Indented);
+    sLog_.information("Response: " + jsonString.toStdString());
+}
+
 
 //Needed for parsing:
 //nlohmann::json jRead;
