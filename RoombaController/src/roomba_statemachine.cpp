@@ -88,23 +88,23 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 break;
 
             case ServerEvents::E_RIGHT:
-                rmbControl->setWheels(100, -100);
+                rmbControl->setRotation(0, -1);
                 break;
 
             case ServerEvents::E_LEFT:
-                rmbControl->setWheels(-100, 100);
+                rmbControl->setRotation(0, 1);
                 break;
 
             case ServerEvents::E_BACKWARD:
-                rmbControl->setWheels(-100, -100);
+                rmbControl->setRotation(-500, 0x8000);
                 break;
 
             case ServerEvents::E_FORWARD:
-                rmbControl->setWheels(100, 100);
+                rmbControl->setRotation(500, 0x8000);
                 break;
 
             default:
-                rmbControl->setWheels(0);
+                rmbControl->setRotation(0, 0x8000);
                 break;
         }
 
