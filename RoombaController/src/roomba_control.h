@@ -19,14 +19,6 @@ namespace systemcontrol {
             red, blue, green, orange
         } color_t;
 
-        typedef enum : char {
-            side = 1,
-            vacuum = 2,
-            main = 4,
-            side_direction = 8,
-            main_direction = 16,
-            all = 15
-        } motors_t;
 
         typedef enum : speed_t {
             b300 = B300,
@@ -128,7 +120,7 @@ namespace systemcontrol {
 
     private:
         io::SerialPort serial_;
-        char currentMotor_;
+
     };
 }
 
