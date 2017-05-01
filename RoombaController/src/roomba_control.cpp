@@ -27,7 +27,7 @@ int RoombaControl::init() {
 void RoombaControl::setBaud(RoombaControl::baud_t baud) {
 
 
-    serial_.writeVector({129,});
+    serial_.writeVector({Set_Baud, baud});
 }
 
 void RoombaControl::disconnect() {
@@ -35,7 +35,7 @@ void RoombaControl::disconnect() {
 }
 
 void RoombaControl::resetDevices() {
-    serial_.writeByte({7});
+    serial_.writeByte(Reset);
 }
 
 void RoombaControl::setWheels(int ls, int rs) {
@@ -45,7 +45,7 @@ void RoombaControl::setWheels(int ls, int rs) {
     auto hexr_hb = static_cast<unsigned char>(((rs * 5) >> 8) & 0xFF);
     auto hexr_lb = static_cast<unsigned char>((rs * 5) & 0xFF);
 
-    serial_.writeVector({145, hexl_hb, hexl_lb, hexr_hb, hexr_lb});
+    serial_.writeVector({Drive_Wheels, hexl_hb, hexl_lb, hexr_hb, hexr_lb});
 }
 
 void RoombaControl::setWheels(int speed) {
@@ -53,7 +53,7 @@ void RoombaControl::setWheels(int speed) {
     auto hexl_hb = static_cast<unsigned char>((speed * 5 >> 8) & 0xFF);
     auto hexl_lb = static_cast<unsigned char>(speed * 5 & 0xFF);
 
-    serial_.writeVector({145, hexl_hb, hexl_lb, hexl_hb, hexl_lb});
+    serial_.writeVector({Drive_Wheels, hexl_hb, hexl_lb, hexl_hb, hexl_lb});
 }
 
 void RoombaControl::setRotation(int speed, int radial) {
@@ -63,7 +63,7 @@ void RoombaControl::setRotation(int speed, int radial) {
     auto rad_hb = static_cast<unsigned char>((radial * 5 >> 8) & 0xFF);
     auto rad_lb = static_cast<unsigned char>(radial * 5 & 0xFF);
 
-    serial_.writeVector({137, vel_hb, vel_lb, rad_hb, rad_lb});
+    serial_.writeVector({Drive, vel_hb, vel_lb, rad_hb, rad_lb});
 }
 
 void RoombaControl::setLed(color_t color) {
@@ -90,15 +90,12 @@ void RoombaControl::readSensors() {
 
 }
 
-void RoombaControl::setMotors(int PWM) {
-    unsigned char pwm = PWM;
-    serial_.writeVector({145, pwm, pwm, pwm});
+void RoombaControl::setMotors(unsigned char PWM) {
+    serial_.writeVector({Pwm_Motors, PWM, PWM, PWM});
 
 }
 
-void RoombaControl::sendCommands(int command) {
-
-    unsigned char com = command;
-    serial_.writeByte(com);
+void RoombaControl::sendCommands(commands_t command) {
+    serial_.writeByte(command);
 
 }

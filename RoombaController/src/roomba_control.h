@@ -42,7 +42,9 @@ namespace systemcontrol {
         } baud_t;
 
         typedef enum : unsigned char {
+            Reset = 7,
             Start = 128,
+            Set_Baud = 129,
             Control = 130,
             Safe = 131,
             Full = 132,
@@ -50,7 +52,11 @@ namespace systemcontrol {
             Spot = 134,
             Clean = 135,
             Max_Clean = 136,
+            Drive = 137,
             Seek_Dock = 143,
+            Pwm_Motors = 144,
+            Drive_Wheels = 145,
+
             Stop = 173
 
         } commands_t;
@@ -106,17 +112,16 @@ namespace systemcontrol {
 
         /**
          * @brief This function set the brushes and vacuum
-         * @param motor: side, vacuum, main, side_direction, main_direction
-         * @param state: on = 1, off = 0
+         * @param PWM: 0 for brushes of and 127 for full power
          */
-        void setMotors(int PWM);
+        void setMotors(unsigned char PWM);
 
 
         /**
          * @brief This functions sends simple commands
          * @param command: fill in a commands_t command
          */
-        void sendCommands(int command);
+        void sendCommands(commands_t command);
 
         /// TODO
         void readSensors();
