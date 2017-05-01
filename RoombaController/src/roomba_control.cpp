@@ -23,7 +23,7 @@ int RoombaControl::init() {
 
 
 
-
+/*
     unsigned char duur = 32;
     vector<unsigned char> start = {128, 131};
     vector<unsigned char> panzer = {140, 0, 11, 70, duur, 74, static_cast<unsigned char>(duur*2), 64, duur, 65, static_cast<unsigned char>(duur), 64, static_cast<unsigned char>(duur*2),
@@ -36,7 +36,7 @@ int RoombaControl::init() {
 
     serial_.writeVector({141, 0});
     this_thread::sleep_for(chrono::milliseconds(7200));
-    serial_.writeVector({141, 1});
+    serial_.writeVector({141, 1});*/
 
     return 0;
 }
@@ -63,12 +63,13 @@ void RoombaControl::setDevices(parameters par) {
 
 void RoombaControl::setRotation(int speed, int radial) {
 
-    auto vel_hb = static_cast<unsigned char>((speed * 5 >> 8) & 0xFF);
-    auto vel_lb = static_cast<unsigned char>(speed * 5 & 0xFF);
-    auto rad_hb = static_cast<unsigned char>((radial * 5 >> 8) & 0xFF);
-    auto rad_lb = static_cast<unsigned char>(radial * 5 & 0xFF);
+    auto vel_hb = static_cast<unsigned char>((speed >> 8) & 0xFF);
+    auto vel_lb = static_cast<unsigned char>(speed & 0xFF);
+    auto rad_hb = static_cast<unsigned char>((radial >> 8) & 0xFF);
+    auto rad_lb = static_cast<unsigned char>(radial & 0xFF);
 
     serial_.writeVector({Drive, vel_hb, vel_lb, rad_hb, rad_lb});
+    //serial_.writeVector({Drive, 0x01, 0xF4, 0x00, 0x01});
 }
 
 void RoombaControl::setLed(color_t color) {
@@ -106,5 +107,5 @@ void RoombaControl::sendCommands(commands_t command) {
 }
 
 void RoombaControl::beep() {
-    serial_.writeVector({Start, 130, 140, 0, 1 , 62, 32, 141, 0});
+    serial_.writeVector({Start, Full, 140, 0, 1 , 62, 32, 141, 0});
 }
