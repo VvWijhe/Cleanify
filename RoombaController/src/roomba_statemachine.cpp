@@ -88,11 +88,23 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 break;
 
             case ServerEvents::E_RIGHT:
-                logger.debug("Right button pressed");
-                rmbControl->setBrushes(244);
+                rmbControl->setWheels(100, -100);
+                break;
+
+            case ServerEvents::E_LEFT:
+                rmbControl->setWheels(-100, 100);
+                break;
+
+            case ServerEvents::E_BACKWARD:
+                rmbControl->setWheels(-100, -100);
+                break;
+
+            case ServerEvents::E_FORWARD:
+                rmbControl->setWheels(100, 100);
                 break;
 
             default:
+                rmbControl->setWheels(0);
                 break;
         }
 

@@ -97,6 +97,25 @@ void responses::handle_post(pSession session) {
                                    response.error("direction must be a string");
                                }
                            }
+
+                           // parse pre commands
+                           if (postData["pre-commands"] != nullptr) {
+                               if (postData["pre-commands"].is_string()) {
+                                   auto cmd = postData["pre-commands"];
+
+                                   if (cmd == "clean") {
+                                       globals::server_event = globals::ServerEvents::E_CLEAN;
+                                   } else if (cmd == "dock") {
+                                       globals::server_event = globals::ServerEvents::E_DOCK;
+                                   } else if (cmd == "spot") {
+                                       globals::server_event = globals::ServerEvents::E_SPOT;
+                                   } else {
+                                       response.error("unsupported command");
+                                   }
+                               } else {
+                                   response.error("command must be a string");
+                               }
+                           }
                        } else {
                            if(exitFlag) response.ok("closing session");
                            else response.error("busy");
