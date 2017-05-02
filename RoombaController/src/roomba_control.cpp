@@ -61,12 +61,12 @@ void RoombaControl::setDevices(parameters par) {
     setLed(par.color);
 }
 
-void RoombaControl::setRotation(int speed, int radial) {
+void RoombaControl::setRotation(int speed, int radius) {
 
     auto vel_hb = static_cast<unsigned char>((speed >> 8) & 0xFF);
     auto vel_lb = static_cast<unsigned char>(speed & 0xFF);
-    auto rad_hb = static_cast<unsigned char>((radial >> 8) & 0xFF);
-    auto rad_lb = static_cast<unsigned char>(radial & 0xFF);
+    auto rad_hb = static_cast<unsigned char>((radius >> 8) & 0xFF);
+    auto rad_lb = static_cast<unsigned char>(radius & 0xFF);
 
     serial_.writeVector({Drive, vel_hb, vel_lb, rad_hb, rad_lb});
     //serial_.writeVector({Drive, 0x01, 0xF4, 0x00, 0x01});
@@ -93,15 +93,26 @@ void RoombaControl::setLed(color_t color) {
 }
 
 int RoombaControl::readSensors(Sensors &sensorBuffer) {
+    condition_variable cv;
+    mutex mut;
     io::byteVector buffer;
     Sensors tmpSensor;
 
-    serial_.readAll(buffer);
+    thread t([this, &buffer, &cv, &mut]{
+        this->serial_.readAll(buffer);
+        cv.notify_all();
+    });
 
+    unique_lock<mutex> lk(mut);
+    if(cv.wait_for(lk, chrono::milliseconds(1000)) == cv_status::timeout) return -1;
+
+    t.detach();
+
+    return 0;
 }
 
-void RoombaControl::setBrushes(unsigned char PWM) {
-    serial_.writeVector({Pwm_Brushes, PWM, PWM, PWM});
+void RoombaControl::setBrushes(unsigned char pwm) {
+    serial_.writeVector({Pwm_Brushes, pwm, pwm, pwm});
 
 }
 

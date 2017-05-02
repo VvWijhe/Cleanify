@@ -44,6 +44,9 @@ namespace systemcontrol {
          */
         std::shared_ptr<RoombaControl> getControl() const { return control_; }
 
+        /**
+         * @return Adress of a POCO logger object.
+         */
         Poco::Logger & getLogger() const { return logger_; }
 
     private:

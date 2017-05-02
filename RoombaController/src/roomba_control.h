@@ -14,13 +14,16 @@
 #include "serial.h"
 
 namespace systemcontrol {
+    /**
+     * @brief Handles the controlling of the roomba. It contains functions that can set the wheels, brushes and leds.
+     * A serial connection is required to control the Roomba. This class uses linux functions to use the serial port.
+     */
     class RoombaControl {
     public:
         typedef enum : int {
             red, blue, green, orange
         } color_t;
-
-
+        
         typedef enum : speed_t {
             b300 = B300,
             b600 = B600,
@@ -49,9 +52,7 @@ namespace systemcontrol {
             Seek_Dock = 143,
             Pwm_Brushes = 144,
             Drive_Wheels = 145,
-
             Stop = 173
-
         } commands_t;
 
         struct parameters {
@@ -59,12 +60,18 @@ namespace systemcontrol {
             int Drive_rotation;
             int Brushes_speed;
             color_t color;
+        } parameters_t;
 
-
-        } par_t;
-
+        /**
+         * @brief Constructor sets initialises the serial connection.
+         * @param usbName Path to the serial port.
+         * @param baud The baudrate that is supported by the Roomba.
+         */
         RoombaControl(std::string usbName, speed_t baud);
 
+        /**
+         * @brief Empty destructor.
+         */
         ~RoombaControl();
 
         /**
@@ -79,6 +86,9 @@ namespace systemcontrol {
          */
         void setBaud();
 
+        /**
+         * @brief Closes the serial connection.
+         */
         void disconnect();
 
         /**
@@ -98,7 +108,7 @@ namespace systemcontrol {
          * the value speed must be between -100 and 100, radial must be between -2000 and 2000.
          * if the roomba must turn around itself set radius to clockwise:-1 counterclockwise:1
          */
-        void setRotation(int speed, int radial);
+        void setRotation(int speed, int radius);
 
         /**
          * @brief This functions sets the main led of the roomba.
@@ -108,9 +118,9 @@ namespace systemcontrol {
 
         /**
          * @brief This function set the brushes and vacuum
-         * @param PWM: 0 for brushes of and 127 for full power
+         * @param pwm: 0 for brushes of and 127 for full power
          */
-        void setBrushes(unsigned char PWM);
+        void setBrushes(unsigned char pwm);
 
 
         /**
@@ -119,14 +129,21 @@ namespace systemcontrol {
          */
         void sendCommands(commands_t command);
 
+        /**
+         * @brief Lets the Roomba do one beep.
+         */
         void beep();
 
-        /// TODO
+        /**
+         * @brief Requests sensordata and parses the data that is requested. If it has not received data after 800 ms,
+         * it will return an error.
+         * @param sensorBuffer A Sensor object where the parsed data will be stored.
+         * @return -1 if a timeout occurred, 0 if succesfull
+         */
         int readSensors(Sensors &sensorBuffer);
 
     private:
         io::SerialPort serial_;
-
     };
 }
 

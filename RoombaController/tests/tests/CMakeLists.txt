@@ -2,7 +2,7 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 include_directories(../../)
 
 add_executable(runTests
-        #serial_tests.cpp
+        serial_tests.cpp
         #control_test.cpp
         sensorparser_test.cpp
         ../../src/serial.cpp
