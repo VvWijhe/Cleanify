@@ -1,0 +1,13 @@
+@startuml
+[*] --> spiral
+
+spiral --> drive_backwards : E_HIT_OBJECT
+follow_wall --> drive_backwards : E_HIT_OBJECT
+drive_backwards --> rotate_left : E_BACKWARDS_DONE
+rotate_left --> follow_wall : E_ROTATE_DONE
+drive_straight --> spiral : E_TIME_EXCEED
+follow_wall --> big_rot_left : E_TIME_EXCEED
+big_rot_left --> drive_straight : E_ROTATE_DONE
+drive_straight --> drive_backwards : E_HIT_OBJECT
+
+@enduml
