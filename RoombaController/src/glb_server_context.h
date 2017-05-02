@@ -8,7 +8,7 @@
 #include <mutex>
 
 namespace globals {
-    class ServerEvents {
+    class ServerContext {
     public:
         enum server_events {
             E_NO,
@@ -17,7 +17,7 @@ namespace globals {
             E_LED_GREEN, E_LED_ORANGE, E_LED_RED, E_LED_BLUE
         };
 
-        ServerEvents() {}
+        ServerContext() {}
 
         void setEvent(server_events event) { event_ = event; }
 
@@ -25,6 +25,22 @@ namespace globals {
             auto tmp = event_;
             event_ = E_NO;
             return tmp;
+        }
+
+        void setWheelSpeed(double speed) {
+            wheelSpeed_ = speed;
+        }
+
+        void setBrushSpeed(double speed) {
+            brushSpeed_ = speed;
+        }
+
+        double getWheelSpeed() const {
+            return wheelSpeed_;
+        }
+
+        double getBrushSpeed() const {
+            return brushSpeed_;
         }
 
         std::mutex& mutex() {
@@ -36,11 +52,13 @@ namespace globals {
         }
 
     private:
+        double brushSpeed_;
+        double wheelSpeed_;
         std::mutex mutex_;
         server_events event_;
     };
 
-    extern ServerEvents server_event;
+    extern ServerContext server_context;
 }
 
 #endif //ROOMBACONTROLLER_GLB_EVENTS_H

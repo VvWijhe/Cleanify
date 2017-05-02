@@ -10,7 +10,7 @@
 #include "statemachine.hpp"
 #include "glb_session.h"
 #include "glb_roomba_param.h"
-#include "glb_events.h"
+#include "glb_server_context.h"
 
 #ifndef ROOMBACONTROLLER_PROCESSING_H
 #define ROOMBACONTROLLER_PROCESSING_H

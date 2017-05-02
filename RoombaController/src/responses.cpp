@@ -7,7 +7,7 @@
 #include "responses.h"
 #include "glb_session.h"
 #include "glb_roomba_param.h"
-#include "glb_events.h"
+#include "glb_server_context.h"
 
 using namespace std;
 using namespace restbed;
@@ -55,11 +55,11 @@ void responses::handle_post(pSession session) {
                        }
 
                        // check if user wants to quit
-                       if(postData["exit"] == "true") {
-                           globals::server_event = globals::ServerEvents::E_EXIT;
+                       if (postData["exit"] == "true") {
+                           globals::server_context = globals::ServerContext::E_EXIT;
                            response.ok();
                            exitFlag = true;
-                       } else if(globals::roomba_session == globals::IDLE) {
+                       } else if (globals::roomba_session == globals::IDLE) {
                            unique_lock<std::mutex> lk(globals::mut_roomba_session);
                            globals::roomba_session = globals::PC_WEB;
                            globals::cv_roomba_session.notify_one();
@@ -68,33 +68,42 @@ void responses::handle_post(pSession session) {
                        // set global variables if session is ok
                        if (globals::roomba_session == globals::PC_WEB && globals::session_id == postData["session"]) {
                            unique_lock<std::mutex> param_lk(globals::rmbPrm.mutex());
-                           unique_lock<std::mutex> event_lk(globals::server_event.mutex());
+                           unique_lock<std::mutex> event_lk(globals::server_context.mutex());
 
-                           // parse direction
+                           // parse direction and speed
                            if (postData["direction"] != nullptr) {
                                if (postData["direction"].is_string()) {
                                    auto direc = postData["direction"];
 
                                    if (direc == "left") {
-                                       globals::server_event = globals::ServerEvents::E_LEFT;
+                                       globals::server_context = globals::ServerContext::E_LEFT;
                                        response.ok();
                                    } else if (direc == "forward") {
-                                       globals::server_event = globals::ServerEvents::E_FORWARD;
+                                       globals::server_context = globals::ServerContext::E_FORWARD;
                                        response.ok();
                                    } else if (direc == "right") {
-                                       globals::server_event = globals::ServerEvents::E_RIGHT;
+                                       globals::server_context = globals::ServerContext::E_RIGHT;
                                        response.ok();
                                    } else if (direc == "backward") {
-                                       globals::server_event = globals::ServerEvents::E_BACKWARD;
+                                       globals::server_context = globals::ServerContext::E_BACKWARD;
                                        response.ok();
                                    } else if (direc == "stop") {
-                                       globals::server_event = globals::ServerEvents::E_STOP;
+                                       globals::server_context = globals::ServerContext::E_STOP;
                                        response.ok();
                                    } else {
                                        response.error("unsupported direction");
                                    }
                                } else {
                                    response.error("direction must be a string");
+                               }
+
+                               if (postData["wheel_speed"] != nullptr) {
+                                   if (postData["wheel_speed"].is_number()) {
+                                       globals::server_context.setWheelSpeed(
+                                               static_cast<double>(postData["wheel_speed"]));
+                                   } else {
+                                       response.error("wheel speed must be a number");
+                                   }
                                }
                            }
 
@@ -104,11 +113,11 @@ void responses::handle_post(pSession session) {
                                    auto cmd = postData["pre-commands"];
 
                                    if (cmd == "clean") {
-                                       globals::server_event = globals::ServerEvents::E_CLEAN;
+                                       globals::server_context = globals::ServerContext::E_CLEAN;
                                    } else if (cmd == "dock") {
-                                       globals::server_event = globals::ServerEvents::E_DOCK;
+                                       globals::server_context = globals::ServerContext::E_DOCK;
                                    } else if (cmd == "spot") {
-                                       globals::server_event = globals::ServerEvents::E_SPOT;
+                                       globals::server_context = globals::ServerContext::E_SPOT;
                                    } else {
                                        response.error("unsupported command");
                                    }
@@ -117,7 +126,7 @@ void responses::handle_post(pSession session) {
                                }
                            }
                        } else {
-                           if(exitFlag) response.ok("closing session");
+                           if (exitFlag) response.ok("closing session");
                            else response.error("busy");
                        }
 
