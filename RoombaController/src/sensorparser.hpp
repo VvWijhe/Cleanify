@@ -14,7 +14,7 @@
 
 using namespace std;
 
-enum sensor{
+enum sensorID{
     Bumps_wheeldrops        = 7,
     Wall                    = 8,
     Cliff_left              = 9,
@@ -72,35 +72,68 @@ enum sensor{
 class Sensors{
 public:
 
+    /**
+     * @brief all sensors are added to the vector "sensors_"
+     */
     Sensors();
 
-    ~Sensors() = default;
+    ~Sensors(){};
 
+    /**
+     * @brief Search and returns value of sensor in sensor vector.
+     * @tparam T represents the datatype of the requested data
+     * @param Sensor is the sensorID of the data you requested
+     * @return 0 if failed, value of sensor on succes.
+     */
     template<typename T>
-    T getvalue(sensor sens){
-        if(typeid(T) == sensorvariant(sensors_.find(sens)->second).type() ){
-            return boost::get<T>(sensors_.find(sens)->second);
+    T getvalue(sensorID sensor){
+        if(typeid(T) == sensorvariant(sensors_.find(sensor)->second).type() ){
+            return boost::get<T>(sensors_.find(sensor)->second);
         }
         logger_.error("BOOST ERROR sensors::GetValue: Boost has failed");
         return 0;
     }
 
-    vector<unsigned char> createvector(vector<sensor> sens);
+    /**
+     * @brief Create a vector to request sensordata of multiple sensors from the roomba.
+     * @param sensors is a vector of sensors where you want to know the value.
+     * @return A vector to request data of multiple sensors, with usage of opcode 149
+     */
+    vector<unsigned char> createvector(vector<sensorID> sensors);
 
-    vector<unsigned char> createvector(sensor sens);
+    /**
+     * @brief Create a vector to request sensordata of one sensor from the roomba.
+     * @param sensor is the sensor where you want to know the value.
+     * @return A vector to request data of one sensor, with usage of opcode 142
+     */
+    vector<unsigned char> createvector(sensorID sensor);
 
-    vector<unsigned char> createvectorstream(vector<sensor> sens);
+    /**
+     * @brief Create a vector to request sensordata of multiple sensors from the roomba.
+     *        the data requested will be returned every 15ms.
+     * @param sensors is a vector of sensors where you want to know the value.
+     * @return A vector to request data of multiple sensors, with usage of opcode 148
+     */
+    vector<unsigned char> createvectorstream(vector<sensorID> sensors);
 
+    /**
+     * @brief this function will parse the incomming data and update the sensor value's.
+     * @param input is a char vector of the received data from the roomba.
+     * @return 1 if succesfull, -1 when first byte isn't equal to 19, -2 when checksum error.
+     */
     int parsedata(vector<unsigned char> input);
 
+    /**
+     * @brief will check if the som of al bytes is equal to 0.
+     * @param data is the vector of data you want to check
+     * @return 1 when succes, -1 when failed.
+     */
     int checksumcheck(vector<unsigned char> data);
 
 private:
     using sensorvariant = boost::variant<unsigned char, char, unsigned short, short>;
 
-    map<sensor, sensorvariant> sensors_;
-
-    vector<unsigned char> send_vector_ = {0, 0};
+    map<sensorID, sensorvariant> sensors_;
 
     Poco::Logger &logger_;
 };

@@ -14,7 +14,7 @@ TEST(sensorparser_test, parsing_vector){
 
 TEST(sensorparser_test, create_vector){
     Sensors testsensors;
-    vector<sensor> input = {Wall, Cliff_front_left, Cliff_front_left_signal, Virtual_wall};
+    vector<sensorID> input = {Wall, Cliff_front_left, Cliff_front_left_signal, Virtual_wall};
     vector<unsigned char> expected_output = {149, 4, Wall, Cliff_front_left, Cliff_front_left_signal, Virtual_wall};
     EXPECT_EQ(testsensors.createvector(input), expected_output);
     expected_output.at(0) = 148;

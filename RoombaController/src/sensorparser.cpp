@@ -62,23 +62,23 @@ Sensors::Sensors() : logger_(Poco::Logger::get("logger")){
 }
 
 
-vector<unsigned char> Sensors::createvector(vector<sensor> sens){
+vector<unsigned char> Sensors::createvector(vector<sensorID> sensors){
     vector<unsigned char> send_vector_ = {149, 0};
-    send_vector_.at(1) = sens.size();
-    for(auto s: sens){
+    send_vector_.at(1) = sensors.size();
+    for(auto s: sensors){
         send_vector_.push_back(s);
     }
     return send_vector_;
 }
 
-vector<unsigned char> Sensors::createvector(sensor sens){
-    return {142, sens};
+vector<unsigned char> Sensors::createvector(sensorID sensor){
+    return {142, sensor};
 }
 
-vector<unsigned char> Sensors::createvectorstream(vector<sensor> sens){
+vector<unsigned char> Sensors::createvectorstream(vector<sensorID> sensors){
     vector<unsigned char> send_vector_ = {148, 0};
-    send_vector_.at(1) = sens.size();
-    for(auto s: sens){
+    send_vector_.at(1) = sensors.size();
+    for(auto s: sensors){
         send_vector_.push_back(s);
     }
     return send_vector_;
@@ -94,21 +94,21 @@ int Sensors::parsedata(vector<unsigned char> input){
         return -2;
     }
     for(int i = 2; i < (2+input.at(1)); i++){
-        sensorvariant Sensor_boost = (sensors_.find(static_cast<sensor>( input.at(i) ))->second);
+        sensorvariant Sensor_boost = (sensors_.find(static_cast<sensorID>( input.at(i) ))->second);
         if (Sensor_boost.type() == typeid(unsigned char)){
-            sensors_.find(static_cast<sensor>( input.at(i) ))->second = static_cast<unsigned char>(input.at(i+1));
+            sensors_.find(static_cast<sensorID>( input.at(i) ))->second = static_cast<unsigned char>(input.at(i+1));
             i++;
         }
         else if (Sensor_boost.type() == typeid(unsigned short)){
-            sensors_.find(static_cast<sensor>( input.at(i) ))->second = static_cast<unsigned short>((input.at(i+1) << 8) | input.at(i+2));
+            sensors_.find(static_cast<sensorID>( input.at(i) ))->second = static_cast<unsigned short>((input.at(i+1) << 8) | input.at(i+2));
             i += 2;
         }
         else if (Sensor_boost.type() == typeid(short)){
-            sensors_.find(static_cast<sensor>( input.at(i) ))->second = static_cast<short>((input.at(i+1) << 8) | input.at(i+2));
+            sensors_.find(static_cast<sensorID>( input.at(i) ))->second = static_cast<short>((input.at(i+1) << 8) | input.at(i+2));
             i += 2;
         }
         else if (Sensor_boost.type() == typeid(char)){
-            sensors_.find(static_cast<sensor>( input.at(i) ))->second = static_cast<char>(input.at(i+1));
+            sensors_.find(static_cast<sensorID>( input.at(i) ))->second = static_cast<char>(input.at(i+1));
             i++;
         }
     }
@@ -117,13 +117,13 @@ int Sensors::parsedata(vector<unsigned char> input){
 
 int Sensors::checksumcheck(vector<unsigned char> data){
     unsigned char som = 0;
-    for(int i = 0; i < (2+data.at(1)); i++){
-        som -= data.at(i);
+    for(int i = 0; i <= (2+data.at(1)); i++){
+        som += data.at(i);
     }
-    if (data.back() == som){
+    if (0 == som){
         return 1;
     }
     logger_.error(string("CHECKSUM ERROR Sensors::ChecksumCheck: Calculated checksum is '") +=
-                          to_string(+som) + "' and should be '" + to_string(+data.back()) + "' ");
+                          to_string(+som) + "' and should be '" + to_string(+data.at(2+data.at(1))) + "' ");
     return -1;
 }
