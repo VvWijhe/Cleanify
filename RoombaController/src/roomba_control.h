@@ -10,6 +10,7 @@
 #include <string>
 #include <memory>
 
+#include "sensorparser.hpp"
 #include "serial.h"
 
 namespace systemcontrol {
@@ -121,7 +122,7 @@ namespace systemcontrol {
         void beep();
 
         /// TODO
-        void readSensors();
+        int readSensors(Sensors &sensorBuffer);
 
     private:
         io::SerialPort serial_;

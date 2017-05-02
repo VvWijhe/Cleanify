@@ -115,7 +115,6 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
 
         param_lk.unlock();
         event_lk.unlock();
-
         loopFrequency.wait();
     }
 
@@ -129,12 +128,22 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbContext = static_pointer_cast<RoombaStateContext>(context);
     auto rmbControl = rmbContext->getControl();
     auto &logger = rmbContext->getLogger();
+    boost::asio::io_service io;
 
     logger.information("Cleaning started");
 
-    unique_lock<std::mutex> param_lk(rmbPrm.mutex());
-    param_lk.unlock();
-    cin.ignore();
+    while(roomba_session != PC_WEB) {
+        boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
+        unique_lock<std::mutex> param_lk(rmbPrm.mutex());
+
+        // calculate dt
+        // read sensors
+        // run algorithm
+        // control roomba
+
+        param_lk.unlock();
+        loopFrequency.wait();
+    }
 
     context->setState(make_shared<WaitForSession>());
 }

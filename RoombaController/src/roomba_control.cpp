@@ -92,7 +92,11 @@ void RoombaControl::setLed(color_t color) {
     }
 }
 
-void RoombaControl::readSensors() {
+int RoombaControl::readSensors(Sensors &sensorBuffer) {
+    io::byteVector buffer;
+    Sensors tmpSensor;
+
+    serial_.readAll(buffer);
 
 }
 
