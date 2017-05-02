@@ -56,16 +56,20 @@ void responses::handle_post(pSession session) {
 
                        // check if user wants to quit
                        if (postData["exit"] == "true") {
-                           globals::server_context = globals::ServerContext::E_EXIT;
-                           response.ok();
-                           exitFlag = true;
+                           if(globals::roomba_session != globals::AUTO) {
+                               globals::server_context = globals::ServerContext::E_EXIT;
+                               response.ok();
+                               exitFlag = true;
+                           } else {
+                               response.error("busy");
+                           }
                        } else if (globals::roomba_session == globals::IDLE) {
                            unique_lock<std::mutex> lk(globals::mut_roomba_session);
                            globals::roomba_session = globals::PC_WEB;
                            globals::cv_roomba_session.notify_one();
                        }
 
-                       // set global variables if session is ok
+                       // control roomba if session is ok
                        if (globals::roomba_session == globals::PC_WEB && globals::session_id == postData["session"]) {
                            unique_lock<std::mutex> param_lk(globals::rmbPrm.mutex());
                            unique_lock<std::mutex> event_lk(globals::server_context.mutex());
@@ -104,7 +108,20 @@ void responses::handle_post(pSession session) {
                                    } else {
                                        response.error("wheel speed must be a number");
                                    }
+                               } else {
+                                   globals::server_context.setWheelSpeed(1.0);
                                }
+                           }
+
+                           // parse brush
+                           if (postData["brush_speed"] != nullptr) {
+                               if (postData["brush_speed"].is_number()) {
+                                   globals::server_context.setBrushSpeed(static_cast<double>(postData["brush_speed"]));
+                               } else {
+                                   response.error("brush must be a number");
+                               }
+                           } else {
+                               globals::server_context.setBrushSpeed(1.0);
                            }
 
                            // parse pre commands
