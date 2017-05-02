@@ -75,11 +75,11 @@ void MainWindow::driveFunctionCommand(const QJsonValue &direction) {
   Brush_Speed_Value_ = ui_->horizontalSlider_Brush_Speed->value();
   jWrite.insert("session", "PC");
   jWrite.insert("direction", direction);
-  // jWrite.insert("wheel_speed", Wheel_Speed_Value_);
-  // jWrite.insert("brush_speed", Brush_Speed_Value_);
+  // jWrite.insert("wheel_speed", (Wheel_Speed_Value_/100));
+  // jWrite.insert("brush_speed", (Brush_Speed_Value_/100));
   startPost(jWrite);
-  sLog_.debug("wheel_speed: " + std::to_string(Wheel_Speed_Value_) +
-              ", brush_speed: " + std::to_string(Brush_Speed_Value_));
+  sLog_.debug("wheel_speed: " + std::to_string(Wheel_Speed_Value_ / 100) +
+              ", brush_speed: " + std::to_string(Brush_Speed_Value_ / 100));
 }
 
 void MainWindow::stopDriving() {
