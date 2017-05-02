@@ -79,37 +79,39 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
     while(roomba_session == PC_WEB) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
         unique_lock<std::mutex> param_lk(rmbPrm.mutex());
-        unique_lock<std::mutex> event_lk(server_event.mutex());
+        unique_lock<std::mutex> event_lk(server_context.mutex());
 
-        switch (server_event.getEvent()) {
-            case ServerEvents::E_EXIT:
+        switch (server_context.getEvent()) {
+            case ServerContext::E_EXIT:
                 roomba_session = IDLE;
                 logger.information("Exit session");
                 break;
 
-            case ServerEvents::E_RIGHT:
-                rmbControl->setRotation(300, 0xFFFF);
+            case ServerContext::E_RIGHT:
+                rmbControl->setRotation(static_cast<int>(300 * server_context.getWheelSpeed()), 0xFFFF);
                 break;
 
-            case ServerEvents::E_LEFT:
-                rmbControl->setRotation(300, 0x0001);
+            case ServerContext::E_LEFT:
+                rmbControl->setRotation(static_cast<int>(300 * server_context.getWheelSpeed()), 0x0001);
                 break;
 
-            case ServerEvents::E_BACKWARD:
-                rmbControl->setRotation(-500, 0x8000);
+            case ServerContext::E_BACKWARD:
+                rmbControl->setRotation(static_cast<int>(-500 * server_context.getWheelSpeed()), 0x8000);
                 break;
 
-            case ServerEvents::E_FORWARD:
-                rmbControl->setRotation(500, 0x8000);
+            case ServerContext::E_FORWARD:
+                rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), 0x8000);
                 break;
 
-            case ServerEvents::E_STOP:
+            case ServerContext::E_STOP:
                 rmbControl->setRotation(0, 0x8000);
                 break;
 
             default:
                 break;
         }
+
+        rmbControl->setBrushes(static_cast<unsigned char>(255 * server_context.getBrushSpeed()));
 
         param_lk.unlock();
         event_lk.unlock();

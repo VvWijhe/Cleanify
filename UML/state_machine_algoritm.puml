@@ -1,16 +1,15 @@
 @startuml
-scale 350 width
 [*] --down> Init
 
 state Init {
     Init: entry / init();
-    Init -down> Map: E_CleanButtonPressed
+    Init -down> Clean: E_CleanButtonPressed
 }
 
-state Map {
+state Clean {
     [*] --down> DetermineMap: E_MapUnknown
     [*] -right> DetermineLocation: E_MapKnown
-    Map -up> Init: E_CleaningCancelled
+    Clean -up> Init: E_CleaningCancelled
     state DetermineMap {
         [*] -> FindFirstWall: startDriving();
         FindFirstWall: entry / driveForward();
