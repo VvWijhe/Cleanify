@@ -1,0 +1,14 @@
+.btn-size{
+    min-width: 80px;
+    max-width: 80px;
+    height: 75px;
+}
+
+.group-margin{
+
+   margin-top: -35px;
+}
+
+.wellpadding{
+    padding: 10%;
+}
