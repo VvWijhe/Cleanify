@@ -18,7 +18,7 @@ namespace globals {
     class RoombaParameters {
     public:
         enum paramaters {
-            M_LEFT, M_RIGHT,
+            WHEEL_L, WHEEL_R,
             BRUSHES,
             COMMAND
         };

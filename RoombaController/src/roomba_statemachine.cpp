@@ -88,7 +88,23 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 break;
 
             case ServerEvents::E_RIGHT:
-                logger.debug("Right button pressed");
+                rmbControl->setRotation(300, 0xFFFF);
+                break;
+
+            case ServerEvents::E_LEFT:
+                rmbControl->setRotation(300, 0x0001);
+                break;
+
+            case ServerEvents::E_BACKWARD:
+                rmbControl->setRotation(-500, 0x8000);
+                break;
+
+            case ServerEvents::E_FORWARD:
+                rmbControl->setRotation(500, 0x8000);
+                break;
+
+            case ServerEvents::E_STOP:
+                rmbControl->setRotation(0, 0x8000);
                 break;
 
             default:

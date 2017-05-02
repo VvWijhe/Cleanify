@@ -61,6 +61,7 @@ private slots:
   void on_pushButton_Spot_Man_clicked();
   void on_pushButton_Clean_Man_clicked();
   void on_pushButton_Dock_Man_clicked();
+  void Server_Exit();
 
 private:
   Ui::MainWindow *ui_;
