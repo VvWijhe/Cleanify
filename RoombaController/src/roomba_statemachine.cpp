@@ -103,6 +103,22 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), 0x8000);
                 break;
 
+            case ServerContext::E_FORWARD_LEFT: //
+                rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), 1000);
+                break;
+
+            case ServerContext::E_FORWARD_RIGHT:
+                rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), -1000);
+                break;
+
+            case ServerContext::E_BACKWARD_LEFT:
+                rmbControl->setRotation(static_cast<int>(-500 * server_context.getWheelSpeed()), -1000);
+                break;
+
+            case ServerContext::E_BACKWARD_RIGHT:
+                rmbControl->setRotation(static_cast<int>(-500 * server_context.getWheelSpeed()), 1000);
+                break;
+
             case ServerContext::E_STOP:
                 rmbControl->setRotation(0, 0x8000);
                 break;

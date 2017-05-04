@@ -85,11 +85,23 @@ void responses::handle_post(pSession session) {
                                    } else if (direc == "forward") {
                                        globals::server_context = globals::ServerContext::E_FORWARD;
                                        response.ok();
+                                   } else if (direc == "forward-left") {
+                                       globals::server_context = globals::ServerContext::E_FORWARD_LEFT;
+                                       response.ok();
                                    } else if (direc == "right") {
                                        globals::server_context = globals::ServerContext::E_RIGHT;
                                        response.ok();
+                                   } else if (direc == "forward-right") {
+                                       globals::server_context = globals::ServerContext::E_FORWARD_RIGHT;
+                                       response.ok();
                                    } else if (direc == "backward") {
                                        globals::server_context = globals::ServerContext::E_BACKWARD;
+                                       response.ok();
+                                   } else if (direc == "backward-left") {
+                                       globals::server_context = globals::ServerContext::E_BACKWARD_LEFT;
+                                       response.ok();
+                                   } else if (direc == "backward-right") {
+                                       globals::server_context = globals::ServerContext::E_BACKWARD_RIGHT;
                                        response.ok();
                                    } else if (direc == "stop") {
                                        globals::server_context = globals::ServerContext::E_STOP;
