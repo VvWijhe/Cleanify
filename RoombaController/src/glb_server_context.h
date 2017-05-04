@@ -17,7 +17,7 @@ namespace globals {
             E_LED_GREEN, E_LED_ORANGE, E_LED_RED, E_LED_BLUE
         };
 
-        ServerContext() : brushSpeed_(1.0),
+        ServerContext() : brushSpeed_(0),
                           wheelSpeed_(0.0)
         {}
 
@@ -33,7 +33,7 @@ namespace globals {
             wheelSpeed_ = speed;
         }
 
-        void setBrushSpeed(double speed) {
+        void setBrushSpeed(unsigned int speed) {
             brushSpeed_ = speed;
         }
 
@@ -41,7 +41,7 @@ namespace globals {
             return wheelSpeed_;
         }
 
-        double getBrushSpeed() const {
+        unsigned int getBrushSpeed() const {
             return brushSpeed_;
         }
 
@@ -54,7 +54,7 @@ namespace globals {
         }
 
     private:
-        double brushSpeed_;
+        unsigned int brushSpeed_;
         double wheelSpeed_;
         std::mutex mutex_;
         server_events event_;

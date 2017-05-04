@@ -116,12 +116,12 @@ void responses::handle_post(pSession session) {
                            // parse brush
                            if (postData["brush_speed"] != nullptr) {
                                if (postData["brush_speed"].is_number()) {
-                                   globals::server_context.setBrushSpeed(static_cast<double>(postData["brush_speed"]));
+                                   globals::server_context.setBrushSpeed(static_cast<unsigned int>(postData["brush_speed"]));
                                } else {
                                    response.error("brush must be a number");
                                }
                            } else {
-                               globals::server_context.setBrushSpeed(1.0);
+                               globals::server_context.setBrushSpeed(0);
                            }
 
                            // parse pre commands
