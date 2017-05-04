@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.2.1, 2017-05-04T13:16:09. -->
+<!-- Written by QtCreator 4.2.1, 2017-05-02T11:42:36. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{c56bcbaa-92d4-4a4a-9a5b-e8809d76487d}</value>
+  <value type="QByteArray">{8164d5d6-465d-4bdb-8b0b-2e0d226b2e0f}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -62,11 +62,11 @@
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.8.0 GCC 64bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.8.0 GCC 64bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.58.gcc_64_kit</value>
-   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">1</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/media/alex/My Passport/Documenten/School/HAN/Leerjaar_2/Project 4/GUI/build-pc_applicatie-Desktop_Qt_5_8_0_GCC_64bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/PCapplication/build-pc_applicatie-Desktop_Qt_5_8_0_GCC_64bit-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -303,14 +303,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">pc_applicatie</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/media/alex/My Passport/Documenten/School/HAN/Leerjaar_2/Project 4/GUI/pc_applicatie_V10/pc_applicatie.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">pc_applicatie2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/PCapplication/pc_applicatie.pro</value>
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">pc_applicatie.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">/media/alex/My Passport/Documenten/School/HAN/Leerjaar_2/Project 4/GUI/build-pc_applicatie-Desktop_Qt_5_8_0_GCC_64bit-Release</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">/media/victor/harde schijf/school/HBO2/semester_2/Cleanify/PCapplication/build-pc_applicatie-Desktop_Qt_5_8_0_GCC_64bit-Debug</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>

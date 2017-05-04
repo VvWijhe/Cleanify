@@ -61,7 +61,7 @@ void MainWindow::startPost(QJsonObject jWrite) {
    QJsonDocument jsave = QJsonDocument::fromJson(response_data_);
    reply_->deleteLater();
    jsonString = jsave.toJson(QJsonDocument::Indented);
-   sLog_.information("Response: " + jsonString.toStdString());
+   sLog_.information("Response(startPost): " + jsonString.toStdString());
 }
 
 void MainWindow::httpRead() {
@@ -76,20 +76,20 @@ void MainWindow::driveFunctionCommand(const QJsonValue &direction) {
    jWrite.insert("session", "PC");
    jWrite.insert("direction", direction);
    jWrite.insert("wheel_speed", (Wheel_Speed_Value_/100.0));
-   jWrite.insert("brush_speed", (Brush_Speed_Value_/100.0));
+   jWrite.insert("brush_speed", Brush_Speed_Value_);
    startPost(jWrite);
    sLog_.debug("wheel_speed: " + std::to_string(Wheel_Speed_Value_ / 100.0) +
-               ", brush_speed: " + std::to_string(Brush_Speed_Value_ / 100.0));
+               ", brush_speed: " + std::to_string(Brush_Speed_Value_));
 }
 
 void MainWindow::stopDriving() {
    QJsonObject jWrite;
    jWrite.insert("session", "PC");
    jWrite.insert("direction", "stop");
-   // jWrite.insert("wheel_speed", 0);
-   // jWrite.insert("brush_speed", 0);
    startPost(jWrite);
    sLog_.trace("Function stopDriving()");
+   //jWrite.insert("wheel_speed", 0);
+   //jWrite.insert("brush_speed", 0);
 }
 
 void MainWindow::on_pushButton_Stop_pressed() {
@@ -133,74 +133,35 @@ void MainWindow::on_pushButton_Backward_Right_pressed() {
    sLog_.trace("Pressed backward-right");
 }
 
-void MainWindow::on_pushButton_Stop_2_pressed() {
-   stopDriving();
-   Server_Exit();
-   sLog_.trace("Pressed Stop_2");
-}
-
-void MainWindow::on_pushButton_Spot_pressed() {
+void MainWindow::on_pushButton_Spot_Man_clicked() {
    QJsonObject jWrite;
    sLog_.trace("Pressed Spot");
    stopDriving();
    jWrite.insert("session", "PC");
    jWrite.insert("pre-commands", "spot");
    startPost(jWrite);
-}
-
-void MainWindow::on_pushButton_Clean_pressed() {
-   QJsonObject jWrite;
-   sLog_.trace("Pressed Clean-Man");
-   stopDriving();
-   jWrite.insert("session", "PC");
-   jWrite.insert("pre-commands", "clean-man");
-   startPost(jWrite);
-}
-
-void MainWindow::on_pushButton_Dock_pressed() {
-   QJsonObject jWrite;
-   sLog_.trace("Pressed Dock-Man");
-   stopDriving();
-   jWrite.insert("session", "PC");
-   jWrite.insert("pre-commands", "dock-man");
-   startPost(jWrite);
-}
-
-void MainWindow::on_pushButton_Spot_Man_clicked() {
-   QJsonObject jWrite;
-   sLog_.trace("Pressed Spot-Man");
-   stopDriving();
-   jWrite.insert("session", "PC");
-   jWrite.insert("pre-commands", "spot-man");
-   startPost(jWrite);
+   Server_Exit();
 }
 
 void MainWindow::on_pushButton_Clean_Man_clicked() {
    QJsonObject jWrite;
-   sLog_.trace("Pressed Clean-Man");
+   sLog_.trace("Pressed Clean");
    stopDriving();
    jWrite.insert("session", "PC");
-   jWrite.insert("pre-commands", "clean-man");
+   jWrite.insert("pre-commands", "clean");
    startPost(jWrite);
+   Server_Exit();
 }
 
 void MainWindow::on_pushButton_Dock_Man_clicked() {
    QJsonObject jWrite;
-   sLog_.trace("Pressed Dock-Man");
+   sLog_.trace("Pressed Dock");
    stopDriving();
    jWrite.insert("session", "PC");
-   jWrite.insert("pre-commands", "dock-man");
+   jWrite.insert("pre-commands", "dock");
    startPost(jWrite);
+   Server_Exit();
 }
-
-void MainWindow::on_pushButton_Forward_released() { stopDriving(); }
-void MainWindow::on_pushButton_Backward_released() { stopDriving(); }
-void MainWindow::on_pushButton_Left_released() { stopDriving(); }
-void MainWindow::on_pushButton_Right_released() { stopDriving(); }
-void MainWindow::on_pushButton_Forward_Left_released() { stopDriving(); }
-void MainWindow::on_pushButton_Forward_Right_released() { stopDriving(); }
-void MainWindow::on_pushButton_Backward_Left_released() { stopDriving(); }
-void MainWindow::on_pushButton_Backward_Right_released() { stopDriving(); }
 
 void MainWindow::Server_Exit() {
    QJsonObject jWrite;
@@ -219,7 +180,52 @@ void MainWindow::Server_Exit() {
    QJsonDocument jsave = QJsonDocument::fromJson(response_data_);
    reply_->deleteLater();
    jsonString = jsave.toJson(QJsonDocument::Indented);
-   sLog_.information("Response: " + jsonString.toStdString());
+   sLog_.information("Response(Server_Exit): " + jsonString.toStdString());
+}
+
+void MainWindow::on_pushButton_Forward_released() {stopDriving();}
+void MainWindow::on_pushButton_Backward_released() {stopDriving();}
+void MainWindow::on_pushButton_Left_released() {stopDriving();}
+void MainWindow::on_pushButton_Right_released() {stopDriving();}
+void MainWindow::on_pushButton_Forward_Left_released() {stopDriving();}
+void MainWindow::on_pushButton_Forward_Right_released() {stopDriving();}
+void MainWindow::on_pushButton_Backward_Left_released() {stopDriving();}
+void MainWindow::on_pushButton_Backward_Right_released() {stopDriving();}
+
+
+//Functies voor standaard Roomba programma's. In eind product wordt dit niet gebruikt ivm eigen geschreven programma's
+void MainWindow::on_pushButton_Spot_pressed() {
+   QJsonObject jWrite;
+   sLog_.trace("Pressed Spot-aut");
+   stopDriving();
+   jWrite.insert("session", "PC");
+   jWrite.insert("pre-commands", "spot-aut");
+   startPost(jWrite);
+}
+
+void MainWindow::on_pushButton_Clean_pressed() {
+   QJsonObject jWrite;
+   sLog_.trace("Pressed Clean-aut");
+   stopDriving();
+   jWrite.insert("session", "PC");
+   jWrite.insert("pre-commands", "clean-aut");
+   startPost(jWrite);
+}
+
+void MainWindow::on_pushButton_Dock_pressed() {
+   QJsonObject jWrite;
+   sLog_.trace("Pressed Dock-aut");
+   stopDriving();
+   jWrite.insert("session", "PC");
+   jWrite.insert("pre-commands", "dock-aut");
+   startPost(jWrite);
+   Server_Exit();
+}
+
+void MainWindow::on_pushButton_Stop_2_pressed() {
+   stopDriving();
+   Server_Exit();
+   sLog_.trace("Pressed Stop_2");
 }
 
 // Needed for parsing:
@@ -229,3 +235,5 @@ void MainWindow::Server_Exit() {
 // ss << "Geparsed: " << jRead["Battery"];
 // std::cout << "Geparsed: " << jRead["Battery"] << std::endl;
 // sLog.information(ss.str().c_str());
+
+
