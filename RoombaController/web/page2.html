@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>page2</title>
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="lib/css/bootstrap-slider.min.css" rel="stylesheet">
@@ -11,10 +10,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Optional theme -->
+    <!--&lt;!&ndash; Optional theme &ndash;&gt;-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
 
 </head>
 
@@ -37,7 +37,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
                         <li><a href="#">Link</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -61,107 +61,101 @@
 
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-xs-12">
-            <div class="panel panel-success">
-                <div class="panel-heading">Manual Mode</div>
-                <div class="panel-body">
-
-                    <div class="text-center">
-                        <ul class="pagination">
-                            <div class="btn-group">
-                                <button class=btn-size><font size="6">&#8598;</font></button>
-                                <button class=btn-size><font size="6">&#8593;</font></button>
-                                <button class=btn-size><font size="6">&#8599;</font></button>
-                            </div>
-                        </ul>
-                    </div>
-                    <div class="text-center">
-                        <ul class="pagination">
-                            <div class="btn-group group-margin">
-                                <button class="btn-size"><font size="6">&#8592;</font></button>
-                                <button class="btn-size"><font size="6">&nbsp&#183;&nbsp</font></button>
-                                <button class="btn-size"><font size="6">&#8594;</font></button>
-                            </div>
-                        </ul>
-                    </div>
-                    <div class="text-center">
-                        <ul class="pagination">
-                            <div class="btn-group group-margin">
-                                <button class="btn-size"><font size="6">&#8601;</font></button>
-                                <button class="btn-size"><font size="6">&#8595;</font></button>
-                                <button class="btn-size"><font size="6">&#8600;</font></button>
-                            </div>
-                        </ul>
-                    </div>
-
-
-                    <div class="text-center">
-                        <ul class="pagination">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-sm-5 col-xs-12">
-                                        <div class="well well-sm-6 wellpadding">
-                                            <span id="ex1comment">Change motor speed</span><br/>
-                                            <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0"
-                                                   data-slider-max="1" data-slider-step="0.01" data-slider-value="1"/>
-
-                                            <div class="container"></div>
-                                            <br/>
-                                            <span id="ex2comment">Change brush speed</span><br/>
-                                            <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="0"
-                                                   data-slider-max="1" data-slider-step="0.01" data-slider-value="1"/>
-                                            <br/>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </ul>
+<div class="container container-fluid">
+    <div class="col-sm-6 col-xs-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">Manual Mode</div>
+            <div class="panel-body">
+                <div class="text-center">
+                    <div class="btn-group">
+                        <button id="forward-left" class="btn-size btn-text-large">&#8598;</button>
+                        <button id="forward" class="btn-size btn-text-large">&#8593;</button>
+                        <button id="forward-right" class="btn-size btn-text-large">&#8599;</button>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-xs-12">
-            <div class="panel panel-primary">
-                <div class="panel-heading">Autonomous Mode</div>
-                <div class="panel-body">
-                    <div class="well">
-                        <input id="ex3" data-slider-id='ex1Slider' type="text" data-slider-min="0"
-                               data-slider-max="1" data-slider-step="0.01" data-slider-value="1"/>
-                        <span id="ex3comment">Change motor speed</span>
+                <div class="text-center">
+                    <div class="btn-group group-margin-top">
+                        <button id="left" class="btn-size btn-text-large">&#8592;</button>
+                        <button class="btn-size btn-text-large">&nbsp&#183;&nbsp</button>
+                        <button id="right" class="btn-size btn-text-large">&#8594;</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="btn-group group-margin-top">
+                        <button id="backward-left" class="btn-size btn-text-large">&#8601;</button>
+                        <button id="backward" class="btn-size btn-text-large">&#8595;</button>
+                        <button id="backward-right" class="btn-size btn-text-large">&#8600;</button>
+                    </div>
+                </div>
+
+
+                <div class="text-center">
+                    <div class="well well-margin">
+                        <span id="ex1comment">Change motor speed</span><br/>
+                        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0"
+                               data-slider-max="1" data-slider-step="0.01" data-slider-value="0"/>
                         <div class="container"></div>
                         <br/>
-
-                        <input id="ex4" data-slider-id='ex2Slider' type="text" data-slider-min="0"
-                               data-slider-max="1" data-slider-step="0.01" data-slider-value="1"/>
-                        <span id="ex4comment">Change brush speed</span><br/>
+                        <span id="ex2comment">Change brush speed</span><br/>
+                        <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="0"
+                               data-slider-max="1" data-slider-step="0.01" data-slider-value="0"/>
+                        <br/>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button id="clean" class="btn-size btn-text-medium">Clean</button>
+                </div>
+                <div class="text-center">
+                    <div class="btn-group group-margin-top">
+                        <button id="spot" class="btn-size btn-text-medium">Spot</button>
+                        <button id="" class="btn-size btn-text-medium">Stop</button>
+                        <button id="dock" class="btn-size btn-text-medium">Dock</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="col-sm-6 col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Status</div>
+            <div class="panel-body">
+                <h4>battery</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
 </div>
 
+    <!    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="lib/js/bootstrap-slider.min.js"></script>
 
-<!    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/js/bootstrap-slider.min.js"></script>
+    <script>$('#ex1').slider({
+        tooltip_position: 'bottom',
+        formatter: function (value) {
+            return 'Motors are on : ' + Number((value * 100).toFixed(2)) + '%';
+        }
+    });</script>
+    <script>$('#ex2').slider({
+        tooltip_position: 'bottom',
+        formatter: function (value) {
+            return 'Brushes are on : ' + Number((value * 100).toFixed(2)) + '%';
+        }
+    });</script>
+<script>
 
-<script>$('#ex1').slider({
-    tooltip_position: 'bottom',
-    formatter: function (value) {
-        return 'Motors are on : ' + Number((value * 100).toFixed(2)) + '%';
-    }
-});</script>
-<script>$('#ex2').slider({
-    tooltip_position: 'bottom',
-    formatter: function (value) {
-        return 'Brushes are on : ' + Number((value * 100).toFixed(2)) + '%';
-    }
-});</script>
+    $(function() {
+        $("#progress-bar").css("width", "50%");
+    });
+
+</script>
 </body>
 </html>

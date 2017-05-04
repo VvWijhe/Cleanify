@@ -1,14 +1,22 @@
 .btn-size{
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 75px;
+    max-width: 75px;
     height: 75px;
 }
 
-.group-margin{
-
-   margin-top: -35px;
+.btn-text-large {
+    font-size: xx-large;
 }
 
-.wellpadding{
-    padding: 10%;
+.btn-test-medium{
+    font-size: large;
+}
+
+.group-margin-top{
+    margin-top: 4px;
+}
+
+.well-margin{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

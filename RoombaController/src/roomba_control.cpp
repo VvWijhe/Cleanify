@@ -19,24 +19,8 @@ int RoombaControl::init() {
         return -1;
     }
     //setBaud();
-    //beep();
+    beep();
 
-
-
-
-    unsigned char duur = 32;
-    vector<unsigned char> start = {128, 131};
-    vector<unsigned char> panzer = {140, 0, 11, 70, duur, 74, static_cast<unsigned char>(duur*2), 64, duur, 65, static_cast<unsigned char>(duur), 64, static_cast<unsigned char>(duur*2),
-                                    62, duur, 60, duur, 67, static_cast<unsigned char>(duur*2), 76, duur, 74, static_cast<unsigned char>(duur/2), 72, duur};
-    vector<unsigned char> panzer2 = {140,1,11, 72, duur, 74, static_cast<unsigned char>(duur*2), 69, duur, 69, static_cast<unsigned char>(duur/2), 69, static_cast<unsigned char>(duur*2),
-                                     67, duur, 65, duur, 64, static_cast<unsigned char>((duur/2)*3), 67, duur, 65, static_cast<unsigned char>(duur/2), 64, duur};
-
-    serial_.writeVector(panzer);
-    serial_.writeVector(panzer2);
-
-    serial_.writeVector({141, 0});
-    this_thread::sleep_for(chrono::milliseconds(8000));
-    serial_.writeVector({141, 1});
 
     return 0;
 }
