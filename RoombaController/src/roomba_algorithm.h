@@ -9,16 +9,18 @@
 #include <string>
 
 namespace algorithm {
+    const int full_speed = 300;
+
     class roomba_algorithm {
     public:
         using parameters = systemcontrol::RoombaControl::parameters;
 
-        roomba_algorithm();
+        roomba_algorithm() {}
 
-        ~roomba_algorithm() = default;
+        virtual ~roomba_algorithm() = default;
 
-        virtual systemcontrol::RoombaControl::parameters
-        calculate(systemcontrol::RoombaControl::parameters p, double dt, Sensors &sensorData) = 0;
+        virtual void
+        calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) = 0;
     };
 
     class Clean : public roomba_algorithm {
@@ -40,8 +42,8 @@ namespace algorithm {
 
         ~Clean() = default;
 
-        systemcontrol::RoombaControl::parameters
-        calculate(systemcontrol::RoombaControl::parameters p, double dt, Sensors &sensorData);
+        void
+        calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
 
         state_e getCurrentState() const { return currentState_; }
 
@@ -53,14 +55,13 @@ namespace algorithm {
     class Spot : public roomba_algorithm {
     public:
         using parameters = systemcontrol::RoombaControl::parameters;
+
         typedef enum {
         } state_e;
         typedef enum {
         } event_e;
 
-        parameters calculate(parameters p, double dt);
-
-
+        void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
     };
 }
 #endif //CLEANIFY_ROOMBA_ALGORITHM_H

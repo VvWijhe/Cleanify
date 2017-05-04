@@ -88,7 +88,7 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
     });
 
     unique_lock<mutex> lk(mut);
-    if(cv.wait_for(lk, chrono::milliseconds(1000)) == cv_status::timeout) return -1;
+    if(cv.wait_for(lk, chrono::milliseconds(800)) == cv_status::timeout) return -1;
 
     t.detach();
 

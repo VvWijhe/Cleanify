@@ -7,8 +7,8 @@
 
 using namespace algorithm;
 
-systemcontrol::RoombaControl::parameters
-Clean::calculate(systemcontrol::RoombaControl::parameters p, double dt, Sensors &sensorData) {
+void
+Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
     int x;
     std::bitset<8> bitset1(sensorData.getvalue<unsigned char>(Light_bumper));
     /* Light bumper: 8 bits
@@ -23,17 +23,15 @@ Clean::calculate(systemcontrol::RoombaControl::parameters p, double dt, Sensors 
                 currentState_ = S_DRIVE_BACKWARDS;
                 eventOut_ = E_HIT_OBJECT;
             }
-            else {                                          //set roomba parameters
-                p.Drive_speed = 50;
-                p.Brushes_speed = 100;
-                p.Drive_rotation = x;  /*@TODO add functionality to the rotation*/
+            else {
+                control->setRotation(full_speed, 100); //set roomba parameters
+                control->setBrushes(100); /*@TODO add functionality to the rotation*/
             }
             break;
 
         case S_DRIVE_BACKWARDS:
-            p.Drive_speed = -50;
-            p.Brushes_speed = 100;
-            p.Drive_rotation = 0;  /*@TODO add functionality to the rotation*/
+            control->setRotation(-full_speed, 0x8000); //set roomba parameters
+            control->setBrushes(100); /*@TODO add functionality to the rotation*/
             if(dt >= 1) { //drove backwards for 1 sec
                 currentState_ = S_ROTATE_LEFT;
                 eventOut_ = E_BACKWARDS_DONE;
@@ -41,9 +39,8 @@ Clean::calculate(systemcontrol::RoombaControl::parameters p, double dt, Sensors 
             break;
 
         case S_ROTATE_LEFT:
-            p.Drive_speed = 50;
-            p.Brushes_speed = 100;
-            p.Drive_rotation = 0;  /*@TODO add functionality to the rotation*/
+            control->setRotation(full_speed, 0x0001); //set roomba parameters
+            control->setBrushes(100); /*@TODO add functionality to the rotation*/
             currentState_ = S_DRIVE_STRAIGT;
             eventOut_ = E_ROTATE_DONE;
             break;
@@ -58,16 +55,14 @@ Clean::calculate(systemcontrol::RoombaControl::parameters p, double dt, Sensors 
                 eventOut_ = E_TIME_EXCEEDED;
             }
             else {                                          //set roomba parameters
-                p.Drive_speed = 50;
-                p.Brushes_speed = 100;
-                p.Drive_rotation = x;  /*@TODO add functionality to the rotation*/
+                control->setRotation(full_speed, 100); //set roomba parameters
+                control->setBrushes(100); /*@TODO add functionality to the rotation*/
             }
             break;
 
         case S_BIG_ROTATE_LEFT:
-            p.Drive_speed = 50;
-            p.Brushes_speed = 100;
-            p.Drive_rotation = 0;  /*@TODO add functionality to the rotation*/
+            control->setRotation(full_speed, 0x0001); //set roomba parameters
+            control->setBrushes(100);  /*@TODO add functionality to the rotation*/
             currentState_ = S_DRIVE_STRAIGT;
             eventOut_ = E_ROTATE_DONE;
             break;
@@ -82,9 +77,8 @@ Clean::calculate(systemcontrol::RoombaControl::parameters p, double dt, Sensors 
                 eventOut_ = E_TIME_EXCEEDED;
             }
             else {                                          //set roomba parameters
-                p.Drive_speed = 50;
-                p.Brushes_speed = 100;
-                p.Drive_rotation = 0;  /*@TODO add functionality to the rotation*/
+                control->setRotation(full_speed, 0x8000); //set roomba parameters
+                control->setBrushes(100); /*@TODO add functionality to the rotation*/
             }
             break;
 
