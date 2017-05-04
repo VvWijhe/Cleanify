@@ -87,6 +87,7 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 logger.information("Exit session");
                 break;
 
+                // direction events
             case ServerContext::E_RIGHT:
                 rmbControl->setRotation(static_cast<int>(300 * server_context.getWheelSpeed()), 0xFFFF);
                 break;
@@ -103,7 +104,7 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), 0x8000);
                 break;
 
-            case ServerContext::E_FORWARD_LEFT: //
+            case ServerContext::E_FORWARD_LEFT:
                 rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), 1000);
                 break;
 
@@ -121,6 +122,11 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
 
             case ServerContext::E_STOP:
                 rmbControl->setRotation(0, 0x8000);
+                break;
+
+                // pre commands
+            case ServerContext::E_CLEAN:
+                rmbContext->setState(make_shared<Clean>());
                 break;
 
             default:
@@ -146,7 +152,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
     auto &logger = rmbContext->getLogger();
     boost::asio::io_service io;
 
-    logger.information("Cleaning started");
+    logger.information("Starting cleaning");
 
     while(roomba_session != PC_WEB) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));

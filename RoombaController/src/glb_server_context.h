@@ -8,6 +8,9 @@
 #include <mutex>
 
 namespace globals {
+    /**
+     * @brief Handles data exchange between de server and roomba process.
+     */
     class ServerContext {
     public:
         enum server_events {
