@@ -15,19 +15,37 @@
 #include "responses.h"
 
 namespace server {
+    /**
+     * @brief Class that sets up a HTTP server.
+     */
     class RoombaServer {
     public:
+        /**
+         * @brief Constructor sets the port and makes recources available for the client.
+         * @param port
+         */
         RoombaServer(unsigned short port);
 
+        /**
+         * @brief Destructor stops the server.
+         */
         ~RoombaServer();
 
+        /**
+         * @brief Starts the server.
+         */
         void run();
 
+        /**
+         * @brief Stops the server.
+         */
         void stop();
 
+        /**
+         * @brief Checks is the server is started.
+         * @return
+         */
         bool started() const;
-
-        std::string getAdress();
 
     private:
         restbed::Service service_;

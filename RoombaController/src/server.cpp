@@ -36,7 +36,7 @@ RoombaServer::RoombaServer(unsigned short port) {
 }
 
 RoombaServer::~RoombaServer() {
-
+    stop();
 }
 
 void RoombaServer::run() {
@@ -59,8 +59,4 @@ void RoombaServer::stop() {
 
 bool RoombaServer::started() const {
     return isStarted;
-}
-
-std::string RoombaServer::getAdress() {
-    return settings_->get_bind_address();
 }

@@ -12,26 +12,36 @@ namespace statemachine {
 
     using event_t = unsigned int;
 
+    /**
+     * @brief State base class.
+     */
     class State {
     public:
         virtual ~State() = default;
 
+        /**
+         * @brief Executes the state.
+         * @param context Object that contains data that is shared between states.
+         */
         virtual void handle(const std::shared_ptr<Context> &context) = 0;
     };
 
+    /**
+     * @brief Class that can contain data to be shared between states. It contains functions that executes the states.
+     */
     class Context : public std::enable_shared_from_this<Context> {
     public:
         Context() : event_(0), currentState_(nullptr) {}
 
         int handleState(event_t event) {
-            if(currentState_ == nullptr) return -1;
+            if (currentState_ == nullptr) return -1;
 
             currentState_->handle(shared_from_this());
             return 1;
         }
 
         void runAll() {
-            while(handleState(event_) > 0);
+            while (handleState(event_) > 0);
         }
 
         void setState(const std::shared_ptr<State> &nextState) { currentState_ = nextState; }

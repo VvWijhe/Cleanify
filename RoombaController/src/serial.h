@@ -21,21 +21,52 @@
 namespace io {
     using byteVector = std::vector<unsigned char>;
 
+    /**
+     * @brief Provides support for the linux serial interface.
+     */
     class SerialPort {
     public:
+        /**
+         * @brief Empty constructor. Sets the baudrate and path to the port.
+         * @param portname Path to the port.
+         * @param baud Baudrate that is supported by the linux system.
+         */
         SerialPort(std::string portname, speed_t baud);
 
+        /**
+         * @brief Opens the serial port.
+         * @return errno
+         */
         int connect();
 
+        /**
+         * @brief closes the serial port
+         * @return errno
+         */
         int disconnect();
 
+        /**
+         * @brief Writes a byte.
+         * @param data An unsigned char.
+         * @return errno
+         */
         int writeByte(unsigned char data);
 
-        int writeVector(const std::vector<unsigned char> &data);
+        /**
+         * @brief Writes a vector of unsiged chars.
+         * @param data A vector of unsigned chars.
+         * @return errno
+         */
+        int writeVector(const byteVector &data);
 
+        /**
+         * @brief Reads a stream of bytes. Blocks till a byte is received. Returns if after the first byte, no other
+         * byte is received after some milliseconds.
+         * @param buffer Vector where the received data will be stored.
+         * @param limit Maximum number to be read. Default is 255.
+         * @return errno
+         */
         int readAll(byteVector &buffer, size_t limit = 255) const;
-
-        int fd() { return fd_; }
 
     private:
         std::string port_;
