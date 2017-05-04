@@ -82,7 +82,7 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
     io::byteVector buffer;
     Sensors tmpSensor;
 
-    thread t([this, &buffer, &cv, &mut]{
+    thread t([this, &buffer, &cv]{
         this->serial_.readAll(buffer);
         cv.notify_all();
     });
