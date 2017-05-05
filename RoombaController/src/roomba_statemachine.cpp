@@ -153,20 +153,20 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
     auto &logger = rmbContext->getLogger();
     boost::asio::io_service io;
     algorithm::Clean alg;
-    bool error{false};
+    bool exitFlag{false};
 
     logger.information("Starting cleaning");
 
-    while(roomba_session != PC_WEB && !error) {
+    while(!exitFlag) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
 
         // calculate dt
+
         // read sensors
         Sensors sensorData;
         if(rmbControl->readSensors(sensorData)) {
             logger.error("Reading sensordata timeout");
-            roomba_session = IDLE;
-            error = true;
+            exitFlag = true;
         } else {
             // run algorithm
             alg.calculate(rmbControl, sensorData, 30);
@@ -175,7 +175,12 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
         loopFrequency.wait();
     }
 
-    context->setState(make_shared<WaitForSession>());
+    // return to the last session
+    if(roomba_session == PC_WEB) {
+        context->setState(make_shared<Session>());
+    } else {
+        context->setState(make_shared<WaitForSession>());
+    }
 }
 
 void ShutDown::handle(const shared_ptr<statemachine::Context> &context) {

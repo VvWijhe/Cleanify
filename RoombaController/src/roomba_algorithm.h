@@ -13,8 +13,6 @@ namespace algorithm {
 
     class roomba_algorithm {
     public:
-        using parameters = systemcontrol::RoombaControl::parameters;
-
         roomba_algorithm() {}
 
         virtual ~roomba_algorithm() = default;
@@ -25,10 +23,10 @@ namespace algorithm {
 
     class Clean : public roomba_algorithm {
     public:
-        using parameters = systemcontrol::RoombaControl::parameters;
         typedef enum {
             S_NO, S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGT
         } state_e;
+
         typedef enum {
             E_NO,
             E_READY,
@@ -54,10 +52,9 @@ namespace algorithm {
 
     class Spot : public roomba_algorithm {
     public:
-        using parameters = systemcontrol::RoombaControl::parameters;
-
         typedef enum {
         } state_e;
+
         typedef enum {
         } event_e;
 
