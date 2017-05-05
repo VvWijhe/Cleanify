@@ -82,15 +82,22 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
     io::byteVector buffer;
     Sensors tmpSensor;
 
-    thread t([this, &buffer, &cv]{
-        this->serial_.readAll(buffer);
+    thread t([this, &buffer, &cv]() -> int {
+        if(this->serial_.readAll(buffer)) {
+            return -1;
+        }
+
         cv.notify_all();
+        return 0;
     });
 
     unique_lock<mutex> lk(mut);
-    if(cv.wait_for(lk, chrono::milliseconds(800)) == cv_status::timeout) return -1;
+    if(cv.wait_for(lk, chrono::milliseconds(800)) == cv_status::timeout) {
+        t.detach();
+        return -1;
+    }
 
-    t.detach();
+    t.join();
 
     return 0;
 }

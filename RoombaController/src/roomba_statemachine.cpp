@@ -163,16 +163,16 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
         // calculate dt
         // read sensors
         Sensors sensorData;
-        if(rmbControl->readSensors(sensorData) != 0) {
+        if(rmbControl->readSensors(sensorData)) {
             logger.error("Reading sensordata timeout");
             roomba_session = IDLE;
             error = true;
         } else {
             // run algorithm
             alg.calculate(rmbControl, sensorData, 30);
-
-            loopFrequency.wait();
         }
+
+        loopFrequency.wait();
     }
 
     context->setState(make_shared<WaitForSession>());
