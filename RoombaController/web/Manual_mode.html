@@ -50,14 +50,24 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Separated link</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <li><a href="About.html">about</a></li>
                         </ul>
                     </li>
                 </ul>
                 //
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a id="EXIT" href="Manual_mode.html"><span class="glyphicon glyphicon-remove-sign"></span> Disconnect</a></li>
-                    <li><a id="CONNECT" href="Manual_mode.html"><span class="glyphicon glyphicon-ok-sign"></span> Connect</a></li>
+                    <li>
+                        <button id="CONNECT" type="button" class="btn btn-success navbar-btn"><span
+                                class="glyphicon glyphicon-ok-sign"></span> Connect
+                        </button>
+                    </li>
+                    <li>
+                        <button id="EXIT" type="button" class="btn btn-danger navbar-btn"><span
+                                class="glyphicon glyphicon-remove-sign"></span> Disconnect
+                        </button>
+                    </li>
+
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -68,7 +78,7 @@
 
 <div class="container-fluid">
     <div class="col-sm-6 col-xs-12">
-        <div id="manual_panel" class="panel panel-success">
+        <div id="manual_panel" class="panel panel-default">
             <div class="panel-heading"><b>Manual Mode</b></div>
             <div class="panel-body">
                 <div class="text-center">
@@ -107,6 +117,13 @@
                         <br/>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+        <div id="autonomous_panel" class="panel panel-default">
+            <div class="panel-heading"><b>Autonomous Mode</b></div>
+            <div class="panel-body">
                 <div class="text-center">
                     <div class="btn-group group-margin-top">
                         <button id="spot" class="dir btn-size btn-text-medium">Spot</button>
@@ -135,10 +152,8 @@
 
 
         </div>
-        <div id="battery-bar" class="alert alert-success">
-            <strong>Success!</strong> You should
-            <button id="test" class="test" onmousedown="danger()" onmouseup="nodanger()">Dock</button>
-            .
+        <div id="message" class="alert alert-warning">
+            Press <strong>Connect</strong> to connect to the Roomba
         </div>
     </div>
 </div>
