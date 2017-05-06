@@ -7,7 +7,7 @@ $('#slider_motor').slider({
     tooltip_position: 'bottom',
     formatter: function (value) {
         $("#progress-bar").css("width", (value * 100) +'%');
-        $("#progress_number").textContent= "newtext";
+        document.getElementById("progress_number").textContent=(Number((value * 100).toFixed(2))+'%');
         return 'Motors are on : ' + Number((value * 100).toFixed(2)) + '%';
 
     }

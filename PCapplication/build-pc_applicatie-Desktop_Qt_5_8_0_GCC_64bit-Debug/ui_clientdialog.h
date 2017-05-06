@@ -63,16 +63,17 @@ public:
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-
-        OK = new QPushButton(horizontalLayoutWidget);
-        OK->setObjectName(QStringLiteral("OK"));
-
         Cancel = new QPushButton(horizontalLayoutWidget);
         Cancel->setObjectName(QStringLiteral("Cancel"));
         Cancel->setEnabled(true);
 
         horizontalLayout->addWidget(Cancel);
+
+        OK = new QPushButton(horizontalLayoutWidget);
+        OK->setObjectName(QStringLiteral("OK"));
+
         horizontalLayout->addWidget(OK);
+
 
         retranslateUi(ClientDialog);
 
@@ -90,7 +91,7 @@ public:
 };
 
 namespace Ui {
-class ClientDialog: public Ui_ClientDialog {};
+    class ClientDialog: public Ui_ClientDialog {};
 } // namespace Ui
 
 QT_END_NAMESPACE

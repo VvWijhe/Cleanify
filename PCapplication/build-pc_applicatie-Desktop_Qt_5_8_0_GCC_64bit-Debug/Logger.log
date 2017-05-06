@@ -13291,3 +13291,567 @@
 01-05-2017 13:40:12 MainWindow Information: Response: 
 01-05-2017 13:40:12 MainWindow Information: Response: 
 01-05-2017 13:40:12 MainWindow Information: Response: 
+04-05-2017 11:08:15 ClientDialog Information: URL: http://localhost:8000 has been input
+04-05-2017 11:08:31 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:08:31 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:08:31 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:08:37 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:08:37 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:08:40 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:08:45 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:08:45 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:08:48 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:09:20 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:09:20 MainWindow Debug: wheel_speed: 0, brush_speed: 1
+04-05-2017 11:09:31 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:09:37 MainWindow Information: Response: {
+    "message": "unsupported direction",
+    "status": "error"
+}
+
+04-05-2017 11:09:37 MainWindow Debug: wheel_speed: 0, brush_speed: 1
+04-05-2017 11:09:39 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:09:41 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:09:41 MainWindow Debug: wheel_speed: 0, brush_speed: 1
+04-05-2017 11:09:44 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:10:10 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:10:10 MainWindow Information: Response: {
+    "message": "closing session",
+    "status": "ok"
+}
+
+04-05-2017 11:10:16 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:10:16 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:10:19 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:10:33 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:10:33 MainWindow Information: Response: 
+04-05-2017 11:10:33 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:10:33 MainWindow Information: Response: 
+04-05-2017 11:10:33 MainWindow Information: Response: 
+04-05-2017 11:10:33 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:10:34 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:10:34 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:10:36 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:10:50 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:10:50 MainWindow Information: Response: 
+04-05-2017 11:10:50 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:10:50 MainWindow Information: Response: 
+04-05-2017 11:10:50 MainWindow Information: Response: 
+04-05-2017 11:10:50 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:11:25 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:25 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:11:26 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:28 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:28 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:11:30 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:32 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:32 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:11:33 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:36 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:36 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:11:38 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:43 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:43 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:11:45 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:51 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:51 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:11:52 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:55 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:11:55 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:11:56 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:13:38 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:13:38 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:13:38 MainWindow Information: Response: 
+04-05-2017 11:13:38 MainWindow Information: Response: 
+04-05-2017 11:13:38 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:13:38 MainWindow Information: Response: 
+04-05-2017 11:13:38 MainWindow Information: Response: 
+04-05-2017 11:13:38 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:13:39 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:13:41 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:13:41 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:13:42 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:13:43 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:13:43 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:13:44 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:13:50 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:13:50 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:13:53 MainWindow Information: Response: {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 11:13:53 MainWindow Information: Response: 
+04-05-2017 11:13:53 MainWindow Debug: wheel_speed: 0, brush_speed: 0
+04-05-2017 11:13:53 MainWindow Information: Response: 
+04-05-2017 13:18:42 MainWindow Information: Response(startPost): 
+04-05-2017 13:18:42 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:18:42 MainWindow Information: Response(startPost): 
+04-05-2017 13:18:42 MainWindow Information: Response(startPost): 
+04-05-2017 13:18:42 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:18:43 MainWindow Information: Response(startPost): 
+04-05-2017 13:18:43 MainWindow Information: Response(startPost): 
+04-05-2017 13:18:43 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:18:43 MainWindow Information: Response(startPost): 
+04-05-2017 13:18:43 MainWindow Information: Response(startPost): 
+04-05-2017 13:18:43 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:18:43 MainWindow Information: Response(startPost): 
+04-05-2017 13:18:43 MainWindow Information: Response(startPost): 
+04-05-2017 13:18:43 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:18:43 MainWindow Information: Response(startPost): 
+04-05-2017 13:22:44 ClientDialog Information: URL: http://localhost:8000 has been input
+04-05-2017 13:22:46 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:22:46 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:22:46 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:22:46 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:22:46 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:22:47 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:22:48 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:22:48 MainWindow Information: Response(startPost): 
+04-05-2017 13:22:48 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:22:48 MainWindow Information: Response(startPost): 
+04-05-2017 13:22:48 MainWindow Information: Response(startPost): 
+04-05-2017 13:22:48 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:22:48 MainWindow Information: Response(startPost): 
+04-05-2017 13:22:48 MainWindow Information: Response(startPost): 
+04-05-2017 13:22:48 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:22:49 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:22:49 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:22:52 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:22:52 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:22:52 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+04-05-2017 13:22:53 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:22:56 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:22:56 MainWindow Debug: wheel_speed: 0,640000, brush_speed: 0
+04-05-2017 13:22:57 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:02 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:02 MainWindow Debug: wheel_speed: 1,000000, brush_speed: 0
+04-05-2017 13:23:05 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:13 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:13 MainWindow Debug: wheel_speed: 0,160000, brush_speed: 100
+04-05-2017 13:23:13 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:14 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:14 MainWindow Debug: wheel_speed: 0,160000, brush_speed: 100
+04-05-2017 13:23:21 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:23 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:23 MainWindow Debug: wheel_speed: 0,160000, brush_speed: 100
+04-05-2017 13:23:26 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:31 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:31 MainWindow Debug: wheel_speed: 1,000000, brush_speed: 100
+04-05-2017 13:23:33 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:36 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:36 MainWindow Debug: wheel_speed: 0,370000, brush_speed: 100
+04-05-2017 13:23:39 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:40 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:40 MainWindow Debug: wheel_speed: 0,370000, brush_speed: 100
+04-05-2017 13:23:42 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:44 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:44 MainWindow Debug: wheel_speed: 1,000000, brush_speed: 100
+04-05-2017 13:23:48 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:51 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:51 MainWindow Debug: wheel_speed: 1,000000, brush_speed: 128
+04-05-2017 13:23:55 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:58 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:23:58 MainWindow Debug: wheel_speed: 1,000000, brush_speed: 128
+04-05-2017 13:24:04 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:05 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:05 MainWindow Debug: wheel_speed: 1,000000, brush_speed: 128
+04-05-2017 13:24:07 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:07 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:07 MainWindow Debug: wheel_speed: 1,000000, brush_speed: 128
+04-05-2017 13:24:08 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:10 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:10 MainWindow Debug: wheel_speed: 1,000000, brush_speed: 128
+04-05-2017 13:24:10 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:12 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:12 MainWindow Debug: wheel_speed: 1,000000, brush_speed: 128
+04-05-2017 13:24:17 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:32 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:32 MainWindow Debug: wheel_speed: 0,140000, brush_speed: 128
+04-05-2017 13:24:35 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:36 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:36 MainWindow Debug: wheel_speed: 0,140000, brush_speed: 128
+04-05-2017 13:24:38 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:38 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:38 MainWindow Debug: wheel_speed: 0,140000, brush_speed: 128
+04-05-2017 13:24:38 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:40 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:40 MainWindow Debug: wheel_speed: 0,240000, brush_speed: 128
+04-05-2017 13:24:42 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:42 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:42 MainWindow Debug: wheel_speed: 0,240000, brush_speed: 128
+04-05-2017 13:24:43 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:43 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:43 MainWindow Debug: wheel_speed: 0,240000, brush_speed: 128
+04-05-2017 13:24:44 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:44 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+04-05-2017 13:24:44 MainWindow Debug: wheel_speed: 0,240000, brush_speed: 128
+04-05-2017 13:24:44 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
