@@ -57,13 +57,16 @@ $(document).ready(function () {
         $("#manual_panel").attr('class', 'panel panel-success');
         $("#autonomous_panel").attr('class', 'panel panel-success')
         $('#message').toggle();
+        $("#occupied").show();
 
     });
 
     $("#EXIT").click(function(){
         $('#message').toggle();
         $("#manual_panel").attr('class', 'panel panel-default');
-        $("#autonomous_panel").attr('class', 'panel panel-default')
+        $("#autonomous_panel").attr('class', 'panel panel-default');
+        $("#occupied").hide();
+
     });
 
 

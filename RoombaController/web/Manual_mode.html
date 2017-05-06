@@ -54,7 +54,6 @@
                         </ul>
                     </li>
                 </ul>
-                //
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <button id="CONNECT" type="button" class="btn btn-success navbar-btn"><span
@@ -78,6 +77,11 @@
 
 <div class="container-fluid">
     <div class="col-sm-6 col-xs-12">
+
+        <div id="occupied" style="display: none " class="alert alert-danger">
+            Roomba is connected with another device
+        </div>
+
         <div id="manual_panel" class="panel panel-default">
             <div class="panel-heading"><b>Manual Mode</b></div>
             <div class="panel-body">
@@ -147,10 +151,7 @@
                         <span id="progress_number"></span>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
         <div id="message" class="alert alert-warning">
             Press <strong>Connect</strong> to connect to the Roomba
