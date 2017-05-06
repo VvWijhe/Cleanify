@@ -60,7 +60,7 @@ int SerialPort::readAll(byteVector &buffer, size_t limit) const {
         buffer.push_back(c[i]);
     }
 
-    return 1;
+    return 0;
 }
 
 int SerialPort::writeByte(unsigned char data) {

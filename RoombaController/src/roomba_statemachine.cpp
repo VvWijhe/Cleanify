@@ -5,6 +5,7 @@
 #include <boost/date_time/posix_time/posix_time.hpp>
 
 #include "roomba_statemachine.h"
+#include "roomba_algorithm.h"
 
 using namespace std;
 using namespace systemcontrol;
@@ -151,23 +152,35 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbControl = rmbContext->getControl();
     auto &logger = rmbContext->getLogger();
     boost::asio::io_service io;
+    algorithm::Clean alg;
+    bool exitFlag{false};
 
     logger.information("Starting cleaning");
 
-    while(roomba_session != PC_WEB) {
+    while(!exitFlag) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
-        unique_lock<std::mutex> param_lk(rmbPrm.mutex());
 
         // calculate dt
-        // read sensors
-        // run algorithm
-        // control roomba
 
-        param_lk.unlock();
+        // read sensors
+        Sensors sensorData;
+        if(rmbControl->readSensors(sensorData)) {
+            logger.error("Reading sensordata timeout");
+            exitFlag = true;
+        } else {
+            // run algorithm
+            alg.calculate(rmbControl, sensorData, 30);
+        }
+
         loopFrequency.wait();
     }
 
-    context->setState(make_shared<WaitForSession>());
+    // return to the last session
+    if(roomba_session == PC_WEB) {
+        context->setState(make_shared<Session>());
+    } else {
+        context->setState(make_shared<WaitForSession>());
+    }
 }
 
 void ShutDown::handle(const shared_ptr<statemachine::Context> &context) {
