@@ -23,9 +23,11 @@ $(function () {
 
 function danger() {
     $("#battery-bar").attr('class', 'alert alert-danger');
+    $("#manual_panel").attr('class', 'panel panel-danger')
 }
 function nodanger() {
     $("#battery-bar").attr('class', 'alert alert-success');
+    $("#manual_panel").attr('class', 'panel panel-success')
 }
 
 function move(){
