@@ -6,7 +6,10 @@
 $('#slider_motor').slider({
     tooltip_position: 'bottom',
     formatter: function (value) {
+        $("#progress-bar").css("width", (value * 100) +'%');
+        $("#progress_number").textContent= "newtext";
         return 'Motors are on : ' + Number((value * 100).toFixed(2)) + '%';
+
     }
 });
 $('#slider_brush').slider({
@@ -17,9 +20,10 @@ $('#slider_brush').slider({
 });
 
 
-$(function () {
-    $("#progress-bar").css("width", "50%");
-});
+// $(function () {
+//     $("#progress-bar").css("width", "50%");
+//
+// });
 
 function danger() {
     $("#battery-bar").attr('class', 'alert alert-danger');
