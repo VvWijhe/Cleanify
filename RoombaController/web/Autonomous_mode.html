@@ -43,7 +43,8 @@
                     <li class="active"><a href="Autonomous_mode.html"><strong>Autonomous</strong></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false"><strong>Dropdown</strong><span class="caret"></span></a>
+                           aria-haspopup="true" aria-expanded="false"><strong>Dropdown</strong><span
+                                class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -84,9 +85,7 @@
                     <div class="btn-group group-margin-top">
                         <button id="spot" class="dir btn-size btn-text-medium">Spot</button>
                         <button id="clean" class="dir btn-size btn-text-medium">Clean</button>
-                        <button id="dock" class="dir btn-size btn-text-medium" onmousedown="danger()"
-                                onmouseup="nodanger()">Dock
-                        </button>
+                        <button id="dock" class="dir btn-size btn-text-medium">Dock</button>
                     </div>
                 </div>
             </div>
@@ -99,7 +98,7 @@
                 <h4>battery</h4>
                 <div class="progress">
                     <div class="progress-bar progress-bar-striped active" id="progress-bar" role="progressbar"
-                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0;">
                     </div>
                 </div>
 
@@ -109,7 +108,7 @@
         </div>
         <div id="battery-bar" class="alert alert-success">
             <strong>Success!</strong> You should
-            <button id="test" class="test" onmousedown="danger()" onmouseup="nodanger()">Dock</button>
+            <button id="test" class="test">Dock</button>
             .
         </div>
     </div>
