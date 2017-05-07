@@ -73,10 +73,10 @@ $(document).ready(function () {
 });
 
 function myMap() {
-    var Cleanify = {lat: 51.9873201, lng: 5.9511133};
+    var Cleanify = {lat: 51.9889801, lng: 5.949402};
     var mapCanvas = document.getElementById("map");
     var mapOptions = {
-        center: new google.maps.LatLng(Cleanify), zoom: 18,
+        center: new google.maps.LatLng(Cleanify), zoom: 16,
         scrollwheel: false
     };
     var map = new google.maps.Map(mapCanvas, mapOptions);
