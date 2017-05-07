@@ -1,194 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        .button {
-            display: inline-block;
-            padding: 10px 15px;
-            font-size: 40px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-        }
+    <meta charset="UTF-8">
+    <title>Cleanify</title>
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/css/bootstrap-slider.min.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        .button2 {
-            background-color: #008CBA;
-        }
+    <!--&lt;!&ndash; Optional theme &ndash;&gt;-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--<link rel="stylesheet" type="text/css" href="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/styles/main.css">-->
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
 
-        .button:hover {
-            background-color: #3e8e41
-        }
+    <!--<meta http-equiv="refresh" content="3" >-->
 
-        .button:active {
-            background-color: #3e8e41;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-        }
-
-        table, th, td {
-            border-collapse: collapse;
-            text-align: center;
-        }
-
-        div.container {
-            width: 100%;
-            border: 1px solid gray;
-        }
-
-        header, footer {
-            padding: 1em;
-            color: white;
-            background-color: black;
-            clear: left;
-            text-align: center;
-        }
-
-        nav {
-            float: left;
-            max-width: 160px;
-            margin: 0;
-            padding: 1em;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul a {
-            text-decoration: none;
-        }
-
-        article {
-
-            padding: 1em;
-            overflow: hidden;
-        }
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".dir").click(function () {
-                var form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
-
-                $.post("/control",
-                    form,
-                    function (data) {
-                        console.log(data);
-                    }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-                    alert("ERROR: NO CONNECTION");
-                });
-            });
-
-            $("#EXIT").click(function () {
-                var form = "{\"exit\" : \"true\"}";
-
-                $.post("/control",
-                    form,
-                    function (data) {
-                        console.log(data);
-                    }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-                    alert("ERROR: NO CONNECTION");
-                });
-            });
-        });
-    </script>
 </head>
+<header>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong>Cleanify</strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="Manual_mode.html"><strong>Manual</strong></a></li>
+                    <li><a href="Autonomous_mode.html"><strong>Autonomous</strong></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false"><strong>Dropdown</strong><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="About.html">about</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+
 <body>
-<center>
-    <header>
-        <h1>Cleanify: Der Roomba</h1>
-    </header>
-    <!--<nav>-->
-    <!--<h2 >Automatic Drive</h2>-->
-    <!--<button id="AUT_ON" class="button">ON&nbsp</button>-->
-    <!--<button id="AUT_OFF" class="button">OFF</button>-->
-    <!--</nav>-->
-    <article>
-        <h2>Manual Drive</h2>
-        <table style="width:10%">
-            <tr>
-                <th>
-                    <button id="LF" class="button dir">&#8598;</button>
-                </th>
-                <th>
-                    <button id="forward" class="button dir">&#8593;</button>
-                </th>
-                <th>
-                    <button id="RF" class="button dir">&#8599;</button>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <button id="left" class="button dir">&#8592;</button>
-                </td>
-                <td>
-                    <button id="stop" class="button dir">&nbsp&#183;&nbsp</button>
-                </td>
-                <td>
-                    <button id="right" class="button dir">&#8594;</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button id="LB" class="button dir">&#8601;</button>
-                </td>
-                <td>
-                    <button id="backward" class="button dir">&#8595;</button>
-                </td>
-                <td>
-                    <button id="RB" class="button dir">&#8600;</button>
-                </td>
-            </tr>
-        </table>
-        <div id="result" style="color:red"></div>
-    </article>
-    <buttons>
-        <h2>Help Buttons</h2>
-        <table style="width:10%">
-            <tr>
-                <th>
-                    <button id="BRUSH" class="button">BRUSH</button>
-                </th>
-                <th>
-                    <button id="EXIT" class="button">STOP</button>
-                </th>
-                <th>
-                    <button id="MUSIC" class="button">MUSIC</button>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <button id="CLEAN" class="button">CLEAN</button>
-                </td>
-                <td>
-                    <button id="SPOT" class="button">SPOT</button>
-                </td>
-                <td>
-                    <button id="DOCK" class="button">DOCK</button>
-                </td>
-            </tr>
-        </table>
-        <td>
-            <button style="color:green" id="GREEN" class="button"> &nbsp&nbsp&nbsp&#x25cf;&nbsp&nbsp</button>
-        </td>
-        <td>
-            <button style="color:orange" id="ORANGE" class="button"> &nbsp&nbsp&#x25cf;&nbsp&nbsp</button>
-        </td>
-        <td>
-            <button style="color:red" id="RED" class="button"> &nbsp&nbsp&#x25cf;&nbsp&nbsp</button>
-        </td>
-        <td>
-            <button style="color:blue" id="BLUE" class="button"> &nbsp&nbsp&#x25cf;&nbsp&nbsp&nbsp</button>
-        </td>
-    </buttons>
-    <li><a href="Manual_mode.html">page2</a></li>
-</center>
+<div class="container-fluid text-center imgpadding">
+    <img src="we_suck.png" width="319" height="171">
+
+
+</div>
+
+
 </body>
 </html>

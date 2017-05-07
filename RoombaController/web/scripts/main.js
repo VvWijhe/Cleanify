@@ -4,19 +4,20 @@
 
 
 $('#slider_motor').slider({
+    var: progress_bar = $("#progress-bar"),
     tooltip_position: 'bottom',
     formatter: function (value) {
-        $("#progress-bar").css("width", (value * 100) +'%');
-        $("#progress-bar").attr('class', 'progress-bar progress-bar-striped active');
-        if(value <= 0.25){
-            $("#progress-bar").attr('class', 'progress-bar progress-bar-striped active progress-bar-warning');
-            if(value <= 0.1){
-                $("#progress-bar").attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
+        progress_bar.css("width", (value * 100) + '%');
+        progress_bar.attr('class', 'progress-bar progress-bar-striped active');
+        if (value <= 0.25) {
+            progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-warning');
+            if (value <= 0.1) {
+                progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
             }
         }
 
-        document.getElementById("progress_number").textContent=(Number((value * 100).toFixed(2))+'%');
-        return 'Motors are on : ' + Number((value * 100).toFixed(2)) + '%';
+        document.getElementById("progress_number").textContent = (Number((value * 100).toFixed(2)) + '%');
+        return `Motors are on : ${Number((value * 100).toFixed(2))}%`;
 
     }
 });
@@ -29,7 +30,7 @@ $('#slider_brush').slider({
 
 $(document).ready(function () {
     $(".dir").click(function () {
-        var form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
+        let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
 
         $.post("/control",
             form,
@@ -41,8 +42,11 @@ $(document).ready(function () {
     });
 
     $("#EXIT").click(function () {
-        var form = "{\"exit\" : \"true\"}";
-
+        let form = "{\"exit\" : \"true\"}";
+        $('#message').toggle();
+        $("#manual_panel").attr('class', 'panel panel-default');
+        $("#autonomous_panel").attr('class', 'panel panel-default');
+        $("#occupied").hide();
         $.post("/control",
             form,
             function (data) {
@@ -52,7 +56,7 @@ $(document).ready(function () {
         });
     });
 
-    $("#CONNECT").click(function(){
+    $("#CONNECT").click(function () {
         // $("#message").attr('class', 'alert alert-success');
         $("#manual_panel").attr('class', 'panel panel-success');
         $("#autonomous_panel").attr('class', 'panel panel-success')
@@ -61,26 +65,18 @@ $(document).ready(function () {
 
     });
 
-    $("#EXIT").click(function(){
-        $('#message').toggle();
-        $("#manual_panel").attr('class', 'panel panel-default');
-        $("#autonomous_panel").attr('class', 'panel panel-default');
-        $("#occupied").hide();
-
-    });
-
 
 });
 
 function myMap() {
-    var Cleanify = {lat: 51.9889801, lng: 5.949402};
-    var mapCanvas = document.getElementById("map");
-    var mapOptions = {
+    let Cleanify = {lat: 51.9889801, lng: 5.949402};
+    let mapCanvas = document.getElementById("map");
+    let mapOptions = {
         center: new google.maps.LatLng(Cleanify), zoom: 16,
         scrollwheel: false
     };
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-    var marker = new google.maps.Marker({
+    let map = new google.maps.Map(mapCanvas, mapOptions);
+    let marker = new google.maps.Marker({
         position: Cleanify,
         map: map
     });
