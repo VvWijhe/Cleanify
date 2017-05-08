@@ -36,18 +36,21 @@ $(document).ready(function () {
          form,
          function (data) {
          console.log(data);
+             let response=jQuery.parseJSON(data.error);
+             if(typeof response == "busy")
+             {
+                 $("#occupied").show();
+             }
+             else{
+                 $("#occupied").hide();
+             }
+
          }, "text").fail(function (jqXHR, textStatus, errorThrown) {
          alert("ERROR: NO CONNECTION");
+
          });
 
-        let response=jQuery.parseJSON('error');
-        if(typeof response == 'busy')
-        {
-            $("#occupied").show();
-        }
-        else{
-            $("#occupied").hide();
-        }
+
         $("#manual_panel").attr('class', 'panel panel-success');
         $("#autonomous_panel").attr('class', 'panel panel-success')
         $('#message').toggle();
