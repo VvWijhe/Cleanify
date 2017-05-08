@@ -28,6 +28,15 @@ $('#slider_brush').slider({
     }
 });
 
+function isJson(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
 $(document).ready(function () {
     $(".dir").click(function () {
         let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}"
@@ -36,10 +45,10 @@ $(document).ready(function () {
          form,
          function (data) {
          console.log(data);
-             if (data.name === 'busy') {
-                 $("#occupied").hide();
-             } else {
+             if (isJson("busy")) {
                  $("#occupied").show();
+             } else {
+                 $("#occupied").hide();
              }
 
          }, "text").fail(function (jqXHR, textStatus, errorThrown) {
