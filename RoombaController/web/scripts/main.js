@@ -36,8 +36,7 @@ $(document).ready(function () {
          form,
          function (data) {
          console.log(data);
-             let response=jQuery.parseJSON(data.error);
-             if(typeof response === "busy")
+             if(data.error === 'busy')
              {
                  $("#occupied").show();
              }
