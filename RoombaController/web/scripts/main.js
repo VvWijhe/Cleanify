@@ -39,6 +39,7 @@ $(document).ready(function () {
          }, "text").fail(function (jqXHR, textStatus, errorThrown) {
          alert("ERROR: NO CONNECTION");
          });
+        $.post("/status");
         $("#manual_panel").attr('class', 'panel panel-success');
         $("#autonomous_panel").attr('class', 'panel panel-success')
         $('#message').toggle();
@@ -55,7 +56,7 @@ $(document).ready(function () {
             }, "text").fail(function (jqXHR, textStatus, errorThrown) {
             alert("ERROR: NO CONNECTION");
         });
-        $.post("/status");
+
 
         $('#message').toggle();
         $("#manual_panel").attr('class', 'panel panel-default');
