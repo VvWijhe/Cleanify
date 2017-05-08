@@ -37,7 +37,7 @@ $(document).ready(function () {
          function (data) {
          console.log(data);
              let response=jQuery.parseJSON(data.error);
-             if(typeof response == "busy")
+             if(typeof response === "busy")
              {
                  $("#occupied").show();
              }
