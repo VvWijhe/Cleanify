@@ -33,12 +33,16 @@ $(document).ready(function () {
         //let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}"
 
         /*$.post("/control",
-            form,
-            function (data) {
-                console.log(data);
-            }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-            alert("ERROR: NO CONNECTION");
-        });*/
+         form,
+         function (data) {
+         console.log(data);
+         }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+         alert("ERROR: NO CONNECTION");
+         });*/
+        $("#manual_panel").attr('class', 'panel panel-success');
+        $("#autonomous_panel").attr('class', 'panel panel-success')
+        $('#message').toggle();
+        $("#occupied").show();
     });
 
     $("#EXIT").click(function () {
@@ -58,26 +62,6 @@ $(document).ready(function () {
         $("#autonomous_panel").attr('class', 'panel panel-default');
         $("#occupied").hide();
     });
-
-    $("#CONNECT").click(function () {
-        /*let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
-
-        $.post("/control",
-            form,
-            function (data) {
-                console.log(data);
-            }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-            alert("ERROR: NO CONNECTION");
-        });*/
-
-        $("#manual_panel").attr('class', 'panel panel-success');
-        $("#autonomous_panel").attr('class', 'panel panel-success')
-        $('#message').toggle();
-        $("#occupied").show();
-
-    });
-
-
 });
 
 function myMap() {
