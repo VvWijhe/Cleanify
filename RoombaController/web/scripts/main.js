@@ -39,9 +39,14 @@ $(document).ready(function () {
          }, "text").fail(function (jqXHR, textStatus, errorThrown) {
          alert("ERROR: NO CONNECTION");
          });
-        $("#occupied").hide();
-        if(data.error == "busy"){
+
+        let response=jQuery.parseJSON('error');
+        if(typeof response == 'busy')
+        {
             $("#occupied").show();
+        }
+        else{
+            $("#occupied").hide();
         }
         $("#manual_panel").attr('class', 'panel panel-success');
         $("#autonomous_panel").attr('class', 'panel panel-success')
