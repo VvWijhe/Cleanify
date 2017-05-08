@@ -19,9 +19,25 @@ void responses::index(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1");
+    logger.debug(request->get_method() + " " + request->get_path() + "HTTP/1.1");
 
     FileHandler page("../web/index.html");
+    session->fetch(static_cast<const size_t >(content_length),
+                   [&page](const shared_ptr<Session> s, const Bytes &body) {
+                       s->close(OK,
+                                page.getcontent(),
+                                {{"Content-Length", std::to_string(page.getcontent().size())}});
+                   });
+}
+
+void responses::manual_Mode(pSession session) {
+    const auto request = session->get_request();
+    int content_length = request->get_header("Content-Length", 0);
+    auto &logger = Poco::Logger::get("logger");
+
+    logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1");
+
+    FileHandler page("../web/Manual_mode.html");
     session->fetch(static_cast<const size_t >(content_length),
                    [&page](const shared_ptr<Session> s, const Bytes &body) {
                        s->close(OK,

@@ -14,22 +14,28 @@ RoombaServer::RoombaServer(unsigned short port) {
     settings_->set_port(port);
     settings_->set_default_header("Connection", "close");
 
-    // main page reponse
+    // main page response
     auto resource = make_shared<Resource>();
     resource->set_path("/");
     resource->set_method_handler("GET", responses::index);
     service_.publish(resource);
 
-    // post instruction
+    // manual page response
     auto resource1 = make_shared<Resource>();
-    resource1->set_path("/control");
-    resource1->set_method_handler("POST", responses::handle_post);
+    resource1->set_path("/Manual_mode");
+    resource1->set_method_handler("GET", responses::manual_Mode);
     service_.publish(resource1);
 
+    // post instruction
     auto resource2 = make_shared<Resource>();
-    resource2->set_path("/status");
-    resource2->set_method_handler("GET", responses::status);
+    resource2->set_path("/control");
+    resource2->set_method_handler("POST", responses::handle_post);
     service_.publish(resource2);
+
+    auto resource3 = make_shared<Resource>();
+    resource3->set_path("/status");
+    resource3->set_method_handler("GET", responses::status);
+    service_.publish(resource3);
 
     // 404 page not found
     service_.set_not_found_handler(responses::error404);

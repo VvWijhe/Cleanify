@@ -30,23 +30,20 @@ $('#slider_brush').slider({
 
 $(document).ready(function () {
     $(".dir").click(function () {
-        let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
+        //let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}"
 
-        $.post("/control",
+        /*$.post("/control",
             form,
             function (data) {
                 console.log(data);
             }, "text").fail(function (jqXHR, textStatus, errorThrown) {
             alert("ERROR: NO CONNECTION");
-        });
+        });*/
     });
 
     $("#EXIT").click(function () {
         let form = "{\"exit\" : \"true\"}";
-        $('#message').toggle();
-        $("#manual_panel").attr('class', 'panel panel-default');
-        $("#autonomous_panel").attr('class', 'panel panel-default');
-        $("#occupied").hide();
+
         $.post("/control",
             form,
             function (data) {
@@ -54,10 +51,25 @@ $(document).ready(function () {
             }, "text").fail(function (jqXHR, textStatus, errorThrown) {
             alert("ERROR: NO CONNECTION");
         });
+        $.post("/status");
+
+        $('#message').toggle();
+        $("#manual_panel").attr('class', 'panel panel-default');
+        $("#autonomous_panel").attr('class', 'panel panel-default');
+        $("#occupied").hide();
     });
 
     $("#CONNECT").click(function () {
-        // $("#message").attr('class', 'alert alert-success');
+        /*let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
+
+        $.post("/control",
+            form,
+            function (data) {
+                console.log(data);
+            }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+            alert("ERROR: NO CONNECTION");
+        });*/
+
         $("#manual_panel").attr('class', 'panel panel-success');
         $("#autonomous_panel").attr('class', 'panel panel-success')
         $('#message').toggle();
