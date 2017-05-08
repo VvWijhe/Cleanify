@@ -36,7 +36,7 @@ $(document).ready(function () {
          form,
          function (data) {
          console.log(data);
-             if (data.name === 'Blofeld') {
+             if (data.name === 'busy') {
                  $("#occupied").hide();
              } else {
                  $("#occupied").show();
