@@ -108,6 +108,7 @@ void responses::handle_post(pSession session) {
                                globals::server_context = globals::ServerContext::E_EXIT;
                                response.ok();
                                exitFlag = true;
+                               globals::session_id = "";
                            } else {
                                response.error("busy");
                            }

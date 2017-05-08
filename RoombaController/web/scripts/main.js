@@ -36,7 +36,7 @@ $(document).ready(function () {
          form,
          function (data) {
          console.log(data);
-             if (data.error === 'busy') {
+             if (data.error !== 'busy') {
                  $("#occupied").hide();
              } else {
                  $("#occupied").show();
