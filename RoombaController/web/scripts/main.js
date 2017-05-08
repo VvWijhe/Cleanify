@@ -39,7 +39,7 @@ $(document).ready(function () {
          }, "text").fail(function (jqXHR, textStatus, errorThrown) {
          alert("ERROR: NO CONNECTION");
          });
-        $.post("/status");
+        $.get("/status");
         $("#manual_panel").attr('class', 'panel panel-success');
         $("#autonomous_panel").attr('class', 'panel panel-success')
         $('#message').toggle();
