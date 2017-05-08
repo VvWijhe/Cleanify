@@ -30,15 +30,15 @@ $('#slider_brush').slider({
 
 $(document).ready(function () {
     $(".dir").click(function () {
-        //let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}"
+        let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}"
 
-        /*$.post("/control",
+        $.post("/control",
          form,
          function (data) {
          console.log(data);
          }, "text").fail(function (jqXHR, textStatus, errorThrown) {
          alert("ERROR: NO CONNECTION");
-         });*/
+         });
         $("#manual_panel").attr('class', 'panel panel-success');
         $("#autonomous_panel").attr('class', 'panel panel-success')
         $('#message').toggle();
