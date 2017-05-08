@@ -39,14 +39,14 @@ $(document).ready(function () {
          }, "text").fail(function (jqXHR, textStatus, errorThrown) {
          alert("ERROR: NO CONNECTION");
          });
-        $.get( "/status", function( data ) {
-            $( "body" )
-                .append( "Name: " + data) // John
-        }, "json" );
+        $("#occupied").hide();
+        if(data.error == "busy"){
+            $("#occupied").show();
+        }
         $("#manual_panel").attr('class', 'panel panel-success');
         $("#autonomous_panel").attr('class', 'panel panel-success')
         $('#message').toggle();
-        $("#occupied").show();
+
     });
 
     $("#EXIT").click(function () {
@@ -64,7 +64,7 @@ $(document).ready(function () {
         $('#message').toggle();
         $("#manual_panel").attr('class', 'panel panel-default');
         $("#autonomous_panel").attr('class', 'panel panel-default');
-        $("#occupied").hide();
+
     });
 });
 

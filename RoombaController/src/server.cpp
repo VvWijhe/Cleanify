@@ -22,20 +22,34 @@ RoombaServer::RoombaServer(unsigned short port) {
 
     // manual page response
     auto resource1 = make_shared<Resource>();
-    resource1->set_path("/Manual_mode");
-    resource1->set_method_handler("GET", responses::manual_Mode);
+    resource1->set_path("/manual");
+    resource1->set_method_handler("GET", responses::manual);
     service_.publish(resource1);
 
-    // post instruction
+    //autonomous page response
     auto resource2 = make_shared<Resource>();
-    resource2->set_path("/control");
-    resource2->set_method_handler("POST", responses::handle_post);
+    resource2->set_path("/autonomous");
+    resource2->set_method_handler("GET", responses::autonomous);
     service_.publish(resource2);
 
-    auto resource3 = make_shared<Resource>();
-    resource3->set_path("/status");
-    resource3->set_method_handler("GET", responses::status);
-    service_.publish(resource3);
+
+
+    //about page response
+    auto resource7 = make_shared<Resource>();
+    resource7->set_path("/about");
+    resource7->set_method_handler("GET", responses::about);
+    service_.publish(resource7);
+
+    // post instruction
+    auto resource8 = make_shared<Resource>();
+    resource8->set_path("/control");
+    resource8->set_method_handler("POST", responses::handle_post);
+    service_.publish(resource8);
+
+    auto resource9 = make_shared<Resource>();
+    resource9->set_path("/status");
+    resource9->set_method_handler("GET", responses::status);
+    service_.publish(resource9);
 
     // 404 page not found
     service_.set_not_found_handler(responses::error404);

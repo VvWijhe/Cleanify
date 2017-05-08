@@ -27,9 +27,19 @@ namespace responses {
      * @brief Response to http get /Manual. It sends an html page.
      * @param session contains http request information.
      */
-    void manual_Mode(pSession session);
+    void manual(pSession session);
 
+    /**
+    * @brief Response to http get /autonomous. It sends an html page.
+    * @param session contains http request information.
+    */
+    void autonomous(pSession session);
 
+    /**
+    * @brief Response to http get /autonomous. It sends an html page.
+    * @param session contains http request information.
+    */
+    void about(pSession session);
 
     /**
      * @brief Handles client post request. The client starts a roomba session and can send instructions in json format.

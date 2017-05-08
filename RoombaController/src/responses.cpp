@@ -30,7 +30,7 @@ void responses::index(pSession session) {
                    });
 }
 
-void responses::manual_Mode(pSession session) {
+void responses::manual(pSession session) {
     const auto request = session->get_request();
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
@@ -38,6 +38,38 @@ void responses::manual_Mode(pSession session) {
     logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1");
 
     FileHandler page("../web/Manual_mode.html");
+    session->fetch(static_cast<const size_t >(content_length),
+                   [&page](const shared_ptr<Session> s, const Bytes &body) {
+                       s->close(OK,
+                                page.getcontent(),
+                                {{"Content-Length", std::to_string(page.getcontent().size())}});
+                   });
+}
+
+void responses::autonomous(pSession session) {
+    const auto request = session->get_request();
+    int content_length = request->get_header("Content-Length", 0);
+    auto &logger = Poco::Logger::get("logger");
+
+    logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1");
+
+    FileHandler page("../web/Autonomous_mode.html");
+    session->fetch(static_cast<const size_t >(content_length),
+                   [&page](const shared_ptr<Session> s, const Bytes &body) {
+                       s->close(OK,
+                                page.getcontent(),
+                                {{"Content-Length", std::to_string(page.getcontent().size())}});
+                   });
+}
+
+void responses::about(pSession session) {
+    const auto request = session->get_request();
+    int content_length = request->get_header("Content-Length", 0);
+    auto &logger = Poco::Logger::get("logger");
+
+    logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1");
+
+    FileHandler page("../web/About.html");
     session->fetch(static_cast<const size_t >(content_length),
                    [&page](const shared_ptr<Session> s, const Bytes &body) {
                        s->close(OK,
@@ -63,10 +95,10 @@ void responses::handle_post(pSession session) {
                        if (postData["session"] == nullptr) {
                            response.error("can't determine source pc or web");
                        } else {
-                           if (postData["session"].is_string()) {
+                           if (postData["session"].is_string() && globals::session_id == "") {
                                globals::session_id = postData["session"];
                            } else {
-                               response.error("value not a string");
+                               response.error("session set error");
                            }
                        }
 
