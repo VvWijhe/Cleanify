@@ -49,7 +49,7 @@ function Disconnect() {
 }
 
 
-function drive() {
+function Drive() {
     let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
 
     $.get("/status", function (data) {
@@ -67,7 +67,7 @@ function drive() {
     });
 }
 
-function stop() {
+function Stop() {
     let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
 
     $.get("/status", function (data) {
