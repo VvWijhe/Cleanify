@@ -36,20 +36,15 @@ function myTimer() {
         }
 
     });
-    $.post("/control",
-        form,
+    $.get("/control",
         function (data) {
-            console.log(data);
             let obj_control = JSON.parse(data);
             if (obj_control.message === "busy") {
                 $("#occupied").show();
             } else {
                 $("#occupied").hide();
             }
-
-        }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-        alert("ERROR: NO CONNECTION");
-    });
+        });
 
 }
 
