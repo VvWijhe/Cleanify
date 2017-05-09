@@ -55,10 +55,10 @@ status_t Roomba::move(vector<shared_ptr<QGraphicsLineItem>> walls) {
 
    if(diff < 0 && !compare(setPoint, rotation(), 1.0)) {
       setRotation(rotation() - angular_velocity * DELTA_t_sec);
-      return ROTATING;
+      return ROTATING_LEFT;
    } else if(diff > 0 && !compare(setPoint, rotation(), 1.0)) {
       setRotation(rotation() + angular_velocity * DELTA_t_sec);
-      return ROTATING;
+      return ROTATING_RIGHT;
    } // end rotation
 
    // if the roomba is colliding, the move function returns and the roomba will not move

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'roombasim.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -187,14 +187,14 @@ public:
 
     void retranslateUi(QMainWindow *RoombaSim)
     {
-        RoombaSim->setWindowTitle(QApplication::translate("RoombaSim", "MainWindow", 0));
-        startButton->setText(QApplication::translate("RoombaSim", "Start", 0));
-        pushButton->setText(QApplication::translate("RoombaSim", "Stop", 0));
-        speedLabel->setText(QApplication::translate("RoombaSim", "Speed", 0));
-        label->setText(QApplication::translate("RoombaSim", "dt", 0));
-        label_2->setText(QApplication::translate("RoombaSim", "x", 0));
-        label_3->setText(QApplication::translate("RoombaSim", "y", 0));
-        exitButton->setText(QApplication::translate("RoombaSim", "Exit", 0));
+        RoombaSim->setWindowTitle(QApplication::translate("RoombaSim", "MainWindow", Q_NULLPTR));
+        startButton->setText(QApplication::translate("RoombaSim", "Start", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("RoombaSim", "Stop", Q_NULLPTR));
+        speedLabel->setText(QApplication::translate("RoombaSim", "Speed", Q_NULLPTR));
+        label->setText(QApplication::translate("RoombaSim", "dt", Q_NULLPTR));
+        label_2->setText(QApplication::translate("RoombaSim", "x", Q_NULLPTR));
+        label_3->setText(QApplication::translate("RoombaSim", "y", Q_NULLPTR));
+        exitButton->setText(QApplication::translate("RoombaSim", "Exit", Q_NULLPTR));
     } // retranslateUi
 
 };

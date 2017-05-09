@@ -33,6 +33,7 @@ void Room::update() {
    mt19937 rng(rd());
    uniform_int_distribution<int> uni(0, 2);
    auto rndAngle = uni(rng);
+   static double rotAngle = 0.01;
 
    // Move roomba and pass the walls vector to the function to check if it collides with a wall
    auto roombaStatus = _roomba->move(_walls);
@@ -40,6 +41,13 @@ void Room::update() {
       case COLLISSION:
          cout << "Collision" << endl;
          _roomba->setAngle(_roomba->getAngle() + rndAngle + 0.14);
+         break;
+
+      case MOVING:
+         _roomba->setAngle(_roomba->getAngle() + rotAngle);
+
+         if(rotAngle < 0) rotAngle = 0.01;
+         rotAngle -= 0.000001;
          break;
 
       default:
