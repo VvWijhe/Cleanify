@@ -43,7 +43,7 @@ namespace algorithm {
 
     class Spot : public roomba_algorithm {
     public:
-        void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData) override;
+        void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
     };
 
     class Dock: public roomba_algorithm {

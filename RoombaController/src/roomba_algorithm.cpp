@@ -84,7 +84,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
 /*
  * Drive in circles that increase by size. Cleans an area of 1m2.
  */
-void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData) {
+void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
     std::bitset<8> bitset1(sensorData.getvalue < unsigned char > (Light_bumper));
     if (bitset1 != 0b00000000) {                     //hit object
         control->setRotation(full_speed, 1000); //set roomba parameters
