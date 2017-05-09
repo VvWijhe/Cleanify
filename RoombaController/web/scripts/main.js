@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
     $(".dir").click(function () {
-        let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}"
+        let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
 
         $.post("/control",
             form,

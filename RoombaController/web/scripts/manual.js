@@ -1,5 +1,3 @@
-
-
 var myVar = setInterval(myTimer, 500);
 
 function myTimer() {
@@ -15,6 +13,61 @@ function myTimer() {
                 progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
             }
         }
+    });
+}
+
+function Connect(){
+    let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
+
+    $.get("/status", function (data) {
+        let obj_status = JSON.parse(data);
+
+        if(obj_status.status !== "ava"){
+            $.post("/control",
+                form,
+                function (data) {
+                    console.log(data);
+                }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+                alert("ERROR: NO CONNECTION");
+            });}
+        else{
+            alert("ERROR: Already connected");
+        }
+    });
+}
+
+
+function drive() {
+    let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
+
+    $.get("/status", function (data) {
+        let obj_status = JSON.parse(data);
+
+        if(obj_status.){
+        $.post("/control",
+            form,
+            function (data) {
+                console.log(data);
+            }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+            alert("ERROR: NO CONNECTION");
+        });}
+    });
+}
+
+function stop() {
+    let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
+
+    $.get("/status", function (data) {
+        let obj_status = JSON.parse(data);
+
+        if(obj_status.){
+            $.post("/control",
+                form,
+                function (data) {
+                    console.log(data);
+                }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+                alert("ERROR: NO CONNECTION");
+            });}
     });
 }
 
