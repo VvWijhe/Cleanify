@@ -9,8 +9,9 @@ using namespace algorithm;
 
 void
 Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    int x;
-    std::bitset<8> bitset1(sensorData.getvalue < unsigned char > (Light_bumper));
+    std::bitset<8> bitset(sensorData.getvalue < unsigned char > (Light_bumper));
+    std::bitset<6> bitset1;
+    for(int i = 0; i < 6; i++){ bitset1[i] = bitset[i]; }
     /* Light bumper: 8 bits
      * 5 to 0 are from right to left; 6 and 7 are reserved
      */
@@ -80,10 +81,20 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
     }
 }
 
-void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-
+/*
+ * Drive in circles that increase by size. Cleans an area of 1m2.
+ */
+void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData) {
+    std::bitset<8> bitset1(sensorData.getvalue < unsigned char > (Light_bumper));
+    if (bitset1 != 0b00000000) {                     //hit object
+        control->setRotation(full_speed, 1000); //set roomba parameters
+        control->setBrushes(100); /*@TODO add functionality to the rotation*/
+    }
 }
 
+/*
+ * Drive to Dock
+ */
 void Dock::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
- //test
+    std::bitset<8> bitset1(sensorData.getvalue < unsigned char > (Light_bumper));
 }
