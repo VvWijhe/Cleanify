@@ -20,7 +20,7 @@ function Connect(){
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
 
-        if(obj_status.status !== "ava"){
+        if(obj_status.status !== "availlable"){
             $.post("/control",
                 form,
                 function (data) {
@@ -58,7 +58,7 @@ function drive() {
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
 
-        if(obj_status.){
+        if(obj_status.status === "ok"){
             $.post("/control",
                 form,
                 function (data) {
