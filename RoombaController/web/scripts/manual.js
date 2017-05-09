@@ -1,68 +1,93 @@
-var myVar;
+var timerVar;
+var connected = false;
+let progress_bar = $("#progress-bar");
 
-function Connect(){
+function Connect() {
     let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
 
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
 
-        if(obj_status.status === "available"){
-            myVar = setInterval(myTimer, 500);
+        if (obj_status.status === "available") {
+            timerVar = setInterval(myTimer, 500);
+            connected = true;
+            $("#manual_panel").attr('class', 'panel panel-success');
+            $("#autonomous_panel").attr('class', 'panel panel-success');
             $.post("/control",
                 form,
                 function (data) {
                     console.log(data);
                 }, "text").fail(function (jqXHR, textStatus, errorThrown) {
                 alert("ERROR: NO CONNECTION");
-            });}
+            });
+        }
         else if (obj_status.status === "busy") {
+            connected = false;
             $("#occupied").show();
             $("#manual_panel").attr('class', 'panel panel-danger');
             $("#autonomous_panel").attr('class', 'panel panel-danger')
-        } else {
-            alert("ERROR: Already connected");
         }
     });
 }
 
+function Disconnect() {
+    let form = "{\"exit\" : \"true\"}";
+    connected = false;
+    clearInterval(timerVar);
+    $.post("/control",
+        form,
+        function (data) {
+            console.log(data);
+        }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+        alert("ERROR: NO CONNECTION");
+    });
+    progress_bar.css("width", "0%");
+    document.getElementById("progress_number").textContent = ("");
+    $('#message').show();
+    $("#manual_panel").attr('class', 'panel panel-default');
+    $("#autonomous_panel").attr('class', 'panel panel-default');
+}
 
-function drive() {
+
+function Drive() {
     let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
 
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
 
-        if(obj_status.status === "ok"){
-        $.post("/control",
-            form,
-            function (data) {
-                console.log(data);
-            }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-            alert("ERROR: NO CONNECTION");
-        });}
-    });
-}
-
-function stop() {
-    let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
-
-    $.get("/status", function (data) {
-        let obj_status = JSON.parse(data);
-
-        if(obj_status.status === "ok"){
+        if (connected === true) {
             $.post("/control",
                 form,
                 function (data) {
                     console.log(data);
                 }, "text").fail(function (jqXHR, textStatus, errorThrown) {
                 alert("ERROR: NO CONNECTION");
-            });}
+            });
+        }
+    });
+}
+
+function Stop() {
+    let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
+
+    $.get("/status", function (data) {
+        let obj_status = JSON.parse(data);
+
+        if (connected === true) {
+            $.post("/control",
+                form,
+                function (data) {
+                    console.log(data);
+                }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+                alert("ERROR: NO CONNECTION");
+            });
+        }
     });
 }
 
 function myTimer() {
     $.get("/status", function (data) {
-        let progress_bar = $("#progress-bar");
+
         let obj_status = JSON.parse(data);
         progress_bar.css("width", (obj_status.battery) + '%');
         document.getElementById("progress_number").textContent = ( obj_status.battery + '%');

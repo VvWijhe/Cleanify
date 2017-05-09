@@ -43,13 +43,11 @@ namespace algorithm {
 
     class Spot : public roomba_algorithm {
     public:
-        typedef enum {
-        } state_e;
-        void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
+        void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData) override;
     };
 
     class Dock: public roomba_algorithm {
-    public: //test
+    public:
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
     };
 }
