@@ -31,7 +31,7 @@ function Connect() {
 
 function Disconnect() {
     let form = "{\"exit\" : \"true\"}";
-
+    connected = false;
     $.post("/control",
         form,
         function (data) {
