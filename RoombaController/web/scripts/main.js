@@ -45,7 +45,9 @@ $(document).ready(function () {
          form,
          function (data) {
          console.log(data);
-             if (isJson("busy")) {
+         let obj = JSON.parse(data);
+
+         if (obj.message === "busy") {
                  $("#occupied").show();
              } else {
                  $("#occupied").hide();
