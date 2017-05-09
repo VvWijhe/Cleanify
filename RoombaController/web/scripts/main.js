@@ -2,7 +2,7 @@
  * Created by victor on 04.05.17.
  */
 
-var myVar = setInterval(myTimer, 100);
+var myVar = setInterval(myTimer, 500);
 
 
 $('#slider_motor').slider({
@@ -36,6 +36,21 @@ function myTimer() {
         }
 
     });
+    $.post("/control",
+        form,
+        function (data) {
+            console.log(data);
+            let obj_control = JSON.parse(data);
+            if (obj_control.message === "busy") {
+                $("#occupied").show();
+            } else {
+                $("#occupied").hide();
+            }
+
+        }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+        alert("ERROR: NO CONNECTION");
+    });
+
 }
 
 
