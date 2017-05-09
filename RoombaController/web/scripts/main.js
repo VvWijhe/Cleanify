@@ -20,7 +20,6 @@ $('#slider_brush').slider({
 });
 
 
-
 function myTimer() {
     $.get("/status", function (data) {
         let progress_bar = $("#progress-bar");
@@ -34,21 +33,8 @@ function myTimer() {
                 progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
             }
         }
-
     });
-    $.post("/control",
-        function (data) {
-            let obj_control = JSON.parse(data);
-            if (obj_control.message === "busy") {
-                $("#occupied").show();
-            } else {
-                $("#occupied").hide();
-            }
-        });
-
 }
-
-
 
 
 $(document).ready(function () {
