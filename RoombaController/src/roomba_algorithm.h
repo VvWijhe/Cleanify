@@ -49,7 +49,7 @@ namespace algorithm {
     };
 
     class Dock: public roomba_algorithm {
-    public:
+    public: //test
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
     };
 }

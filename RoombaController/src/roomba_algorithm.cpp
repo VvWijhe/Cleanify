@@ -85,5 +85,5 @@ void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors s
 }
 
 void Dock::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-
+ //test
 }
