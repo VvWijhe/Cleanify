@@ -6,7 +6,7 @@ function Connect(){
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
 
-        if(obj_status.status === "availlable"){
+        if(obj_status.status === "available"){
             myVar = setInterval(myTimer, 500);
             $.post("/control",
                 form,
