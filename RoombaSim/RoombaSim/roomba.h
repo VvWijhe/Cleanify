@@ -9,7 +9,7 @@
 
 using namespace std;
 
-enum status_t {STANDBY, MOVING, COLLISSION, ROTATING};
+enum status_t {STANDBY, MOVING, COLLISSION, ROTATING_LEFT, ROTATING_RIGHT};
 
 class Roomba : public QGraphicsEllipseItem {
 public:

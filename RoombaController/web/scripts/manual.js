@@ -1,6 +1,65 @@
+var myVar;
+
+function Connect(){
+    let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
+
+    $.get("/status", function (data) {
+        let obj_status = JSON.parse(data);
+
+        if(obj_status.status === "availlable"){
+            myVar = setInterval(myTimer, 500);
+            $.post("/control",
+                form,
+                function (data) {
+                    console.log(data);
+                }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+                alert("ERROR: NO CONNECTION");
+            });}
+        else if(obj_status.status === "busy"){
+            $("#occupied").show();
+            $("#manual_panel").attr('class', 'panel panel-danger');
+            $("#autonomous_panel").attr('class', 'panel panel-danger')
+        }
+        else{
+            alert("ERROR: Already connected");
+        }
+    });
+}
 
 
-var myVar = setInterval(myTimer, 500);
+function drive() {
+    let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
+
+    $.get("/status", function (data) {
+        let obj_status = JSON.parse(data);
+
+        if(obj_status.status === "ok"){
+        $.post("/control",
+            form,
+            function (data) {
+                console.log(data);
+            }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+            alert("ERROR: NO CONNECTION");
+        });}
+    });
+}
+
+function stop() {
+    let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
+
+    $.get("/status", function (data) {
+        let obj_status = JSON.parse(data);
+
+        if(obj_status.status === "ok"){
+            $.post("/control",
+                form,
+                function (data) {
+                    console.log(data);
+                }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+                alert("ERROR: NO CONNECTION");
+            });}
+    });
+}
 
 function myTimer() {
     $.get("/status", function (data) {

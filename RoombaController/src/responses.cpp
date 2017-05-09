@@ -226,7 +226,7 @@ void responses::status(pSession session) {
                    [](const shared_ptr<Session> s, const Bytes &body) {
                        json response;
 
-                       response["status"] = "idle";
+                       response["status"] = "available";
                        response["battery"] = 23;
 
                        s->close(OK,

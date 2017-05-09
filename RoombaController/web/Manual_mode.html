@@ -56,7 +56,8 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <button id="CONNECT" type="button" class="dir btn btn-success navbar-btn"><span
+                        <button id="connect" onmousedown="Connect()" type="button"
+                                class="dir btn btn-success navbar-btn"><span
                                 class="glyphicon glyphicon-ok-sign"></span> Connect
                         </button>
                     </li>
@@ -87,25 +88,42 @@
             <div class="panel-body">
                 <div class="text-center">
                     <div class="btn-group">
-                        <button id="forward-left" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">
+                        <button id="forward-left" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">
                             &#8598;
                         </button>
-                        <button id="forward" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8593;</button>
-                        <button id="forward-right" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8599;</button>
+                        <button id="forward" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">&#8593;
+                        </button>
+                        <button id="forward-right" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">&#8599;
+                        </button>
                     </div>
                 </div>
                 <div class="text-center">
                     <div class="btn-group group-margin-top">
-                        <button id="left" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8592;</button>
-                        <button id="stop" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&nbsp&#183;&nbsp</button>
-                        <button id="right" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8594;</button>
+                        <button id="left" onmousedown="Drive()" onmouseup="Stop()" class="dir btn-size btn-text-large">
+                            &#8592;
+                        </button>
+                        <button id="stop" onmousedown="Drive()" onmouseup="Stop()" class="dir btn-size btn-text-large">
+                            &nbsp&#183;&nbsp
+                        </button>
+                        <button id="right" onmousedown="Drive()" onmouseup="Stop()" class="dir btn-size btn-text-large">
+                            &#8594;
+                        </button>
                     </div>
                 </div>
                 <div class="text-center">
                     <div class="btn-group group-margin-top">
-                        <button id="backward-left" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8601;</button>
-                        <button id="backward" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8595;</button>
-                        <button id="backward-right" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8600;</button>
+                        <button id="backward-left" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">&#8601;
+                        </button>
+                        <button id="backward" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">&#8595;
+                        </button>
+                        <button id="backward-right" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">&#8600;
+                        </button>
                     </div>
                 </div>
 
@@ -169,7 +187,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/lib/js/bootstrap-slider.min.js"></script>
 <script src="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/scripts/main.js"></script>
-
+<script src="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/scripts/manual.js"></script>
 
 </body>
 </html>

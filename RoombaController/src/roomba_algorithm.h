@@ -24,19 +24,10 @@ namespace algorithm {
     class Clean : public roomba_algorithm {
     public:
         typedef enum {
-            S_NO, S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGT
+            S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGT
         } state_e;
 
-        typedef enum {
-            E_NO,
-            E_READY,
-            E_HIT_OBJECT,
-            E_TIME_EXCEEDED,
-            E_ROTATE_DONE,
-            E_BACKWARDS_DONE,
-        } event_e;
-
-        Clean() : currentState_(S_START), eventOut_(E_NO) {}
+        Clean() : currentState_(S_START) {}
 
         ~Clean() = default;
 
@@ -47,17 +38,18 @@ namespace algorithm {
 
     private:
         state_e currentState_;
-        event_e eventOut_;
+        double dt_;
     };
 
     class Spot : public roomba_algorithm {
     public:
         typedef enum {
         } state_e;
+        void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
+    };
 
-        typedef enum {
-        } event_e;
-
+    class Dock: public roomba_algorithm {
+    public: //test
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
     };
 }

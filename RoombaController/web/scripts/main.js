@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
     $(".dir").click(function () {
-        let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}"
+        let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
 
         $.post("/control",
             form,
@@ -39,7 +39,6 @@ $(document).ready(function () {
             }, "text").fail(function (jqXHR, textStatus, errorThrown) {
             alert("ERROR: NO CONNECTION");
         });
-
 
         $('#message').toggle();
         $("#manual_panel").attr('class', 'panel panel-default');
