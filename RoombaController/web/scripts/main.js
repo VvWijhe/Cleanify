@@ -2,6 +2,8 @@
  * Created by victor on 04.05.17.
  */
 
+var myVar = setInterval(myTimer, 100);
+
 
 $('#slider_motor').slider({
     tooltip_position: 'bottom',
@@ -16,6 +18,28 @@ $('#slider_brush').slider({
         return 'Brushes are on : ' + Number((value * 100).toFixed(2)) + '%';
     }
 });
+
+
+
+function myTimer() {
+    $.get("/status", function (data) {
+        let progress_bar = $("#progress-bar");
+        let obj_status = JSON.parse(data);
+        progress_bar.css("width", (obj_status.battery) + '%');
+        document.getElementById("progress_number").textContent = ( obj_status.battery + '%');
+        progress_bar.attr('class', 'progress-bar progress-bar-striped active');
+        if (obj_status.battery <= 25) {
+            progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-warning');
+            if (obj_status.battery <= 10) {
+                progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
+            }
+        }
+
+    });
+}
+
+
+
 
 $(document).ready(function () {
     $(".dir").click(function () {
@@ -35,23 +59,6 @@ $(document).ready(function () {
             }, "text").fail(function (jqXHR, textStatus, errorThrown) {
             alert("ERROR: NO CONNECTION");
         });
-
-        $.get("/status", function (data) {
-            let progress_bar = $("#progress-bar");
-            let obj_status = JSON.parse(data);
-            progress_bar.css("width", (obj_status.battery) + '%');
-            document.getElementById("progress_number").textContent = ( obj_status.battery + '%');
-            progress_bar.attr('class', 'progress-bar progress-bar-striped active');
-            if (obj_status.battery <= 25) {
-                progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-warning');
-                if (obj_status.battery <= 10) {
-                    progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
-                }
-            }
-
-        });
-
-
         $("#manual_panel").attr('class', 'panel panel-success');
         $("#autonomous_panel").attr('class', 'panel panel-success')
         $('#message').toggle();

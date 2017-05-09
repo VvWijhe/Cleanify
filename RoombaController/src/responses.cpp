@@ -227,7 +227,7 @@ void responses::status(pSession session) {
                        json response;
 
                        response["status"] = "idle";
-                       response["battery"] = 71;
+                       response["battery"] = 23;
 
                        s->close(OK,
                                 response.dump(),
