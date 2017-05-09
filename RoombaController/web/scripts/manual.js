@@ -1,5 +1,6 @@
 var timerVar;
 var connected = false;
+let progress_bar = $("#progress-bar");
 
 function Connect() {
     let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
@@ -85,7 +86,7 @@ function stop() {
 
 function myTimer() {
     $.get("/status", function (data) {
-        let progress_bar = $("#progress-bar");
+
         let obj_status = JSON.parse(data);
         progress_bar.css("width", (obj_status.battery) + '%');
         document.getElementById("progress_number").textContent = ( obj_status.battery + '%');
