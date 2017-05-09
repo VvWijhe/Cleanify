@@ -33,7 +33,7 @@ function Connect() {
 function Disconnect() {
     let form = "{\"exit\" : \"true\"}";
     connected = false;
-    timerVar = setInterval(myTimer, 0);
+    clearInterval(timerVar);
     $.post("/control",
         form,
         function (data) {
