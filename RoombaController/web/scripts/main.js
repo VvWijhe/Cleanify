@@ -48,16 +48,19 @@ $(document).ready(function () {
                 let obj_control = JSON.parse(data);
                 if (obj_control.message === "busy") {
                     $("#occupied").show();
+                    $("#manual_panel").attr('class', 'panel panel-danger');
+                    $("#autonomous_panel").attr('class', 'panel panel-danger')
                 } else {
                     $("#occupied").hide();
+                    $("#manual_panel").attr('class', 'panel panel-success');
+                    $("#autonomous_panel").attr('class', 'panel panel-success')
                 }
 
             }, "text").fail(function (jqXHR, textStatus, errorThrown) {
             alert("ERROR: NO CONNECTION");
         });
-        $("#manual_panel").attr('class', 'panel panel-success');
-        $("#autonomous_panel").attr('class', 'panel panel-success')
-        $('#message').toggle();
+
+        $('#message').show();
 
     });
 

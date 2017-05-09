@@ -87,25 +87,25 @@
             <div class="panel-body">
                 <div class="text-center">
                     <div class="btn-group">
-                        <button id="forward-left" onmousedown="myFunction()" class="dir btn-size btn-text-large">
+                        <button id="forward-left" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">
                             &#8598;
                         </button>
-                        <button id="forward" class="dir btn-size btn-text-large">&#8593;</button>
-                        <button id="forward-right" class="dir btn-size btn-text-large">&#8599;</button>
+                        <button id="forward" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8593;</button>
+                        <button id="forward-right" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8599;</button>
                     </div>
                 </div>
                 <div class="text-center">
                     <div class="btn-group group-margin-top">
-                        <button id="left" class="dir btn-size btn-text-large">&#8592;</button>
-                        <button id="stop" class="dir btn-size btn-text-large">&nbsp&#183;&nbsp</button>
-                        <button id="right" class="dir btn-size btn-text-large">&#8594;</button>
+                        <button id="left" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8592;</button>
+                        <button id="stop" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&nbsp&#183;&nbsp</button>
+                        <button id="right" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8594;</button>
                     </div>
                 </div>
                 <div class="text-center">
                     <div class="btn-group group-margin-top">
-                        <button id="backward-left" class="dir btn-size btn-text-large">&#8601;</button>
-                        <button id="backward" class="dir btn-size btn-text-large">&#8595;</button>
-                        <button id="backward-right" class="dir btn-size btn-text-large">&#8600;</button>
+                        <button id="backward-left" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8601;</button>
+                        <button id="backward" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8595;</button>
+                        <button id="backward-right" onmousedown="Drive()" onmouseup="stop()" class="dir btn-size btn-text-large">&#8600;</button>
                     </div>
                 </div>
 
