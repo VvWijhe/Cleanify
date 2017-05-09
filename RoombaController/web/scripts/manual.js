@@ -15,12 +15,11 @@ function Connect(){
                 }, "text").fail(function (jqXHR, textStatus, errorThrown) {
                 alert("ERROR: NO CONNECTION");
             });}
-        else if(obj_status.status === "busy"){
+        else if (obj_status.status === "busy") {
             $("#occupied").show();
             $("#manual_panel").attr('class', 'panel panel-danger');
             $("#autonomous_panel").attr('class', 'panel panel-danger')
-        }
-        else{
+        } else {
             alert("ERROR: Already connected");
         }
     });
