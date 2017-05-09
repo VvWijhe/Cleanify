@@ -220,7 +220,7 @@ void responses::status(pSession session) {
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
-    logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
+    //logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1 ");
 
     session->fetch(static_cast<const size_t >(content_length),
                    [](const shared_ptr<Session> s, const Bytes &body) {
