@@ -40,7 +40,6 @@ $(document).ready(function () {
             alert("ERROR: NO CONNECTION");
         });
 
-
         $('#message').toggle();
         $("#manual_panel").attr('class', 'panel panel-default');
         $("#autonomous_panel").attr('class', 'panel panel-default');
