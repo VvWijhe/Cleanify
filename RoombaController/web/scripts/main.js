@@ -4,10 +4,8 @@
 
 
 $('#slider_motor').slider({
-    var: progress_bar = $("#progress-bar"),
     tooltip_position: 'bottom',
     formatter: function (value) {
-        document.getElementById("progress_number").textContent = (Number((value * 100).toFixed(2)) + '%');
         return `Motors are on : ${Number((value * 100).toFixed(2))}%`;
 
     }
@@ -39,12 +37,14 @@ $(document).ready(function () {
         });
 
         $.get("/status", function (data) {
+            let progress_bar = $("#progress-bar");
             let obj_status = JSON.parse(data);
             progress_bar.css("width", (obj_status.battery) + '%');
+            document.getElementById("progress_number").textContent = ( obj_status.battery + '%');
             progress_bar.attr('class', 'progress-bar progress-bar-striped active');
-            if (value <= 0.25) {
+            if (obj_status.battery <= 25) {
                 progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-warning');
-                if (value <= 0.1) {
+                if (obj_status.battery <= 10) {
                     progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
                 }
             }
