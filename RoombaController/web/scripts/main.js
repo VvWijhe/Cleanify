@@ -36,7 +36,7 @@ function myTimer() {
         }
 
     });
-    $.get("/control",
+    $.post("/control",
         function (data) {
             let obj_control = JSON.parse(data);
             if (obj_control.message === "busy") {
