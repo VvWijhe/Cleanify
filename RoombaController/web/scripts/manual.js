@@ -67,6 +67,24 @@ function Drive(id) {
     });
 }
 
+function Cmd(id) {
+    let form = "{\"pre-commands\" : \"" + id + "\", \"session\" : \"webapp\"}";
+
+    $.get("/status", function (data) {
+        let obj_status = JSON.parse(data);
+
+        if (connected === true) {
+            $.post("/control",
+                form,
+                function (data) {
+                    console.log(data);
+                }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+                alert("ERROR: NO CONNECTION");
+            });
+        }
+    });
+}
+
 function Stop() {
     let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
 

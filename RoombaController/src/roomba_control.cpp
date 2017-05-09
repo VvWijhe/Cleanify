@@ -53,7 +53,6 @@ void RoombaControl::setRotation(int speed, int radius) {
     auto rad_lb = static_cast<unsigned char>(radius & 0xFF);
 
     serial_.writeVector({Drive, vel_hb, vel_lb, rad_hb, rad_lb});
-    //serial_.writeVector({Drive, 0x01, 0xF4, 0x00, 0x01});
 }
 
 void RoombaControl::setLed(color_t color) {
