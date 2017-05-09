@@ -3,7 +3,7 @@
 //
 
 #include "src/serial.h"
-#include "src/sensorparser.hpp"
+#include "src/sensorparser.h"
 #include "gtest/gtest.h"
 
 TEST(serial_test, connect) {

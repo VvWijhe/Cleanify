@@ -168,6 +168,9 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
             logger.error("Reading sensordata timeout");
             exitFlag = true;
         } else {
+            // set sensor data for the server
+            server_context.setSensorData(sensorData);
+
             // run algorithm
             alg.calculate(rmbControl, sensorData, 30);
         }

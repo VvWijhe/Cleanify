@@ -90,7 +90,7 @@ public:
         if(typeid(T) == sensorvariant(sensors_.find(sensor)->second).type() ){
             return boost::get<T>(sensors_.find(sensor)->second);
         }
-        logger_.error("BOOST ERROR sensors::GetValue: Boost has failed");
+        //logger_.error("BOOST ERROR sensors::GetValue: Boost has failed");
         return 0;
     }
 
@@ -135,7 +135,7 @@ private:
 
     map<sensorID, sensorvariant> sensors_;
 
-    Poco::Logger &logger_;
+    //Poco::Logger &logger_;
 };
 
 #endif //ROOMBACONTROLLER_SENSORDATA_H

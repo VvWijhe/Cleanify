@@ -6,6 +6,7 @@
 #define ROOMBACONTROLLER_GLB_EVENTS_H
 
 #include <mutex>
+#include "sensorparser.h"
 
 namespace globals {
     /**
@@ -32,12 +33,20 @@ namespace globals {
             return tmp;
         }
 
+        void setSensorData(const Sensors& sensors) {
+            sensorData_ = sensors;
+        }
+
         void setWheelSpeed(double speed) {
             wheelSpeed_ = speed;
         }
 
         void setBrushSpeed(unsigned int speed) {
             brushSpeed_ = speed;
+        }
+
+        Sensors getSensorData() const {
+            return sensorData_;
         }
 
         double getWheelSpeed() const {
@@ -57,6 +66,7 @@ namespace globals {
         }
 
     private:
+        Sensors sensorData_;
         unsigned int brushSpeed_;
         double wheelSpeed_;
         std::mutex mutex_;

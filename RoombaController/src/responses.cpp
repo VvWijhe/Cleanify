@@ -226,8 +226,11 @@ void responses::status(pSession session) {
                    [](const shared_ptr<Session> s, const Bytes &body) {
                        json response;
 
-                       response["status"] = "available";
-                       response["battery"] = 23;
+                       if(globals::roomba_session == globals::IDLE) response["status"] = "available";
+                       else response["status"] = "running";
+
+                       auto sensorData = globals::server_context.getSensorData();
+                       response["battery"] = sensorData.getvalue<unsigned short>(Battery_capacity);
 
                        s->close(OK,
                                 response.dump(),

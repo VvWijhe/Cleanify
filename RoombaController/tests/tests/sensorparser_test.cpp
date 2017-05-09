@@ -2,7 +2,7 @@
 // Created by bas on 20-4-17.
 //
 
-#include "src/sensorparser.hpp"
+#include "src/sensorparser.h"
 #include "gtest/gtest.h"
 
 TEST(sensorparser_test, parsing_vector){
