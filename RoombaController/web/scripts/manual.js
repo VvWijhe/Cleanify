@@ -1,4 +1,4 @@
-var myVar = setInterval(myTimer, 500);
+var myVar;
 
 function Connect(){
     let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
