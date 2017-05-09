@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Cleanify/Manual</title>
-    <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/css/bootstrap-slider.min.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/lib/css/bootstrap-slider.min.css"
+          rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,16 +15,13 @@
     <!--&lt;!&ndash; Optional theme &ndash;&gt;-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!--<link rel="stylesheet" type="text/css" href="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/styles/main.css">-->
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
-
-    <!--<meta http-equiv="refresh" content="3" >-->
-
+    <link rel="stylesheet" type="text/css"
+          href="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/styles/main.css">
 </head>
 
 <header>
-    <nav class="navbar navbar-inverse ">
-        <div class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -32,17 +31,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index1.html">Cleanify</a>
+                <a class="navbar-brand" href="/"><strong>Cleanify</strong></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="Manual_mode.html">Manual</a></li>
-                    <li><a href="Autonomous_mode.html">Autonomous</a></li>
+                    <li class="active"><a href="manual"><strong>Manual</strong></a></li>
+                    <li><a href="/autonomous"><strong>Autonomous</strong></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                           aria-haspopup="true" aria-expanded="false"><strong>Dropdown</strong> <span
+                                class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -50,14 +50,24 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Separated link</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <li><a href="/about">about</a></li>
                         </ul>
                     </li>
                 </ul>
-                //
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a id="EXIT" href="Manual_mode.html"><span class="glyphicon glyphicon-remove-sign"></span> Disconnect</a></li>
-                    <li><a id="CONNECT" href="Manual_mode.html"><span class="glyphicon glyphicon-ok-sign"></span> Connect</a></li>
+                    <li>
+                        <button id="connect" onmousedown="Connect()" type="button"
+                                class="dir btn btn-success navbar-btn"><span
+                                class="glyphicon glyphicon-ok-sign"></span> Connect
+                        </button>
+                    </li>
+                    <li>
+                        <button id="EXIT" type="button" class="btn btn-danger navbar-btn"><span
+                                class="glyphicon glyphicon-remove-sign"></span> Disconnect
+                        </button>
+                    </li>
+
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -66,30 +76,54 @@
 
 <body>
 
-<div class="container-fluid">
+<div class="container">
     <div class="col-sm-6 col-xs-12">
-        <div id="manual_panel" class="panel panel-success">
-            <div class="panel-heading"><b>Manual Mode</b></div>
+
+        <div id="occupied" style="display: none " class="alert alert-danger">
+            Roomba is connected with another device
+        </div>
+
+        <div id="manual_panel" class="panel panel-default">
+            <div class="panel-heading"><b>Manual control</b></div>
             <div class="panel-body">
                 <div class="text-center">
                     <div class="btn-group">
-                        <button id="forward-left" class="dir btn-size btn-text-large">&#8598;</button>
-                        <button id="forward" class="dir btn-size btn-text-large">&#8593;</button>
-                        <button id="forward-right" class="dir btn-size btn-text-large">&#8599;</button>
+                        <button id="forward-left" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">
+                            &#8598;
+                        </button>
+                        <button id="forward" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">&#8593;
+                        </button>
+                        <button id="forward-right" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">&#8599;
+                        </button>
                     </div>
                 </div>
                 <div class="text-center">
                     <div class="btn-group group-margin-top">
-                        <button id="left" class="dir btn-size btn-text-large">&#8592;</button>
-                        <button id="stop" class="dir btn-size btn-text-large">&nbsp&#183;&nbsp</button>
-                        <button id="right" class="dir btn-size btn-text-large">&#8594;</button>
+                        <button id="left" onmousedown="Drive()" onmouseup="Stop()" class="dir btn-size btn-text-large">
+                            &#8592;
+                        </button>
+                        <button id="stop" onmousedown="Drive()" onmouseup="Stop()" class="dir btn-size btn-text-large">
+                            &nbsp&#183;&nbsp
+                        </button>
+                        <button id="right" onmousedown="Drive()" onmouseup="Stop()" class="dir btn-size btn-text-large">
+                            &#8594;
+                        </button>
                     </div>
                 </div>
                 <div class="text-center">
                     <div class="btn-group group-margin-top">
-                        <button id="backward-left" class="dir btn-size btn-text-large">&#8601;</button>
-                        <button id="backward" class="dir btn-size btn-text-large">&#8595;</button>
-                        <button id="backward-right" class="dir btn-size btn-text-large">&#8600;</button>
+                        <button id="backward-left" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">&#8601;
+                        </button>
+                        <button id="backward" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">&#8595;
+                        </button>
+                        <button id="backward-right" onmousedown="Drive()" onmouseup="Stop()"
+                                class="dir btn-size btn-text-large">&#8600;
+                        </button>
                     </div>
                 </div>
 
@@ -97,23 +131,32 @@
                 <div class="text-center">
                     <div class="well well-margin">
                         <span id="ex1comment">Change Roomba speed</span><br/>
-                        <input id="slider_motor" data-slider-id='ex1Slider' type="text" data-slider-min="0"
-                               data-slider-max="1" data-slider-step="0.01" data-slider-value="0"/>
+                        <label for="slider_motor"></label><input id="slider_motor" data-slider-id='ex1Slider'
+                                                                 type="text" data-slider-min="0"
+                                                                 data-slider-max="1" data-slider-step="0.01"
+                                                                 data-slider-value="0"/>
                         <div class="container"></div>
                         <br/>
                         <span id="ex2comment">Change brush speed</span><br/>
-                        <input id="slider_brush" data-slider-id='ex2Slider' type="text" data-slider-min="0"
-                               data-slider-max="1" data-slider-step="0.01" data-slider-value="0"/>
+                        <label for="slider_brush"></label><input id="slider_brush" data-slider-id='ex2Slider'
+                                                                 type="text" data-slider-min="0"
+                                                                 data-slider-max="1" data-slider-step="0.01"
+                                                                 data-slider-value="0"/>
                         <br/>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+        <div id="autonomous_panel" class="panel panel-default">
+            <div class="panel-heading"><b>Autonomous control</b></div>
+            <div class="panel-body">
                 <div class="text-center">
                     <div class="btn-group group-margin-top">
                         <button id="spot" class="dir btn-size btn-text-medium">Spot</button>
                         <button id="clean" class="dir btn-size btn-text-medium">Clean</button>
-                        <button id="dock" class="dir btn-size btn-text-medium" onmousedown="danger()"
-                                onmouseup="nodanger()">Dock
-                        </button>
+                        <button id="dock" class="dir btn-size btn-text-medium">Dock</button>
                     </div>
                 </div>
             </div>
@@ -126,19 +169,14 @@
                 <h4>battery</h4>
                 <div class="progress">
                     <div class="progress-bar progress-bar-striped active" id="progress-bar" role="progressbar"
-                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0;">
                         <span id="progress_number"></span>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
-        <div id="battery-bar" class="alert alert-success">
-            <strong>Success!</strong> You should
-            <button id="test" class="test" onmousedown="danger()" onmouseup="nodanger()">Dock</button>
-            .
+        <div id="message" class="alert alert-warning">
+            Press <strong>Connect</strong> to connect to the Roomba
         </div>
     </div>
 </div>
@@ -147,9 +185,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="lib/js/bootstrap-slider.min.js"></script>
-<!--<script src="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/scripts/main.js"></script>-->
-<script src="scripts/main.js"></script>
+<script src="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/lib/js/bootstrap-slider.min.js"></script>
+<script src="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/scripts/main.js"></script>
+<script src="https://rawgit.com/VvWijhe/Cleanify/master/RoombaController/web/scripts/manual.js"></script>
 
 </body>
 </html>

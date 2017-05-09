@@ -82,11 +82,14 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
     io::byteVector buffer;
     Sensors tmpSensor;
 
+    serial_.writeVector(sensorBuffer.createvector({Dirt_detect, Bumps_wheeldrops, Battery_charge }));
+
     thread t([this, &buffer, &cv]() -> int {
         if(this->serial_.readAll(buffer)) {
             return -1;
         }
 
+        sensorBuffer.parsedata(buffer);
         cv.notify_all();
         return 0;
     });

@@ -18,10 +18,28 @@ namespace responses {
     using responseHandler = std::function<void(const pSession session)>;
 
     /**
-     * @brief Response to http get /. It sends an html page.
+    * @brief Response to http get /. It sends an html page.
+    * @param session contains http request information.
+    */
+    void index(pSession session);
+
+    /**
+     * @brief Response to http get /Manual. It sends an html page.
      * @param session contains http request information.
      */
-    void index(pSession session);
+    void manual(pSession session);
+
+    /**
+    * @brief Response to http get /autonomous. It sends an html page.
+    * @param session contains http request information.
+    */
+    void autonomous(pSession session);
+
+    /**
+    * @brief Response to http get /autonomous. It sends an html page.
+    * @param session contains http request information.
+    */
+    void about(pSession session);
 
     /**
      * @brief Handles client post request. The client starts a roomba session and can send instructions in json format.
