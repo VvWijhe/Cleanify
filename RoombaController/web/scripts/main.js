@@ -7,15 +7,6 @@ $('#slider_motor').slider({
     var: progress_bar = $("#progress-bar"),
     tooltip_position: 'bottom',
     formatter: function (value) {
-        progress_bar.css("width", (value * 100) + '%');
-        progress_bar.attr('class', 'progress-bar progress-bar-striped active');
-        if (value <= 0.25) {
-            progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-warning');
-            if (value <= 0.1) {
-                progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
-            }
-        }
-
         document.getElementById("progress_number").textContent = (Number((value * 100).toFixed(2)) + '%');
         return `Motors are on : ${Number((value * 100).toFixed(2))}%`;
 
@@ -28,35 +19,37 @@ $('#slider_brush').slider({
     }
 });
 
-function isJson(str) {
-    try {
-        JSON.parse(str);
-    } catch (e) {
-        return false;
-    }
-    return true;
-}
-
 $(document).ready(function () {
     $(".dir").click(function () {
         let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}"
 
         $.post("/control",
-         form,
-         function (data) {
-         console.log(data);
-         let obj = JSON.parse(data);
+            form,
+            function (data) {
+                console.log(data);
+                let obj_control = JSON.parse(data);
+                if (obj_control.message === "busy") {
+                    $("#occupied").show();
+                } else {
+                    $("#occupied").hide();
+                }
 
-         if (obj.message === "busy") {
-                 $("#occupied").show();
-             } else {
-                 $("#occupied").hide();
-             }
+            }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+            alert("ERROR: NO CONNECTION");
+        });
 
-         }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-         alert("ERROR: NO CONNECTION");
+        $.get("/status", function (data) {
+            let obj_status = JSON.parse(data);
+            progress_bar.css("width", (obj_status.battery) + '%');
+            progress_bar.attr('class', 'progress-bar progress-bar-striped active');
+            if (value <= 0.25) {
+                progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-warning');
+                if (value <= 0.1) {
+                    progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
+                }
+            }
 
-         });
+        });
 
 
         $("#manual_panel").attr('class', 'panel panel-success');
