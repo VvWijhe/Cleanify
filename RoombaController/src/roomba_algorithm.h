@@ -7,6 +7,7 @@
 
 #include "roomba_control.h"
 #include <string>
+#include <bitset>
 
 namespace algorithm {
     const int full_speed = 300;
@@ -47,7 +48,7 @@ namespace algorithm {
             S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGT
         } state_e;
 
-        Clean() : currentState_(S_START) {}
+        Clean() : currentState_(S_START), dt_(0.0) {}
 
         ~Clean() = default;
 
@@ -59,16 +60,27 @@ namespace algorithm {
     private:
         state_e currentState_;
         double dt_;
+        int spiral;
+        std::bitset<8> bitset_;
+        std::bitset<6> bitset1_;
     };
 
     class Spot : public roomba_algorithm {
     public:
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
+
+    private:
+        std::bitset<8> bitset_;
+        std::bitset<6> bitset1_;
     };
 
     class Dock : public roomba_algorithm {
     public:
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
+
+    private:
+        std::bitset<8> bitset_;
+        std::bitset<6> bitset1_;
     };
 }
 #endif //CLEANIFY_ROOMBA_ALGORITHM_H

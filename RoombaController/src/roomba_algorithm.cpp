@@ -13,37 +13,34 @@
  */
 
 #include "roomba_algorithm.h"
-#include <bitset>
 
 using namespace algorithm;
 
 void
 Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    std::bitset<8> bitset(sensorData.getvalue < unsigned char > (Light_bumper));
-    std::bitset<6> bitset1;
-    for(int i = 0; i < 6; i++){ bitset1[i] = bitset[i]; }
+    bitset_(sensorData.getvalue(Light_bumper));
+    for(int i = 0; i < 6; i++){ bitset1_[i] = bitset_[i]; }
 
     dt_ += dt; //timesteps = last timestep + new timestep (there are 30 timesteps per second)
 
     switch (currentState_) {
 
         case S_START:
-            dt_ = 0;
             currentState_ = S_SPIRAL;
             break;
 
         case S_SPIRAL:
-            if (bitset1 != 0b00000000) {                     //hit object
+            if (bitset1_ != 0) {                     //hit object
                 currentState_ = S_DRIVE_BACKWARDS;
             } else {
-                control->setRotation(full_speed, 100); //set roomba parameters
-                control->setBrushes(100); /*@TODO add functionality to the rotation*/
+                control->setRotation(full_speed, spiral += dt); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+                control->setBrushes(100);
             }
             break;
 
         case S_DRIVE_BACKWARDS:
-            control->setRotation(-full_speed, 32768); //drive in full speed straight backwards
-            control->setBrushes(100); /*@TODO add functionality to the rotation*/
+            control->setRotation(-full_speed, 32768); //drive in full speed straight backwards (300 mm/s)
+            control->setBrushes(100);
             if (dt_ >= 1) { //drove backwards for 1 sec
                 dt_ = 0;
                 currentState_ = S_ROTATE_LEFT;
@@ -57,7 +54,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         case S_FOLLOW_WALL:
-            if (bitset1 != 0b00000000) {                     //hit object
+            if (bitset1_ != 0) {                     //hit object
                 currentState_ = S_DRIVE_BACKWARDS;
             } else if (dt_ >= 5) {                              //time exceeded 5 sec
                 dt_ = 0;
@@ -75,7 +72,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         case S_DRIVE_STRAIGT:
-            if (bitset1 != 0b00000000) {                     //hit object
+            if (bitset1_ != 0) {                     //hit object
                 currentState_ = S_DRIVE_BACKWARDS;
             } else if (dt_ >= 5) {                              //time exceeded 5 sec
                 dt_ = 0;
@@ -95,8 +92,9 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
  * Drive in circles that increase by size. Cleans an area of 1m2.
  */
 void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    std::bitset<8> bitset1(sensorData.getvalue < unsigned char > (Light_bumper));
-    if (bitset1 != 0b00000000) {                     //hit object
+    bitset1_(sensorData.getvalue(Light_bumper));
+    for(int i = 0; i < 6; i++){ bitset1_[i] = bitset_[i]; }
+    if (bitset1 != 0) {                     //hit object
         control->setRotation(full_speed, 1000); //set roomba parameters
         control->setBrushes(100); /*@TODO add functionality to the rotation*/
     }
@@ -106,5 +104,6 @@ void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors s
  * Drive to Dock
  */
 void Dock::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    std::bitset<8> bitset1(sensorData.getvalue < unsigned char > (Light_bumper));
+    bitset1_(sensorData.getvalue(Light_bumper));
+    for(int i = 0; i < 6; i++){ bitset1_[i] = bitset_[i]; }
 }
