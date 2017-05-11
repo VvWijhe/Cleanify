@@ -16,6 +16,9 @@
 
 using namespace algorithm;
 
+/*
+ * Clean a whole room
+ */
 void
 Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
     bitset_(sensorData.getvalue(Light_bumper));
@@ -55,9 +58,9 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         case S_FOLLOW_WALL:
-            if (bitset1_ != 0) { //hit object
+            if (bitset1_ != 0) { //If hit object
                 currentState_ = S_DRIVE_BACKWARDS;
-            } else if (dt_ >= 30*30) { //time exceeded 30 sec
+            } else if (dt_ >= 30*30) { //If time exceeded 30 sec
                 dt_ = 0;
                 currentState_ = S_BIG_ROTATE_LEFT;
             } else {
@@ -66,7 +69,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         case S_BIG_ROTATE_LEFT:
-            control->setRotation(full_speed, 0x0001); //set roomba parameters
+            control->setRotation(full_speed, 0x0001); //Turn in place counter-clockwise
             if (dt_ >= 30*1.5) { //for 1.5 sec
                 dt_ = 0;
                 currentState_ = S_DRIVE_STRAIGT;
@@ -85,6 +88,8 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         default:
+            control->setBrushes(0);
+            control->setRotation(0, 0);
             break;
     }
 }
