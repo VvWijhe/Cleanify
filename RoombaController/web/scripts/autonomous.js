@@ -14,44 +14,6 @@ function myTimer() {
     });
 }
 
-function Connect(){
-    let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
-
-    $.get("/status", function (data) {
-        let obj_status = JSON.parse(data);
-
-        if(obj_status.status !== "availlable"){
-            $.post("/control",
-                form,
-                function (data) {
-                    console.log(data);
-                }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-                alert("ERROR: NO CONNECTION");
-            });}
-        else{
-            alert("ERROR: Already connected");
-        }
-    });
-}
-
-function Disconnect(){
-    let form = "{\"exit\" : \"true\"}";
-
-    $.post("/control",
-        form,
-        function (data) {
-            console.log(data);
-        }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-        alert("ERROR: NO CONNECTION");
-    });
-
-
-    $('#message').show();
-    $("#manual_panel").attr('class', 'panel panel-default');
-    $("#autonomous_panel").attr('class', 'panel panel-default');
-}
-
-
 function drive() {
     let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
 
