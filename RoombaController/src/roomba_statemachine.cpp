@@ -74,10 +74,11 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
     auto rmbControl = rmbContext->getControl();
     auto &logger = rmbContext->getLogger();
     boost::asio::io_service io;
+    bool exitflag = false;
 
     logger.information("PC/Web session started");
 
-    while(roomba_session == PC_WEB) {
+    while(roomba_session == PC_WEB && !exitflag) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
         unique_lock<std::mutex> param_lk(rmbPrm.mutex());
         unique_lock<std::mutex> event_lk(server_context.mutex());
@@ -128,6 +129,7 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 // pre commands
             case ServerContext::E_CLEAN:
                 rmbContext->setState(make_shared<Clean>());
+                exitflag = true;
                 break;
 
             default:
@@ -141,7 +143,7 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
         loopFrequency.wait();
     }
 
-    context->setState(make_shared<WaitForSession>());
+//    context->setState(make_shared<WaitForSession>());
 }
 
 void Clean::handle(const shared_ptr<statemachine::Context> &context) {

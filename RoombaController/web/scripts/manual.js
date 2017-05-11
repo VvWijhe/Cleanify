@@ -116,6 +116,12 @@ function myTimer() {
                 progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
             }
         }
+        if(obj_status.status === "busy"){
+            connected = false;
+            $('#message').show();
+            $("#manual_panel").attr('class', 'panel panel-default');
+            $("#autonomous_panel").attr('class', 'panel panel-default');
+        }
     });
 }
 
