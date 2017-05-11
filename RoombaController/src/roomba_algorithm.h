@@ -48,7 +48,7 @@ namespace algorithm {
             S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGT
         } state_e;
 
-        Clean() : currentState_(S_START), dt_(0.0) {}
+        Clean() : currentState_(S_START), dt_(0.0), spiral_(100) {}
 
         ~Clean() = default;
 
@@ -60,7 +60,7 @@ namespace algorithm {
     private:
         state_e currentState_;
         double dt_;
-        int spiral;
+        int spiral_;
         std::bitset<8> bitset_;
         std::bitset<6> bitset1_;
     };
@@ -72,6 +72,8 @@ namespace algorithm {
     private:
         std::bitset<8> bitset_;
         std::bitset<6> bitset1_;
+        int spiral_;
+        double dt_;
     };
 
     class Dock : public roomba_algorithm {
