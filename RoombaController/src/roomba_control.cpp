@@ -18,6 +18,7 @@ int RoombaControl::init() {
     if (serial_.connect() != 1) {
         return -1;
     }
+
     //setBaud();
     beep();
 

@@ -155,14 +155,13 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
     auto &logger = rmbContext->getLogger();
     boost::asio::io_service io;
     algorithm::Clean alg;
+    algorithm::Timer dt;
     bool exitFlag{false};
 
     logger.information("Starting cleaning");
 
     while(!exitFlag) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
-
-        // calculate dt
 
         // read sensors
         Sensors sensorData;
@@ -174,7 +173,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
             server_context.setSensorData(sensorData);
 
             // run algorithm
-            alg.calculate(rmbControl, sensorData, 30);
+            alg.calculate(rmbControl, sensorData, dt.elapsed());
         }
 
         loopFrequency.wait();

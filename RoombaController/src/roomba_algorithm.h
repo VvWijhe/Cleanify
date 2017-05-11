@@ -11,6 +11,26 @@
 namespace algorithm {
     const int full_speed = 300;
 
+    class Timer {
+    public:
+        using clock = std::chrono::high_resolution_clock;
+        using second = std::chrono::duration<double, std::ratio<1>>;
+
+        Timer() : beg_(clock::now()) {}
+
+        void reset() { beg_ = clock::now(); }
+
+        double elapsed() {
+            auto tmp = std::chrono::duration_cast<second>
+                    (clock::now() - beg_).count();
+            reset();
+            return tmp;
+        }
+
+    private:
+        std::chrono::time_point<clock> beg_;
+    };
+
     class roomba_algorithm {
     public:
         roomba_algorithm() {}
@@ -46,7 +66,7 @@ namespace algorithm {
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
     };
 
-    class Dock: public roomba_algorithm {
+    class Dock : public roomba_algorithm {
     public:
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
     };
