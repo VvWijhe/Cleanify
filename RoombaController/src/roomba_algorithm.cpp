@@ -21,7 +21,7 @@ using namespace algorithm;
  */
 void
 Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    bitset_(sensorData.getvalue(Light_bumper));
+    bitset_(sensorData.getvalue<unsigned char>(Light_bumper));
     for(int i = 0; i < 6; i++){ bitset1_[i] = bitset_[i]; }
 
     dt_ += dt; //timesteps = last timestep + new timestep (there are 30 timesteps per second)
@@ -98,7 +98,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
  * Drive in circles that increase by size. Cleans an area of 1m2.
  */
 void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    bitset1_(sensorData.getvalue(Light_bumper));
+    bitset_(sensorData.getvalue<unsigned char>(Light_bumper));
     for(int i = 0; i < 6; i++){ bitset1_[i] = bitset_[i]; }
 
     dt_ += dt;
@@ -114,6 +114,6 @@ void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors s
  * Drive to Dock
  */
 void Dock::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    bitset1_(sensorData.getvalue(Light_bumper));
+    bitset_(sensorData.getvalue<unsigned char>(Light_bumper));
     for(int i = 0; i < 6; i++){ bitset1_[i] = bitset_[i]; }
 }
