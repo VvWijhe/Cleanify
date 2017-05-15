@@ -1,0 +1,38 @@
+@startuml
+
+class State {
++ State()
++ <i>handle() : void
+}
+
+Clean -|> State
+class Clean {
++ Clean()
++ <i>handle() : void
+}
+
+Session -|> State
+class Session {
++ Session()
++ <i>handle() : void
+}
+
+class Context {
++ Context()
++ handleState(event : event_t) : int
++ runAll() : void
++ setState(nextState : const shared_ptr<State>&) : void
++ getState() const : shared_ptr<State>
+- currentState_ : shared_ptr<State>
+}
+
+RoombaContext -|> Context
+class RoombaContext {
++ RoombaContext()
++ getServer() : shared_ptr<Server>
++ getControl() : shared_ptr<RoombaControl>
+- control_ : shared_ptr<RoombaControl>
+- server_ : shared_ptr<Server>
+}
+
+@enduml
