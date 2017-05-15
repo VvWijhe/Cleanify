@@ -14739,3 +14739,15 @@
     "status": "ok"
 }
 
+09-05-2017 15:02:37 ClientDialog Information: URL: http://localhost:8000 has been input
+09-05-2017 15:02:48 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
+09-05-2017 15:02:48 MainWindow Debug: wheel_speed: 0,000000, brush_speed: 0
+09-05-2017 15:02:48 MainWindow Information: Response(startPost): {
+    "message": "",
+    "status": "ok"
+}
+
