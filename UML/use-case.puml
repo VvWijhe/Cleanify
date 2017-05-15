@@ -10,7 +10,7 @@ actor object
 actor user
 actor dockingstation
 
-rectangle Roomba-650 {
+rectangle Roomba650 {
   object -- (moving)
   cliff -- (moving)
   wall -- (moving)
@@ -18,7 +18,6 @@ rectangle Roomba-650 {
   user -- (troubleshoot)
   user -- (spot cleaning)
   user -- (cleaning)
-  user -- (max cleaning)
   user -- (clock)
   user -- (docking)
 
@@ -33,4 +32,13 @@ rectangle Roomba-650 {
 
   ' (docking) .> (battery loading) : extends
 }
+
+rectangle app {
+  user -- (clean)
+  user -- (direction-button)
+  user -- (spot)
+}
+
+app <--> Roomba650
+
 @enduml
