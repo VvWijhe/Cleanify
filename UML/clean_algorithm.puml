@@ -1,4 +1,6 @@
 @startuml
+title Clean algorithm statemachine
+
 [*] --> spiral
 
 spiral --> drive_backwards : E_HIT_OBJECT

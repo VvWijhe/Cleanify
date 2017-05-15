@@ -1,10 +1,10 @@
 @startuml
-title GUI - Server: upload settings
+title GUI - Server: control
 
-GUI -> Server: POST /
+GUI -> Server: POST /control
 Server -> RoombaController: parse request
 RoombaController -> RoombaController: set roomba parameters
-RoombaController -> Server: send status
-Server -> GUI : json
+RoombaController -> Server: set status
+Server -> GUI : json status
 
 @enduml

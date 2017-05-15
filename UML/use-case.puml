@@ -19,7 +19,6 @@ rectangle Roomba-650 {
   user -- (spot cleaning)
   user -- (cleaning)
   user -- (max cleaning)
-  user -- (scheduling)
   user -- (clock)
   user -- (docking)
 
