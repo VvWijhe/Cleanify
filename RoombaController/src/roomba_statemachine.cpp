@@ -137,7 +137,7 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 break;
         }
 
-        rmbControl->setBrushes(static_cast<unsigned char>(server_context.getBrushSpeed()));
+        //rmbControl->setBrushes(static_cast<unsigned char>(server_context.getBrushSpeed()));
 
         param_lk.unlock();
         event_lk.unlock();
