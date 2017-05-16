@@ -3,22 +3,7 @@ let progress_bar = $("#progress-bar");
 
 
 
-function Disconnect() {
-    let form = "{\"exit\" : \"true\"}";
-    connected = false;
-    $.post("/control",
-        form,
-        function (data) {
-            console.log(data);
-        }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-        alert("ERROR: NO CONNECTION");
-    });
-    progress_bar.css("width", "0%");
-    document.getElementById("progress_number").textContent = ("");
-    $('#message').show();
-    $("#manual_panel").attr('class', 'panel panel-default');
-    $("#autonomous_panel").attr('class', 'panel panel-default');
-}
+
 
 
 function drive() {

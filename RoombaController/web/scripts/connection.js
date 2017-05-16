@@ -6,9 +6,12 @@ let varManual;
 let varAuto;
 let connected = false;
 
+
+//connect button is pressed
 function Connect() {
     let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
 
+    //retrieves status from the server
     $.get("/status", function (data) {
             let obj_status = JSON.parse(data);
 
@@ -32,6 +35,25 @@ function Connect() {
                 $("#autonomous_panel").attr('class', 'panel panel-danger')
             }
         }
-    )
-    ;
+    );
+}
+//if the disconnect button is pressed
+function Disconnect() {
+    let form = "{\"exit\" : \"true\"}";
+    if(connected === true) {
+        connected = false;
+        $.post("/control",
+            form,
+            function (data) {
+                console.log(data);
+            }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+            alert("ERROR: NO CONNECTION");
+        });
+        progress_bar.css("width", "0%");
+        document.getElementById("progress_number").textContent = ("");
+        //changes the panel collors to default
+        $('#message').show();
+        $("#manual_panel").attr('class', 'panel panel-default');
+        $("#autonomous_panel").attr('class', 'panel panel-default');
+    }
 }
