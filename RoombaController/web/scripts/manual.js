@@ -33,7 +33,6 @@ function Connect() {
 function Disconnect() {
     let form = "{\"exit\" : \"true\"}";
     connected = false;
-    clearInterval(timerVar);
     $.post("/control",
         form,
         function (data) {
@@ -49,8 +48,8 @@ function Disconnect() {
 }
 
 
-function Drive(id) {
-    let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\"}";
+function drive() {
+    let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
 
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
@@ -67,25 +66,7 @@ function Drive(id) {
     });
 }
 
-function Cmd(id) {
-    let form = "{\"pre-commands\" : \"" + id + "\", \"session\" : \"webapp\"}";
-
-    $.get("/status", function (data) {
-        let obj_status = JSON.parse(data);
-
-        if (connected === true) {
-            $.post("/control",
-                form,
-                function (data) {
-                    console.log(data);
-                }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-                alert("ERROR: NO CONNECTION");
-            });
-        }
-    });
-}
-
-function Stop() {
+function stop() {
     let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
 
     $.get("/status", function (data) {
@@ -115,12 +96,6 @@ function myTimer() {
             if (obj_status.battery <= 10) {
                 progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
             }
-        }
-        if(obj_status.status === "busy"){
-            connected = false;
-            $('#message').show();
-            $("#manual_panel").attr('class', 'panel panel-default');
-            $("#autonomous_panel").attr('class', 'panel panel-default');
         }
     });
 }
