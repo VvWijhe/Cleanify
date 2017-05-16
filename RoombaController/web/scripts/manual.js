@@ -1,10 +1,21 @@
 
+
+
+function timerManual(){
+
+
+}
+
+
+
+
+
+
+
+
+/*
+
 let progress_bar = $("#progress-bar");
-
-
-
-
-
 
 function drive() {
     let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
@@ -70,4 +81,4 @@ $('#slider_brush').slider({
     formatter: function (value) {
         return 'Brushes are on : ' + Number((value * 100).toFixed(2)) + '%';
     }
-});
+});*/

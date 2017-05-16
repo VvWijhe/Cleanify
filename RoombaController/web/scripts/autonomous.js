@@ -1,3 +1,17 @@
+function timerAuto(){
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
 function myTimer() {
     $.get("/status", function (data) {
         let progress_bar = $("#progress-bar");
@@ -29,4 +43,4 @@ function drive() {
                 alert("ERROR: NO CONNECTION");
             });}
     });
-}
+}*/
