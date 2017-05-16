@@ -53,7 +53,9 @@ void RoombaControl::setRotation(int speed, int radius) {
     auto rad_hb = static_cast<unsigned char>((radius >> 8) & 0xFF);
     auto rad_lb = static_cast<unsigned char>(radius & 0xFF);
 
-    serial_.writeVector({Drive, vel_hb, vel_lb, rad_hb, rad_lb});
+    serial_.writeVector({Drive, vel_hb, vel_lb, rad_hb, rad_lb, Control});
+
+    //this_thread::sleep_for(chrono::milliseconds(100));
 }
 
 void RoombaControl::setLed(color_t color) {
@@ -99,7 +101,7 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
     });
 
     unique_lock<mutex> lk(mut);
-    if (cv.wait_for(lk, chrono::milliseconds(800)) == cv_status::timeout) {
+    if (cv.wait_for(lk, chrono::milliseconds(2000)) == cv_status::timeout) {
         t.detach();
         return -1;
     }
@@ -120,5 +122,5 @@ void RoombaControl::sendCommands(commands_t command) {
 }
 
 void RoombaControl::beep() {
-    serial_.writeVector({Start, Full, 140, 0, 1, 62, 32, 141, 0});
+    serial_.writeVector({Start, Control, Full, 140, 0, 1, 62, 32, 141, 0});
 }

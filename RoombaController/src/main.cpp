@@ -22,10 +22,10 @@ using namespace Poco;
 int main() {
     try {
         thread t([]{
-            system("rfcomm connect /dev/rfcomm0 00:06:66:60:07:81");
+            system("rfcomm connect /dev/rfcomm4 00:06:66:60:07:81");
         });
 
-        this_thread::sleep_for(chrono::seconds(5));
+        this_thread::sleep_for(chrono::seconds(6));
 
         //initialise logger
         AutoPtr<SplitterChannel> splitterChannel(new SplitterChannel());
@@ -44,7 +44,7 @@ int main() {
 
         process->runAll();
 
-//        t.join();
+        t.detach();
     } catch (exception &e) {
         cerr << e.what() << endl;
     }

@@ -79,7 +79,7 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
     logger.information("PC/Web session started");
 
     while(roomba_session == PC_WEB && !exitflag) {
-        boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
+        boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(16));
         unique_lock<std::mutex> param_lk(rmbPrm.mutex());
         unique_lock<std::mutex> event_lk(server_context.mutex());
 
