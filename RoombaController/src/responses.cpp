@@ -37,7 +37,7 @@ void responses::manual(pSession session) {
 
     logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1");
 
-    FileHandler page("../web/Manual_mode.html");
+    FileHandler page("../web/control.html");
     session->fetch(static_cast<const size_t >(content_length),
                    [&page](const shared_ptr<Session> s, const Bytes &body) {
                        s->close(OK,
