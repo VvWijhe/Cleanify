@@ -30,14 +30,14 @@ void responses::index(pSession session) {
                    });
 }
 
-void responses::manual(pSession session) {
+void responses::roomba(pSession session) {
     const auto request = session->get_request();
     int content_length = request->get_header("Content-Length", 0);
     auto &logger = Poco::Logger::get("logger");
 
     logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1");
 
-    FileHandler page("../web/control.html");
+    FileHandler page("../web/roomba.html");
     session->fetch(static_cast<const size_t >(content_length),
                    [&page](const shared_ptr<Session> s, const Bytes &body) {
                        s->close(OK,
@@ -46,21 +46,6 @@ void responses::manual(pSession session) {
                    });
 }
 
-void responses::autonomous(pSession session) {
-    const auto request = session->get_request();
-    int content_length = request->get_header("Content-Length", 0);
-    auto &logger = Poco::Logger::get("logger");
-
-    logger.debug(request->get_method() + " " + request->get_path() + " HTTP/1.1");
-
-    FileHandler page("../web/Autonomous_mode.html");
-    session->fetch(static_cast<const size_t >(content_length),
-                   [&page](const shared_ptr<Session> s, const Bytes &body) {
-                       s->close(OK,
-                                page.getcontent(),
-                                {{"Content-Length", std::to_string(page.getcontent().size())}});
-                   });
-}
 
 void responses::about(pSession session) {
     const auto request = session->get_request();

@@ -27,13 +27,7 @@ namespace responses {
      * @brief Response to http get /Manual. It sends an html page.
      * @param session contains http request information.
      */
-    void manual(pSession session);
-
-    /**
-    * @brief Response to http get /autonomous. It sends an html page.
-    * @param session contains http request information.
-    */
-    void autonomous(pSession session);
+    void roomba(pSession session);
 
     /**
     * @brief Response to http get /autonomous. It sends an html page.
