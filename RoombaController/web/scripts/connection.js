@@ -12,7 +12,7 @@ function Connect() {
         let obj_status = JSON.parse(data);
 
         if (obj_status.status === "available") {
-            timerVar = setInterval(myTimer, 500);
+            //timerVar = setInterval(myTimer, 500);
             connected = true;
             $("#manual_panel").attr('class', 'panel panel-success');
             $("#autonomous_panel").attr('class', 'panel panel-success');
