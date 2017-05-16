@@ -28,7 +28,7 @@ namespace statemachine {
 
     /**
      * @brief Class that can contain data to be shared between states. It contains functions that executes the states.
-     */
+     **/
     class Context : public std::enable_shared_from_this<Context> {
     public:
         Context() : event_(0), currentState_(nullptr) {}

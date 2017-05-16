@@ -92,38 +92,47 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 // direction events
             case ServerContext::E_RIGHT:
                 rmbControl->setRotation(static_cast<int>(300 * server_context.getWheelSpeed()), 0xFFFF);
+                logger.information("r");
                 break;
 
             case ServerContext::E_LEFT:
                 rmbControl->setRotation(static_cast<int>(300 * server_context.getWheelSpeed()), 0x0001);
+                logger.information("l");
                 break;
 
             case ServerContext::E_BACKWARD:
                 rmbControl->setRotation(static_cast<int>(-500 * server_context.getWheelSpeed()), 0x8000);
+                logger.information("-");
                 break;
 
             case ServerContext::E_FORWARD:
                 rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), 0x8000);
+                logger.information("-");
                 break;
 
             case ServerContext::E_FORWARD_LEFT:
                 rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), 1000);
+                logger.information("-");
                 break;
 
             case ServerContext::E_FORWARD_RIGHT:
                 rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), -1000);
+                logger.information("-");
                 break;
 
             case ServerContext::E_BACKWARD_LEFT:
                 rmbControl->setRotation(static_cast<int>(-250 * server_context.getWheelSpeed()), 500);
+                logger.information("-");
                 break;
 
             case ServerContext::E_BACKWARD_RIGHT:
                 rmbControl->setRotation(static_cast<int>(-250 * server_context.getWheelSpeed()), -500);
+                logger.information("-");
                 break;
 
             case ServerContext::E_STOP:
                 rmbControl->setRotation(0, 0x8000);
+                logger.information("-");
                 break;
 
                 // pre commands
