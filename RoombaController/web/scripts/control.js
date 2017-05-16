@@ -2,8 +2,7 @@
  * Created by victor on 11.05.17.
  */
 
-let varManual;
-let varAuto;
+let timerVar;
 let connected = false;
 
 
@@ -17,8 +16,7 @@ function Connect() {
 
             //if the site is available
             if (obj_status.status === "available") {
-                varManual = setInterval(timerManual, 500);
-                varAuto = setInterval(timerAuto, 500);
+                timerVar = setInterval(timerControl, 500);
                 connected = true;
                 $.post("/control",
                     form,
@@ -56,4 +54,14 @@ function Disconnect() {
         $("#manual_panel").attr('class', 'panel panel-default');
         $("#autonomous_panel").attr('class', 'panel panel-default');
     }
+}
+
+
+
+
+
+function timerControl(){
+
+
+
 }
