@@ -62,7 +62,7 @@ function Disconnect() {
 }
 
 function Drive(id) {
-    let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\", \"wheel_speed\" : \"" + wheels + ", \"brush_speed\" : \"" + brushes + "}";
+    let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\", \"wheel_speed\" : \""+ wheels +"\", \"brush_speed\" : \"" + brushes + "\"}";
 
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
