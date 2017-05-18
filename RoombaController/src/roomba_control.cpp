@@ -84,8 +84,6 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
     io::byteVector buffer;
     Sensors tmpSensor;
 
-    serial_.writeVector(sensorBuffer.createvector({Dirt_detect, Bumps_wheeldrops, Battery_charge}));
-
     thread t([this, &buffer, &cv, &sensorBuffer]() -> int {
         if (this->serial_.readAll(buffer)) {
             return -1;
@@ -99,6 +97,8 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
         cv.notify_all();
         return 0;
     });
+
+    serial_.writeVector(sensorBuffer.createvector({Dirt_detect, Bumps_wheeldrops, Battery_charge}));
 
     unique_lock<mutex> lk(mut);
     if (cv.wait_for(lk, chrono::milliseconds(2000)) == cv_status::timeout) {
