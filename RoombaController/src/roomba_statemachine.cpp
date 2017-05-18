@@ -112,12 +112,12 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
                 break;
 
             case ServerContext::E_FORWARD_LEFT:
-                rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), 1000);
+                rmbControl->setRotation(static_cast<int>(250 * server_context.getWheelSpeed()), 500);
                 rmbControl->setBrushes(static_cast<unsigned char>(server_context.getBrushSpeed()));
                 break;
 
             case ServerContext::E_FORWARD_RIGHT:
-                rmbControl->setRotation(static_cast<int>(500 * server_context.getWheelSpeed()), -1000);
+                rmbControl->setRotation(static_cast<int>(250 * server_context.getWheelSpeed()), -500);
                 rmbControl->setBrushes(static_cast<unsigned char>(server_context.getBrushSpeed()));
                 break;
 
@@ -175,18 +175,18 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
 
         // read sensors
         Sensors sensorData;
-        if(rmbControl->readSensors(sensorData)) {
-            logger.error("Reading sensordata timeout");
-            exitFlag = true;
-        } else {
-            // set sensor data for the server
-            unique_lock<std::mutex> serverLock(server_context.mutex());
-            server_context.setSensorData(sensorData);
-            serverLock.unlock();
-
-            // run algorithm
+//        if(rmbControl->readSensors(sensorData)) {
+//            logger.error("Reading sensordata timeout");
+//            exitFlag = true;
+//        } else {
+//            // set sensor data for the server
+//            unique_lock<std::mutex> serverLock(server_context.mutex());
+//            server_context.setSensorData(sensorData);
+//            serverLock.unlock();
+//
+//            // run algorithm
             alg.calculate(rmbControl, sensorData, dt.elapsed());
-        }
+//        }
 
         loopFrequency.wait();
     }

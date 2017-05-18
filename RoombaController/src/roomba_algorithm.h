@@ -61,8 +61,6 @@ namespace algorithm {
         state_e currentState_;
         double dt_;
         int spiral_;
-        std::bitset<8> bitset_;
-        std::bitset<6> bitset1_;
     };
 
     class Spot : public roomba_algorithm {
@@ -70,8 +68,6 @@ namespace algorithm {
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
 
     private:
-        std::bitset<8> bitset_;
-        std::bitset<6> bitset1_;
         int spiral_;
         double dt_;
     };
@@ -81,8 +77,6 @@ namespace algorithm {
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
 
     private:
-        std::bitset<8> bitset_;
-        std::bitset<6> bitset1_;
     };
 }
 #endif //CLEANIFY_ROOMBA_ALGORITHM_H
