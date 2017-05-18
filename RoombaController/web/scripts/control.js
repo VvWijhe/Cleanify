@@ -5,6 +5,8 @@
 let timerVar;
 let connected = false;
 let progress_bar = $("#progress-bar");
+let wheels;
+let brushes;
 
 
 //connect button is pressed
@@ -60,7 +62,7 @@ function Disconnect() {
 }
 
 function Drive(id) {
-    let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\"}";
+    let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\", \"wheel_speed\" : \"" + wheels + ", \"brush_speed\" : \"" + brushes + "}";
 
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
@@ -114,6 +116,7 @@ function timerControl(){
 $('#slider_motor').slider({
     tooltip_position: 'bottom',
     formatter: function (value) {
+        wheels = value;
         return `Motors are on : ${Number((value * 100).toFixed(2))}%`;
 
     }
@@ -121,6 +124,7 @@ $('#slider_motor').slider({
 $('#slider_brush').slider({
     tooltip_position: 'bottom',
     formatter: function (value) {
+        brushes = (value * 127);
         return 'Brushes are on : ' + Number((value * 100).toFixed(2)) + '%';
     }
 });
