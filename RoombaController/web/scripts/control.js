@@ -59,8 +59,8 @@ function Disconnect() {
     }
 }
 
-function drive() {
-    let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
+function Drive(id) {
+    let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\"}";
 
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
@@ -77,7 +77,7 @@ function drive() {
     });
 }
 
-function stop() {
+function Stop() {
     let form = "{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}";
 
     $.get("/status", function (data) {
