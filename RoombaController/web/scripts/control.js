@@ -60,7 +60,7 @@ function Disconnect() {
 }
 
 function drive() {
-    let form = "{\"direction\" : \"" + "drive" + "\", \"session\" : \"webapp\"}";
+    let form = "{\"direction\" : \"" + this.id + "\", \"session\" : \"webapp\"}";
 
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
