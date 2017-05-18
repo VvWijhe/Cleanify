@@ -48,7 +48,7 @@ namespace algorithm {
             S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGT
         } state_e;
 
-        Clean() : currentState_(S_START), dt_(0.0), spiral_(100) {}
+        Clean() : currentState_(S_START), elapsedTime_(0.0), spiral_(100.0), driveStraightTime_(0.0) {}
 
         ~Clean() = default;
 
@@ -59,8 +59,9 @@ namespace algorithm {
 
     private:
         state_e currentState_;
-        double dt_;
-        int spiral_;
+        double elapsedTime_;
+        double spiral_;
+        double driveStraightTime_;
     };
 
     class Spot : public roomba_algorithm {

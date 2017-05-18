@@ -25,8 +25,8 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
     std::bitset<6> bitset1;
     for(int i = 0; i < 6; i++){ bitset1[i] = bitset[i]; }
 
-    dt_ += dt; //timesteps = last timestep + new timestep (there are 30 timesteps per second)
-
+    elapsedTime_ += dt; //timesteps = last timestep + new timestep (there are 30 timesteps per second)
+    std::cout << spiral_ << std::endl;
     switch (currentState_) {
 
         case S_START:
@@ -35,34 +35,39 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         case S_SPIRAL:
-            if (bitset != 0) {                     //hit object
-                currentState_ = S_DRIVE_BACKWARDS;
-            } else {
-                control->setRotation(full_speed, spiral_ += dt); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+            spiral_ += 0.4;
+            if(spiral_ > 500.0){
+                spiral_ = 100.0;
+                currentState_ = S_DRIVE_STRAIGT;
             }
+            //if (bitset1 != 0) {                     //hit object
+            //    currentState_ = S_DRIVE_BACKWARDS;
+            //} else {
+                control->setRotation(full_speed, static_cast<int>(spiral_)); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+            //}
             break;
 
         case S_DRIVE_BACKWARDS:
             control->setRotation(-full_speed, 32768); //drive in full speed straight backwards (300 mm/s)
-            if (dt_ >= 30*1) { //for 1 sec
-                dt_ = 0;
+            if (elapsedTime_ >= 1) { //for 1 sec
+                elapsedTime_ = 0;
                 currentState_ = S_ROTATE_LEFT;
             }
             break;
 
         case S_ROTATE_LEFT:
             control->setRotation(full_speed, 0x0001); //Turn in place counter-clockwise
-            if (dt_ >= 30*1) { //for 1 sec
-                dt_ = 0;
+            if (elapsedTime_ >= 1) { //for 1 sec
+                elapsedTime_ = 0;
                 currentState_ = S_FOLLOW_WALL;
             }
             break;
 
         case S_FOLLOW_WALL:
-            if (bitset != 0) { //If hit object
+            if (bitset1 != 0) { //If hit object
                 currentState_ = S_DRIVE_BACKWARDS;
-            } else if (dt_ >= 30*30) { //If time exceeded 30 sec
-                dt_ = 0;
+            } else if (elapsedTime_ >= 30*30) { //If time exceeded 30 sec
+                elapsedTime_ = 0;
                 currentState_ = S_BIG_ROTATE_LEFT;
             } else {
                 control->setRotation(full_speed, 100); //Drive at full speed in a circle with a radius of 100 mm
@@ -71,17 +76,18 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
 
         case S_BIG_ROTATE_LEFT:
             control->setRotation(full_speed, 0x0001); //Turn in place counter-clockwise
-            if (dt_ >= 30*1.5) { //for 1.5 sec
-                dt_ = 0;
+            if (elapsedTime_ >= 30*1.5) { //for 1.5 sec
+                elapsedTime_ = 0;
                 currentState_ = S_DRIVE_STRAIGT;
             }
             break;
 
         case S_DRIVE_STRAIGT:
-            if (bitset != 0) { //hit object
+            driveStraightTime_ += dt;
+            if (bitset1 != 0) { //hit object
                 currentState_ = S_DRIVE_BACKWARDS;
-            } else if (dt_ >= 30*5) { //time exceeded 10 sec
-                dt_ = 0;
+            } else if (driveStraightTime_ >= 3) { //time exceeded 10 sec
+                driveStraightTime_ = 0.0;
                 currentState_ = S_SPIRAL;
             } else {
                 control->setRotation(full_speed, 0x8000); //Drive straight at full speed
@@ -109,7 +115,7 @@ void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors s
     if (bitset != 0 || spiral_ >= 500) { //If hit object or spiral radius > 500 mm
         control->setRotation(0, 0);
     } else {
-        control->setRotation(full_speed, spiral_ += dt); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+        control->setRotation(full_speed, spiral_ -= dt); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
     }
 }
 
