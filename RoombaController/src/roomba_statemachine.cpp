@@ -175,18 +175,18 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
 
         // read sensors
         Sensors sensorData;
-        if(rmbControl->readSensors(sensorData)) {
-            logger.error("Reading sensordata timeout");
-            exitFlag = true;
-        } else {
-            // set sensor data for the server
-            unique_lock<std::mutex> serverLock(server_context.mutex());
-            server_context.setSensorData(sensorData);
-            serverLock.unlock();
-
-            // run algorithm
+//        if(rmbControl->readSensors(sensorData)) {
+//            logger.error("Reading sensordata timeout");
+//            exitFlag = true;
+//        } else {
+//            // set sensor data for the server
+//            unique_lock<std::mutex> serverLock(server_context.mutex());
+//            server_context.setSensorData(sensorData);
+//            serverLock.unlock();
+//
+//            // run algorithm
             alg.calculate(rmbControl, sensorData, dt.elapsed());
-        }
+//        }
 
         loopFrequency.wait();
     }
