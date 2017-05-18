@@ -117,19 +117,19 @@ void MainWindow::on_pushButton_Right_pressed() {
    sLog_.trace("Pressed right");
 }
 void MainWindow::on_pushButton_Forward_Left_pressed() {
-   driveFunctionCommand("forward_left");
+   driveFunctionCommand("forward-left");
    sLog_.trace("Pressed forward-left");
 }
 void MainWindow::on_pushButton_Forward_Right_pressed() {
-   driveFunctionCommand("forward_right");
+   driveFunctionCommand("forward-right");
    sLog_.trace("Pressed rorward-right");
 }
 void MainWindow::on_pushButton_Backward_Left_pressed() {
-   driveFunctionCommand("backward_left");
+   driveFunctionCommand("backward-left");
    sLog_.trace("Pressed backward-left");
 }
 void MainWindow::on_pushButton_Backward_Right_pressed() {
-   driveFunctionCommand("backward_right");
+   driveFunctionCommand("backward-right");
    sLog_.trace("Pressed backward-right");
 }
 
