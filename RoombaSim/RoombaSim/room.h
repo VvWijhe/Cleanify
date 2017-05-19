@@ -6,6 +6,7 @@
 #include <vector>
 #include <memory>
 
+#include "serial.h"
 #include "roomba.h"
 #include "helper.h"
 

@@ -10,12 +10,12 @@ namespace Ui {
 class RoombaSim;
 }
 
-class RoombaSim : public QMainWindow {
+class MainWindow : public QMainWindow {
    Q_OBJECT
 
 public:
-   explicit RoombaSim(QWidget *parent = 0);
-   ~RoombaSim();
+   explicit MainWindow(QWidget *parent = 0);
+   ~MainWindow();
 
 private slots:
    void on_startButton_clicked();

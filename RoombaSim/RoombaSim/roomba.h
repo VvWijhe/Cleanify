@@ -6,6 +6,7 @@
 #include <memory>
 
 #include "helper.h"
+#include "serial.h"
 
 using namespace std;
 
@@ -19,6 +20,13 @@ public:
 
    ~Roomba() {}
 
+   void setSpeed(short speed) {
+       if(speed > 500) speed = 500;
+       _speed = SCALE(speed) / 1000;
+   }
+
+   double getSpeed() const { return _speed; }
+
    void setAngle(double angle);
 
    double getAngle() const { return _angle; }
@@ -27,11 +35,15 @@ public:
 
    void setDistance(long distance) { _distance = distance; }
 
-   status_t move(vector<std::shared_ptr<QGraphicsLineItem>> walls);
+   status_t updatePos(vector<std::shared_ptr<QGraphicsLineItem>> walls);
+
+   void readSerial();
 
 private:
    double _angle{};
    long _distance{};
+   double _speed{};
+   Serial _serial;
 };
 
 #endif // ROOMBA_H

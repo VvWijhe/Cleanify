@@ -4,6 +4,7 @@
 #include <QStyleOption>
 #include <QRectF>
 #include <cmath>
+#include <QDebug>
 #include <iostream>
 
 Roomba::Roomba() {
@@ -23,6 +24,8 @@ Roomba::Roomba(int posx, int posy, int width, int height) {
    setPen(QPen(Qt::green));
 
    setRect(posx, posy, width, height);
+
+   if(_serial.openPort() < 0) qDebug() << "Error opening port";
 }
 
 void Roomba::setAngle(double angle) {
@@ -35,7 +38,7 @@ void Roomba::setAngle(double angle) {
    _angle = angle;
 }
 
-status_t Roomba::move(vector<shared_ptr<QGraphicsLineItem>> walls) {
+status_t Roomba::updatePos(vector<shared_ptr<QGraphicsLineItem>> walls) {
    // set center point
    QRectF br = boundingRect();
    setTransformOriginPoint(br.center());
@@ -81,8 +84,34 @@ status_t Roomba::move(vector<shared_ptr<QGraphicsLineItem>> walls) {
    setPen(QPen(Qt::green));
 
    // move roomba
-   setPos(pos().x() + cos(_angle) * velocity * DELTA_t_sec, pos().y() + sin(_angle) * velocity * DELTA_t_sec);
+   setPos(pos().x() + cos(_angle) * velocity * DELTA_t_sec * _speed, pos().y() + sin(_angle) * velocity * DELTA_t_sec * _speed);
    _distance++;
 
    return MOVING;
+}
+
+void Roomba::readSerial() {
+    auto sequence = _serial.getBuffer();
+
+    if(sequence.size() == 0) {
+        return;
+    }
+
+    switch(static_cast<unsigned char>(sequence.at(0))) {
+    case 128:
+        break;
+
+    case 137:
+    {
+        short speed = (unsigned char)sequence.at(1);
+        speed <<= 8;
+        speed |= (unsigned char)sequence.at(2);
+
+        setSpeed(speed);
+        break;
+    }
+
+    default:
+        break;
+    }
 }

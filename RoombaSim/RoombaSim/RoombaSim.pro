@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui serialport
 
 CONFIG += c++11
 
@@ -17,14 +17,16 @@ TEMPLATE = app
 SOURCES += main.cpp \
     room.cpp \
     roomba.cpp \
-    roombasim.cpp
+    serial.cpp \
+    mainwindow.cpp
 
 HEADERS  += \
     room.h \
     roomba.h \
-    roombasim.h \
     helper.h \
-    version.h
+    version.h \
+    serial.h \
+    mainwindow.h
 
 FORMS    += \
     roombasim.ui

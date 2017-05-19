@@ -1,4 +1,4 @@
-#include "roombasim.h"
+#include "mainwindow.h"
 #include "ui_roombasim.h"
 #include "version.h"
 
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-RoombaSim::RoombaSim(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent) :
    QMainWindow(parent),
    ui(make_shared<Ui::RoombaSim>()) {
    ui->setupUi(this);
@@ -53,26 +53,26 @@ RoombaSim::RoombaSim(QWidget *parent) :
    ui->statusbar->showMessage("Scale 1:100 cm");
 }
 
-RoombaSim::~RoombaSim() {
+MainWindow::~MainWindow() {
 }
 
-void RoombaSim::on_startButton_clicked() {
+void MainWindow::on_startButton_clicked() {
     _updater->start();
 }
 
-void RoombaSim::on_pushButton_clicked() {
+void MainWindow::on_pushButton_clicked() {
     _updater->stop();
 }
 
-void RoombaSim::on_speedSlider_valueChanged(int value) {
+void MainWindow::on_speedSlider_valueChanged(int value) {
     _updater->setInterval(1000 / value);
 }
 
-void RoombaSim::on_exitButton_clicked() {
+void MainWindow::on_exitButton_clicked() {
     exit(EXIT_SUCCESS);
 }
 
-void RoombaSim::roomUpdated() {
+void MainWindow::roomUpdated() {
    auto roomba = _room->getRoomba();
    auto posx{roomba->rect().x() + roomba->pos().x() + (roomba->rect().height() / 2)};
    auto posy{roomba->rect().y() + roomba->pos().y() + (roomba->rect().width() / 2)};
