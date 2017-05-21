@@ -6,16 +6,16 @@ using namespace std;
 
 Room::Room() {
     // Add roomba to the room
-    _roomba = make_shared<Roomba>(165, 265, SCALE(0.4), SCALE(0.4));
+    _roomba = make_shared<Roomba>(165, 265, SCALE(0.347), SCALE(0.347));
     addItem(_roomba.get());
 
     // Create vector of walls
     _walls.push_back(make_shared<Line>(SCALE(2), SCALE(5), SCALE(12), SCALE(5)));
-    _walls.push_back(make_shared<Line>(SCALE(2), SCALE(5), SCALE(2), SCALE(15)));
-    _walls.push_back(make_shared<Line>(SCALE(2), SCALE(15), SCALE(18), SCALE(15)));
-    _walls.push_back(make_shared<Line>(SCALE(18), SCALE(15), SCALE(18), SCALE(11)));
-    _walls.push_back(make_shared<Line>(SCALE(18), SCALE(11), SCALE(12), SCALE(11)));
-    _walls.push_back(make_shared<Line>(SCALE(12), SCALE(11), SCALE(12), SCALE(5)));
+    _walls.push_back(make_shared<Line>(SCALE(2), SCALE(5), SCALE(2), SCALE(10)));
+    _walls.push_back(make_shared<Line>(SCALE(2), SCALE(10), SCALE(12), SCALE(10)));
+    _walls.push_back(make_shared<Line>(SCALE(12), SCALE(5), SCALE(12), SCALE(10)));
+//    _walls.push_back(make_shared<Line>(SCALE(18), SCALE(11), SCALE(12), SCALE(11)));
+//    _walls.push_back(make_shared<Line>(SCALE(12), SCALE(11), SCALE(12), SCALE(5)));
 
     // Add all walls to the room
     for(auto wall : _walls) {

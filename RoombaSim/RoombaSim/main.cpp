@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
    QApplication a(argc, argv);
 
-   MainWindow sim;
+   RoombaSim sim;
    sim.show();
 
    return a.exec();

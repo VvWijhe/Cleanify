@@ -23,6 +23,8 @@ public:
 
    Roomba* getRoomba() const { return _roomba.get(); }
 
+   vector<std::shared_ptr<Line>>* getRoute() { return &_route; }
+
 public slots:
    void update();
 

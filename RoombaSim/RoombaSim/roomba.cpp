@@ -28,13 +28,7 @@ Roomba::Roomba(int posx, int posy, int width, int height) {
    if(_serial.openPort() < 0) qDebug() << "Error opening port";
 }
 
-void Roomba::setAngle(double angle) {
-   while(angle > PI_2) {
-      angle -= PI_2;
-   }
-   while(angle < -PI_2) {
-      angle += PI_2;
-   }
+void Roomba::setAngle(short angle) {
    _angle = angle;
 }
 
@@ -43,26 +37,28 @@ status_t Roomba::updatePos(vector<shared_ptr<QGraphicsLineItem>> walls) {
    QRectF br = boundingRect();
    setTransformOriginPoint(br.center());
 
-   // begin rotation
-   if(rotation() > 360) {
-      setRotation(0);
-   }
-   if(rotation() < 0) {
-      setRotation(360);
-   }
+//   // begin rotation
+//   if(rotation() > 360) {
+//      setRotation(0);
+//   }
+//   if(rotation() < 0) {
+//      setRotation(360);
+//   }
 
-   // rotate to the shortest angle algorithm
-   double setPoint {((_angle * 180.0) / PI)};
-   double diff {setPoint - rotation()};
-   diff = fabs((static_cast<int>(diff) + 180) % 360 - 180);
+//   // rotate to the shortest angle algorithm
+//   double setPoint {((_angle * 180.0) / PI)};
+//   double diff {setPoint - rotation()};
+//   diff = fabs((static_cast<int>(diff) + 180) % 360 - 180);
 
-   if(diff < 0 && !compare(setPoint, rotation(), 1.0)) {
-      setRotation(rotation() - angular_velocity * DELTA_t_sec);
-      return ROTATING_LEFT;
-   } else if(diff > 0 && !compare(setPoint, rotation(), 1.0)) {
-      setRotation(rotation() + angular_velocity * DELTA_t_sec);
-      return ROTATING_RIGHT;
-   } // end rotation
+//   if(diff < 0 && !compare(setPoint, rotation(), 1.0)) {
+//      setRotation(rotation() - angular_velocity * DELTA_t_sec);
+//      return ROTATING_LEFT;
+//   } else if(diff > 0 && !compare(setPoint, rotation(), 1.0)) {
+//      setRotation(rotation() + angular_velocity * DELTA_t_sec);
+//      return ROTATING_RIGHT;
+//   } // end rotation
+
+   setRotation(rotation() + _angle);
 
    // if the roomba is colliding, the move function returns and the roomba will not move
    for(auto wall : walls) {
@@ -72,7 +68,7 @@ status_t Roomba::updatePos(vector<shared_ptr<QGraphicsLineItem>> walls) {
       // if a collision occurs, move maxSteps backwards
       while(collidesWithItem(wall.get()) && maxSteps++ < 2) {
          setPen(QPen(Qt::red));
-         setPos(pos().x() - cos(_angle), pos().y() - sin(_angle));
+         setPos(pos().x() - cos((rotation() * PI) / 180.0), pos().y() - sin(((rotation() * PI) / 180.0)));
          isColliding = true;
       }
 
@@ -84,7 +80,8 @@ status_t Roomba::updatePos(vector<shared_ptr<QGraphicsLineItem>> walls) {
    setPen(QPen(Qt::green));
 
    // move roomba
-   setPos(pos().x() + cos(_angle) * velocity * DELTA_t_sec * _speed, pos().y() + sin(_angle) * velocity * DELTA_t_sec * _speed);
+   setPos(pos().x() + cos((rotation() * PI) / 180.0) * DELTA_t_sec * _speed,
+          pos().y() + sin((rotation() * PI) / 180.0) * DELTA_t_sec * _speed);
    _distance++;
 
    return MOVING;
@@ -103,11 +100,23 @@ void Roomba::readSerial() {
 
     case 137:
     {
+        if(sequence.size() < 5) return;
+
         short speed = (unsigned char)sequence.at(1);
         speed <<= 8;
         speed |= (unsigned char)sequence.at(2);
-
         setSpeed(speed);
+
+        short radius = (unsigned char)sequence.at(3);
+        radius <<= 8;
+        radius |= (unsigned char)sequence.at(4);
+
+        if(radius == -1) { _angle = -7; setSpeed(0); }
+        else if(radius == 1) { _angle = 7; setSpeed(0); }
+        else if(radius == -32768) _angle = 0;
+        else if(radius > 0) _angle = (57.2957 * DELTA_t_sec * speed) / radius;
+        else if(radius < 0) _angle = (57.2957 * DELTA_t_sec * speed) / radius;
+
         break;
     }
 

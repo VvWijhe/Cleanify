@@ -22,12 +22,12 @@ public:
 
    void setSpeed(short speed) {
        if(speed > 500) speed = 500;
-       _speed = SCALE(speed) / 1000;
+       _speed = SCALE((double)speed / 1000.0);
    }
 
    double getSpeed() const { return _speed; }
 
-   void setAngle(double angle);
+   void setAngle(short angle);
 
    double getAngle() const { return _angle; }
 

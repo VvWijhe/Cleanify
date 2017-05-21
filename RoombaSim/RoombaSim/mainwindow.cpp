@@ -7,7 +7,7 @@
 
 using namespace std;
 
-MainWindow::MainWindow(QWidget *parent) :
+RoombaSim::RoombaSim(QWidget *parent) :
    QMainWindow(parent),
    ui(make_shared<Ui::RoombaSim>()) {
    ui->setupUi(this);
@@ -17,12 +17,12 @@ MainWindow::MainWindow(QWidget *parent) :
    // Create room
    _room = make_shared<Room>();
    _room->setBackgroundBrush(QBrush(Qt::black));
-   _room->setSceneRect(0, 0, 698, 698);
+   _room->setSceneRect(0, 0, 500, 500);
 
    ui->view->setScene(_room.get());
-   ui->view->scale(1, -1);
+   ui->view->scale(1.2, -1.2);
    ui->view->setRenderHint(QPainter::Antialiasing);
-   ui->view->setFixedSize(700, 700);
+   ui->view->setFixedSize(602, 602);
    ui->view->show();
 
    // draw grid
@@ -46,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent) :
    _updater = make_shared<QTimer>();
    QObject::connect(_updater.get(), SIGNAL(timeout()), _room.get(), SLOT(update()));
    _updater->setInterval(ui->speedSlider->value());
+   _updater->start();
 
    QObject::connect(_room.get(), SIGNAL(updated()), this, SLOT(roomUpdated()));
 
@@ -53,26 +54,35 @@ MainWindow::MainWindow(QWidget *parent) :
    ui->statusbar->showMessage("Scale 1:100 cm");
 }
 
-MainWindow::~MainWindow() {
+RoombaSim::~RoombaSim() {
 }
 
-void MainWindow::on_startButton_clicked() {
+void RoombaSim::on_startButton_clicked() {
     _updater->start();
 }
 
-void MainWindow::on_pushButton_clicked() {
+void RoombaSim::on_pushButton_clicked() {
     _updater->stop();
 }
 
-void MainWindow::on_speedSlider_valueChanged(int value) {
+void RoombaSim::on_speedSlider_valueChanged(int value) {
     _updater->setInterval(1000 / value);
 }
 
-void MainWindow::on_exitButton_clicked() {
+void RoombaSim::on_exitButton_clicked() {
     exit(EXIT_SUCCESS);
 }
 
-void MainWindow::roomUpdated() {
+void RoombaSim::on_resetButton_clicked() {
+    auto roomba = _room->getRoomba();
+    roomba->setPos(0, 0);
+    roomba->setRotation(0);
+
+    auto route = _room->getRoute();
+    route->clear();
+}
+
+void RoombaSim::roomUpdated() {
    auto roomba = _room->getRoomba();
    auto posx{roomba->rect().x() + roomba->pos().x() + (roomba->rect().height() / 2)};
    auto posy{roomba->rect().y() + roomba->pos().y() + (roomba->rect().width() / 2)};
