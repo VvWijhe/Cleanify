@@ -70,12 +70,17 @@ namespace algorithm {
             S_START, S_SPIRAL_BIGGER, S_SPIRAL_SMALLER, S_STOP
         } state_e;
 
+        Spot(): currentState_(S_START), spiral_(100.0), elapsedTime_(0.0), direction_(false) {}
+
+        ~Spot() = default;
+
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
 
     private:
         state_e currentState_;
-        int spiral_;
+        double spiral_;
         double elapsedTime_;
+        bool direction_;
     };
 
     class Dock : public roomba_algorithm {

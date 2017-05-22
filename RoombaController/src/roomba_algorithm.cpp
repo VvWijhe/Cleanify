@@ -114,28 +114,40 @@ void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors s
 
     switch(currentState_) {
         case S_START:
+            direction_ = !direction_;
             control->setBrushes(100);
             currentState_ = S_SPIRAL_BIGGER;
             break;
 
         case S_SPIRAL_BIGGER:
-        spiral_ += 0.4;
-        if (spiral_ > 500.0) {
-            spiral_ = 100.0;
-            currentState_ = S_SPIRAL_SMALLER;
-        }
-        control->setRotation(full_speed,
-                             static_cast<int>(spiral_)); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
-        break;
+            if(bitset1 != 0){
+                currentState_ = S_START;
+            }
+            else {
+                spiral_ += 0.4;
+
+                if (spiral_ > 500.0) {
+                    spiral_ = 100.0;
+                    currentState_ = S_SPIRAL_SMALLER;
+                }
+                control->setRotation(full_speed,
+                                     static_cast<int>(spiral_)); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+            }
+            break;
 
         case S_SPIRAL_SMALLER:
-            spiral_ -= 0.4;
-            if (spiral_ <= 0.0) {
-                spiral_ = 100.0;
-                currentState_ = S_STOP;
+            if(bitset1 != 0){
+                currentState_ = S_START;
             }
-            control->setRotation(full_speed,
-                                 static_cast<int>(spiral_)); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+            else {
+                spiral_ -= 0.4;
+                if (spiral_ <= 0.0) {
+                    spiral_ = 100.0;
+                    currentState_ = S_STOP;
+                }
+                control->setRotation(full_speed,
+                                     static_cast<int>(spiral_)); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+            }
             break;
 
         case S_STOP:
