@@ -35,48 +35,50 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         case S_SPIRAL:
-            spiral_ += 0.4;
-            if(spiral_ > 500.0){
+            spiral_ += 0.7;
+
+            if(spiral_ > 200.0){
                 spiral_ = 100.0;
                 currentState_ = S_DRIVE_STRAIGT;
             }
-            //if (bitset1 != 0) {                     //hit object
-            //    currentState_ = S_DRIVE_BACKWARDS;
-            //} else {
-                control->setRotation(full_speed, static_cast<int>(spiral_)); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
-            //}
+            if (bitset == 0xff) {                     //hit object
+                currentState_ = S_DRIVE_BACKWARDS;
+            }
+
+            control->setRotation(full_speed, static_cast<int>(spiral_)); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
             break;
 
         case S_DRIVE_BACKWARDS:
-            control->setRotation(-full_speed, 32768); //drive in full speed straight backwards (300 mm/s)
-            if (elapsedTime_ >= 1) { //for 1 sec
+            control->setRotation(-full_speed, 0x8000); //drive in full speed straight backwards (300 mm/s)
+            if (elapsedTime_ >= 0.3) {
                 elapsedTime_ = 0;
                 currentState_ = S_ROTATE_LEFT;
             }
             break;
 
         case S_ROTATE_LEFT:
-            control->setRotation(full_speed, 0x0001); //Turn in place counter-clockwise
-            if (elapsedTime_ >= 1) { //for 1 sec
+            control->setRotation(0, 0x0001); //Turn in place counter-clockwise
+            if (elapsedTime_ >= 0.1) { //for 1 sec
                 elapsedTime_ = 0;
                 currentState_ = S_FOLLOW_WALL;
             }
             break;
 
         case S_FOLLOW_WALL:
-            if (bitset1 != 0) { //If hit object
+            if (bitset1 == 0xff) { //If hit object
                 currentState_ = S_DRIVE_BACKWARDS;
-            } else if (elapsedTime_ >= 30*30) { //If time exceeded 30 sec
+            } else if (elapsedTime_ >= 8) { //If time exceeded 30 sec
                 elapsedTime_ = 0;
                 currentState_ = S_BIG_ROTATE_LEFT;
-            } else {
-                control->setRotation(full_speed, 100); //Drive at full speed in a circle with a radius of 100 mm
             }
+
+            control->setRotation(full_speed, -1500); //Drive at full speed in a circle with a radius of 100 mm
+
             break;
 
         case S_BIG_ROTATE_LEFT:
             control->setRotation(full_speed, 0x0001); //Turn in place counter-clockwise
-            if (elapsedTime_ >= 30*1.5) { //for 1.5 sec
+            if (elapsedTime_ >= 0.5) { //for 1.5 sec
                 elapsedTime_ = 0;
                 currentState_ = S_DRIVE_STRAIGT;
             }
@@ -84,9 +86,9 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
 
         case S_DRIVE_STRAIGT:
             driveStraightTime_ += dt;
-            if (bitset1 != 0) { //hit object
+            if (bitset1 == 0xff) { //hit object
                 currentState_ = S_DRIVE_BACKWARDS;
-            } else if (driveStraightTime_ >= 3) { //time exceeded 10 sec
+            } else if (driveStraightTime_ >= 7) { //time exceeded 10 sec
                 driveStraightTime_ = 0.0;
                 currentState_ = S_SPIRAL;
             } else {

@@ -116,7 +116,7 @@ int Sensors::checksumcheck(vector<unsigned char> data) {
     for (int i = 0; i <= (2 + data.at(1)); i++) {
         som += data.at(i);
     }
-    if (0 == som) {
+    if (0 == (som & 0xff)) {
         return 1;
     }
 
