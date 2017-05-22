@@ -3,9 +3,7 @@
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_han_cleanify_MainActivity_stringFromJNI(
-        JNIEnv* env,
-        jobject /* this */) {
+Java_han_Cleanify_MainActivity_stringFromJNI(JNIEnv* env, jobject /* this */) {
     std::string hello = "Hello from C++";
     return env->NewStringUTF(hello.c_str());
 }

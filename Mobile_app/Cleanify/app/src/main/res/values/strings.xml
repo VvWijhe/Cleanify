@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Cleanify</string>
     <string name="action_settings">Settings</string>
+    <string name="Clean">Clean</string>
+    <string name="Dock">Dock</string>
+    <string name="stop">Stop</string>
+    <string name="Spot">Spot</string>
+    <string name="Speed">Speed</string>
+    <string name="Brushes">Brushes</string>
+    <string name="arrow">arrow</string>
 </resources>

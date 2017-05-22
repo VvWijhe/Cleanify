@@ -1,4 +1,4 @@
-package han.cleanify;
+package han.Cleanify;
 
 import org.junit.Test;
 
