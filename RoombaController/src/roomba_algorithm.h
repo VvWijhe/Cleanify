@@ -66,11 +66,16 @@ namespace algorithm {
 
     class Spot : public roomba_algorithm {
     public:
+        typedef enum {
+            S_START, S_SPIRAL_BIGGER, S_SPIRAL_SMALLER, S_STOP
+        } state_e;
+
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
 
     private:
+        state_e currentState_;
         int spiral_;
-        double dt_;
+        double elapsedTime_;
     };
 
     class Dock : public roomba_algorithm {

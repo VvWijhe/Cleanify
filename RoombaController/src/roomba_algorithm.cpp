@@ -110,13 +110,45 @@ void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors s
 
     for(int i = 0; i < 6; i++){ bitset1[i] = bitset[i]; }
 
-    dt_ += dt;
+    elapsedTime_ += dt;
 
-    if (bitset != 0 || spiral_ >= 500) { //If hit object or spiral radius > 500 mm
-        control->setRotation(0, 0);
-    } else {
-        control->setRotation(full_speed, spiral_ -= dt); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+    switch(currentState_) {
+        case S_START:
+            control->setBrushes(100);
+            currentState_ = S_SPIRAL_BIGGER;
+            break;
+
+        case S_SPIRAL_BIGGER:
+        spiral_ += 0.4;
+        if (spiral_ > 500.0) {
+            spiral_ = 100.0;
+            currentState_ = S_SPIRAL_SMALLER;
+        }
+        control->setRotation(full_speed,
+                             static_cast<int>(spiral_)); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+        break;
+
+        case S_SPIRAL_SMALLER:
+            spiral_ -= 0.4;
+            if (spiral_ <= 0.0) {
+                spiral_ = 100.0;
+                currentState_ = S_STOP;
+            }
+            control->setRotation(full_speed,
+                                 static_cast<int>(spiral_)); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+            break;
+
+        case S_STOP:
+            control->setRotation(0,0);
+            control->setBrushes(0);
+            break;
     }
+
+//    if (bitset != 0 || spiral_ >= 500) { //If hit object or spiral radius > 500 mm
+//        control->setRotation(0, 0);
+//    } else {
+//        control->setRotation(full_speed, spiral_ -= dt); //drive in full speed in a spiral, getting 1mm bigger every timestep (30 mm bigger radius/s)
+//    }
 }
 
 /*
