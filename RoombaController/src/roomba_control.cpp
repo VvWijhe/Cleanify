@@ -82,34 +82,33 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
     condition_variable cv;
     mutex mut;
     io::byteVector buffer;
-    Sensors tmpSensor;
-
-    thread t([this, &buffer, &cv, &sensorBuffer]() -> void {
-        if (this->serial_.readAll(buffer)) return;
-
-        // parse sensordata, return if unsuccesful
-//        auto result = sensorBuffer.parsedata(buffer);
-//        if (result == -1) {
-//            cv.notify_all();
-//            return;
-//        }
-//        else if (result == -2) return;
-
-        cv.notify_all();
-    });
 
     serial_.writeVector(sensorBuffer.createvector({Light_bumper, Bumps_wheeldrops, Battery_charge}));
 
-    unique_lock<mutex> lk(mut);
-    if (cv.wait_for(lk, chrono::milliseconds(5000)) == cv_status::timeout) {
-        t.detach();
-        return -1;
-    }
+    this_thread::sleep_for(chrono::milliseconds(10));
+
+    if(serial_.readAll(buffer) < 0) return -1;
 
     auto result = sensorBuffer.parsedata(buffer);
-    t.detach();
 
     return 0;
+
+//    thread t([this, &buffer, &cv, &sensorBuffer]() -> void {
+//        if (this->serial_.readAll(buffer) < 0) return;
+//
+//        cv.notify_all();
+//    });
+//
+//    unique_lock<mutex> lk(mut);
+//    if (cv.wait_for(lk, chrono::milliseconds(5000)) == cv_status::timeout) {
+//        t.detach();
+//        return -1;
+//    }
+//
+//    auto result = sensorBuffer.parsedata(buffer);
+//    t.detach();
+//
+//    return 0;
 }
 
 void RoombaControl::setBrushes(unsigned char pwm) {

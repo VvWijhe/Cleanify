@@ -11,7 +11,7 @@ SerialPort::SerialPort(std::string portname, speed_t baud) : port_(portname),
 }
 
 int SerialPort::connect() {
-    fd_ = open(port_.c_str(), O_RDWR | O_NOCTTY | O_SYNC);
+    fd_ = open(port_.c_str(), O_RDWR | O_NOCTTY);
 
     struct termios tty;
     memset(&tty, 0, sizeof tty);
@@ -27,8 +27,8 @@ int SerialPort::connect() {
     tty.c_iflag &= ~IGNBRK;         // disable break processing
     tty.c_lflag = 0;                // no signaling chars, no echo,
     tty.c_oflag = 0;                // no remapping, no delays
-    tty.c_cc[VMIN] = 1;            // read doesn't block
-    tty.c_cc[VTIME] = 5;            // 0.5 seconds read timeout
+    tty.c_cc[VMIN] = 0;            // pure timed read
+    tty.c_cc[VTIME] = 50;            // 0.5 seconds read timeout
 
     tty.c_iflag &= ~(IXON | IXOFF | IXANY); // shut off xon/xoff ctrl
     tty.c_cflag |= (CLOCAL | CREAD);// ignore modem controls,
@@ -51,8 +51,8 @@ int SerialPort::disconnect() {
 int SerialPort::readAll(byteVector &buffer, size_t limit) const {
     unsigned char c[limit];
 
-    ssize_t nRead = read(fd_, c, limit);
-    if(nRead < 0) {
+    auto nRead = read(fd_, c, limit);
+    if(nRead <= 0) {
         return -1;
     }
 

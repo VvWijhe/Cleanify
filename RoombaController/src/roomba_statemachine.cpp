@@ -176,10 +176,8 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
         // read sensors
         Sensors sensorData;
         if(rmbControl->readSensors(sensorData)) {
-            if(1) {
-                logger.error("Reading sensordata timeout");
-                exitFlag = true;
-            }
+            logger.error("No sensordata received");
+            exitFlag = true;
         } else {
             // set sensor data for the server
             unique_lock<std::mutex> serverLock(server_context.mutex());

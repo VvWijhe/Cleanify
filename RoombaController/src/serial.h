@@ -64,7 +64,7 @@ namespace io {
          * byte is received after some milliseconds.
          * @param buffer Vector where the received data will be stored.
          * @param limit Maximum number to be read. Default is 255.
-         * @return errno
+         * @return -1 if no data is available 0 if succesful
          */
         int readAll(byteVector &buffer, size_t limit = 255) const;
 
