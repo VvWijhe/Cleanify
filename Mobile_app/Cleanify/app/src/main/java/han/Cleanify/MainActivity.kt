@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             if (event.action == MotionEvent.ACTION_UP) {
-                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \""  + brush.progress + "\"}").response { request, response, result ->
                 }
 
             }
