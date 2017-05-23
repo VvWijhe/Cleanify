@@ -88,7 +88,7 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
         if (this->serial_.readAll(buffer)) return;
 
         // parse sensordata, return if unsuccesful
-        auto result = sensorBuffer.parsedata(buffer);
+//        auto result = sensorBuffer.parsedata(buffer);
 //        if (result == -1) {
 //            cv.notify_all();
 //            return;
@@ -101,11 +101,12 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
     serial_.writeVector(sensorBuffer.createvector({Light_bumper, Bumps_wheeldrops, Battery_charge}));
 
     unique_lock<mutex> lk(mut);
-    if (cv.wait_for(lk, chrono::milliseconds(1500)) == cv_status::timeout) {
+    if (cv.wait_for(lk, chrono::milliseconds(5000)) == cv_status::timeout) {
         t.detach();
         return -1;
     }
 
+    auto result = sensorBuffer.parsedata(buffer);
     t.detach();
 
     return 0;

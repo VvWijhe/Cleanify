@@ -57,7 +57,7 @@ int SerialPort::readAll(byteVector &buffer, size_t limit) const {
     }
 
     for (int i = 0; i < nRead; i++) {
-        std::cout << (int)c[i] << std::endl;
+        std::cout << static_cast<int>(c[i]) << std::endl;
         buffer.push_back(c[i]);
     }
 

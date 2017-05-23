@@ -176,7 +176,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
         // read sensors
         Sensors sensorData;
         if(rmbControl->readSensors(sensorData)) {
-            if(rmbControl->readSensors(sensorData)) {
+            if(1) {
                 logger.error("Reading sensordata timeout");
                 exitFlag = true;
             }

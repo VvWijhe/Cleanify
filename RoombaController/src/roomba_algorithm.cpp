@@ -26,7 +26,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
     for(int i = 0; i < 6; i++){ bitset1[i] = bitset[i]; }
 
     elapsedTime_ += dt; //timesteps = last timestep + new timestep (there are 30 timesteps per second)
-    std::cout << spiral_ << std::endl;
+//    std::cout << spiral_ << std::endl;
     switch (currentState_) {
 
         case S_START:
