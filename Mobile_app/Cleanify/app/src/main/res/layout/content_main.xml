@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main"
-    tools:context="han.cleanify.MainActivity"
+    tools:context="han.Cleanify.MainActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
@@ -29,25 +29,31 @@
 
 
         <ImageButton
+            android:id="@+id/forward_left"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/forward_left"/>
+            app:srcCompat="@drawable/forward_left"
+            android:contentDescription="@string/arrow" />
 
         <ImageButton
+            android:id="@+id/forward"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/forward"/>
+            app:srcCompat="@drawable/forward"
+            android:contentDescription="@string/arrow"/>
 
         <ImageButton
+            android:id="@+id/forward_right"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/forward_right"/>
+            app:srcCompat="@drawable/forward_right"
+            android:contentDescription="@string/arrow"/>
 
     </LinearLayout>
 
@@ -68,26 +74,32 @@
 
 
         <ImageButton
+            android:id="@+id/left"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/left"/>
+            app:srcCompat="@drawable/left"
+            android:contentDescription="@string/arrow"/>
 
         <Button
+            android:id="@+id/stop"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="stop"
+            android:text="@string/stop"
+            android:gravity="center"
             android:textSize="30sp" />
 
         <ImageButton
+            android:id="@+id/right"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/right"/>
+            app:srcCompat="@drawable/right"
+            android:contentDescription="@string/arrow"/>
 
     </LinearLayout>
 
@@ -108,25 +120,31 @@
 
 
         <ImageButton
+            android:id="@+id/backward_left"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/backward_left"/>
+            android:contentDescription="@string/arrow"
+            app:srcCompat="@drawable/backward_left" />
 
         <ImageButton
+            android:id="@+id/backward"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/backward"/>
+            app:srcCompat="@drawable/backward"
+            android:contentDescription="@string/arrow"/>
 
         <ImageButton
+            android:id="@+id/backward_right"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/backward_right"/>
+            app:srcCompat="@drawable/backward_right"
+            android:contentDescription="@string/arrow"/>
 
     </LinearLayout>
 
@@ -152,7 +170,7 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Spot"
+            android:text="@string/Spot"
             android:textSize="25sp" />
 
         <Button
@@ -161,7 +179,7 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Clean"
+            android:text="@string/Clean"
             android:textSize="25sp" />
 
         <Button
@@ -169,7 +187,7 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Dock"
+            android:text="@string/Dock"
             android:textSize="25sp"/>
 
     </LinearLayout>
@@ -199,10 +217,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="Speed" />
+            android:text="@string/Speed" />
 
         <SeekBar
-            android:id="@+id/seekBar2"
+            android:id="@+id/wheels"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -213,10 +231,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="Brushes" />
+            android:text="@string/Brushes" />
 
         <SeekBar
-            android:id="@+id/seekBar3"
+            android:id="@+id/brushes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />

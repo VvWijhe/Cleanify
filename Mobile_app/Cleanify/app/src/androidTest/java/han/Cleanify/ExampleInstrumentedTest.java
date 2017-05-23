@@ -1,4 +1,4 @@
-package han.cleanify;
+package han.Cleanify;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
