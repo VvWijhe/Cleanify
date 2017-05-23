@@ -4,6 +4,8 @@
 
 #include "sensorparser.h"
 
+#include <iostream>
+
 using namespace std;
 
 Sensors::Sensors() {
@@ -63,8 +65,8 @@ Sensors::Sensors() {
 
 
 vector<unsigned char> Sensors::createvector(vector<sensorID> sensors) {
-    vector<unsigned char> send_vector_ = {149, 0};
-    send_vector_.at(1) = sensors.size();
+    vector<unsigned char> send_vector_ = {149};
+    send_vector_.push_back(sensors.size());
     for (auto s: sensors) {
         send_vector_.push_back(s);
     }
@@ -76,8 +78,8 @@ vector<unsigned char> Sensors::createvector(sensorID sensor) {
 }
 
 vector<unsigned char> Sensors::createvectorstream(vector<sensorID> sensors) {
-    vector<unsigned char> send_vector_ = {148, 0};
-    send_vector_.at(1) = sensors.size();
+    vector<unsigned char> send_vector_ = {148};
+    send_vector_.push_back(sensors.size());
     for (auto s: sensors) {
         send_vector_.push_back(s);
     }
@@ -85,12 +87,17 @@ vector<unsigned char> Sensors::createvectorstream(vector<sensorID> sensors) {
 }
 
 int Sensors::parsedata(vector<unsigned char> input) {
+    cout << "parsing data\n";
+
+    if(input.size() < 3) return -1;
+
     if (input.at(0) != 19) {
         return -1;
     } else if (checksumcheck(input) != 1) {
         return -2;
     }
-    for (int i = 2; i < (2 + input.at(1)); i++) {
+
+    for (int i = 2; i < input.size() && i < (2 + input.at(1)); i++) {
         sensorvariant Sensor_boost = (sensors_.find(static_cast<sensorID>( input.at(i)))->second);
         if (Sensor_boost.type() == typeid(unsigned char)) {
             sensors_.find(static_cast<sensorID>( input.at(i)))->second = static_cast<unsigned char>(input.at(i + 1));
@@ -108,6 +115,8 @@ int Sensors::parsedata(vector<unsigned char> input) {
             i++;
         }
     }
+
+    cout << "parsing succes\n";
     return 1;
 }
 

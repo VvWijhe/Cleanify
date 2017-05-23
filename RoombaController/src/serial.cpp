@@ -53,10 +53,11 @@ int SerialPort::readAll(byteVector &buffer, size_t limit) const {
 
     ssize_t nRead = read(fd_, c, limit);
     if(nRead < 0) {
-        return errno;
+        return -1;
     }
 
     for (int i = 0; i < nRead; i++) {
+        std::cout << (int)c[i] << std::endl;
         buffer.push_back(c[i]);
     }
 
