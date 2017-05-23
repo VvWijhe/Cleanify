@@ -77,6 +77,8 @@ void RoombaSim::on_resetButton_clicked() {
     auto roomba = _room->getRoomba();
     roomba->setPos(0, 0);
     roomba->setRotation(0);
+    roomba->setAngle(0);
+    roomba->setSpeed(0);
 
     auto route = _room->getRoute();
     route->clear();

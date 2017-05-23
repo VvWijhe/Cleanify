@@ -43,6 +43,10 @@ public:
         return tmp;
     }
 
+    void send(const QByteArray& data) {
+        _serial->write(data);
+    }
+
 public slots:
     void readyRead() {
 //        QByteArray data = _serial->readAll();

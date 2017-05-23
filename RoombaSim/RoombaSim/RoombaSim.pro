@@ -26,7 +26,8 @@ HEADERS  += \
     helper.h \
     version.h \
     serial.h \
-    mainwindow.h
+    mainwindow.h \
+    dataframe.h
 
 FORMS    += \
     roombasim.ui

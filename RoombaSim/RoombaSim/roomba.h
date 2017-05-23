@@ -40,6 +40,7 @@ public:
    void readSerial();
 
 private:
+   status_t _status;
    double _angle{};
    long _distance{};
    double _speed{};
