@@ -53,7 +53,8 @@ class MainActivity : AppCompatActivity() {
                 ) { dialog, id ->
                     // get user input and set it to result
                     // edit text
-                    url = userInput.text.toString()
+                    var inputurl = userInput.text.toString()
+                    url = "http://" + inputurl + ":8000/control"
                     Toast.makeText(this, url, Toast.LENGTH_SHORT).show()
                 }
                 .setNegativeButton("Cancel"
