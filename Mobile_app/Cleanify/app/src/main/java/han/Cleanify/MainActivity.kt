@@ -1,32 +1,70 @@
 package han.Cleanify
 
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.view.Menu
+import android.view.*
 import com.androidquery.AQuery
-import android.view.MenuItem
+import android.content.Context
+import android.widget.EditText
 import android.widget.Toast
-import android.view.View
 import com.github.kittinunf.fuel.Fuel
 import han.Cleanify.MainActivity.*
 import com.androidquery.util.AQUtility.postDelayed
-import android.view.MotionEvent
 import android.widget.SeekBar;
 
 
 
 
 internal var aq: AQuery? = null
-const val url = "http://192.168.43.78:8000/control"
+internal var url = ""
 
 class MainActivity : AppCompatActivity() {
+
+    internal val context: Context = this
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+
+        // get prompts.xml view
+        val li = LayoutInflater.from(context)
+        val promptsView = li.inflate(R.layout.prompts, null)
+
+        val alertDialogBuilder = AlertDialog.Builder(
+                context)
+
+        // set prompts.xml to alertdialog builder
+        alertDialogBuilder.setView(promptsView)
+
+        val userInput = promptsView
+                .findViewById(R.id.editTextDialogUserInput) as EditText
+
+        // set dialog message
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("OK"
+                ) { dialog, id ->
+                    // get user input and set it to result
+                    // edit text
+                    url = userInput.text.toString()
+                    Toast.makeText(this, url, Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("Cancel"
+                ) { dialog, id -> dialog.cancel() }
+
+        // create alert dialog
+        val alertDialog = alertDialogBuilder.create()
+
+        // show it
+        alertDialog.show()
+
         val speed = findViewById(R.id.wheels) as SeekBar
         val brush = findViewById(R.id.brushes) as SeekBar
         val forw = findViewById(R.id.forward)
@@ -46,8 +84,7 @@ class MainActivity : AppCompatActivity() {
         val fl = findViewById(R.id.forward_left)
         fl.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                Fuel.post(url).body("{\"direction\" : \"" + "forward-left" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
-                }
+                Fuel.post(url).body("{\"direction\" : \"" + "forward-left" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" +  (brush.progress*1.27) + "\"}").response { request, response, result ->                }
             }
             if (event.action == MotionEvent.ACTION_UP) {
                 Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \""  + brush.progress + "\"}").response { request, response, result ->
@@ -144,10 +181,31 @@ class MainActivity : AppCompatActivity() {
 
         val stop = findViewById(R.id.stop)
         stop.setOnClickListener {
-            Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+            Fuel.post(url).body("{\"exit\" : \"true\"}").response { request, response, result ->
             }
         }
+
+        val clean = findViewById(R.id.clean)
+        val spot  = findViewById(R.id.spot)
+        val dock  = findViewById(R.id.dock)
+
+        clean.setOnClickListener {
+            Fuel.post(url).body("{\"exit\" : \"true\"}").response { request, response, result ->
+            }
+        }
+        spot.setOnClickListener {
+            Fuel.post(url).body("{\"exit\" : \"true\"}").response { request, response, result ->
+            }
+        }
+        dock.setOnClickListener {
+            Fuel.post(url).body("{\"exit\" : \"true\"}").response { request, response, result ->
+            }
+        }
+
     }
+
+
+
 
 
 
