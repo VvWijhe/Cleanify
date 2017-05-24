@@ -70,11 +70,11 @@ class MainActivity : AppCompatActivity() {
         val forw = findViewById(R.id.forward)
         forw.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                Fuel.post(url).body("{\"direction\" : \"" + "forward" + "\", \"session\" : \"webapp\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "forward" + "\", \"session\" : \"mobapp\"}").response { request, response, result ->
                 }
             }
             if (event.action == MotionEvent.ACTION_UP) {
-                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"mobapp\"}").response { request, response, result ->
                 }
 
             }
@@ -84,10 +84,10 @@ class MainActivity : AppCompatActivity() {
         val fl = findViewById(R.id.forward_left)
         fl.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                Fuel.post(url).body("{\"direction\" : \"" + "forward-left" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" +  (brush.progress*1.27) + "\"}").response { request, response, result ->                }
+                Fuel.post(url).body("{\"direction\" : \"" + "forward-left" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" +  (brush.progress*1.27) + "\"}").response { request, response, result ->                }
             }
             if (event.action == MotionEvent.ACTION_UP) {
-                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \""  + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \""  + brush.progress + "\"}").response { request, response, result ->
                 }
 
             }
@@ -97,11 +97,11 @@ class MainActivity : AppCompatActivity() {
         val fr = findViewById(R.id.forward_right)
         fr.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                Fuel.post(url).body("{\"direction\" : \"" + "forward-right" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "forward-right" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
             }
             if (event.action == MotionEvent.ACTION_UP) {
-                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
 
             }
@@ -111,11 +111,11 @@ class MainActivity : AppCompatActivity() {
         val l = findViewById(R.id.left)
         l.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                Fuel.post(url).body("{\"direction\" : \"" + "left" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "left" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
             }
             if (event.action == MotionEvent.ACTION_UP) {
-                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
 
             }
@@ -125,11 +125,11 @@ class MainActivity : AppCompatActivity() {
         val r = findViewById(R.id.right)
         r.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                Fuel.post(url).body("{\"direction\" : \"" + "right" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "right" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
             }
             if (event.action == MotionEvent.ACTION_UP) {
-                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
 
             }
@@ -139,11 +139,11 @@ class MainActivity : AppCompatActivity() {
         val bl = findViewById(R.id.backward_left)
         bl.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                Fuel.post(url).body("{\"direction\" : \"" + "backward-left" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "backward-left" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
             }
             if (event.action == MotionEvent.ACTION_UP) {
-                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
 
             }
@@ -153,12 +153,12 @@ class MainActivity : AppCompatActivity() {
         val b = findViewById(R.id.backward)
         b.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                Fuel.post(url).body("{\"direction\" : \"" + "backward" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "backward" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
                 println(brush.progress)
             }
             if (event.action == MotionEvent.ACTION_UP) {
-                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
 
             }
@@ -168,11 +168,11 @@ class MainActivity : AppCompatActivity() {
         val br = findViewById(R.id.backward_right)
         br.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                Fuel.post(url).body("{\"direction\" : \"" + "backward-right" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "backward-right" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
             }
             if (event.action == MotionEvent.ACTION_UP) {
-                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"webapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
+                Fuel.post(url).body("{\"direction\" : \"" + "stop" + "\", \"session\" : \"mobapp\", \"brush_speed\" : \"" + brush.progress + "\"}").response { request, response, result ->
                 }
 
             }
@@ -190,15 +190,15 @@ class MainActivity : AppCompatActivity() {
         val dock  = findViewById(R.id.dock)
 
         clean.setOnClickListener {
-            Fuel.post(url).body("{\"exit\" : \"true\"}").response { request, response, result ->
+            Fuel.post(url).body("{\"pre-commands\" : \"" + "clean" + "\", \"session\" : \"mobapp\"}").response { request, response, result ->
             }
         }
         spot.setOnClickListener {
-            Fuel.post(url).body("{\"exit\" : \"true\"}").response { request, response, result ->
+            Fuel.post(url).body("{\"pre-commands\" : \"" + "spot" + "\", \"session\" : \"mobapp\"}").response { request, response, result ->
             }
         }
         dock.setOnClickListener {
-            Fuel.post(url).body("{\"exit\" : \"true\"}").response { request, response, result ->
+            Fuel.post(url).body("{\"pre-commands\" : \"" + "dock" + "\", \"session\" : \"mobapp\"}").response { request, response, result ->
             }
         }
 
