@@ -1,0 +1,28 @@
+@startuml
+
+node UsersComputer <<device>> {
+    node "PC App" <<execution environment>>
+}
+
+node Server <<device>> {
+    cloud "Webapp" <<execution environment>>
+    cloud "Webserver" <<execution environment>>
+}
+
+node MobilePhone <<device>> {
+    node "Application" <<execution environment>>
+}
+
+node Microcontroller <<device>> {
+    node "RoombaController" <<execution environment>>
+}
+
+node Roomba <<device>>
+
+UsersComputer <--> () HTTP: use
+MobilePhone <--> () HTTP: use
+Server <--> HTTP: use
+Microcontroller <--> HTTP: use
+Roomba <--> HTTP: use
+
+@enduml

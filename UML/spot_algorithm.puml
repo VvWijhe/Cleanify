@@ -8,6 +8,7 @@ Spiral_Increase --> Start: E_HIT_OBJECT
 
 Spiral_Decrease --> Start: E_HIT_OBJECT
 Spiral_Decrease --> Stop: E_DONE_SPIRAL_DEC
+Stop --> [*]
 
 
 @enduml
