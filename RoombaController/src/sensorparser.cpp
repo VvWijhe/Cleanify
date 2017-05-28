@@ -131,3 +131,22 @@ int Sensors::checksumcheck(vector<unsigned char> data) {
 
     return -1;
 }
+
+vector<unsigned char> Sensors::lastValidFrame(vector<unsigned char> &stream) {
+    vector<unsigned char> lastFrame;
+
+    if(stream.size() == 0) return vector<unsigned char>();
+
+    for (int i = 1; stream.at(i) + i + 1 < stream.size(); i += stream.at(i) + 3) {
+        if (i + 2 * (stream.at(i) + 3) > stream.size() + 2) {
+            auto frameBegin = stream.begin() + i - 1;
+            auto frameEnd = frameBegin + stream.at(i) + 3;
+
+            lastFrame = vector<unsigned char>(frameBegin, frameEnd);
+            stream = vector<unsigned char>(frameEnd, stream.end());
+            break;
+        }
+    }
+
+    return lastFrame;
+}
