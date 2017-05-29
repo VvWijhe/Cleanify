@@ -170,6 +170,8 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
 
     logger.information("Starting cleaning");
 
+    rmbControl->startStream();
+
     while(!exitFlag) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
 
@@ -190,6 +192,8 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
 
         loopFrequency.wait();
     }
+
+    rmbControl->stopStream();
 
     // return to the last session
     if(roomba_session == PC_WEB) {
