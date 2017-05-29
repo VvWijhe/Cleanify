@@ -39,15 +39,7 @@ function Connect() {
             }
         }
     );
-}
-//if the disconnect button is pressed
-function Disconnect() {
-    let form = "{\"exit\" : \"true\"}";
-    if(connected === true) {
-        connected = false;
-        $.post("/control",
-            form,
-            function (data) {
+}\
                 console.log(data);
             }, "text").fail(function (jqXHR, textStatus, errorThrown) {
             alert("ERROR: NO CONNECTION");
@@ -62,7 +54,7 @@ function Disconnect() {
 }
 
 function Drive(id) {
-    let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\", \"wheel_speed\" : \""+ wheels_value +"\", \"brush_speed\" : \"" + brushes_value + "\"}";
+    let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\", \"wheel_speed\" : "+ wheels_value +", \"brush_speed\" : " + brushes_value + "}";
 
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
