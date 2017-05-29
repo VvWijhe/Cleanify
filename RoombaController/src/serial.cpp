@@ -28,7 +28,7 @@ int SerialPort::connect() {
     tty.c_lflag = 0;                // no signaling chars, no echo,
     tty.c_oflag = 0;                // no remapping, no delays
     tty.c_cc[VMIN] = 0;            // pure timed read
-    tty.c_cc[VTIME] = 50;            // 0.5 seconds read timeout
+    tty.c_cc[VTIME] = 1;            // 0.5 seconds read timeout
 
     tty.c_iflag &= ~(IXON | IXOFF | IXANY); // shut off xon/xoff ctrl
     tty.c_cflag |= (CLOCAL | CREAD);// ignore modem controls,
@@ -57,7 +57,7 @@ int SerialPort::readAll(byteVector &buffer, size_t limit) const {
     }
 
     for (int i = 0; i < nRead; i++) {
-        std::cout << static_cast<int>(c[i]) << std::endl;
+        //std::cout << static_cast<int>(c[i]) << std::endl;
         buffer.push_back(c[i]);
     }
 

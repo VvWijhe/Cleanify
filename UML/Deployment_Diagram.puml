@@ -19,10 +19,12 @@ node Microcontroller <<device>> {
 
 node Roomba <<device>>
 
-UsersComputer <--> () HTTP: use
-MobilePhone <--> () HTTP: use
-Server <--> HTTP: use
-Microcontroller <--> HTTP: use
-Roomba <--> HTTP: use
+UsersComputer <--> () HTTP
+MobilePhone <--> () HTTP
+Server <--> HTTP
+Microcontroller <--> HTTP
+Roomba <--> HTTP
+Microcontroller <--> () SCI
+Roomba <--> () SCI
 
 @enduml
