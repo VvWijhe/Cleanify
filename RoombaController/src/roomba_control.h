@@ -134,16 +134,22 @@ namespace systemcontrol {
          */
         void beep();
 
+        void startStream();
+
+        void stopStream();
+
         /**
          * @brief Requests sensordata and parses the data that is requested. If it has not received data after 800 ms,
          * it will return an error.
          * @param sensorBuffer A Sensor object where the parsed data will be stored.
-         * @return -3 if the checksum failed, -2 if header error, -1 if a timeout occurred, 0 if succesfull
+         * @return -3 if the sensordata is not complete yet,
+         * -2 if no data was available in 3 attempts, 0 if succesfull
          */
         int readSensors(Sensors &sensorBuffer);
 
     private:
         io::SerialPort serial_;
+        std::vector<unsigned char> streamBuffer_;
     };
 }
 

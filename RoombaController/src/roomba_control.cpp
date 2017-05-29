@@ -79,20 +79,27 @@ void RoombaControl::setLed(color_t color) {
 }
 
 int RoombaControl::readSensors(Sensors &sensorBuffer) {
-    condition_variable cv;
-    mutex mut;
-    io::byteVector buffer;
+    static int attempts;
 
-    serial_.writeVector(sensorBuffer.createvector({Light_bumper, Bumps_wheeldrops, Battery_charge}));
+    if(serial_.readAll(streamBuffer_) < 0 && attempts < 3) {
+        attempts++;
+        return -1;
+    } else if(attempts == 3){
+        attempts = 0;
+        return -2;
+    }
 
-    this_thread::sleep_for(chrono::milliseconds(10));
+    auto validFrame = Sensors::lastValidFrame(streamBuffer_);
 
-    if(serial_.readAll(buffer) < 0) return -1;
+    if(validFrame.size() == 0) return -3;
 
-    auto result = sensorBuffer.parsedata(buffer);
+    auto result = sensorBuffer.parsedata(validFrame);
 
     return 0;
 
+//    condition_variable cv;
+//    mutex mut;
+//    io::byteVector buffer;
 //    thread t([this, &buffer, &cv, &sensorBuffer]() -> void {
 //        if (this->serial_.readAll(buffer) < 0) return;
 //
@@ -123,4 +130,12 @@ void RoombaControl::sendCommands(commands_t command) {
 
 void RoombaControl::beep() {
     serial_.writeVector({Start, Control, Safe, 140, 0, 1, 62, 32, 141, 0});
+}
+
+void RoombaControl::startStream() {
+    serial_.writeVector(Sensors::createvectorstream({Light_bumper, Bumps_wheeldrops, Battery_charge}));
+}
+
+void RoombaControl::stopStream() {
+    serial_.writeVector({150, 0});
 }

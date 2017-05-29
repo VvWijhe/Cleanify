@@ -175,7 +175,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
 
         // read sensors
         Sensors sensorData;
-        if(rmbControl->readSensors(sensorData)) {
+        if(rmbControl->readSensors(sensorData) == -2) {
             logger.error("No sensordata received");
             exitFlag = true;
         } else {
