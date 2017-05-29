@@ -87,9 +87,7 @@ vector<unsigned char> Sensors::createvectorstream(vector<sensorID> sensors) {
 }
 
 int Sensors::parsedata(vector<unsigned char> input) {
-    cout << "parsing data\n" << input.size() <<"'" << input.at(1) + 3 << "'" << endl;
-
-    if (input.size() < 3) {cout << "1" << endl; return -1; }
+    if (input.size() < 2) {cout << "1" << endl; return -1; }
 
     else if ((input.at(1) + 3) != input.size()) { cout << "2" << endl; return -1; }
     cout << "size is just good" << endl;
