@@ -89,8 +89,9 @@ vector<unsigned char> Sensors::createvectorstream(vector<sensorID> sensors) {
 int Sensors::parsedata(vector<unsigned char> input) {
     cout << "parsing data\n";
 
-    if(input.size() < 3) return -1;
-    else if(input.at(1)+1 < input.size()){return -1;}
+    if (input.size() < 3) {cout << "1" << endl; return -1; }
+
+    else if (input.at(1) + 2 < input.size()) { cout << "2" << endl; return -1; }
     if (input.at(0) != 19) {
         return -1;
     } else if (checksumcheck(input) != 1) {
@@ -135,7 +136,7 @@ int Sensors::checksumcheck(vector<unsigned char> data) {
 vector<unsigned char> Sensors::lastValidFrame(vector<unsigned char> &stream) {
     vector<unsigned char> lastFrame;
 
-    if(stream.size() == 0) return vector<unsigned char>();
+    if (stream.size() == 0) return vector<unsigned char>();
 
     for (int i = 1; stream.at(i) + i + 1 < stream.size(); i += stream.at(i) + 3) {
         if (i + 2 * (stream.at(i) + 3) > stream.size() + 2) {
