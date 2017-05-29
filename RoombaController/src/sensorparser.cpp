@@ -92,6 +92,7 @@ int Sensors::parsedata(vector<unsigned char> input) {
     if (input.size() < 3) {cout << "1" << endl; return -1; }
 
     else if ((input.at(1) + 2) < input.size()) { cout << "2" << endl; return -1; }
+    cout << "size is just good" << endl;
     if (input.at(0) != 19) {
         return -1;
     } else if (checksumcheck(input) != 1) {
