@@ -1,5 +1,6 @@
 #include <iostream>
 #include <thread>
+#include <csignal>
 
 #include "Poco/AsyncChannel.h"
 #include "Poco/ConsoleChannel.h"
@@ -15,12 +16,20 @@ using namespace std;
 using namespace systemcontrol;
 using namespace Poco;
 
+void exitHandler(int signal) {
+    system("rfcomm release /dev/rfcomm6");
+    exit(1);
+}
+
 /**
  * @brief Main entry of the program
  * @return 
  */
 int main() {
     try {
+        // set exit handler
+        signal(SIGKILL, exitHandler);
+
         thread t([]{
             system("rfcomm connect /dev/rfcomm6 00:06:66:60:07:81");
         });
