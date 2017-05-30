@@ -89,11 +89,6 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
         return -2;
     }
 
-    for(auto t : streamBuffer_) {
-        cout << (int)t << ",";
-    }
-    cout << endl;
-
 //    auto validFrame = Sensors::lastValidFrame(streamBuffer_);
 //
 //    if(validFrame.size() == 0) return -3;
