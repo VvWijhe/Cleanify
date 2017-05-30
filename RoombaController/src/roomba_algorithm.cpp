@@ -21,9 +21,7 @@ using namespace algorithm;
  */
 void
 Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    std::bitset<8> bitset(sensorData.getvalue < unsigned char > (Light_bumper));
-    std::bitset<6> bitset1;
-    for(int i = 0; i < 6; i++){ bitset1[i] = bitset[i]; }
+    std::bitset<8> bumper(sensorData.getvalue < unsigned char > (Light_bumper));
 
     elapsedTime_ += dt; //timesteps = last timestep + new timestep (there are 30 timesteps per second)
 //    std::cout << spiral_ << std::endl;
@@ -41,7 +39,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
                 spiral_ = 100.0;
                 currentState_ = S_DRIVE_STRAIGT;
             }
-            if (bitset == 0xff) {                     //hit object
+            if (bumper[1] == 1) {                     //hit object
                 currentState_ = S_DRIVE_BACKWARDS;
             }
 
@@ -65,7 +63,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         case S_FOLLOW_WALL:
-            if (bitset1 == 0xff) { //If hit object
+            if (bumper[1] == 1) { //If hit object
                 currentState_ = S_DRIVE_BACKWARDS;
             } else if (elapsedTime_ >= 8) { //If time exceeded 30 sec
                 elapsedTime_ = 0;
@@ -86,7 +84,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
 
         case S_DRIVE_STRAIGT:
             driveStraightTime_ += dt;
-            if (bitset1 == 0xff) { //hit object
+            if (bumper[1] == 1) { //hit object
                 currentState_ = S_DRIVE_BACKWARDS;
             } else if (driveStraightTime_ >= 7) { //time exceeded 10 sec
                 driveStraightTime_ = 0.0;
@@ -108,9 +106,6 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
  */
 void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
     std::bitset<8> bitset(sensorData.getvalue < unsigned char > (Light_bumper));
-    std::bitset<6> bitset1;
-
-    for(int i = 0; i < 6; i++){ bitset1[i] = bitset[i]; }
 
     elapsedTime_ += dt;
 
@@ -122,7 +117,7 @@ void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors s
             break;
 
         case S_SPIRAL_BIGGER:
-            if(bitset1 != 0){
+            if(bitset[1] != 1){
                 currentState_ = S_START;
             }
             else {
@@ -138,7 +133,7 @@ void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors s
             break;
 
         case S_SPIRAL_SMALLER:
-            if(bitset1 != 0){
+            if(bitset[1] != 1){
                 currentState_ = S_START;
             }
             else {
@@ -170,7 +165,5 @@ void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors s
  */
 void Dock::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
     std::bitset<8> bitset(sensorData.getvalue < unsigned char > (Light_bumper));
-    std::bitset<6> bitset1;
 
-    for(int i = 0; i < 6; i++){ bitset1[i] = bitset[i]; }
 }
