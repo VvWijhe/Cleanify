@@ -147,8 +147,6 @@ namespace systemcontrol {
          */
         int readSensors(Sensors &sensorBuffer);
 
-        void startStream();
-
     private:
         io::SerialPort serial_;
         std::vector<unsigned char> streamBuffer_;

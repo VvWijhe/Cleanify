@@ -21,7 +21,7 @@ using namespace algorithm;
  */
 void
 Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    std::bitset<8> bumper(sensorData.getvalue < unsigned char > (Light_bumper));
+    std::bitset<8> bumper(sensorData.getvalue < unsigned char > (Bumps_wheeldrops));
 
     elapsedTime_ += dt; //timesteps = last timestep + new timestep (there are 30 timesteps per second)
 //    std::cout << spiral_ << std::endl;
@@ -105,7 +105,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
  * Drive in circles that increase by size. Cleans an area of 1m2.
  */
 void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    std::bitset<8> bitset(sensorData.getvalue < unsigned char > (Light_bumper));
+    std::bitset<8> bitset(sensorData.getvalue < unsigned char > (Bumps_wheeldrops));
 
     elapsedTime_ += dt;
 
@@ -164,6 +164,6 @@ void Spot::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors s
  * Drive to Dock
  */
 void Dock::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) {
-    std::bitset<8> bitset(sensorData.getvalue < unsigned char > (Light_bumper));
+    std::bitset<8> bitset(sensorData.getvalue < unsigned char > (Bumps_wheeldrops));
 
 }
