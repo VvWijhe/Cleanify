@@ -173,7 +173,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
     rmbControl->startStream();
 
     while(!exitFlag) {
-        boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
+        boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(100));
 
         // read sensors
         Sensors sensorData;

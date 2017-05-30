@@ -16,6 +16,8 @@
 #define ROOMBACONTROLLER_PROCESSING_H
 
 namespace systemcontrol {
+    const std::string rfcomm = "/dev/rfcomm3";
+
     /**
      *
      *
@@ -29,7 +31,7 @@ namespace systemcontrol {
         RoombaStateContext(const std::shared_ptr<statemachine::State> &initial) :
                 logger_(Poco::Logger::get("logger")) {
             server_ = std::make_shared<server::RoombaServer>(8000);
-            control_ = std::make_shared<RoombaControl>("/dev/rfcomm6", systemcontrol::RoombaControl::b115200);
+            control_ = std::make_shared<RoombaControl>("/dev/ttyUSB0", systemcontrol::RoombaControl::b115200);
 
             setState(initial);
         }

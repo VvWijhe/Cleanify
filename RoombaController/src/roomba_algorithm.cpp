@@ -30,16 +30,18 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
         case S_START:
             currentState_ = S_SPIRAL;
             control->setBrushes(100);
+            cout << "START" << endl;
             break;
 
         case S_SPIRAL:
+            cout << "SPIRAL" << endl;
             spiral_ += 0.7;
 
             if(spiral_ > 200.0){
                 spiral_ = 100.0;
                 currentState_ = S_DRIVE_STRAIGT;
             }
-            if (bumper[1] == 1) {                     //hit object
+            if (bumper[1] == 1 || bumper[0] == 1) {                     //hit object
                 currentState_ = S_DRIVE_BACKWARDS;
             }
 
@@ -47,23 +49,28 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         case S_DRIVE_BACKWARDS:
-            control->setRotation(-full_speed, 0x8000); //drive in full speed straight backwards (300 mm/s)
-            if (elapsedTime_ >= 0.3) {
+            cout << "back" << endl;
+
+            if (elapsedTime_ >= 3) {
                 elapsedTime_ = 0;
                 currentState_ = S_ROTATE_LEFT;
             }
+
+            control->setRotation(-full_speed, 0x8000); //drive in full speed straight backwards (300 mm/s)
             break;
 
         case S_ROTATE_LEFT:
+            cout << "left" << endl;
             control->setRotation(0, 0x0001); //Turn in place counter-clockwise
-            if (elapsedTime_ >= 0.1) { //for 1 sec
+            if (elapsedTime_ >= 1) { //for 1 sec
                 elapsedTime_ = 0;
                 currentState_ = S_FOLLOW_WALL;
             }
             break;
 
         case S_FOLLOW_WALL:
-            if (bumper[1] == 1) { //If hit object
+            cout << "FW" << endl;
+            if (bumper[1] == 1 || bumper[0] == 1) { //If hit object
                 currentState_ = S_DRIVE_BACKWARDS;
             } else if (elapsedTime_ >= 8) { //If time exceeded 30 sec
                 elapsedTime_ = 0;
@@ -75,6 +82,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         case S_BIG_ROTATE_LEFT:
+            cout << "big left" << endl;
             control->setRotation(full_speed, 0x0001); //Turn in place counter-clockwise
             if (elapsedTime_ >= 0.5) { //for 1.5 sec
                 elapsedTime_ = 0;
@@ -83,8 +91,9 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         case S_DRIVE_STRAIGT:
+            cout << "straight" << endl;
             driveStraightTime_ += dt;
-            if (bumper[1] == 1) { //hit object
+            if (bumper[1] == 1 || bumper[0] == 1) { //hit object
                 currentState_ = S_DRIVE_BACKWARDS;
             } else if (driveStraightTime_ >= 7) { //time exceeded 10 sec
                 driveStraightTime_ = 0.0;
@@ -95,6 +104,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             break;
 
         default:
+            cout << "default" << endl;
             control->setBrushes(0);
             control->setRotation(0, 0);
             break;

@@ -16,8 +16,11 @@ using namespace std;
 using namespace systemcontrol;
 using namespace Poco;
 
+const string releaseCmd = "rfcomm release " + rfcomm;
+const string connectCmd = "rfcomm connect " + rfcomm + " 00:06:66:60:07:81"; //00:06:66:60:07:81
+
 void exitHandler(int signal) {
-    system("rfcomm release /dev/rfcomm6");
+    system(releaseCmd.c_str());
     exit(1);
 }
 
@@ -28,10 +31,10 @@ void exitHandler(int signal) {
 int main() {
     try {
         // set exit handler
-        signal(SIGKILL, exitHandler);
+        signal(SIGINT, exitHandler);
 
         thread t([]{
-            system("rfcomm connect /dev/rfcomm6 00:06:66:60:07:81");
+            system(connectCmd.c_str());
         });
 
         this_thread::sleep_for(chrono::seconds(6));
