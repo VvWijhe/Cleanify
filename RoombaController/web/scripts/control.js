@@ -39,22 +39,12 @@ function Connect() {
             }
         }
     );
-}\
-                console.log(data);
-            }, "text").fail(function (jqXHR, textStatus, errorThrown) {
-            alert("ERROR: NO CONNECTION");
-        });
-        progress_bar.css("width", "0%");
-        document.getElementById("progress_number").textContent = ("");
-        //changes the panel collors to default
-        $('#message').show();
-        $("#manual_panel").attr('class', 'panel panel-default');
-        $("#autonomous_panel").attr('class', 'panel panel-default');
-    }
 }
 
+//ahll
+
 function Drive(id) {
-    let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\", \"wheel_speed\" : "+ wheels_value +", \"brush_speed\" : " + brushes_value + "}";
+    let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\", \"wheel_speed\" : " + wheels_value + ", \"brush_speed\" : " + brushes_value + "}";
 
     $.get("/status", function (data) {
         let obj_status = JSON.parse(data);
@@ -89,7 +79,7 @@ function Stop() {
     });
 }
 
-function timerControl(){
+function timerControl() {
     $.get("/status", function (data) {
 
         let obj_status = JSON.parse(data);
