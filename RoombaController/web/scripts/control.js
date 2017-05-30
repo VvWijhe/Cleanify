@@ -41,7 +41,31 @@ function Connect() {
     );
 }
 
-//ahll
+function Disconnect() {
+    let form = "{\"exit\" : \"" + "true" + "\", \"session\" : \"webapp\"}";
+
+    //retrieves status from the server
+    $.get("/status", function (data) {
+            let obj_status = JSON.parse(data);
+
+            //if the site is available
+            if (connected === true) {
+                $.post("/control",
+                    form,
+                    function (data) {
+                        console.log(data);
+                    }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+                    alert("ERROR: NO CONNECTION");
+                });
+                timerVar = setInterval(timerControl, 0);
+                connected = false;
+                $("#manual_panel").attr('class', 'panel panel-default');
+                $("#autonomous_panel").attr('class', 'panel panel-default')
+            }
+        }
+    );
+}
+
 
 function Drive(id) {
     let form = "{\"direction\" : \"" + id + "\", \"session\" : \"webapp\", \"wheel_speed\" : " + wheels_value + ", \"brush_speed\" : " + brushes_value + "}";
@@ -91,6 +115,24 @@ function timerControl() {
             if (obj_status.battery <= 10) {
                 progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
             }
+        }
+    });
+}
+
+function Cmd(id){
+    let form = "{\"pre-commands\" : \"" + id + "\", \"session\" : \"webapp\"}";
+
+    $.get("/status", function (data) {
+        let obj_status = JSON.parse(data);
+
+        if (connected === true) {
+            $.post("/control",
+                form,
+                function (data) {
+                    console.log(data);
+                }, "text").fail(function (jqXHR, textStatus, errorThrown) {
+                alert("ERROR: NO CONNECTION");
+            });
         }
     });
 }
