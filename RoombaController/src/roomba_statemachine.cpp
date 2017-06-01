@@ -171,6 +171,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
     logger.information("Starting cleaning");
 
     rmbControl->startStream();
+    this_thread::sleep_for(chrono::milliseconds(20));
 
     while(!exitFlag) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(100));
@@ -187,7 +188,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
             serverLock.unlock();
 
             // run algorithm
-            alg.calculate(rmbControl, sensorData, dt.elapsed());
+            //alg.calculate(rmbControl, sensorData, dt.elapsed());
         }
 
         loopFrequency.wait();

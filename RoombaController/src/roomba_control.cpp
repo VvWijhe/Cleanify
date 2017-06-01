@@ -136,7 +136,7 @@ void RoombaControl::sendCommands(commands_t command) {
 }
 
 void RoombaControl::beep() {
-    serial_.writeVector({Start, Control, Safe, 140, 0, 1, 62, 32, 141, 0});
+    serial_.writeVector({80, 73, 78, 71, 10, 128, 140, 0, 1, 62, 32, 141, 0});
 }
 
 void RoombaControl::startStream() {
