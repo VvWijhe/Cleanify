@@ -52,6 +52,7 @@ int SerialPort::readAll(byteVector &buffer, size_t limit) const {
     unsigned char c[limit];
 
     auto nRead = read(fd_, c, limit);
+    std::cout << nRead << std::endl;
     if(nRead <= 0) {
         return -1;
     }
