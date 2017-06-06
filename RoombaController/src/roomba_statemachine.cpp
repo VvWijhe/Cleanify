@@ -188,7 +188,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
             serverLock.unlock();
 
             // run algorithm
-            //alg.calculate(rmbControl, sensorData, dt.elapsed());
+            alg.calculate(rmbControl, sensorData, dt.elapsed());
         }
 
         loopFrequency.wait();
