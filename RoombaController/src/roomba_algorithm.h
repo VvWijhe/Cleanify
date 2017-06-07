@@ -45,7 +45,7 @@ namespace algorithm {
     class Clean : public roomba_algorithm {
     public:
         typedef enum {
-            S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGT
+            S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGHT
         } state_e;
 
         Clean() : currentState_(S_START), elapsedTime_(0.0), spiral_(100.0), driveStraightTime_(0.0) {}

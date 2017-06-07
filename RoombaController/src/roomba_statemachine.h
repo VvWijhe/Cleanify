@@ -9,14 +9,13 @@
 #include "roomba_control.h"
 #include "statemachine.hpp"
 #include "glb_session.h"
-#include "glb_roomba_param.h"
 #include "glb_server_context.h"
 
 #ifndef ROOMBACONTROLLER_PROCESSING_H
 #define ROOMBACONTROLLER_PROCESSING_H
 
 namespace systemcontrol {
-    const std::string rfcomm = "/dev/rfcomm3";
+    const std::string rfcomm = "/dev/ttyUSB0";
 
     /**
      *
@@ -31,7 +30,7 @@ namespace systemcontrol {
         RoombaStateContext(const std::shared_ptr<statemachine::State> &initial) :
                 logger_(Poco::Logger::get("logger")) {
             server_ = std::make_shared<server::RoombaServer>(8000);
-            control_ = std::make_shared<RoombaControl>("/dev/ttyUSB0", systemcontrol::RoombaControl::b115200);
+            control_ = std::make_shared<RoombaControl>(rfcomm, systemcontrol::RoombaControl::b115200);
 
             setState(initial);
         }

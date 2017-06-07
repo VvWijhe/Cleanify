@@ -6,7 +6,6 @@
 
 #include "responses.h"
 #include "glb_session.h"
-#include "glb_roomba_param.h"
 #include "glb_server_context.h"
 
 using namespace std;
@@ -105,7 +104,6 @@ void responses::handle_post(pSession session) {
 
                        // control roomba if session is ok
                        if (globals::roomba_session == globals::PC_WEB && globals::session_id == postData["session"]) {
-                           unique_lock<std::mutex> param_lk(globals::rmbPrm.mutex());
                            unique_lock<std::mutex> event_lk(globals::server_context.mutex());
 
                            // parse direction and speed

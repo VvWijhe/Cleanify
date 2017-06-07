@@ -32,7 +32,6 @@ set(SOURCE_FILES
         src/roomba_control.cpp
         src/roomba_statemachine.cpp
         src/glb_session.cpp
-        src/glb_roomba_param.cpp
         src/sensorparser.cpp
         src/glb_server_context.cpp
         src/roomba_algorithm.cpp)

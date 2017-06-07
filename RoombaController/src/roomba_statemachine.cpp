@@ -80,7 +80,6 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
 
     while(roomba_session == PC_WEB && !exitflag) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(16));
-        unique_lock<std::mutex> param_lk(rmbPrm.mutex());
         unique_lock<std::mutex> event_lk(server_context.mutex());
 
         switch (server_context.getEvent()) {
@@ -148,7 +147,6 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
 
         //rmbControl->setBrushes(static_cast<unsigned char>(server_context.getBrushSpeed()));
 
-        param_lk.unlock();
         event_lk.unlock();
         loopFrequency.wait();
     }
