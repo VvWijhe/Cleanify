@@ -7,7 +7,7 @@
 
 TEST(sensorparser_test, parsing_vector){
     Sensors testsensors;
-    EXPECT_EQ(testsensors.parsedata({19, 5, 29, 2, 25, 13, 0, 163}), 1);
+    EXPECT_EQ(testsensors.parsedata({19, 5, 29, 2, 25, 13, 0}), 1);
     EXPECT_EQ(testsensors.getvalue<unsigned short>(Cliff_front_left_signal),
               static_cast<unsigned short>(537));
 }

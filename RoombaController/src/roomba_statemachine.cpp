@@ -172,7 +172,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
     this_thread::sleep_for(chrono::milliseconds(20));
 
     while(!exitFlag) {
-        boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(100));
+        boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(20));
 
         // read sensors
         Sensors sensorData;

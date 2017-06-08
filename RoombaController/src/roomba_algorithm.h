@@ -48,7 +48,8 @@ namespace algorithm {
             S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGHT
         } state_e;
 
-        Clean() : currentState_(S_START), elapsedTime_(0.0), spiral_(100.0), driveStraightTime_(0.0) {}
+        Clean() : currentState_(S_START), elapsedTime_(0.0), spiral_(100.0), driveStraightTime_(0.0),
+        followWallTime_(0.0){}
 
         ~Clean() = default;
 
@@ -59,6 +60,7 @@ namespace algorithm {
 
     private:
         state_e currentState_;
+        double followWallTime_;
         double elapsedTime_;
         double spiral_;
         double driveStraightTime_;
@@ -85,6 +87,9 @@ namespace algorithm {
 
     class Dock : public roomba_algorithm {
     public:
+        typedef enum {
+            S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGT
+        } state_e;
         void calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors sensorData, double dt) override;
 
     private:

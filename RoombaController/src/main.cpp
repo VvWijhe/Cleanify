@@ -17,7 +17,7 @@ using namespace systemcontrol;
 using namespace Poco;
 
 const string releaseCmd = "rfcomm release " + rfcomm;
-const string connectCmd = "rfcomm connect " + rfcomm + " 00:06:66:60:07:81"; //00:06:66:60:07:81
+const string connectCmd = "rfcomm bind " + rfcomm + " 00:06:66:60:07:81"; //00:06:66:60:07:81
 
 void exitHandler(int signal) {
     system(releaseCmd.c_str());
@@ -33,11 +33,11 @@ int main() {
 //        // set exit handler
 //        signal(SIGINT, exitHandler);
 //
-//        thread t([]{
-//            system(connectCmd.c_str());
-//        });
-//
-//        this_thread::sleep_for(chrono::seconds(6));
+        thread t([]{
+            system(connectCmd.c_str());
+        });
+
+        this_thread::sleep_for(chrono::seconds(6));
 
         //initialise logger
         AutoPtr<SplitterChannel> splitterChannel(new SplitterChannel());
@@ -56,7 +56,7 @@ int main() {
 
         process->runAll();
 
-//        t.detach();
+        t.detach();
     } catch (exception &e) {
         cerr << e.what() << endl;
     }

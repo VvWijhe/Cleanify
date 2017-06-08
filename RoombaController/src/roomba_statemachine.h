@@ -15,7 +15,7 @@
 #define ROOMBACONTROLLER_PROCESSING_H
 
 namespace systemcontrol {
-    const std::string rfcomm = "/dev/ttyUSB0";
+    const std::string rfcomm = "/dev/rfcomm0";
 
     /**
      *
