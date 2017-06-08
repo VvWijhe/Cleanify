@@ -45,11 +45,18 @@ namespace algorithm {
     class Clean : public roomba_algorithm {
     public:
         typedef enum {
-            S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGHT
+            S_START, S_SPIRAL, S_FOLLOW_WALL, S_DRIVE_BACKWARDS, S_ROTATE_LEFT, S_BIG_ROTATE_LEFT, S_DRIVE_STRAIGHT,
+            S_FOLLOW_OBJECT
         } state_e;
 
+        typedef enum {
+            E_NO, E_RIGHT_BUMPER, E_WALL_TURN
+        } event_t;
+
         Clean() : currentState_(S_START), elapsedTime_(0.0), spiral_(100.0), driveStraightTime_(0.0),
-        followWallTime_(0.0){}
+        followTime_(0.0),
+        followAngle_(0x8000),
+        event_(E_NO){}
 
         ~Clean() = default;
 
@@ -59,11 +66,14 @@ namespace algorithm {
         state_e getCurrentState() const { return currentState_; }
 
     private:
+        event_t event_;
         state_e currentState_;
-        double followWallTime_;
+        double followTime_;
         double elapsedTime_;
         double spiral_;
         double driveStraightTime_;
+        int wallHits_;
+        int followAngle_;
     };
 
     class Spot : public roomba_algorithm {

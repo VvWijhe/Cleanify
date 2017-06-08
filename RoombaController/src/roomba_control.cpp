@@ -82,6 +82,7 @@ int RoombaControl::readSensors(Sensors &sensorBuffer) {
     static int attempts;
 
     if(serial_.readAll(streamBuffer_) < 0 && attempts < 3) {
+        startStream();
         attempts++;
         return -1;
     } else if(attempts == 3){
@@ -140,7 +141,7 @@ void RoombaControl::beep() {
 }
 
 void RoombaControl::startStream() {
-    serial_.writeVector(Sensors::createvectorstream({Light_bumper, Bumps_wheeldrops, Battery_charge}));
+    serial_.writeVector(Sensors::createvectorstream({Light_bumper, Bumps_wheeldrops, Battery_charge, Wall}));
 }
 
 void RoombaControl::stopStream() {

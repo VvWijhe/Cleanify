@@ -31,8 +31,8 @@ void exitHandler(int signal) {
 int main() {
     try {
 //        // set exit handler
-//        signal(SIGINT, exitHandler);
-//
+        signal(SIGINT, exitHandler);
+
         thread t([]{
             system(connectCmd.c_str());
         });
