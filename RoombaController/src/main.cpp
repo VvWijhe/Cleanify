@@ -31,13 +31,13 @@ void exitHandler(int signal) {
 int main() {
     try {
 //        // set exit handler
-        signal(SIGINT, exitHandler);
+//        signal(SIGINT, exitHandler);
+//
+//        thread t([]{
+//            system(connectCmd.c_str());
+//        });
 
-        thread t([]{
-            system(connectCmd.c_str());
-        });
-
-        this_thread::sleep_for(chrono::seconds(6));
+//        this_thread::sleep_for(chrono::seconds(6));
 
         //initialise logger
         AutoPtr<SplitterChannel> splitterChannel(new SplitterChannel());
@@ -56,7 +56,7 @@ int main() {
 
         process->runAll();
 
-        t.detach();
+//        t.detach();
     } catch (exception &e) {
         cerr << e.what() << endl;
     }

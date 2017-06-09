@@ -108,7 +108,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
                     control->setRotation(200, -1900); // to follow wall
                 } else {
                     currentState_ = S_FOLLOW_OBJECT;
-                    control->setRotation(200, -500r); // to follow wall
+                    control->setRotation(200, -500); // to follow wall
                 }
 
                 break;
