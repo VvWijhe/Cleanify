@@ -14,14 +14,8 @@
 #ifndef ROOMBACONTROLLER_PROCESSING_H
 #define ROOMBACONTROLLER_PROCESSING_H
 
-#define USE_BLT 0
-
 namespace systemcontrol {
-#if USE_BLT
-    const std::string rfcomm = "/dev/rfcomm0";
-#else
     const std::string rfcomm = "/dev/ttyUSB0";
-#endif
 
     /**
      *
