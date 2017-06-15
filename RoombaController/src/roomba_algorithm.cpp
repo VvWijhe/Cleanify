@@ -1,7 +1,6 @@
 //
 // Created by raymon on 2-5-17.
 //
-// da is
 
 /*
  * Light bumper: 8 bits
