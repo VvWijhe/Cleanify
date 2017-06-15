@@ -30,6 +30,7 @@ void exitHandler(int signal) {
  */
 int main() {
     try {
+#if USE_BLT
 //        // set exit handler
         signal(SIGINT, exitHandler);
 
@@ -38,6 +39,7 @@ int main() {
         });
 
         this_thread::sleep_for(chrono::seconds(6));
+#endif
 
         //initialise logger
         AutoPtr<SplitterChannel> splitterChannel(new SplitterChannel());
@@ -56,7 +58,9 @@ int main() {
 
         process->runAll();
 
+#if USE_BLT
         t.detach();
+#endif
     } catch (exception &e) {
         cerr << e.what() << endl;
     }
