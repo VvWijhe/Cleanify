@@ -1,4 +1,6 @@
 @startuml
+title Deployment diagram 
+
 node Roomba <<device>> {
   component sensors
   component motors
