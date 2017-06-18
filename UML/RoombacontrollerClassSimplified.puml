@@ -1,0 +1,50 @@
+@startuml
+
+class FileHandler
+class Sensors
+enum sensorID
+
+namespace globals{
+    class ServerContext
+    enum session
+}
+
+namespace responses{
+    class json_response
+}
+
+namespace algorithm{
+    class Timer
+    abstract class roomba_algorithm
+    class Clean
+    class Spot
+    class Dock
+}
+
+namespace systemcontrol{
+    class RoombaControl
+    class RoombaStateContext
+}
+
+namespace states{
+    class Initialise
+    class WaitforSession
+    class Session
+    class Clean
+    class ShutDown
+}
+
+namespace io{
+    class SerialPort
+}
+
+namespace server{
+    class RoombaServer
+}
+
+namespace statemachine{
+    abstract class State
+    class Context
+}
+
+@enduml
