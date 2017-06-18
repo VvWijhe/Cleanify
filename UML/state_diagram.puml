@@ -35,6 +35,5 @@ class RoombaContext {
 }
 
 Context *--"1" Clean
-Context *--"1" State
 Context *--"1" Session
 @enduml
