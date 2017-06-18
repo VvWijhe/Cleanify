@@ -1,10 +1,10 @@
 @startuml
-node Roomba {
+node Roomba <<device>> {
   component sensors
   component motors
 }
 
-node Controller {
+node Controller <<device>> {
   node webserver {
   }
 }
