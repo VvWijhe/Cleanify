@@ -1,5 +1,4 @@
 @startuml
-
 class State {
 + State()
 + <i>handle() : void
@@ -35,4 +34,7 @@ class RoombaContext {
 - server_ : shared_ptr<Server>
 }
 
+Context *--"1" Clean
+Context *--"1" State
+Context *--"1" Session
 @enduml
