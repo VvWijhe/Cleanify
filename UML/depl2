@@ -1,0 +1,19 @@
+@startuml
+node Roomba {
+  component sensors
+  component motors
+}
+
+node Controller {
+  node webserver {
+  }
+}
+
+node <<device>> {
+  node applicatie {
+  }
+}
+
+applicatie .. webserver : <<protocol>> HTTP
+webserver -- Roomba : <<protocol>> usart
+@enduml
