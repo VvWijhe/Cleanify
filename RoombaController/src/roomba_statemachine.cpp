@@ -210,6 +210,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
         loopFrequency.wait();
     }
 
+    srv.detach();
     rmbControl->stopStream();
 
     // return to the last session
