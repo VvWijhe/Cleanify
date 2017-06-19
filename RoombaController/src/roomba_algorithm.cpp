@@ -2,7 +2,6 @@
 //
 // Created by raymon on 2-5-17.
 //
-//test
 
 /*
  * Light bumper: 8 bits
