@@ -183,6 +183,7 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
                 default:
                     break;
             }
+            event_lk.unlock();
 
             this_thread::sleep_for(chrono::milliseconds(33));
         }
