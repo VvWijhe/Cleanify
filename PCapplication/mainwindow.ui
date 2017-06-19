@@ -414,7 +414,7 @@
        <item>
         <widget class="QSlider" name="horizontalSlider_Brush_Speed">
          <property name="maximum">
-          <number>127</number>
+          <number>128</number>
          </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>

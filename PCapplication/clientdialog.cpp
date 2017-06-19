@@ -13,8 +13,7 @@ ClientDialog::ClientDialog(QWidget *parent)
     : QDialog(parent), ui_(new Ui::ClientDialog),
       sLog_(Logger::get("ClientDialog")) {
     ui_->setupUi(this);
-    //ui_->lineEdit->setText(QString::fromStdString(connected_to_url));
-    ui_->lineEdit->setText("http://localhost:8000");
+    ui_->lineEdit->setText(QString::fromStdString(connected_to_url));
 }
 
 ClientDialog::~ClientDialog() { delete ui_; }

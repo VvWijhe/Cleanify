@@ -137,11 +137,15 @@ void RoombaControl::sendCommands(commands_t command) {
 }
 
 void RoombaControl::beep() {
-    serial_.writeVector({80, 73, 78, 71, 10, 128, 140, 0, 1, 62, 32, 141, 0});
+    serial_.writeVector({80, 73, 78, 71, 10});
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    serial_.writeVector({128, 140, 0, 1, 62, 32, 141, 0});
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 }
 
 void RoombaControl::startStream() {
     serial_.writeVector(Sensors::createvectorstream({Light_bumper, Bumps_wheeldrops, Battery_charge, Wall}));
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 }
 
 void RoombaControl::stopStream() {

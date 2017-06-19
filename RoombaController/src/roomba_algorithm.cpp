@@ -1,3 +1,4 @@
+
 //
 // Created by raymon on 2-5-17.
 //
@@ -40,7 +41,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             static double spiralTime;
             spiralTime += dt;
 
-            cout << "SPIRAL: " << endl;
+            cout << "SPIRAL: "<< endl;
 
             if (bumper[1] == 1 || bumper[0] == 1) {
                 currentState_ = S_DRIVE_BACKWARDS;
@@ -48,15 +49,16 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
                 break;
             }
 
-            if (spiralTime > 1) {
-                spiral_ += 0.7;
+            if (spiralTime > 0.3) {
+                spiral_ += 4;
                 control->setRotation(full_speed, static_cast<int>(spiral_));
                 spiralTime = 0.0;
             }
 
-            if (spiral_ > 200.0) {
+            if (spiral_ > 300.0) {
                 spiral_ = 100.0;
                 currentState_ = S_DRIVE_STRAIGHT;
+                control->setRotation(200, 0x8000);
             }
 
             break;
@@ -93,11 +95,11 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             double maxTime = 0;
 
             if(event_ == E_WALL_TURN) {
-                maxTime = 0.4;
+                maxTime = 0.2;
             } else if (event_ == E_RIGHT_BUMPER) {
-                maxTime = 1.7;
+                maxTime = 1.5;
             } else {
-                maxTime = 2.0;
+                maxTime = 1.8;
             }
 
             if (elapsedTime_ > maxTime) { //for 1 sec
@@ -105,10 +107,10 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
 
                 if(event_ == E_WALL_TURN) {
                     currentState_ = S_FOLLOW_WALL;
-                    control->setRotation(200, -1900); // to follow wall
+                    control->setRotation(200, 0x8000); // to follow wall
                 } else {
                     currentState_ = S_FOLLOW_OBJECT;
-                    control->setRotation(200, -500); // to follow wall
+                    control->setRotation(160, -250); // to follow wall
                 }
 
                 break;
@@ -116,14 +118,26 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
 
             break;
         }
+
         case S_FOLLOW_OBJECT:
+        {
             cout << "FO" << endl;
 
+            static double notObjectTime;
+
+            notObjectTime += dt;
             followTime_ += dt;
+
+            if(notObjectTime > 8.0) {
+                currentState_ = S_DRIVE_STRAIGHT;
+                notObjectTime = 0.0;
+                control->setRotation(200, 0x8000);
+                break;
+            }
 
             if(isWall) {
                 currentState_ = S_FOLLOW_WALL;
-                control->setRotation(180, -1900);
+                control->setRotation(200, -1900);
                 break;
             }
 
@@ -132,6 +146,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
                 currentState_ = S_DRIVE_BACKWARDS;
                 followAngle_ = -190;
                 control->setRotation(-200, 0x8000);
+                notObjectTime = 0.0;
                 break;
             }
 
@@ -139,6 +154,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
                 event_ = E_RIGHT_BUMPER;
                 currentState_ = S_DRIVE_BACKWARDS;
                 followAngle_ = -190;
+                notObjectTime = 0.0;
                 control->setRotation(-200, 0x8000);
                 break;
             }
@@ -150,6 +166,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
                 control->setRotation(300, 0x0001);
             }
             break;
+        }
 
         case S_FOLLOW_WALL:
             cout << "FW" << endl;
@@ -160,9 +177,10 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
 
             if(!isWall) notWallTime += dt;
 
-            if(!isWall && notWallTime > 2.0){
+            if(!isWall && notWallTime > 1.4){
                 notWallTime = 0.0;
-                currentState_ = S_DRIVE_STRAIGHT;
+                currentState_ = S_FOLLOW_OBJECT;
+                control->setRotation(150, -500);
                 break;
             }
 
@@ -185,7 +203,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
                 followTime_ = 0;
                 followAngle_ = 0x8000;
                 currentState_ = S_BIG_ROTATE_LEFT;
-                control->setRotation(300, 0x0001);
+                control->setRotation(200, 0x0001);
             }
 
             break;
@@ -197,7 +215,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             if (elapsedTime_ >= 0.5) { //for 1.5 sec
                 elapsedTime_ = 0;
                 currentState_ = S_DRIVE_STRAIGHT;
-                control->setRotation(300, 0x8000);
+                control->setRotation(200, 0x8000);
             }
             break;
 
@@ -215,8 +233,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             if (driveStraightTime_ >= 7) { //time exceeded 10 sec
                 driveStraightTime_ = 0.0;
                 currentState_ = S_SPIRAL;
-                spiral_ = 100.0;
-                control->setRotation(full_speed, static_cast<int>(spiral_));
+                control->setRotation(200, static_cast<int>(spiral_));
             }
 
             break;

@@ -1,0 +1,21 @@
+@startuml
+title Deployment diagram 
+
+node Roomba <<device>> {
+  component sensors
+  component motors
+}
+
+node Controller <<device>> {
+  node webserver {
+  }
+}
+
+node <<device>> {
+  node applicatie {
+  }
+}
+
+applicatie .. webserver : <<protocol>> HTTP
+webserver -- Roomba : <<protocol>> usart
+@enduml

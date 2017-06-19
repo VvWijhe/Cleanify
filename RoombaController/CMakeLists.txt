@@ -8,7 +8,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 find_package (Threads)
 
 # find boost
-find_package(Boost 1.58 COMPONENTS system REQUIRED)
+find_package(Boost 1.55 COMPONENTS system REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 
 ## restbed library
