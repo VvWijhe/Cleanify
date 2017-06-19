@@ -171,6 +171,23 @@ void Clean::handle(const shared_ptr<statemachine::Context> &context) {
     rmbControl->startStream();
     this_thread::sleep_for(chrono::milliseconds(20));
 
+    // server intterupt thread
+    thread srv([&exitFlag]{
+        while(1) {
+            unique_lock<std::mutex> event_lk(server_context.mutex());
+            switch(server_context.getEvent()) {
+                case ServerContext::E_STOP:
+                    exitFlag = true;
+                    break;
+
+                default:
+                    break;
+            }
+
+            this_thread::sleep_for(chrono::milliseconds(33));
+        }
+    });
+
     while(!exitFlag) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(20));
 
