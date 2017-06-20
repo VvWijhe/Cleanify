@@ -82,7 +82,7 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
     this_thread::sleep_for(chrono::milliseconds(20));
 
     while(roomba_session == PC_WEB && !exitflag) {
-        boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(16));
+        boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(33));
         unique_lock<std::mutex> event_lk(server_context.mutex());
 
         // read sensors

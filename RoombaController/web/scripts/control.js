@@ -109,7 +109,7 @@ function timerControl() {
         let obj_status = JSON.parse(data);
         let battery_charge = obj_status.battery;
         battery_charge = (battery_charge/3000)*100;
-        battery_charge = battery_charge.toFixed(2);
+        battery_charge = battery_charge.toFixed(0);
         progress_bar.css("width", battery_charge+ '%');
         document.getElementById("progress_number").textContent = (battery_charge + '%');
         progress_bar.attr('class', 'progress-bar progress-bar-striped active');
