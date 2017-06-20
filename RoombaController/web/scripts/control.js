@@ -108,7 +108,7 @@ function timerControl() {
 
         let obj_status = JSON.parse(data);
         progress_bar.css("width", ((obj_status.battery /3000)*100) + '%');
-        document.getElementById("progress_number").textContent = ((obj_status.battery /3000)*100) + '%');
+        document.getElementById("progress_number").textContent = (((obj_status.battery /3000)*100) + '%');
         progress_bar.attr('class', 'progress-bar progress-bar-striped active');
         if (obj_status.battery <= 750) {
             progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-warning');
