@@ -144,7 +144,7 @@ void RoombaControl::beep() {
 }
 
 void RoombaControl::startStream() {
-    serial_.writeVector(Sensors::createvectorstream({Light_bumper, Bumps_wheeldrops, Battery_capacity, Wall}));
+    serial_.writeVector(Sensors::createvectorstream({Light_bumper, Bumps_wheeldrops, Battery_charge, Wall}));
     std::this_thread::sleep_for(std::chrono::milliseconds(50));
 }
 

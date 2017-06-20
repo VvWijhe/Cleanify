@@ -94,7 +94,7 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
         server_context.setSensorData(sensorData);
 //        serverLock.unlock();
 
-        auto s = sensorData.getvalue<unsigned short>(Battery_capacity);
+        auto s = sensorData.getvalue<unsigned short>(Battery_charge);
         cout << s << endl;
 
         switch (server_context.getEvent()) {

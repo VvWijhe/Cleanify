@@ -108,11 +108,11 @@ function timerControl() {
 
         let obj_status = JSON.parse(data);
         progress_bar.css("width", ((obj_status.battery /65535)*100) + '%');
-        document.getElementById("progress_number").textContent = ( obj_status.battery + '%');
+        document.getElementById("progress_number").textContent = ((obj_status.battery /65535)*100) + '%');
         progress_bar.attr('class', 'progress-bar progress-bar-striped active');
-        if (obj_status.battery <= 25) {
+        if (obj_status.battery <= 16383) {
             progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-warning');
-            if (obj_status.battery <= 10) {
+            if (obj_status.battery <= 6553) {
                 progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
             }
         }
