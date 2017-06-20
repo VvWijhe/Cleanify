@@ -216,7 +216,7 @@ void responses::status(pSession session) {
                        auto sensorData = globals::server_context.getSensorData();
 //                       serverLock.unlock();
 
-                       response["battery"] = sensorData.getvalue<unsigned short>(Battery_charge);
+//                       response["battery"] = sensorData.getvalue<unsigned short>(Battery_charge);
 
                        s->close(OK,
                                 response.dump(),
