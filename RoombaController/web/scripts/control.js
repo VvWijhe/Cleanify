@@ -107,12 +107,15 @@ function timerControl() {
     $.get("/status", function (data) {
 
         let obj_status = JSON.parse(data);
-        progress_bar.css("width", ((obj_status.battery /3000)*100) + '%');
-        document.getElementById("progress_number").textContent = ((((obj_status.battery /3000)*100).tofixed(2)) + '%');
+        let battery_charge = obj_status.battery;
+        battery_charge = (battery_charge/3000)*100;
+        battery_charge = battery_charge.toFixed(2);
+        progress_bar.css("width", battery_charge+ '%');
+        document.getElementById("progress_number").textContent = (battery_charge + '%');
         progress_bar.attr('class', 'progress-bar progress-bar-striped active');
-        if (obj_status.battery <= 750) {
+        if (battery_charge <= 25) {
             progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-warning');
-            if (obj_status.battery <= 300) {
+            if (battery_charge <= 10) {
                 progress_bar.attr('class', 'progress-bar progress-bar-striped active progress-bar-danger');
             }
         }
