@@ -1,5 +1,4 @@
 @startuml
-
 left to right direction
 
 skinparam packageStyle rectangle
@@ -15,10 +14,8 @@ rectangle Roomba650 {
   cliff -- (moving)
   wall -- (moving)
   ' user -- (power on)
-  user -- (troubleshoot)
   user -- (spot cleaning)
   user -- (cleaning)
-  user -- (clock)
   user -- (docking)
 
   dockingstation -- (docking)
@@ -40,5 +37,4 @@ rectangle app {
 }
 
 app <--> Roomba650
-
 @enduml
