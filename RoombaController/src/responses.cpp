@@ -212,9 +212,9 @@ void responses::status(pSession session) {
                        if(globals::roomba_session == globals::IDLE) response["status"] = "available";
                        else response["status"] = "running";
 
-                       unique_lock<std::mutex> serverLock(globals::server_context.mutex());
+//                       unique_lock<std::mutex> serverLock(globals::server_context.mutex());
                        auto sensorData = globals::server_context.getSensorData();
-                       serverLock.unlock();
+//                       serverLock.unlock();
 
                        response["battery"] = sensorData.getvalue<unsigned short>(Battery_capacity);
 
