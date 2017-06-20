@@ -35,6 +35,10 @@ namespace systemcontrol {
             setState(initial);
         }
 
+        void exit() {
+            control_->disconnect();
+        }
+
         /**
          * @return A shared pointer that owns the server object.
          */

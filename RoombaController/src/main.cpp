@@ -19,8 +19,10 @@ using namespace Poco;
 const string releaseCmd = "rfcomm release " + rfcomm;
 const string connectCmd = "rfcomm bind " + rfcomm + " 00:06:66:60:07:81"; //00:06:66:60:07:81
 
-void exitHandler(int signal) {
-    system(releaseCmd.c_str());
+shared_ptr<RoombaStateContext> process;
+
+void exitHandler(int sig) {
+    process->exit();
     exit(1);
 }
 
@@ -30,8 +32,8 @@ void exitHandler(int signal) {
  */
 int main() {
     try {
-//        // set exit handler
-//        signal(SIGINT, exitHandler);
+        // set exit handler
+        signal(SIGINT, exitHandler);
 //
 //        thread t([]{
 //            system(connectCmd.c_str());
@@ -52,7 +54,13 @@ int main() {
         Logger::create("logger", formattingChannel, Message::PRIO_TRACE);
 
         // create statemachine
-        shared_ptr<RoombaStateContext> process = make_shared<RoombaStateContext>(make_shared<states::Initialise>());
+        process = make_shared<RoombaStateContext>(make_shared<states::Initialise>());
+
+//        // set exit handler
+//        signal(SIGINT, [process](int sig){
+//            process.reset();
+//            exit(1);
+//        });
 
         process->runAll();
 
