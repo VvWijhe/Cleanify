@@ -17,7 +17,7 @@ int SerialPort::connect() {
     memset(&tty, 0, sizeof tty);
 
     if (tcgetattr(fd_, &tty) != 0) {
-        return errno;
+        return -1;
     }
 
     cfsetospeed(&tty, baud_);
@@ -39,7 +39,7 @@ int SerialPort::connect() {
 
     if (tcsetattr(fd_, TCSANOW, &tty) != 0) {
         std::cout << strerror(errno) << std::endl;
-        return errno;
+        return -1;
     }
 
     return 1;
