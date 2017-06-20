@@ -128,7 +128,7 @@ Clean::calculate(shared_ptr<systemcontrol::RoombaControl> control, Sensors senso
             notObjectTime += dt;
             followTime_ += dt;
 
-            if(notObjectTime > 8.0) {
+            if(notObjectTime > 4.0) {
                 currentState_ = S_DRIVE_STRAIGHT;
                 notObjectTime = 0.0;
                 control->setRotation(200, 0x8000);
