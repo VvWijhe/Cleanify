@@ -17,6 +17,7 @@ int SerialPort::connect() {
     memset(&tty, 0, sizeof tty);
 
     if (tcgetattr(fd_, &tty) != 0) {
+        std::cout << strerror(errno) << std::endl;
         return -1;
     }
 
