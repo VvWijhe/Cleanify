@@ -78,9 +78,23 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
 
     logger.information("PC/Web session started");
 
+    rmbControl->startStream();
+    this_thread::sleep_for(chrono::milliseconds(20));
+
     while(roomba_session == PC_WEB && !exitflag) {
         boost::asio::deadline_timer loopFrequency(io, boost::posix_time::milliseconds(16));
         unique_lock<std::mutex> event_lk(server_context.mutex());
+
+        // read sensors
+        Sensors sensorData;
+        rmbControl->readSensors(sensorData);
+
+        // set sensor data for the server
+        unique_lock<std::mutex> serverLock(server_context.mutex());
+        server_context.setSensorData(sensorData);
+        serverLock.unlock();
+
+        cout << sensorData.getvalue<unsigned short>(Battery_capacity) << endl;
 
         switch (server_context.getEvent()) {
             case ServerContext::E_EXIT:
