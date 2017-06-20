@@ -14,7 +14,6 @@ rectangle Roomba650 {
   cliff -- (moving)
   wall -- (moving)
   ' user -- (power on)
-  user -- (spot cleaning)
   user -- (cleaning)
   user -- (docking)
 
@@ -33,7 +32,6 @@ rectangle Roomba650 {
 rectangle app {
   user -- (clean)
   user -- (direction-button)
-  user -- (spot)
 }
 
 app <--> Roomba650
