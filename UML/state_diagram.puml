@@ -1,4 +1,6 @@
 @startuml
+title Class diagram statemachine Roomba controller
+
 class State {
 + State()
 + <i>handle() : void
@@ -34,6 +36,6 @@ class RoombaContext {
 - server_ : shared_ptr<Server>
 }
 
-Context *--"1" Clean
-Context *--"1" Session
+RoombaContext *--"1" Clean
+RoombaContext *--"1" Session
 @enduml
