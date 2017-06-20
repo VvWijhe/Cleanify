@@ -38,6 +38,7 @@ int SerialPort::connect() {
     tty.c_cflag &= ~CRTSCTS;
 
     if (tcsetattr(fd_, TCSANOW, &tty) != 0) {
+        perror("serial error");
         return errno;
     }
 
