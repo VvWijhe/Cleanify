@@ -90,11 +90,12 @@ void Session::handle(const shared_ptr<statemachine::Context> &context) {
         rmbControl->readSensors(sensorData);
 
         // set sensor data for the server
-        unique_lock<std::mutex> serverLock(server_context.mutex());
+//        unique_lock<std::mutex> serverLock(server_context.mutex());
         server_context.setSensorData(sensorData);
-        serverLock.unlock();
+//        serverLock.unlock();
 
-        cout << sensorData.getvalue<unsigned short>(Battery_capacity) << endl;
+        auto s = sensorData.getvalue<unsigned short>(Battery_capacity);
+        cout << s << endl;
 
         switch (server_context.getEvent()) {
             case ServerContext::E_EXIT:
