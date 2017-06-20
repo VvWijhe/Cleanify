@@ -90,6 +90,11 @@ public:
         if (typeid(T) == sensorvariant(sensors_.find(sensor)->second).type()) {
             if(sensors_.find(sensor) == sensors_.end()) return 0;
 
+            if(typeid(T) != typeid(unsigned char) &&
+                    typeid(T) != typeid(char) &&
+                    typeid(T) != typeid(unsigned short) &&
+                    typeid(T) != typeid(short)) return 0;
+
             return boost::get<T>(sensors_.find(sensor)->second);
         }
         //logger_.error("BOOST ERROR sensors::GetValue: Boost has failed");
