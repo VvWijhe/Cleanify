@@ -4,6 +4,8 @@
 #include <QGraphicsItem>
 #include <vector>
 #include <memory>
+#include <QTimer>
+#include <QObject>
 
 #include "helper.h"
 #include "serial.h"
@@ -12,7 +14,8 @@ using namespace std;
 
 enum status_t {STANDBY, MOVING, COLLISSION, ROTATING_LEFT, ROTATING_RIGHT};
 
-class Roomba : public QGraphicsEllipseItem {
+class Roomba : public QObject, public QGraphicsEllipseItem {
+    Q_OBJECT
 public:
    Roomba();
 
@@ -39,12 +42,16 @@ public:
 
    void readSerial();
 
+public slots:
+   void sendStream();
+
 private:
    status_t _status;
    double _angle{};
    long _distance{};
    double _speed{};
    Serial _serial;
+   QTimer timer_;
 };
 
 #endif // ROOMBA_H

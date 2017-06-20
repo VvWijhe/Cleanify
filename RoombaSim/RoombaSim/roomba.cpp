@@ -27,6 +27,9 @@ Roomba::Roomba(int posx, int posy, int width, int height) {
     setRect(posx, posy, width, height);
 
     if(_serial.openPort() < 0) qDebug() << "Error opening port";
+
+    QObject::connect(&timer_, SIGNAL(timeout()), this, SLOT(sendStream()));
+    timer_.start(15);
 }
 
 void Roomba::setAngle(short angle) {
@@ -51,11 +54,11 @@ status_t Roomba::updatePos(vector<shared_ptr<QGraphicsLineItem>> walls) {
             return _status;
         }
 
-//        while(collidesWithItem(wall.get()) && maxSteps++ < 2 && _speed < 0) {
-//            setPen(QPen(Qt::red));
-//            setPos(pos().x() + cos((rotation() * PI) / 180.0), pos().y() + sin(((rotation() * PI) / 180.0)));
-//            return COLLISSION;
-//        }
+        //        while(collidesWithItem(wall.get()) && maxSteps++ < 2 && _speed < 0) {
+        //            setPen(QPen(Qt::red));
+        //            setPos(pos().x() + cos((rotation() * PI) / 180.0), pos().y() + sin(((rotation() * PI) / 180.0)));
+        //            return COLLISSION;
+        //        }
     }
 
     setPen(QPen(Qt::green));
@@ -102,7 +105,7 @@ void Roomba::readSerial() {
         break;
     }
 
-    case 149:
+    case 142:
     {
         if(sequence.size() < 2) return;
         else if(sequence.size() < sequence.at(1) + 1) return;
@@ -135,4 +138,21 @@ void Roomba::readSerial() {
     default:
         break;
     }
+}
+
+void Roomba::sendStream() {
+    QByteArray data;
+
+    data.append(19);
+    data.append(2);
+    data.append(7);
+    if(_status == COLLISSION) {
+        data.append(3);
+        data.append(225);
+    } else {
+        data.append('\0');
+        data.append(228);
+    }
+
+    _serial.send(data);
 }
